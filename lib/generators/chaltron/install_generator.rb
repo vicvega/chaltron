@@ -30,7 +30,7 @@ module Chaltron
       say message
 
       if options.interactive?
-        exit unless yes?("Are you sure you want to continue (you should answer a couple of questions)? [yes/NO]")
+        exit unless yes?("Are you sure you want to continue? [yes/NO]")
       end
     end
 
