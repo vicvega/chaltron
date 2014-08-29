@@ -4,6 +4,8 @@ require 'omniauth-ldap'
 require 'bootstrap-sass'
 require 'autoprefixer-rails'
 require 'font-awesome-sass'
+require 'simple-navigation'
+require 'simple_navigation_renderers'
 
 module Chaltron
   class Engine < ::Rails::Engine

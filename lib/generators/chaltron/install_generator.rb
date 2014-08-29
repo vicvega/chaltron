@@ -124,15 +124,24 @@ div#content {
     def create_index_controller
       generate 'controller home index'
       route "root to: 'home#index'"
+
       # controller, views and assets replacement
       copy_file 'app/controllers/home_controller.rb', force: true
       directory 'app/views/home/', force: true
       copy_file 'app/assets/javascripts/home.js.coffee', force: true
       copy_file 'app/assets/stylesheets/home.css.scss', force: true
+
+      Array(1..10).each do |x|
+        route "get 'home/test#{x}'"
+      end
     end
 
     def copy_locale
       copy_file 'config/locales/simple_form.it.yml'
+    end
+
+    def setup_navigation
+      copy_file 'config/navigation.rb'
     end
 
   end

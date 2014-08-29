@@ -20,6 +20,7 @@ PATH
       rails (~> 4.1.0)
       sass-rails
       simple_form
+      simple_navigation_renderers
 
 GEM
   remote: https://rubygems.org/
@@ -150,6 +151,10 @@ GEM
       sprockets-rails (~> 2.0)
     shoulda-matchers (2.6.1)
       activesupport (>= 3.0.0)
+    simple-navigation (3.13.0)
+      activesupport (>= 2.3.2)
+    simple_navigation_renderers (1.0.2)
+      simple-navigation (~> 3.11)
     sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
