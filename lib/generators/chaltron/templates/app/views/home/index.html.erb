@@ -1,0 +1,65 @@
+<%= render 'carousel' %>
+
+<div class='container-fluid'>
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">
+        Benvenuto in Chaltron! <small> aka Muffaster reloaded</small>
+      </h1>
+    </div>
+    <%= render partial: "panel", locals: {
+      title: 'Bootstrap v3.2.0', icon: 'check', link: 'http://getbootstrap.com',
+      body: 'Bootstrap spakka! E ci sono un sacco di template gi&agrave; preconfezionati, anche gratuiti. Come questo ;-)' }
+    %>
+    <%= render partial: "panel", locals: {
+      title: 'Free &amp; Open Source'.html_safe, icon: 'gift',
+      body: 'Nel senso che &egrave; a disposizione e che chi vuole contribuire &egrave; benvenuto!' }
+    %>
+    <%= render partial: "panel", locals: {
+      title: 'Easy to use', icon: 'compass',
+      body: "Si pu&ograve; creare un'applicazione completa nel giro di trenta secondi. Provare per credere. "  }
+    %>
+  </div>
+
+  <div class='row'>
+    <div class="col-lg-12">
+      <h2 class="page-header">Caratteristiche principali</h2>
+    </div>
+    <div class="col-md-6">
+      <p>Chaltron include:</p>
+      <ul>
+        <li>
+          Compatibilit&agrave; con
+          <strong><%= link_to 'Bootstrap v3.2', 'http://getbootstrap.com' %></strong> e
+          <strong><%= link_to 'Font Awesome v4.1', 'http://fortawesome.github.io/Font-Awesome/' %></strong>
+        </li>
+        <li>Autenticazione (utenti locali e LDAP) e autorizzazione</li>
+        <li>Supporto per i grafici con <strong><%= link_to 'amCharts', 'http://www.amcharts.com/' %></strong></li>
+      </ul>
+      <p>Insomma tutto quello che serve per essere pronti e in fretta. Altro che RAD. Prova LSAD</p>
+      <p>
+        Passa a
+        <strong><%= link_to 'Chaltron', 'https://github.com/vicvega/chaltron' %></strong>,
+        al <strong>L</strong>ight <strong>S</strong>peed <strong>A</strong>pplication <strong>D</strong>evelopment!</p>
+    </div>
+    <div class="col-md-6">
+      <%= image_tag('http://placehold.it/700x300', class: 'img-responsive img-thumbnail') %>
+    </div>
+  </div>
+
+  <div class='row'%>
+    <div class="col-lg-12">
+      <h2 class="page-header">FAQ</h2>
+    </div>
+  </div>
+
+  <div class='row'%>
+    <div class="col-lg-12">
+      <div class="panel-group" id="accordion">
+        <%= render partial: 'faq', collection: @faqs %>
+      </div>
+    </div>
+  </div>
+
+
+</div>

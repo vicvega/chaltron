@@ -1,0 +1,39 @@
+<div id='main-carousel' class='carousel slide' data-ride='carousel'>
+  <!-- Indicators -->
+  <ol class='carousel-indicators'>
+    <li data-target='#main-carousel' data-slide-to='0' class='active'></li>
+    <li data-target='#main-carousel' data-slide-to='1'></li>
+    <li data-target='#main-carousel' data-slide-to='2'></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class='carousel-inner'>
+    <div class='item active'>
+      <%= image_tag('http://placehold.it/1900x1080&text=Slide One') %>
+      <div class='carousel-caption'>
+        <h1>Chaltron rulez!</h1>
+      </div>
+    </div>
+    <div class='item'>
+      <%= image_tag('http://placehold.it/1900x1080&text=Slide Two') %>
+      <div class='carousel-caption'>
+        <h1>Wow</h1>
+        <p>Sembra una cosa seria</p>
+      </div>
+    </div>
+    <div class='item'>
+      <%= image_tag('http://placehold.it/1900x1080&text=Slide Three') %>
+      <div class='carousel-caption'>
+        <h1>Niente male!</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class='left carousel-control' href='#main-carousel' role='button' data-slide='prev'>
+    <span class='glyphicon glyphicon-chevron-left'></span>
+  </a>
+  <a class='right carousel-control' href='#main-carousel' role='button' data-slide='next'>
+    <span class='glyphicon glyphicon-chevron-right'></span>
+  </a>
+</div>    
