@@ -84,12 +84,6 @@ Style/MultilineBlockLayout:
 Style/NumericLiterals:
   MinDigits: 15
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: PreferredDelimiters.
-Style/PercentLiteralDelimiters:
-  Enabled: false
-
 # Offense count: 1
 # Cop supports --auto-correct.
 Style/SpecialGlobalVars:

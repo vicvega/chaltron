@@ -101,13 +101,13 @@ end
       directory 'app/views/layouts'
       # javascript
       file = 'app/assets/javascripts/application.js'
-      %w[ nprogress nprogress-turbolinks chaltron ].each do |x|
+      %w( nprogress nprogress-turbolinks chaltron ).each do |x|
         txt = "//= require #{x}\n"
         inject_into_file file, txt, before: '//= require_tree .'
       end
       # css
       file = 'app/assets/stylesheets/application.css'
-      %w[ nprogress nprogress-bootstrap font-awesome chaltron ].each do |x|
+      %w( nprogress nprogress-bootstrap font-awesome chaltron ).each do |x|
         txt = " *= require #{x}\n"
         inject_into_file file, txt, before: ' *= require_self'
       end
