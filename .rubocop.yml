@@ -5,3 +5,4 @@ AllCops:
     - '**/config.ru'
   Exclude:
     - db/schema.rb
+    - spec/dummy/db/schema.rb

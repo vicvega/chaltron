@@ -1,4 +1,4 @@
-require "chaltron/version"
+require 'chaltron/version'
 
 module Chaltron
   class Banner

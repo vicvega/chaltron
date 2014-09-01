@@ -1,4 +1,4 @@
-require "chaltron/engine"
+require 'chaltron/engine'
 
 module Chaltron
 end

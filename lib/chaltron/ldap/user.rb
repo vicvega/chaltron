@@ -13,7 +13,7 @@ module Chaltron
         def find_or_create(auth)
           @auth = auth
           if uid.blank? || email.blank? || username.blank?
-            raise_error("Account must provide a dn, uid and email address")
+            raise_error('Account must provide a dn, uid and email address')
           end
 
           user = find_by_uid_and_provider
@@ -76,7 +76,7 @@ module Chaltron
 
         def find_by_uid(uid)
           # LDAP distinguished name is case-insensitive
-          ::User.where("provider = ? and lower(extern_uid) = ?", provider, uid.downcase).last
+          ::User.where('provider = ? and lower(extern_uid) = ?', provider, uid.downcase).last
         end
 
         def uid
@@ -88,11 +88,11 @@ module Chaltron
         end
 
         def name
-          auth.info.name.to_s.force_encoding("utf-8")
+          auth.info.name.to_s.force_encoding('utf-8')
         end
 
         def username
-          auth.info.nickname.to_s.force_encoding("utf-8")
+          auth.info.nickname.to_s.force_encoding('utf-8')
         end
 
         def provider
@@ -100,7 +100,7 @@ module Chaltron
         end
 
         def raise_error(message)
-          raise OmniAuth::Error, "(LDAP) " + message
+          raise OmniAuth::Error, '(LDAP) ' + message
         end
 
       end

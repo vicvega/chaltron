@@ -1,4 +1,4 @@
-require "chaltron/ldap/user"
+require 'chaltron/ldap/user'
 
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
@@ -12,7 +12,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = Chaltron::LDAP::User.find_or_create(oauth)
     @user.remember_me = true if @user.persisted?
 
-    flash[:notice] = I18n.t("devise.sessions.signed_in")
+    flash[:notice] = I18n.t('devise.sessions.signed_in')
     sign_in_and_redirect(@user)
   end
 

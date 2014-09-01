@@ -2,10 +2,10 @@ require 'coveralls'
 Coveralls.wear!
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-ENV["RAILS_ENV"] ||= 'test'
+ENV['RAILS_ENV'] ||= 'test'
 
 require 'spec_helper'
-require File.expand_path("../dummy/config/environment.rb", __FILE__)
+require File.expand_path('../dummy/config/environment.rb', __FILE__)
 require 'rspec/rails'
 
 require 'ffaker'

@@ -4,9 +4,9 @@ require 'chaltron/banner'
 module Chaltron
   # Install a skeleton application
   class InstallGenerator < Rails::Generators::Base
-    desc "Install a chaltron skeleton application"
-    source_root File.expand_path("../templates", __FILE__)
-    class_option :interactive, type: :boolean, desc: "Run interactive configuration.", default: true
+    desc 'Install a chaltron skeleton application'
+    source_root File.expand_path('../templates', __FILE__)
+    class_option :interactive, type: :boolean, desc: 'Run interactive configuration.', default: true
 
     def disclaimer
       @banner = Chaltron::Banner.new
@@ -30,7 +30,7 @@ module Chaltron
       say message
 
       if options.interactive?
-        exit unless yes?("Are you sure you want to continue? [yes/NO]")
+        exit unless yes?('Are you sure you want to continue? [yes/NO]')
       end
     end
 
@@ -106,7 +106,7 @@ end
         inject_into_file file, txt, before: '//= require_tree .'
       end
       # css
-      file = "app/assets/stylesheets/application.css"
+      file = 'app/assets/stylesheets/application.css'
       %w[ nprogress nprogress-bootstrap font-awesome chaltron ].each do |x|
         txt = " *= require #{x}\n"
         inject_into_file file, txt, before: ' *= require_self'
