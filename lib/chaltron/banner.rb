@@ -29,6 +29,7 @@ module Chaltron
     end
 
     private
+
     def populate_banners
       ret = []
 
