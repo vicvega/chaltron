@@ -20,7 +20,7 @@ describe 'Basic user feature' do
       click_link 'Resetta la password'
 
       fill_in 'user_email', with: @user.email
-      expect { click_button 'Invia' }.to change {ActionMailer::Base.deliveries.count}.by(1)
+      expect { click_button 'Invia' }.to change { ActionMailer::Base.deliveries.count }.by(1)
 
       mail = ActionMailer::Base.deliveries.last
       expect(mail.to).to eq [@user.email]
