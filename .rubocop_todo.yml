@@ -78,13 +78,3 @@ Style/MethodDefParentheses:
 # Cop supports --auto-correct.
 Style/MultilineBlockLayout:
   Enabled: false
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/NumericLiterals:
-  MinDigits: 15
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/SpecialGlobalVars:
-  Enabled: false
