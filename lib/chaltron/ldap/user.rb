@@ -51,7 +51,7 @@ module Chaltron
           ::User.find_by(email: email)
         end
 
-     private
+        private
 
         def create(auth)
           @auth = auth

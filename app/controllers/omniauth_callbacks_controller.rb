@@ -16,7 +16,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     sign_in_and_redirect(@user)
   end
 
-private
+  private
 
   def oauth
     @oauth ||= request.env['omniauth.auth']
