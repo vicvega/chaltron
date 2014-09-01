@@ -69,12 +69,14 @@ module Chaltron
 
     def config_application
       # factories
-      application do<<-RUBY
-config.generators do |g|
+      application do
+        <<RUBY
+
+    config.generators do |g|
       g.fixture_replacement :factory_girl
       g.stylesheets false
     end
-        RUBY
+RUBY
       end
     end
 
@@ -83,7 +85,8 @@ config.generators do |g|
     end
 
     def db_seed
-      append_file 'db/seeds.rb' do<<-RUBY
+      append_file 'db/seeds.rb' do
+        <<RUBY
 User.create do |u|
   u.username              = 'draco'
   u.fullname              = 'Draco Malfoy'
@@ -91,7 +94,7 @@ User.create do |u|
   u.password              = 'password.1'
   u.password_confirmation = 'password.1'
 end
-        RUBY
+RUBY
       end
     end
 
@@ -111,13 +114,14 @@ end
         txt = " *= require #{x}\n"
         inject_into_file file, txt, before: ' *= require_self'
       end
-      append_file file do<<-RUBY
+      append_file file do
+        <<RUBY
 
 /* navbar */
 div#content {
   margin-top: 40px;
 }
-        RUBY
+RUBY
       end
     end
 

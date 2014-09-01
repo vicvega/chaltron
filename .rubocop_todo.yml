@@ -73,8 +73,3 @@ Style/LeadingCommentSpace:
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 Style/MethodDefParentheses:
   Enabled: false
-
-# Offense count: 3
-# Cop supports --auto-correct.
-Style/MultilineBlockLayout:
-  Enabled: false
