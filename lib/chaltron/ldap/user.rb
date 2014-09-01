@@ -33,7 +33,7 @@ module Chaltron
               #
               # TO DO log!!!
               #
-              #log.info("(LDAP) Updating legacy LDAP user #{email} with extern_uid => #{uid}")
+              # log.info("(LDAP) Updating legacy LDAP user #{email} with extern_uid => #{uid}")
             else
               # Create a new user inside GitLab database
               # based on LDAP credentials

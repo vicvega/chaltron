@@ -57,7 +57,7 @@ module Chaltron
 
     def setup_rspec
       generate 'rspec:install'
-      #suppress warnings
+      # suppress warnings
       gsub_file '.rspec', "--warnings\n", ''
       remove_dir 'test'
     end
