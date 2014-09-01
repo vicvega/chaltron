@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-
   def index
   end
 
@@ -9,5 +8,4 @@ class HomeController < ApplicationController
       render :test
     end
   end
-
 end

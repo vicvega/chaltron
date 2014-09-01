@@ -1,7 +1,6 @@
 require 'chaltron/ldap/user'
 
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
-
   def ldap
 #    puts '##########################################'
 #    puts oauth.inspect

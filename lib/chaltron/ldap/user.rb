@@ -102,7 +102,6 @@ module Chaltron
         def raise_error(message)
           fail OmniAuth::Error, '(LDAP) ' + message
         end
-
       end
     end
   end

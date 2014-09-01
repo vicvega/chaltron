@@ -47,11 +47,6 @@ Style/Documentation:
 Style/EmptyLinesAroundAccessModifier:
   Enabled: false
 
-# Offense count: 6
-# Cop supports --auto-correct.
-Style/EmptyLinesAroundBody:
-  Enabled: false
-
 # Offense count: 1
 # Configuration parameters: MinBodyLength.
 Style/GuardClause:

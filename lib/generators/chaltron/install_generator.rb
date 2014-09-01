@@ -147,6 +147,5 @@ RUBY
     def setup_navigation
       copy_file 'config/navigation.rb'
     end
-
   end
 end
