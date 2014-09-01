@@ -39,7 +39,6 @@ module Chaltron
               # based on LDAP credentials
               #
 
-
               user = create(auth)
             end
           end
