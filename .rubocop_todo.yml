@@ -96,11 +96,6 @@ Style/PercentLiteralDelimiters:
 Style/SignalException:
   Enabled: false
 
-# Offense count: 14
-# Cop supports --auto-correct.
-Style/SingleSpaceBeforeFirstArg:
-  Enabled: false
-
 # Offense count: 1
 # Cop supports --auto-correct.
 Style/SpecialGlobalVars:
