@@ -107,11 +107,6 @@ Style/SingleSpaceBeforeFirstArg:
 Style/SpaceInsideBlockBraces:
   Enabled: false
 
-# Offense count: 6
-# Cop supports --auto-correct.
-Style/SpaceInsideBrackets:
-  Enabled: false
-
 # Offense count: 1
 # Cop supports --auto-correct.
 Style/SpecialGlobalVars:
