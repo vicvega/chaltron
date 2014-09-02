@@ -33,11 +33,6 @@ Metrics/MethodLength:
 Metrics/PerceivedComplexity:
   Max: 15
 
-# Offense count: 3
-# Cop supports --auto-correct.
-Style/CommentIndentation:
-  Enabled: false
-
 # Offense count: 20
 Style/Documentation:
   Enabled: false

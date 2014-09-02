@@ -2,9 +2,9 @@ require 'chaltron/ldap/user'
 
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def ldap
-#    puts '##########################################'
-#    puts oauth.inspect
-#    puts '##########################################'
+    #    puts '##########################################'
+    #    puts oauth.inspect
+    #    puts '##########################################'
 
     # We only find ourselves here
     # if the authentication to LDAP was successful.

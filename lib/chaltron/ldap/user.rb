@@ -66,7 +66,7 @@ module Chaltron
           }
           user = ::User.build_user(opts)
           user.save!
-#          log.info "(OAuth) Creating user #{email} from login with extern_uid => #{uid}"
+          #          log.info "(OAuth) Creating user #{email} from login with extern_uid => #{uid}"
           user
         end
 
