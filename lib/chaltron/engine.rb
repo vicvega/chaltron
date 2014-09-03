@@ -5,7 +5,9 @@ require 'bootstrap-sass'
 require 'autoprefixer-rails'
 require 'font-awesome-sass'
 require 'simple-navigation'
+
 require 'simple_navigation_renderers'
+SimpleNavigation.config_file_paths << File.expand_path('../../../config', __FILE__)
 
 module Chaltron
   class Engine < ::Rails::Engine
