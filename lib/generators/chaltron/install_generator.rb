@@ -114,15 +114,6 @@ RUBY
         txt = " *= require #{x}\n"
         inject_into_file file, txt, before: ' *= require_self'
       end
-      append_file file do
-        <<RUBY
-
-/* navbar */
-div#content {
-  margin-top: 40px;
-}
-RUBY
-      end
     end
 
     def create_index_controller
