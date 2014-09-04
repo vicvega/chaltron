@@ -1,6 +1,7 @@
 <%
   body ||= 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?'
   link ||= 'https://github.com/vicvega/chaltron'
+  link_text ||= 'Learn more'
 %>
 
 <div class="col-md-4">
@@ -13,7 +14,7 @@
     </div>
     <div class="panel-body">
       <p><%= raw body %> </p>
-      <%= link_to 'Guarda qui', link, class: 'btn btn-primary' %>
+      <%= link_to link_text, link, class: 'btn btn-primary' %>
     </div>
   </div>
 </div>
