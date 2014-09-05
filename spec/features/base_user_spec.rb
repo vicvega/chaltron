@@ -13,7 +13,7 @@ describe User do
 
   it 'recovers password' do
     visit new_user_session_path
-    click_link 'Resetta la password'
+    click_link 'Hai dimenticato la password?'
 
     fill_in 'user_email', with: user.email
     expect { click_button 'Invia' }.to change { ActionMailer::Base.deliveries.count }.by(1)
