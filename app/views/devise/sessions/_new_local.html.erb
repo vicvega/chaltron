@@ -1,6 +1,6 @@
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal' }) do |f| %>
-  <%= f.input :username, placeholder: "Username", autofocus: 'autofocus', required: false %>
-  <%= f.input :password, placeholder: "Password" %>
+  <%= f.input :username, placeholder: 'Username', autofocus: 'autofocus', required: false %>
+  <%= f.input :password, placeholder: 'Password' %>
   <% if devise_mapping.rememberable? %>
     <div class='form-group'>
       <div class='col-sm-offset-3 col-sm-9'>
@@ -21,6 +21,6 @@
   <hr>
   <p>
     <span>Hai dimenticato la password?</span>
-    <strong><%= link_to "Resetta la password", new_password_path(resource_name) %> </strong>
+    <strong><%= link_to 'Resetta la password', new_password_path(resource_name) %> </strong>
   </p>
-<% end %>  
+<% end %>

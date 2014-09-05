@@ -1,7 +1,7 @@
 <div class='container-fluid'>
   <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { role: 'form', method: :post, class: 'login-box form-horizontal' }) do |f| %>
     <h3 class='page-header'>Password dimenticata</h3>
-    <%= f.input :email, placeholder: "Email", autofocus: true %>
+    <%= f.input :email, placeholder: 'Email', autofocus: true %>
     <div class='form-group'>
       <div class='col-sm-offset-3 col-sm-9'>
         <%= f.submit 'Invia', class: 'btn btn-primary' %>
@@ -10,7 +10,7 @@
     <hr>
     <p>
       <span>Hai già delle credenziali valide?</span>
-      <strong><%= link_to "Login", new_session_path(resource_name) %> </strong>
+      <strong><%= link_to 'Login', new_session_path(resource_name) %> </strong>
     </p>
   <% end %>
-</div>          
+</div>
