@@ -1,0 +1,12 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <%= link_to raw(faq[:question]), "#collapse#{faq_counter}", data: {toggle: 'collapse', parent: '#accordion'}, class: 'accordion-toggle' %>
+    </h4>
+  </div>
+  <%= content_tag :div, id: "collapse#{faq_counter}", class: 'panel-collapse collapse' do %>
+    <div class="panel-body">
+      <%= raw faq[:answer] %>
+    </div>
+  <% end %>
+</div>

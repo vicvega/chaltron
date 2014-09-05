@@ -6,7 +6,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Chaltron test</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'application', 'data-turbolinks-track' => true, media: 'all' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= favicon_link_tag 'favicon.ico', rel: 'shortcut icon' %>
   </head>
@@ -17,4 +17,4 @@
       <%= yield %>
     </div>
   </body>
-</html>  
+</html>

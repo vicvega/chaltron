@@ -1,9 +1,22 @@
 Rails.application.routes.draw do
+  get 'home/test10'
+  get 'home/test9'
+  get 'home/test8'
+  get 'home/test7'
+  get 'home/test6'
+  get 'home/test5'
+  get 'home/test4'
+  get 'home/test3'
+  get 'home/test2'
+  get 'home/test1'
+  root to: 'home#index'
+  get 'home/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  # root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
