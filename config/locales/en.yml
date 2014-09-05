@@ -1,0 +1,12 @@
+en:
+  chaltron:
+    flash:
+      success: info
+      error:   error
+      alert:   alert
+      notice:  notice
+
+    activerecord:
+      attributes:
+        user:
+          password_confirmation: Confirm password

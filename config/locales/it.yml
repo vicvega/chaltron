@@ -1,11 +1,12 @@
 it:
-  flash:
-    success: info
-    error:   errore
-    alert:   attenzione
-    notice:  nota
+  chaltron:
+    flash:
+      success: info
+      error:   errore
+      alert:   attenzione
+      notice:  nota
 
-  activerecord:
-    attributes:
-      user:
-        password_confirmation: Conferma password
+    activerecord:
+      attributes:
+        user:
+          password_confirmation: Conferma password

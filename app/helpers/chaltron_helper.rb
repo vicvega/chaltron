@@ -13,7 +13,7 @@ module ChaltronHelper
 
   def flash_message(message, type)
     content_tag(:div, message, class: "alert #{bootstrap_class_for(type)} alert_link") do
-      content_tag(:strong, I18n.t("flash.#{type}").capitalize + ': ') +
+      content_tag(:strong, I18n.t("chaltron.flash.#{type}").capitalize + ': ') +
       message
     end
   end
