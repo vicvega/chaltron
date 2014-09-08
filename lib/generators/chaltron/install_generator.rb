@@ -88,9 +88,9 @@ RUBY
       append_file 'db/seeds.rb' do
         <<RUBY
 User.create do |u|
-  u.username              = 'draco'
-  u.fullname              = 'Draco Malfoy'
-  u.email                 = 'draco.malfoy@voldemort.com'
+  u.username              = 'bella'
+  u.fullname              = 'Bellatrix Lestrange'
+  u.email                 = 'bellatrix.lestrange@azkaban.co.uk'
   u.password              = 'password.1'
   u.password_confirmation = 'password.1'
 end
