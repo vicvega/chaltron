@@ -5,6 +5,10 @@ it:
       error:   errore
       alert:   attenzione
       notice:  nota
+    menu:
+      admin: amministrazione
+      users: utenti
+
 
   activerecord:
     attributes:

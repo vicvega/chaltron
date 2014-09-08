@@ -5,6 +5,9 @@ en:
       error:   error
       alert:   alert
       notice:  notice
+    menu:
+      admin: administration
+      users: users
 
   activerecord:
     attributes:

@@ -14,3 +14,7 @@ en:
       new_local:
         remember_me: Remember me
         link_text: Forgot your password?
+  chaltron:
+    users:
+      index:
+        title: User list
