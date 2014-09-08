@@ -1,0 +1,17 @@
+it:
+  devise:
+    passwords:
+      new:
+        title: Password dimenticata?
+        par1: Inserisci la tua email per ricevere instruzioni su come resettare la password
+        par2: Hai già delle credenziali valide?
+      edit:
+        title: Cambio password
+        password_placeholder: Nuova password
+        password_confirmation_placeholder: Conferma password
+        submit_text: Cambia password
+        par: Vuoi procedere al login?
+    sessions:
+      new_local:
+        remember_me: Ricordami
+        link_text: Hai dimenticato la password?

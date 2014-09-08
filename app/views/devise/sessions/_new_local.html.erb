@@ -7,7 +7,7 @@
         <div class='checkbox'>
           <label for='user_remember_me'>
             <%= f.check_box :remember_me %>
-            Remember me
+            <%= t '.remember_me' %>
           </label>
         </div>
       </div>
@@ -20,6 +20,6 @@
   </div>
   <hr>
   <p>
-    <strong><%= link_to 'Forgot your password?', new_password_path(resource_name) %> </strong>
+    <strong><%= link_to t('.link_text'), new_password_path(resource_name) %> </strong>
   </p>
 <% end %>

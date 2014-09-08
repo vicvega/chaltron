@@ -1,7 +1,7 @@
 <div class='container-fluid'>
   <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { role: 'form', method: :post, class: 'login-box form-horizontal' }) do |f| %>
-    <h3 class='page-header'>Forgot your password?</h3>
-    <p>Send us your email to receive instrucions for password reset</p>
+    <h3 class='page-header'><%= t '.title' %></h3>
+    <p><%= t '.par1' %></p>
     <%= f.input :email, placeholder: 'Email', autofocus: true %>
     <div class='form-group'>
       <div class='col-sm-offset-3 col-sm-9'>
@@ -10,7 +10,7 @@
     </div>
     <hr>
     <p>
-      <span>Already got valid credentials?</span>
+      <span><%= t '.par2' %></span>
       <strong><%= link_to 'Login', new_session_path(resource_name) %> </strong>
     </p>
   <% end %>

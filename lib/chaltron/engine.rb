@@ -17,5 +17,9 @@ module Chaltron
       g.assets false
       g.helper false
     end
+
+    initializer("chaltron.locales") do |app|
+      Chaltron::Engine.config.i18n.load_path += Dir[root.join('app/views', 'locales', '*.{rb,yml}')]
+    end
   end
 end
