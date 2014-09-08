@@ -7,8 +7,6 @@ en:
         par2: Already got valid credentials?
       edit:
         title: Change password
-        password_placeholder: New password
-        password_confirmation_placeholder: Confirm password
         submit_text: Change password
         par: Wanna go to login?
     sessions:

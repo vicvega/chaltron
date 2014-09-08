@@ -7,8 +7,6 @@ it:
         par2: Hai già delle credenziali valide?
       edit:
         title: Cambio password
-        password_placeholder: Nuova password
-        password_confirmation_placeholder: Conferma password
         submit_text: Cambia password
         par: Vuoi procedere al login?
     sessions:

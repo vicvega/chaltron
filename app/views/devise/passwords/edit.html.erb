@@ -2,8 +2,8 @@
   <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: 'login-box form-horizontal' }) do |f| %>
     <h3 class='page-header'><%= t '.title' %></h3>
     <%= f.hidden_field :reset_password_token %>
-    <%= f.input :password, placeholder: t('.password_placeholder'), autofocus: true %>
-    <%= f.input :password_confirmation, placeholder: t('.password_confirmation_placeholder') %>
+    <%= f.input :password, autofocus: true %>
+    <%= f.input :password_confirmation %>
     <div class='form-group'>
       <div class='col-sm-offset-3 col-sm-9'>
         <%= f.submit t('.submit_text'), class: 'btn btn-primary' %>
