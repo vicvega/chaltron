@@ -5,6 +5,7 @@ it:
         title: Password dimenticata?
         par1: Inserisci la tua email per ricevere instruzioni su come resettare la password
         par2: Hai già delle credenziali valide?
+        submit_text: Invia
       edit:
         title: Cambio password
         submit_text: Cambia password
