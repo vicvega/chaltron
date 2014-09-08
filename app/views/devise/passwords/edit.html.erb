@@ -1,18 +1,22 @@
-<div class='container-fluid'>
-  <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: 'login-box form-horizontal' }) do |f| %>
-    <h3 class='page-header'><%= t '.title' %></h3>
-    <%= f.hidden_field :reset_password_token %>
-    <%= f.input :password, autofocus: true %>
-    <%= f.input :password_confirmation %>
-    <div class='form-group'>
-      <div class='col-sm-offset-3 col-sm-9'>
-        <%= f.submit t('.submit_text'), class: 'btn btn-primary' %>
-      </div>
+<div class='container login-box'>
+  <div class='panel panel-default'>
+    <div class='panel-heading'><%= t '.title' %></div>
+    <div class='panel-body'>
+      <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: 'form-horizontal' }) do |f| %>
+        <%= f.hidden_field :reset_password_token %>
+        <%= f.input :password, autofocus: true %>
+        <%= f.input :password_confirmation %>
+        <div class='form-group'>
+          <div class='col-sm-offset-3 col-sm-9'>
+            <%= f.submit t('.submit_text'), class: 'btn btn-primary' %>
+          </div>
+        </div>
+        <hr>
+        <p>
+          <span><%= t '.par' %></span>
+          <strong><%= link_to 'Login', new_session_path(resource_name) %> </strong>
+        </p>
+      <% end %>
     </div>
-    <hr>
-    <p>
-      <span><%= t '.par' %></span>
-      <strong><%= link_to 'Login', new_session_path(resource_name) %> </strong>
-    </p>
-  <% end %>
+  </div>
 </div>
