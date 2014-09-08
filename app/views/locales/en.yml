@@ -9,7 +9,7 @@ en:
       edit:
         title: Change password
         submit_text: Change password
-        par: Wanna go to login?
+        par: Never mind!
     sessions:
       new_local:
         remember_me: Remember me

@@ -9,7 +9,7 @@ it:
       edit:
         title: Cambio password
         submit_text: Cambia password
-        par: Vuoi procedere al login?
+        par: Come non detto!
     sessions:
       new_local:
         remember_me: Ricordami

@@ -1,6 +1,6 @@
 <div class='container login-box'>
-  <div class='panel panel-default'>
-    <div class='panel-heading'><%= t '.title' %></div>
+  <div class='panel panel-primary'>
+    <div class='panel-heading'><h4><%= t '.title' %></h4></div>
     <div class='panel-body'>
       <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { role: 'form', method: :post, class: 'form-horizontal' }) do |f| %>
         <p><%= t '.par1' %></p>
