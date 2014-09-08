@@ -6,7 +6,7 @@ it:
       alert:   attenzione
       notice:  nota
 
-    activerecord:
-      attributes:
-        user:
-          password_confirmation: Conferma password
+  activerecord:
+    attributes:
+      user:
+        password_confirmation: Conferma password
