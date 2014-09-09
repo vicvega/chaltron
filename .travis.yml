@@ -3,5 +3,21 @@ rvm:
   - 2.0.0
   - 2.1.2
 before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -y slapd ldap-utils
+  - sudo su -
+  - apt-get update -qq
+  - apt-get install -y slapd ldap-utils
+
+
+
+
+
+
+#  cat > /etc/ldap/ldap.conf << EOF
+#BASE dc=openforce,dc=org
+#BINDDN cn=admin,dc=openforce,dc=org
+#URI ldap://localhost
+#EOF
+##service slapd stop
+##slapadd -v -u -d 1 -F /etc/ldap/slapd.d -l /vagrant/of.ldif
+##service slapd start
+#ldapadd -x -w Secret007! -f /vagrant/of.ldif -D 'cn=admin,dc=openforce,dc=org'
