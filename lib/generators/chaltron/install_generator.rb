@@ -138,5 +138,10 @@ RUBY
     def setup_navigation
       copy_file 'config/navigation.rb'
     end
+
+    def setup_chaltron
+      copy_file 'config/initializers/chaltron.rb'
+    end
+
   end
 end
