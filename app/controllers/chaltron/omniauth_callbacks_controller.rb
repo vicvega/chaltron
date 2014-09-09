@@ -22,4 +22,4 @@ module Chaltron
       @oauth ||= request.env['omniauth.auth']
     end
   end
-end 
+end
