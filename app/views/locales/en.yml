@@ -4,16 +4,21 @@ en:
       new:
         title: Forgot your password?
         par1: Send us your email to receive instrucions for password reset
-        par2: Already got valid credentials?
+        par2_html: Already got valid credentials? <strong><a href="/users/sign_in">Login</a></strong>
         submit_text: Submit
       edit:
         title: Change password
         submit_text: Change password
-        par: Never mind!
+        par_html: Never mind! <strong><a href="/users/sign_in">Login</a></strong>
     sessions:
+      new:
+        title: Login
       new_local:
         remember_me: Remember me
         link_text: Forgot your password?
+        submit_text: Login
+      new_ldap:
+        submit_text: Login
   chaltron:
     users:
       index:

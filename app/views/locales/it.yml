@@ -4,16 +4,21 @@ it:
       new:
         title: Password dimenticata?
         par1: Inserisci la tua email per ricevere instruzioni su come resettare la password
-        par2: Hai già delle credenziali valide?
         submit_text: Invia
+        par2_html: Hai già delle credenziali valide? <strong><a href="/users/sign_in">Login</a></strong>
       edit:
         title: Cambio password
         submit_text: Cambia password
-        par: Come non detto!
+        par_html: Come non detto! <strong><a href="/users/sign_in">Login</a></strong>
     sessions:
+      new:
+        title: Login
       new_local:
         remember_me: Ricordami
         link_text: Hai dimenticato la password?
+        submit_text: Login
+      new_ldap:
+        submit_text: Login
   chaltron:
     users:
       index:
