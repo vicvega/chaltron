@@ -1,0 +1,43 @@
+dn: ou=people,dc=azkaban,dc=co,dc=uk
+objectClass: organizationalUnit
+ou: people
+
+dn: ou=groups,dc=azkaban,dc=co,dc=uk
+objectClass: organizationalUnit
+ou: groups
+
+dn: uid=sirius,ou=people,dc=azkaban,dc=co,dc=uk
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: sirius
+sn: Black
+givenName: Sirius
+cn: Sirius Black
+displayName: Black Sirius
+uidNumber: 1000
+gidNumber: 10000
+homeDirectory: /tmp/test/
+shadowExpire: -1
+shadowFlag: 0
+shadowWarning: 7
+shadowMin: 8
+shadowMax: 999999
+shadowLastChange: 10877
+mail: sirius.balck@azkaban.co.uk
+postalCode: 31000
+mobile: +38 (1)67 xxx xx xx
+homePhone: +38 (1)20 xxx xxx
+title: Administrator
+postalAddress: Test Home
+initials: TT
+
+dn: cn=example,ou=groups,dc=azkaban,dc=co,dc=uk
+objectClass: posixGroup
+cn: example
+gidNumber: 10000
+
+dn: cn=example2,ou=groups,dc=azkaban,dc=co,dc=uk
+objectClass: posixGroup
+cn: example2
+gidNumber: 10001
