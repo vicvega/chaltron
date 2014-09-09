@@ -1,4 +1,22 @@
 <div class='container-fluid'>
-<h3 class='page-header'><%= t '.title' %></h3>
-  <p>To be done</p>
+  <h3 class='page-header'><%= t '.title' %></h3>
+
+  <%= content_tag 'table', id: 'users', class: 'table table-striped' do %>
+    <thead>
+      <tr>
+        <th class='username'>Username</th>
+        <th class='fullname'>Nome completo</th>
+        <th class='email'>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td class='username'><%= user.username %></td>
+          <td class='fullname'><%= user.fullname %></td>
+          <td class='email'><%= user.email %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  <% end %>
 </div>
