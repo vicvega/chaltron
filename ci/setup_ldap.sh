@@ -5,8 +5,8 @@ EOF
 
 /usr/bin/debconf-set-selections /tmp/slapd.debconf
 
-apt-get update
-apt-get install slapd ldap-utils sudo-ldap -y
+apt-get update -qq
+apt-get install slapd ldap-utils -y
 
 cat > /etc/ldap/ldap.conf << EOF
 BASE dc=azkaban,dc=co,dc=uk
