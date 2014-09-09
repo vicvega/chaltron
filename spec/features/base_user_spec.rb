@@ -2,14 +2,17 @@ require 'rails_helper'
 
 describe User do
   describe 'ldap' do
+    let(:fullname) { 'Sirius Black' }
+
     it 'allows login and logout' do
       login_with 'sirius', 'buckbeak', :ldap
-      expect(page).to have_content 'Sirius Black'
+      expect(page).to have_content fullname
       logout
       expect(page).to have_content 'Login'
-      expect(page).not_to have_content 'Sirius Black'
+      expect(page).not_to have_content fullname
     end
   end
+
   describe 'local' do
     let(:user) { create :user }
 
