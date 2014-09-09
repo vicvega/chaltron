@@ -3,24 +3,29 @@
     <div class='panel-heading'><h4><%= t '.title' %></h4></div>
     <div class='panel-body'>
 
-      <div class='col-sm-offset-3 col-sm-9'>
-        <ul class='nav nav-tabs' role='tablist'>
-          <li class='active'>
-            <%= link_to 'LDAP', '#tab-ldap', data: {toggle: 'tab'} %>
-          </li>
-          <li>
-            <%= link_to 'Standard', '#tab-local', data: {toggle: 'tab'} %>
-          </li>
-        </ul>
-      </div>
-      <div class='tab-content'>
-        <div id='tab-ldap' class='tab-pane active'>
-          <%= render partial: 'devise/sessions/new_ldap' %>
+      <% if ldap_enabled? %>
+        <div class='col-sm-offset-3 col-sm-9'>
+          <ul class='nav nav-tabs' role='tablist'>
+            <li class='active'>
+              <%= link_to 'LDAP', '#tab-ldap', data: {toggle: 'tab'} %>
+            </li>
+            <li>
+              <%= link_to 'Standard', '#tab-local', data: {toggle: 'tab'} %>
+            </li>
+          </ul>
         </div>
-        <div id='tab-local' class='tab-pane'>
-          <%= render partial: 'devise/sessions/new_local' %>
+        <div class='tab-content'>
+          <div id='tab-ldap' class='tab-pane active'>
+            <%= render partial: 'devise/sessions/new_ldap' %>
+          </div>
+          <div id='tab-local' class='tab-pane'>
+            <%= render partial: 'devise/sessions/new_local' %>
+          </div>
         </div>
-      </div>
+      <% else %>
+        <!-- LDAP not enabled -->
+        <%= render partial: 'devise/sessions/new_local' %>
+      <% end %>
 
     </div>
   </div>

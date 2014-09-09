@@ -1,4 +1,9 @@
 module ChaltronHelper
+
+  def ldap_enabled?
+    Devise.omniauth_providers.include? :ldap
+  end
+
   #
   # Flash messages
   #
