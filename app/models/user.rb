@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  include Authorizable
   # Include default devise modules. Others available are:
   # :registerable, :confirmable, :lockable and :omniauthable
 
