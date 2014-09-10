@@ -13,6 +13,7 @@ objectClass: shadowAccount
 uid: sirius
 sn: Black
 givenName: Sirius
+userPassword: padfoot
 cn: Sirius Black
 displayName: Black Sirius
 uidNumber: 1000

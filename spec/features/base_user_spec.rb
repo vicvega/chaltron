@@ -5,7 +5,7 @@ describe User do
     let(:fullname) { 'Sirius Black' }
 
     it 'allows login and logout' do
-      login_with 'sirius', 'buckbeak', :ldap
+      login_with 'sirius', 'padfoot', :ldap
       expect(page).to have_content fullname
       logout
       expect(page).to have_content 'Login'
