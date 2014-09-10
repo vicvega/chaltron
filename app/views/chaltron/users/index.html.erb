@@ -4,9 +4,15 @@
   <%= content_tag 'table', id: 'users', class: 'table table-striped' do %>
     <thead>
       <tr>
-        <th class='username'>Username</th>
-        <th class='fullname'>Nome completo</th>
-        <th class='email'>Email</th>
+        <th class='username'>
+          <%= User.human_attribute_name(:username) %>
+        </th>
+        <th class='fullname'>
+          <%= User.human_attribute_name(:fullname) %>
+        </th>
+        <th class='email'>
+          <%= User.human_attribute_name(:email) %>
+        </th>
       </tr>
     </thead>
     <tbody>
