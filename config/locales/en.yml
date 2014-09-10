@@ -8,8 +8,3 @@ en:
     menu:
       admin: administration
       users: users
-
-  activerecord:
-    attributes:
-      user:
-        password_confirmation: Confirm password

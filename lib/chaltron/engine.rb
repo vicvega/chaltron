@@ -20,6 +20,7 @@ module Chaltron
 
     initializer('chaltron.locales') do |_app|
       Chaltron::Engine.config.i18n.load_path += Dir[root.join('app/views', 'locales', '*.{rb,yml}')]
+      Chaltron::Engine.config.i18n.load_path += Dir[root.join('app/models', 'locales', '*.{rb,yml}')]
     end
   end
 end
