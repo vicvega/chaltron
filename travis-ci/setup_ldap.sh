@@ -16,4 +16,4 @@ BINDDN cn=admin,dc=azkaban,dc=co,dc=uk
 URI ldap://localhost
 EOF
 
-ldapadd -x -w password.1 -f ./ci/ldap/entry.ldif -D 'cn=admin,dc=azkaban,dc=co,dc=uk'
+ldapadd -x -w password.1 -f ./travis-ci/ldap/entry.ldif -D 'cn=admin,dc=azkaban,dc=co,dc=uk'

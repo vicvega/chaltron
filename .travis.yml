@@ -4,4 +4,4 @@ rvm:
   - 2.1.2
 before_install:
   - sudo apt-get update -qq
-  - sudo ./ci/setup_ldap.sh
+  - sudo ./travis-ci/setup_ldap.sh
