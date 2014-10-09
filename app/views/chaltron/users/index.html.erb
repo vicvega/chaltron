@@ -1,28 +1,86 @@
 <div class='container-fluid'>
   <h3 class='page-header'><%= t '.title' %></h3>
+  <div class='row'>
+    <div class='col-md-3 side-filters'>
 
-  <%= content_tag 'table', id: 'users', class: 'table table-striped' do %>
-    <thead>
-      <tr>
-        <th class='username'>
-          <%= User.human_attribute_name(:username) %>
-        </th>
-        <th class='fullname'>
-          <%= User.human_attribute_name(:fullname) %>
-        </th>
-        <th class='email'>
-          <%= User.human_attribute_name(:email) %>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @users.each do |user| %>
-        <tr>
-          <td class='username'><%= user.username %></td>
-          <td class='fullname'><%= user.fullname %></td>
-          <td class='email'><%= user.email %></td>
-        </tr>
+      <fieldset>
+        <ul class='nav nav-pills nav-stacked'>
+          <%= content_tag :li, class: (params[:provider].blank? ? 'active': '') do %>
+            <%= link_to users_url do %>
+              <span class='badge pull-right'><%= User.count %></span>
+              Tutti
+            <% end %>
+          <% end %>
+          <%= content_tag :li, class: (params[:provider] == 'local' ? 'active': '') do %>
+            <%= link_to users_url(provider: 'local')  do %>
+              <span class='badge pull-right'><%= User.where(provider: nil).count %></span>
+              locali
+            <% end %>
+          <% end %>
+          <%= content_tag :li, class: (params[:provider] == 'ldap' ? 'active': '') do %>
+            <%= link_to users_url(provider: 'ldap')  do %>
+              <span class='badge pull-right'><%= User.where(provider: :ldap).count %></span>
+              LDAP
+            <% end %>
+          <% end %>
+        </ul>
+      </fieldset>
+
+      <fieldset>
+        <legend>Attività</legend>
+        <ul class='nav nav-pills nav-stacked'>
+        <li class='active'>
+        <li>
+          <%= link_to '#' do %>
+            Inattivi
+            <span class='badge pull-right'>2</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to '#' do %>
+            Mai loggati
+            <span class='badge pull-right'>10</span>
+          <% end %>
+        </li>
+        </ul>
+      </fieldset>
+
+
+
+      <fieldset>
+        <%= link_to nil, class: 'pull-right' do %>
+          <%= icon(:remove) %>
+          <strong>Clear filter</strong>
+        <% end %>
+      </fieldset>
+
+    </div>
+
+    <div class='col-md-9'>
+      <%= content_tag 'table', id: 'users', class: 'table table-striped' do %>
+        <thead>
+          <tr>
+            <th class='username'>
+              <%= User.human_attribute_name(:username) %>
+            </th>
+            <th class='fullname'>
+              <%= User.human_attribute_name(:fullname) %>
+            </th>
+            <th class='email'>
+              <%= User.human_attribute_name(:email) %>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td class='username'><%= user.username %></td>
+              <td class='fullname'><%= user.fullname %></td>
+              <td class='email'><%= user.email %></td>
+            </tr>
+          <% end %>
+        </tbody>
       <% end %>
-    </tbody>
-  <% end %>
+    </div>
+  </div>
 </div>
