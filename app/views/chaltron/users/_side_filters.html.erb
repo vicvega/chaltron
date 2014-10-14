@@ -4,37 +4,37 @@
       <%= content_tag :li, class: (params[:provider].blank? ? 'active': '') do %>
         <%= link_to users_url do %>
           <span class='badge pull-right'><%= User.count %></span>
-          Tutti
+          <%= t '.provider.all' %>
         <% end %>
       <% end %>
       <%= content_tag :li, class: (params[:provider] == 'local' ? 'active': '') do %>
         <%= link_to users_url(provider: 'local')  do %>
           <span class='badge pull-right'><%= User.where(provider: nil).count %></span>
-          locali
+          <%= t '.provider.local' %>
         <% end %>
       <% end %>
       <%= content_tag :li, class: (params[:provider] == 'ldap' ? 'active': '') do %>
         <%= link_to users_url(provider: 'ldap')  do %>
           <span class='badge pull-right'><%= User.where(provider: :ldap).count %></span>
-          LDAP
+          <%= t '.provider.ldap' %>
         <% end %>
       <% end %>
     </ul>
   </fieldset>
 <% end %>
 <fieldset>
-  <legend>Attività</legend>
+  <legend><%= t '.activity.legend' %></legend>
   <ul class='nav nav-pills nav-stacked'>
   <li class='active'>
   <li>
     <%= link_to '#' do %>
-      Inattivi
+      <%= t '.activity.inactive' %>
       <span class='badge pull-right'>2</span>
     <% end %>
   </li>
   <li>
     <%= link_to '#' do %>
-      Mai loggati
+      <%= t '.activity.no_login' %>
       <span class='badge pull-right'>10</span>
     <% end %>
   </li>
@@ -44,6 +44,6 @@
 <fieldset>
   <%= link_to nil, class: 'pull-right' do %>
     <%= icon(:remove) %>
-    <strong>Clear filter</strong>
+    <strong><%= t '.clear_filter' %></strong>
   <% end %>
 </fieldset>
