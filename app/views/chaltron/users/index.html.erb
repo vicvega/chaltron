@@ -2,58 +2,7 @@
   <h3 class='page-header'><%= t '.title' %></h3>
   <div class='row'>
     <div class='col-md-3 side-filters'>
-
-      <fieldset>
-        <ul class='nav nav-pills nav-stacked'>
-          <%= content_tag :li, class: (params[:provider].blank? ? 'active': '') do %>
-            <%= link_to users_url do %>
-              <span class='badge pull-right'><%= User.count %></span>
-              Tutti
-            <% end %>
-          <% end %>
-          <%= content_tag :li, class: (params[:provider] == 'local' ? 'active': '') do %>
-            <%= link_to users_url(provider: 'local')  do %>
-              <span class='badge pull-right'><%= User.where(provider: nil).count %></span>
-              locali
-            <% end %>
-          <% end %>
-          <%= content_tag :li, class: (params[:provider] == 'ldap' ? 'active': '') do %>
-            <%= link_to users_url(provider: 'ldap')  do %>
-              <span class='badge pull-right'><%= User.where(provider: :ldap).count %></span>
-              LDAP
-            <% end %>
-          <% end %>
-        </ul>
-      </fieldset>
-
-      <fieldset>
-        <legend>Attività</legend>
-        <ul class='nav nav-pills nav-stacked'>
-        <li class='active'>
-        <li>
-          <%= link_to '#' do %>
-            Inattivi
-            <span class='badge pull-right'>2</span>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to '#' do %>
-            Mai loggati
-            <span class='badge pull-right'>10</span>
-          <% end %>
-        </li>
-        </ul>
-      </fieldset>
-
-
-
-      <fieldset>
-        <%= link_to nil, class: 'pull-right' do %>
-          <%= icon(:remove) %>
-          <strong>Clear filter</strong>
-        <% end %>
-      </fieldset>
-
+      <%= render 'side_filters' %>
     </div>
 
     <div class='col-md-9'>
