@@ -15,3 +15,8 @@ $navbar-height: 40px;
 
 // Core CSS
 @import "chaltron/layout";
+
+// datatables
+@import 'dataTables/jquery.dataTables.css.scss';
+@import 'dataTables/bootstrap/3/jquery.dataTables.bootstrap';
+@import 'dataTables/extras/dataTables.responsive';

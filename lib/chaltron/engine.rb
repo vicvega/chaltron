@@ -5,6 +5,7 @@ require 'bootstrap-sass'
 require 'autoprefixer-rails'
 require 'font-awesome-sass'
 require 'simple-navigation'
+require 'jquery-datatables-rails'
 
 require 'simple_navigation_renderers'
 SimpleNavigation.config_file_paths << File.expand_path('../../../config', __FILE__)
