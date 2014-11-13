@@ -17,6 +17,10 @@ $navbar-height: 40px;
 @import "chaltron/layout";
 
 // datatables
-@import 'dataTables/jquery.dataTables.css.scss';
 @import 'dataTables/bootstrap/3/jquery.dataTables.bootstrap';
 @import 'dataTables/extras/dataTables.responsive';
+
+// minor fix
+.dataTables_wrapper .dataTables_filter input {
+  margin-left: 0.5em;
+}
