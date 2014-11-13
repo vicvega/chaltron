@@ -23,3 +23,13 @@ en:
     users:
       index:
         title: User list
+      side_filters:
+          provider:
+            all: All
+            local: Local
+            ldap: LDAP
+          activity:
+            legend: Activity
+            inactive: Inactive
+            no_login: Never logged
+          clear_filter: Clear filters

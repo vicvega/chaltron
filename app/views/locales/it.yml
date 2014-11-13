@@ -23,3 +23,13 @@ it:
     users:
       index:
         title: Elenco degli utenti
+      side_filters:
+          provider:
+            all: Tutti
+            local: Locali
+            ldap: LDAP
+          activity:
+            legend: Attività
+            inactive: Inattivi
+            no_login: Mai loggati
+          clear_filter: Rimuovi filtri
