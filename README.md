@@ -5,7 +5,7 @@
 [![Code Climate](https://codeclimate.com/github/vicvega/chaltron/badges/gpa.svg)](https://codeclimate.com/github/vicvega/chaltron)
 [![Dependency Status](https://gemnasium.com/vicvega/chaltron.png)](https://gemnasium.com/vicvega/chaltron)
 
-This project rocks and is still under development. I mean: it's not yet released. When it'll be you'll be able to do as follows.
+This project rocks and is still under development. I mean: **it's not yet released**. Sooner or later you'll be able to do as follows.
 
 In a fresh new rails application simply add to your `Gemfile` 
 ```
