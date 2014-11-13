@@ -8,13 +8,13 @@
         <% end %>
       <% end %>
       <%= content_tag :li, class: (params[:provider] == 'local' ? 'active': '') do %>
-        <%= link_to users_url(provider: 'local') do %>
+        <%= link_to users_url(params.merge(provider: 'local')) do %>
           <span class='badge pull-right'><%= User.where(provider: nil).count %></span>
           <%= t '.provider.local' %>
         <% end %>
       <% end %>
       <%= content_tag :li, class: (params[:provider] == 'ldap' ? 'active': '') do %>
-        <%= link_to users_url(provider: 'ldap') do %>
+        <%= link_to users_url(params.merge(provider: 'ldap')) do %>
           <span class='badge pull-right'><%= User.where(provider: :ldap).count %></span>
           <%= t '.provider.ldap' %>
         <% end %>
@@ -22,15 +22,16 @@
     </ul>
   </fieldset>
 <% end %>
+
 <fieldset>
   <legend><%= t '.activity.legend' %></legend>
   <ul class='nav nav-pills nav-stacked'>
-  <li>
-    <%= link_to users_url(activity: 'no_login') do %>
+  <%= content_tag :li, class: (params[:activity] == 'no_login' ? 'active': '') do %>
+    <%= link_to users_url(params.merge(activity: 'no_login')) do %>
       <%= t '.activity.no_login' %>
       <span class='badge pull-right'><%= User.where(sign_in_count: 0).count %></span>
     <% end %>
-  </li>
+  <% end %>
   </ul>
 </fieldset>
 
