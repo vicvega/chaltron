@@ -1,4 +1,5 @@
 require 'devise'
+require 'cancancan'
 require 'omniauth'
 require 'omniauth-ldap'
 require 'bootstrap-sass'
@@ -22,6 +23,12 @@ module Chaltron
     initializer('chaltron.locales') do |_app|
       Chaltron::Engine.config.i18n.load_path += Dir[root.join('app/views', 'locales', '*.{rb,yml}')]
       Chaltron::Engine.config.i18n.load_path += Dir[root.join('app/models', 'locales', '*.{rb,yml}')]
+    end
+
+    initializer('chaltron.helpers') do |_app|
+      ActiveSupport.on_load(:action_controller) do
+        include Chaltron::Controllers::Helpers
+      end
     end
   end
 end

@@ -93,6 +93,7 @@ User.create do |u|
   u.email                 = 'bellatrix.lestrange@azkaban.co.uk'
   u.password              = 'password.1'
   u.password_confirmation = 'password.1'
+  u.roles                 = Chaltron.roles
 end
 RUBY
       end
@@ -143,5 +144,8 @@ RUBY
       copy_file 'config/initializers/chaltron.rb'
     end
 
-  end
+    def setup_authorization
+      copy_file 'app/models/ability.rb'
+    end
+ end
 end
