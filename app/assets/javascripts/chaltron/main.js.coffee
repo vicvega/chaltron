@@ -1,10 +1,9 @@
-$ ->
+$(document).on 'page:change', ->
   # Flash
   if (flash = $(".flash-container div.alert")).length > 0
     flash.click -> $(@).fadeOut()
     setTimeout (-> flash.fadeOut()), 10000
 
-$(document).on 'page:change', ->
   $('.datatable').DataTable({
     autoWidth: false,
     responsive: true
