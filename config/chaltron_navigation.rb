@@ -11,7 +11,7 @@ SimpleNavigation::Configuration.run do |navigation|
         admin.item :users,
           { icon: 'fa fa-fw fa-users',
             text: I18n.t('chaltron.menu.users').titleize
-          }, users_url
+          }, users_url, highlights_on: /\/users\//
       end
       primary.item :logged, current_user.display_name.html_safe, nil do |user|
         user.item :logout, { icon: 'fa fa-fw fa-sign-out', text: 'Logout' },
