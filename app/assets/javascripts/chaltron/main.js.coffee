@@ -5,6 +5,7 @@ $(document).on 'page:change', ->
     setTimeout (-> flash.fadeOut()), 10000
 
   $('.datatable').DataTable({
+    destroy: true,
     autoWidth: false,
     responsive: true
     # pagingType: 'full_numbers',

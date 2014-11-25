@@ -24,6 +24,7 @@ en:
       index:
         title: User list
         panel_header: Users
+        new_user: New user
       side_filters:
           provider:
             all: All

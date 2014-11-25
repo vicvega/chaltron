@@ -24,6 +24,7 @@ it:
       index:
         title: Elenco degli utenti
         panel_header: Utenti
+        new_user: Nuovo utente
       side_filters:
           provider:
             all: Tutti
