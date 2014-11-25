@@ -8,4 +8,8 @@ class Chaltron::UsersController < ApplicationController
     # apply activity filter
     @users = @users.where(sign_in_count: 0) if params[:activity] == 'no_login'
   end
+
+  def show
+
+  end
 end
