@@ -23,6 +23,7 @@ it:
     users:
       index:
         title: Elenco degli utenti
+        panel_header: Utenti
       side_filters:
           provider:
             all: Tutti

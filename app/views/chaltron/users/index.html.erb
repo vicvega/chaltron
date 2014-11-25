@@ -4,32 +4,38 @@
     <div class='col-md-3 side-filters'>
       <%= render 'side_filters' %>
     </div>
-
     <div class='col-md-9'>
-      <%= content_tag 'table', id: 'users', class: 'table table-striped datatable' do %>
-        <thead>
-          <tr>
-            <th class='username'>
-              <%= User.human_attribute_name(:username) %>
-            </th>
-            <th class='fullname'>
-              <%= User.human_attribute_name(:fullname) %>
-            </th>
-            <th class='email'>
-              <%= User.human_attribute_name(:email) %>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @users.each do |user| %>
-            <tr>
-              <td class='username'><%= user.username %></td>
-              <td class='fullname'><%= user.fullname %></td>
-              <td class='email'><%= user.email %></td>
-            </tr>
+      <div class='panel panel-default'>
+        <div class='panel-heading'>
+          <h3 class='panel-title'><%= t '.panel_header' %></h3>
+        </div>
+        <div class='panel-body'>
+          <%= content_tag 'table', id: 'users', class: 'table table-striped datatable' do %>
+            <thead>
+              <tr>
+                <th class='username'>
+                  <%= User.human_attribute_name(:username) %>
+                </th>
+                <th class='fullname'>
+                  <%= User.human_attribute_name(:fullname) %>
+                </th>
+                <th class='email'>
+                  <%= User.human_attribute_name(:email) %>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @users.each do |user| %>
+                <tr>
+                  <td class='username'><%= user.username %></td>
+                  <td class='fullname'><%= user.fullname %></td>
+                  <td class='email'><%= user.email %></td>
+                </tr>
+              <% end %>
+            </tbody>
           <% end %>
-        </tbody>
-      <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

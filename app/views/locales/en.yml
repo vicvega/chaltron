@@ -23,6 +23,7 @@ en:
     users:
       index:
         title: User list
+        panel_header: Users
       side_filters:
           provider:
             all: All
