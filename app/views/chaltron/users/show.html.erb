@@ -1,4 +1,20 @@
 <div class='container-fluid'>
   <h3 class='page-header'><%= @user.username %></h3>
-  <p><%= @user.fullname %></p>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading"><%= @user.display_name %></div>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <span><%= User.human_attribute_name(:username) %>: </span>
+        <strong><%= @user.username %></strong>
+      </li>
+      <li class="list-group-item">
+        <span><%= User.human_attribute_name(:fullname) %>: </span>
+        <strong><%= @user.fullname %></strong>
+      </li>
+    </ul>
+  </div>
+
+
 </div>
