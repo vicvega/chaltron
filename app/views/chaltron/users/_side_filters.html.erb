@@ -2,7 +2,7 @@
   <fieldset>
     <ul class='nav nav-pills nav-stacked'>
       <%= content_tag :li, class: (params[:provider].blank? ? 'active': '') do %>
-        <%= link_to users_url do %>
+        <%= link_to users_url(params.merge(provider: nil)) do %>
           <span class='badge pull-right'><%= User.count %></span>
           <%= t '.provider.all' %>
         <% end %>
