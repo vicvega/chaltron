@@ -5,7 +5,8 @@ module Chaltron
       extend ActiveSupport::Concern
       included do
         rescue_from ::CanCan::AccessDenied do |exception|
-    	    redirect_to root_url, alert: current_user.nil? ? t(:access_denied_try_login) : t(:access_denied)
+          alert = current_user.nil? ? t('chaltron.access_denied_try_login') : t('chaltron.access_denied')
+    	    redirect_to root_url, alert: alert
     	  end
       end
     end

@@ -1,6 +1,4 @@
 en:
-  access_denied: "Access denied. You don't have are the correct permissions to access this page!"
-  access_denied_try_login: 'Access denied. Sign in, please'
   chaltron:
     flash:
       success: info
@@ -10,3 +8,5 @@ en:
     menu:
       admin: administration
       users: users
+    access_denied: Access denied. You don't have are the correct permissions to access this page!
+    access_denied_try_login: Access denied. Sign in, please

@@ -1,6 +1,4 @@
 it:
-  access_denied: 'Accesso negato! Non hai i permessi ad accedere a questa pagina'
-  access_denied_try_login: 'Accesso negato. Prova ad effettuare il login'
   chaltron:
     flash:
       success: info
@@ -10,3 +8,5 @@ it:
     menu:
       admin: amministrazione
       users: utenti
+    access_denied: Accesso negato! Non hai i permessi ad accedere a questa pagina
+    access_denied_try_login: Accesso negato. Prova ad effettuare il login
