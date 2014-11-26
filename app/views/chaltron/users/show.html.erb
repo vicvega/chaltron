@@ -1,36 +1,36 @@
 <div class='container-fluid'>
   <h3 class='page-header'><%= @user.username %></h3>
-  <div class="panel panel-default">
-    <div class="panel-heading"><%= @user.display_name %></div>
-    <ul class="list-group">
-      <li class="list-group-item">
+  <div class='panel panel-default'>
+    <div class='panel-heading'><%= @user.display_name %></div>
+    <ul class='list-group'>
+      <li class='list-group-item'>
         <span><%= User.human_attribute_name(:username) %>: </span>
         <strong><%= @user.username %></strong>
       </li>
-      <li class="list-group-item">
+      <li class='list-group-item'>
         <span><%= User.human_attribute_name(:fullname) %>: </span>
         <strong><%= @user.fullname %></strong>
       </li>
-      <li class="list-group-item">
+      <li class='list-group-item'>
         <span><%= User.human_attribute_name(:email) %>: </span>
         <strong><%= @user.email %></strong>
       </li>
-      <li class="list-group-item">
+      <li class='list-group-item'>
         <span><%= User.human_attribute_name(:roles) %>: </span>
         <strong><%= @user.roles.map{|x| t("roles.#{x}") }.join(', ') %></strong>
       </li>
-      <li class="list-group-item">
+      <li class='list-group-item'>
         <span><%= User.human_attribute_name(:sign_in_count) %>: </span>
         <strong><%= @user.sign_in_count %></strong>
       </li>
       <% unless @user.last_sign_in_at.nil? %>
-        <li class="list-group-item">
+        <li class='list-group-item'>
           <span><%= User.human_attribute_name(:last_sign_in_at) %>: </span>
           <strong><%= l @user.last_sign_in_at, format: :short %> </strong>
         </li>
       <% end %>
       <% unless @user.last_sign_in_ip.nil? %>
-        <li class="list-group-item">
+        <li class='list-group-item'>
           <span><%= User.human_attribute_name(:last_sign_in_ip) %>: </span>
           <strong><%= @user.last_sign_in_ip%> </strong>
         </li>
