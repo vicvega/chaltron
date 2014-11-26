@@ -6,3 +6,6 @@ it:
         fullname: Nome completo
         email:  E-mail
         password_confirmation: Conferma password
+        last_sign_in_at: Ultimo login
+        last_sign_in_ip: Ultimo login da
+        sign_in_count: Numero di login
