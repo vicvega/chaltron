@@ -16,6 +16,10 @@
         <strong><%= @user.email %></strong>
       </li>
       <li class="list-group-item">
+        <span><%= User.human_attribute_name(:roles) %>: </span>
+        <strong><%= @user.roles.map{|x| t("roles.#{x}") }.join(', ') %></strong>
+      </li>
+      <li class="list-group-item">
         <span><%= User.human_attribute_name(:sign_in_count) %>: </span>
         <strong><%= @user.sign_in_count %></strong>
       </li>

@@ -9,3 +9,7 @@ it:
         last_sign_in_at: Ultimo login
         last_sign_in_ip: Ultimo login da
         sign_in_count: Numero di login
+        roles: Ruoli
+  roles:
+    admin: Amministratore
+    user_admin: Amministratore utenti
