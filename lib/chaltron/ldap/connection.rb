@@ -1,4 +1,5 @@
 require 'net/ldap'
+require 'chaltron/ldap/person'
 
 module Chaltron
   module LDAP
@@ -33,21 +34,18 @@ module Chaltron
 
       def ldap_search(*args)
         results = ldap.search(*args)
-
         if results.nil?
           response = ldap.get_operation_result
-
           unless response.code.zero?
             Rails.logger.warn("LDAP search error: #{response.message}")
           end
-
           []
         else
           results
         end
       end
 
-      def users(field, value, limit = 50)
+      def users(field, value, limit = nil)
         if field.to_sym == :dn
           options = {
             base: value,
@@ -70,19 +68,17 @@ module Chaltron
 #                             end
 #        end
 
-        if limit.present?
-          options.merge!(size: limit)
-        end
+
+        options.merge!(size: limit) if limit.present?
 
         entries = ldap_search(options).select do |entry|
           entry.respond_to? uid
         end
 
         entries.map do |entry|
-
-          puts entry.displayname
-#          Gitlab::LDAP::Person.new(entry, provider)
+          Chaltron::LDAP::Person.new(entry, uid)
         end
+
       end
 
 

@@ -9,7 +9,7 @@ module Chaltron
       end
 
       def self.find_by_field(field, value)
-        ldap.user(field, value)
+        ldap.users(field, value)
       end
 
       def self.find_by_uid(uid)
@@ -19,7 +19,7 @@ module Chaltron
       private
 
       def self.ldap
-       @connection ||= Chaltron::LDAP::Connection.new
+        @connection ||= Chaltron::LDAP::Connection.new
       end
     end
   end
