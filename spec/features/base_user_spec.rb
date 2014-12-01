@@ -4,7 +4,7 @@ describe User do
   describe 'ldap' do
     let(:fullname) { 'Sirius Black' }
 
-    context "when Chaltron.ldap_allow_all is true" do
+    context 'when Chaltron.ldap_allow_all is true' do
       before { Chaltron.ldap_allow_all = true }
       it 'allows login and logout' do
         login_with 'sirius', 'padfoot', :ldap
@@ -15,7 +15,7 @@ describe User do
       end
     end
 
-    context "when Chaltron.ldap_allow_all is not true" do
+    context 'when Chaltron.ldap_allow_all is not true' do
       before { Chaltron.ldap_allow_all = false }
       it 'does not allow login' do
         login_with 'sirius', 'padfoot', :ldap
