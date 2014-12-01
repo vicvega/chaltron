@@ -23,9 +23,6 @@ module Chaltron
         result
       end
 
-
-
-
       def find_by_uid(id)
         user(uid, id)
       end

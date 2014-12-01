@@ -16,7 +16,6 @@ module Chaltron
         ldap.find_by_uid(uid)
       end
 
-
       private
 
       def self.ldap
