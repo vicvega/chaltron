@@ -12,5 +12,3 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
-
-gem 'simple_form', git: 'https://github.com/plataformatec/simple_form.git'

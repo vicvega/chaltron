@@ -6,6 +6,7 @@ require 'bootstrap-sass'
 require 'autoprefixer-rails'
 require 'font-awesome-sass'
 require 'simple-navigation'
+require 'simple_form'
 require 'jquery-datatables-rails'
 
 require 'simple_navigation_renderers'
