@@ -4,12 +4,23 @@ describe User do
   describe 'ldap' do
     let(:fullname) { 'Sirius Black' }
 
-    it 'allows login and logout' do
-      login_with 'sirius', 'padfoot', :ldap
-      expect(page).to have_content fullname
-      logout
-      expect(page).to have_content 'Login'
-      expect(page).not_to have_content fullname
+    context "when Chaltron.ldap_allow_all is true" do
+      before { Chaltron.ldap_allow_all = true }
+      it 'allows login and logout' do
+        login_with 'sirius', 'padfoot', :ldap
+        expect(page).to have_content fullname
+        logout
+        expect(page).to have_content 'Login'
+        expect(page).not_to have_content fullname
+      end
+    end
+
+    context "when Chaltron.ldap_allow_all is not true" do
+      before { Chaltron.ldap_allow_all = false }
+      it 'does not allow login' do
+        login_with 'sirius', 'padfoot', :ldap
+        expect(page).to have_content I18n.t('chaltron.not_allowed_to_sign_in')
+      end
     end
   end
 

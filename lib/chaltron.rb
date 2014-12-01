@@ -8,6 +8,9 @@ module Chaltron
   mattr_accessor :roles
   @@roles = %w( admin user_admin )
 
+  mattr_accessor :ldap_allow_all
+  @@ldap_allow_all = false
+
   def self.setup
     yield self
   end
