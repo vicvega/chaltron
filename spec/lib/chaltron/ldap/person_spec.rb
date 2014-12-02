@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'chaltron/ldap/person'
 
 describe Chaltron::LDAP::Person do
-  context 'authentication' do
+  describe 'authentication' do
     subject { Chaltron::LDAP::Person.valid_credentials? 'sirius', password }
     context 'with correct credentials' do
       let(:password) { 'padfoot' }
@@ -14,17 +14,15 @@ describe Chaltron::LDAP::Person do
     end
   end
 
-  context 'search' do
-    context 'by uid' do
-      subject { Chaltron::LDAP::Person.find_by_uid uid }
-      context 'existing' do
-        let(:uid) { 'sirius' }
-        it { is_expected.to be_an_instance_of Chaltron::LDAP::Person }
-      end
-      context 'not existing' do
-        let(:uid) { 'someone' }
-        it { is_expected.to be_nil }
-      end
+  describe 'search by uid' do
+    subject { Chaltron::LDAP::Person.find_by_uid uid }
+    context 'existing' do
+      let(:uid) { 'sirius' }
+      it { is_expected.to be_an_instance_of Chaltron::LDAP::Person }
+    end
+    context 'not existing' do
+      let(:uid) { 'someone' }
+      it { is_expected.to be_nil }
     end
   end
 
