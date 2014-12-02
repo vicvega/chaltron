@@ -1,32 +1,30 @@
 require 'rails_helper'
 
 describe User do
-  describe 'ldap' do
+  context 'ldap' do
+  subject { page }
     let(:fullname) { 'Sirius Black' }
-
     context 'when Chaltron.ldap_allow_all is true' do
       before { Chaltron.ldap_allow_all = true }
       it 'allows login and logout' do
         login_with 'sirius', 'padfoot', :ldap
-        expect(page).to have_content fullname
+        is_expected.to have_content fullname
         logout
-        expect(page).to have_content 'Login'
-        expect(page).not_to have_content fullname
+        is_expected.to have_content 'Login'
+        is_expected.not_to have_content fullname
       end
     end
-
     context 'when Chaltron.ldap_allow_all is not true' do
       before { Chaltron.ldap_allow_all = false }
       it 'does not allow login' do
         login_with 'sirius', 'padfoot', :ldap
-        expect(page).to have_content I18n.t('chaltron.not_allowed_to_sign_in')
+        is_expected.to have_content I18n.t('chaltron.not_allowed_to_sign_in')
       end
     end
   end
 
-  describe 'local' do
+  context 'local' do
     let(:user) { create :user }
-
     it 'allows login and logout' do
       login_with user.username, user.password
       expect(page).to have_content user.fullname
