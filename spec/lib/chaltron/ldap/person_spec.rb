@@ -26,4 +26,19 @@ describe Chaltron::LDAP::Person do
     end
   end
 
+  describe 'search by field' do
+    subject(:res) { Chaltron::LDAP::Person.find_by_field 'title', title }
+    context 'returning 2 values' do
+      let(:title) { '* guy' }
+      it { is_expected.to be_an_instance_of Array }
+      it { expect(res.size).to eq 2 }
+      it { expect(res.first).to be_an_instance_of Chaltron::LDAP::Person }
+    end
+    context 'returning empty set' do
+      let(:title) { 'test' }
+      it { is_expected.to be_an_instance_of Array }
+      it { expect(res.size).to eq 0 }
+    end
+  end
+
 end

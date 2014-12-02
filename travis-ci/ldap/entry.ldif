@@ -25,11 +25,38 @@ shadowWarning: 7
 shadowMin: 8
 shadowMax: 999999
 shadowLastChange: 10877
-mail: sirius.balck@azkaban.co.uk
+mail: sirius.black@azkaban.co.uk
 postalCode: 31000
 mobile: +38 (1)67 xxx xx xx
 homePhone: +38 (1)20 xxx xxx
-title: Administrator
+title: Good guy
+postalAddress: Test Home
+initials: TT
+
+dn: uid=barty,ou=people,dc=azkaban,dc=co,dc=uk
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: barty
+sn: Crouch
+givenName: Bartemius
+userPassword: padfoot
+cn: Bartemius Crouch
+displayName: Bartemius Crouch Jr.
+uidNumber: 1001
+gidNumber: 10001
+homeDirectory: /tmp/test/
+shadowExpire: -1
+shadowFlag: 0
+shadowWarning: 7
+shadowMin: 8
+shadowMax: 999999
+shadowLastChange: 10877
+mail: barty.crouch@azkaban.co.uk
+postalCode: 31000
+mobile: +38 (1)67 xxx xx xx
+homePhone: +38 (1)20 xxx xxx
+title: Bad guy
 postalAddress: Test Home
 initials: TT
 
