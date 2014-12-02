@@ -1,28 +1,21 @@
+require 'chaltron/ldap/connection'
+
 module Chaltron
   module LDAP
     class Person
-      # Active Directory-specific LDAP filter that checks if bit 2 of the
-      # userAccountControl attribute is set.
-      # Source: http://ctogonewild.com/2009/09/03/bitmask-searches-in-ldap/
-#      AD_USER_DISABLED = Net::LDAP::Filter.ex("userAccountControl:1.2.840.113556.1.4.803", "2")
-
       attr_accessor :entry
 
-#      def self.find_by_uid(uid, adapter)
+      def self.valid_credentials?(login, password)
+        ldap.auth(login, password)
+      end
 
-#        config.uid => @uid
-#        adapter.user(adapter.config.uid, uid)
+      def self.find_by_field(field, value)
+        ldap.users(field, value)
+      end
 
-
-#      end
-
-#      def self.find_by_dn(dn, adapter)
-#        adapter.user('dn', dn)
-#      end
-
-#      def self.disabled_via_active_directory?(dn, adapter)
-#        adapter.dn_matches_filter?(dn, AD_USER_DISABLED)
-#      end
+      def self.find_by_uid(uid)
+        ldap.find_by_uid(uid)
+      end
 
       def initialize(entry, uid)
       #  Rails.logger.debug { "Instantiating #{self.class.name} with LDIF:\n#{entry.to_ldif}" }
@@ -50,11 +43,12 @@ module Chaltron
         entry.dn
       end
 
-#      private
+      private
 
-#      def entry
-#        @entry
-#      end
+      def self.ldap
+        @connection ||= Chaltron::LDAP::Connection.new
+      end
+
     end
   end
 end
