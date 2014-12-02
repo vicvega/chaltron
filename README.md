@@ -7,7 +7,7 @@
 
 This project rocks and is still under development. I mean: **it's not yet released**. Sooner or later you'll be able to do as follows.
 
-In a fresh new rails application simply add to your `Gemfile` 
+In a fresh new rails application simply add to your `Gemfile`
 ```
 gem chaltron
 ```
@@ -26,3 +26,5 @@ to create a ready-to-go application, powered by
  * [font-awesome](https://github.com/FortAwesome/font-awesome-sass)
  * [datatables](https://github.com/rweng/jquery-datatables-rails)
  * [simple_form](https://github.com/plataformatec/simple_form)
+
+Refer to [wiki pages](https://github.com/vicvega/chaltron/wiki) for further instructions
