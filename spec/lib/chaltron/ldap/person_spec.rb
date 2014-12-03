@@ -41,4 +41,13 @@ describe Chaltron::LDAP::Person do
     end
   end
 
+  describe 'create by uid' do
+    subject(:barty) { Chaltron::LDAP::Person.find_by_uid('barty').create_user }
+    it { expect(barty.provider).to eq 'ldap' }
+    it { expect(barty.username).to eq 'barty' }
+    it { expect(barty.fullname).to eq 'Bartemius Crouch' }
+    it { expect(barty.email).to eq 'barty.crouch@azkaban.co.uk' }
+  end
+
+
 end
