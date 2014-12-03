@@ -26,7 +26,7 @@ module Chaltron
             user.update_attributes(extern_uid: uid, provider: provider) unless user.nil?
           end
           if user.nil? and create
-            # Create user
+            # create user
             password = Devise.friendly_token[0, 8].downcase
             opts = {
               extern_uid: uid,
