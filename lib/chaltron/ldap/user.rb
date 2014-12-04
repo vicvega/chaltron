@@ -1,8 +1,10 @@
 # LDAP extension for User ::User
 #
 # * Find or create user from omniauth.auth data
-# * Create user from uid
 #
+
+require 'chaltron/ldap/person'
+
 module Chaltron
   module LDAP
     class User
@@ -35,20 +37,7 @@ module Chaltron
         private
 
         def create_user
-          # create user
-          password = Devise.friendly_token[0, 8].downcase
-          opts = {
-            extern_uid: uid,
-            provider: provider,
-            fullname: name,
-            username: username,
-            email: email,
-            password: password,
-            password_confirmation: password
-          }
-          user = ::User.build_user(opts)
-          user.save!
-          user
+          Chaltron::LDAP::Person.find_by_uid(username).create_user
         end
 
         def find_by_uid_and_provider
