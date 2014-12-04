@@ -44,10 +44,6 @@ module Chaltron
           user
         end
 
-        def create(login)
-
-        end
-
         private
 
         def find_by_uid_and_provider
