@@ -26,25 +26,30 @@ module Chaltron
             user.update_attributes(extern_uid: uid, provider: provider) unless user.nil?
           end
           if user.nil? and create
-            # create user
-            password = Devise.friendly_token[0, 8].downcase
-            opts = {
-              extern_uid: uid,
-              provider: provider,
-              fullname: name,
-              username: username,
-              email: email,
-              password: password,
-              password_confirmation: password
-            }
-            user = ::User.build_user(opts)
-            user.save!
+            user = create_user
           end
           # UPDATE PARAMETERS (department)
           user
         end
 
         private
+
+        def create_user
+          # create user
+          password = Devise.friendly_token[0, 8].downcase
+          opts = {
+            extern_uid: uid,
+            provider: provider,
+            fullname: name,
+            username: username,
+            email: email,
+            password: password,
+            password_confirmation: password
+          }
+          user = ::User.build_user(opts)
+          user.save!
+          user
+        end
 
         def find_by_uid_and_provider
           find_by_uid(uid)
