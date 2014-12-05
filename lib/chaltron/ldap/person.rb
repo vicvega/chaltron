@@ -32,11 +32,16 @@ module Chaltron
           username: username,
           email: email,
           password: password,
-          password_confirmation: password
+          password_confirmation: password,
+          department: department
         }
         user = ::User.build_user(opts)
         user.save
         user
+      end
+
+      def department
+        entry.department.first rescue nil
       end
 
       def name
@@ -52,7 +57,7 @@ module Chaltron
       end
 
       def email
-        entry.try(:mail).first
+        entry.mail.first rescue nil
       end
 
       def dn

@@ -47,6 +47,7 @@ describe Chaltron::LDAP::Person do
     it { expect(barty.username).to eq 'barty' }
     it { expect(barty.fullname).to eq 'Bartemius Crouch' }
     it { expect(barty.email).to eq 'barty.crouch@azkaban.co.uk' }
+    it { expect(barty.department).to be_nil }
   end
 
 

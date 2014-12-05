@@ -15,6 +15,12 @@
         <span><%= User.human_attribute_name(:email) %>: </span>
         <strong><%= @user.email %></strong>
       </li>
+      <% unless @user.department.nil? %>
+        <li class='list-group-item'>
+          <span><%= User.human_attribute_name(:department) %>: </span>
+          <strong><%= @user.department %> </strong>
+        </li>
+      <% end %>
       <li class='list-group-item'>
         <span><%= User.human_attribute_name(:roles) %>: </span>
         <strong><%= @user.roles.map{|x| t("roles.#{x}") }.join(', ') %></strong>
