@@ -1,8 +1,9 @@
 require 'rails_helper'
+require 'chaltron/ldap/person'
 
 describe User do
   context 'ldap' do
-  subject { page }
+    subject { page }
     let(:fullname) { 'Sirius Black' }
     context 'when Chaltron.ldap_allow_all is true' do
       before { Chaltron.ldap_allow_all = true }
@@ -19,6 +20,18 @@ describe User do
       it 'does not allow login' do
         login_with 'sirius', 'padfoot', :ldap
         is_expected.to have_content I18n.t('chaltron.not_allowed_to_sign_in')
+      end
+    end
+
+    context 'when user already present with outdated email' do
+      before do
+        u = Chaltron::LDAP::Person.find_by_uid('barty').create_user
+        u.update_attribute :email, 'barty@example.com'
+      end
+      subject(:user) { User.find_by(username: 'barty') }
+      it 'update email' do
+        login_with 'barty', 'darklord', :ldap
+        expect(user.email).to eq 'barty.crouch@azkaban.co.uk'
       end
     end
   end

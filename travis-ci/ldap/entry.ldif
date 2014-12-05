@@ -40,7 +40,7 @@ objectClass: shadowAccount
 uid: barty
 sn: Crouch
 givenName: Bartemius
-userPassword: padfoot
+userPassword: darklord
 cn: Bartemius Crouch
 displayName: Bartemius Crouch Jr.
 uidNumber: 1001

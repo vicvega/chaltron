@@ -27,18 +27,21 @@ module Chaltron
             user = ::User.find_by(email: email)
             user.update_attributes(extern_uid: uid, provider: provider) unless user.nil?
           end
+          # retreive LDAP entry (must be present! Oauth already succeeded)
+          entry = Chaltron::LDAP::Person.find_by_uid(username)
           if user.nil? and create
-            user = create_user
+            # create user
+            user = entry.create_user
           end
-          # UPDATE PARAMETERS (department)
+          # update parameter from ldap (email and department)
+          user.update_attributes(
+            email: entry.email,
+            department: entry.department
+          ) unless user.nil?
           user
         end
 
         private
-
-        def create_user
-          Chaltron::LDAP::Person.find_by_uid(username).create_user
-        end
 
         def find_by_uid_and_provider
           find_by_uid(uid)
