@@ -35,3 +35,7 @@ en:
             inactive: Inactive
             no_login: Never logged
           clear_filter: Clear filters
+      show:
+        headers:
+          activity: Activity
+          details: Details
