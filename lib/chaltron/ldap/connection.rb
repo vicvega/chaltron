@@ -12,16 +12,7 @@ module Chaltron
 
       def auth(login, password)
         filter = Net::LDAP::Filter.eq(uid, login)
-        result = ldap.bind_as(base: base, filter: filter, password: password)
-
-#        puts ldap.get_operation_result
-
-#        if result
-#          puts "Authenticated #{result.first.dn}"
-#        else
-#          puts "Authentication FAILED."
-#        end
-        result
+        ldap.bind_as(base: base, filter: filter, password: password)
       end
 
       def find_by_uid(id)
