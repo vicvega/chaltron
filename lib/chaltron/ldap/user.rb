@@ -17,6 +17,27 @@ module Chaltron
             raise_error('Account must provide a dn, uid and email address')
           end
           user = find_by_uid_and_provider
+          entry = Chaltron::LDAP::Person.find_by_uid(username)
+          if user.nil? and create
+            # create user
+            user = entry.create_user
+          end
+          update_ldap_attributes(user, entry) unless user.nil?
+          user
+        end
+
+        private
+
+        def update_ldap_attributes(user, entry)
+          user.update_attributes(
+            email: entry.email,
+            department: entry.department
+          )
+        end
+
+        def find_by_uid_and_provider
+          # LDAP distinguished name is case-insensitive
+          user = ::User.where('provider = ? and lower(extern_uid) = ?', provider, uid.downcase).last
           if user.nil?
             # Look for user with same emails
             #
@@ -27,29 +48,7 @@ module Chaltron
             user = ::User.find_by(email: email)
             user.update_attributes(extern_uid: uid, provider: provider) unless user.nil?
           end
-          # retreive LDAP entry (must be present! Oauth already succeeded)
-          entry = Chaltron::LDAP::Person.find_by_uid(username)
-          if user.nil? and create
-            # create user
-            user = entry.create_user
-          end
-          # update parameter from ldap (email and department)
-          user.update_attributes(
-            email: entry.email,
-            department: entry.department
-          ) unless user.nil?
           user
-        end
-
-        private
-
-        def find_by_uid_and_provider
-          find_by_uid(uid)
-        end
-
-        def find_by_uid(uid)
-          # LDAP distinguished name is case-insensitive
-          ::User.where('provider = ? and lower(extern_uid) = ?', provider, uid.downcase).last
         end
 
         def uid
