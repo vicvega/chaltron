@@ -4,10 +4,18 @@
     <div class='col-md-3 side-filters'>
       <%= render 'side_filters' %>
       <hr>
-      <%= link_to '#', class: 'btn btn-primary pull-right' do %>
-        <%= icon(:plus) %>
-        <%= t('.new_user') %>
-      <% end %>
+
+      <div class='btn-group pull-right'>
+        <%= content_tag :button, type: 'button', class: 'btn btn-primary dropdown-toggle',
+          data: {toggle: 'dropdown'}, aria: {expanded: false} do %>
+          <%= t('.new_user') %> <span class="caret"></span>
+        <% end %>
+      <ul class='dropdown-menu' role='menu'>
+        <li><a href='#'><%= t('.new_ldap_user') %></a></li>
+        <li><a href='#'><%= t('.new_local_user') %></a></li>
+      </ul>
+    </div>
+
     </div>
     <div class='col-md-9'>
       <div class='panel panel-default'>

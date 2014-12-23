@@ -25,6 +25,8 @@ it:
         title: Elenco degli utenti
         panel_header: Utenti
         new_user: Nuovo utente
+        new_local_user: Nuovo utente locale
+        new_ldap_user: Nuovo utente LDAP
       side_filters:
           provider:
             all: Tutti
