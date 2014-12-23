@@ -11,7 +11,7 @@ PATH
       jquery-datatables-rails
       nprogress-rails
       omniauth
-      rails (~> 4.1)
+      rails (~> 4.2.0)
       sass-rails
       simple_form
       simple_navigation_renderers
