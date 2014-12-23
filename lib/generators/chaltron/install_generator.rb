@@ -106,7 +106,7 @@ RUBY
       copy_file 'app/controllers/home_controller.rb', force: true
       directory 'app/views/home/', force: true
       copy_file 'app/assets/javascripts/home.js.coffee', force: true
-      copy_file 'app/assets/stylesheets/home.css.scss', force: true
+      copy_file 'app/assets/stylesheets/home.scss', force: true
 
       Array(1..10).each do |x|
         route "get 'home/test#{x}'"
