@@ -2,10 +2,12 @@
   <div class='panel panel-primary'>
     <div class='panel-heading'><h4><%= t '.title' %></h4></div>
     <div class='panel-body'>
-      <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: 'form-horizontal' }) do |f| %>
+      <%= bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name),
+        layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9",
+        html: { method: :put }) do |f| %>
         <%= f.hidden_field :reset_password_token %>
-        <%= f.input :password, autofocus: true %>
-        <%= f.input :password_confirmation %>
+        <%= f.password_field :password, autofocus: true %>
+        <%= f.password_field :password_confirmation %>
         <div class='form-group'>
           <div class='col-sm-offset-3 col-sm-9'>
             <%= f.submit t('.submit_text'), class: 'btn btn-primary' %>

@@ -18,7 +18,6 @@ module Chaltron
     def install_gems
       gem 'rails-i18n'
       gem 'nprogress-rails'
-      gem 'simple_form', git: 'https://github.com/plataformatec/simple_form.git'
 
       # test
       gem_group :development, :test do
@@ -41,11 +40,6 @@ module Chaltron
       # suppress warnings
       gsub_file '.rspec', "--warnings\n", ''
       remove_dir 'test'
-    end
-
-    def setup_simple_form
-      generate 'simple_form:install --bootstrap'
-      gsub_file 'config/initializers/simple_form_bootstrap.rb', 'config.default_wrapper = :vertical_form', 'config.default_wrapper = :horizontal_form'
     end
 
     def config_application
@@ -111,10 +105,6 @@ RUBY
       Array(1..10).each do |x|
         route "get 'home/test#{x}'"
       end
-    end
-
-    def copy_locale
-      copy_file 'config/locales/simple_form.it.yml'
     end
 
     def setup_navigation
