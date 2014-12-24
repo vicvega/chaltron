@@ -22,4 +22,10 @@ module ChaltronHelper
       message
     end
   end
+
+  def back_link
+    link_to :back, class: 'btn btn-primary' do
+      icon('arrow-left') + '&nbsp;'.html_safe + t('chaltron.common.back')
+    end
+  end
 end
