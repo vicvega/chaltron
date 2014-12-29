@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: true
 
   def display_name
-    fullname || username
+    fullname.presence || username
   end
 
   #
