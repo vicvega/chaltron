@@ -125,7 +125,7 @@ GEM
     net-ldap (0.10.1)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
-    nprogress-rails (0.1.6.4)
+    nprogress-rails (0.1.6.5)
     omniauth (1.2.2)
       hashie (>= 1.2, < 4)
       rack (~> 1.0)
