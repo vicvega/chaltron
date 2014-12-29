@@ -23,9 +23,13 @@ module ChaltronHelper
     end
   end
 
-  def back_link
-    link_to :back, class: 'btn btn-primary' do
-      icon('arrow-left') + '&nbsp;'.html_safe + t('chaltron.common.back')
+  def back_link(opts={})
+    klass = opts[:class] || 'btn btn-primary'
+    text  = opts[:text] || t('chaltron.common.back')
+    ic    = opts[:icon]  || 'arrow-left'
+
+    link_to :back, class: klass do
+      icon(ic) + '&nbsp;'.html_safe + text
     end
   end
 end
