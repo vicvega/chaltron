@@ -13,3 +13,5 @@ it:
     not_allowed_to_sign_in: Accesso negato. La tua utenza non può accedere al sistema. Contatta l'amministratore.
     common:
       back: Indietro
+    users:
+      created: Utente creato con successo.

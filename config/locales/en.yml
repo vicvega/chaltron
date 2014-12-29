@@ -13,3 +13,5 @@ en:
     not_allowed_to_sign_in: You are not allowed to sign in. Contact your system administrator.
     common:
       back: Back
+    users:
+      created: User was successfully created.

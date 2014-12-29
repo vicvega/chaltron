@@ -37,7 +37,17 @@ en:
             inactive: Inactive
             no_login: Never logged
           clear_filter: Clear filters
+      new:
+        title: New local user
+      edit:
+        title: Edit %{user}
+      form:
+        submit_text: Create local user
+        cancel_text: Cancel
       show:
         headers:
           activity: Activity
           details: Details
+        edit: Edit
+        destroy: Destroy
+        destroy_confirm: Are you sure you want to destroy %{user}?

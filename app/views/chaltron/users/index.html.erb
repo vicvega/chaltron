@@ -12,7 +12,7 @@
         <% end %>
       <ul class='dropdown-menu' role='menu'>
         <li><a href='#'><%= t('.new_ldap_user') %></a></li>
-        <li><a href='#'><%= t('.new_local_user') %></a></li>
+        <li><%= link_to t('.new_local_user'), new_user_url %></li>
       </ul>
     </div>
 

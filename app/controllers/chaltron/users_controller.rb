@@ -1,6 +1,7 @@
 class Chaltron::UsersController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
+  respond_to :html
 
   def index
     @filters = params[:filters] || {}
@@ -13,6 +14,34 @@ class Chaltron::UsersController < ApplicationController
   end
 
   def show
-
   end
+
+  def new
+  end
+
+  def edit
+  end
+
+  def create
+    @user = User.new(user_params)
+    flash[:notice] = I18n.t('chaltron.users.created') if @user.save
+    respond_with(@user)
+  end
+
+  def update
+    @user.update(user_params)
+    respond_with(@user)
+  end
+
+  def destroy
+    @user.destroy
+    respond_with(@user)
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:username, :email, :fullname, :roles_mask,
+      :password, :password_confirmation)
+  end
+
 end

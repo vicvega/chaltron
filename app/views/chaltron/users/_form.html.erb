@@ -1,0 +1,20 @@
+<%
+  submit_text ||= t('.submit_text')
+%>
+
+<%= bootstrap_form_for(@user, layout: :horizontal,
+  label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
+  <%= f.text_field :username %>
+  <%= f.text_field :fullname %>
+  <%= f.email_field :email %>
+  <%= f.password_field :password %>
+  <%= f.password_field :password_confirmation %>
+
+  <div class='form-group'>
+    <div class='col-sm-offset-3 col-sm-9'>
+      <%= f.submit submit_text, class: 'btn btn-primary' %>
+      <%= back_link class: 'btn btn-default pull-right', text: t('.cancel_text'), icon: 'times' %>
+    </div>
+  </div>
+
+<% end %>
