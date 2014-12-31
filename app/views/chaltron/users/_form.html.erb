@@ -1,14 +1,21 @@
-<%
-  submit_text ||= t('.submit_text')
-%>
-
 <%= bootstrap_form_for(@user, layout: :horizontal,
   label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
-  <%= f.text_field :username %>
-  <%= f.text_field :fullname %>
-  <%= f.email_field :email %>
-  <%= f.password_field :password %>
-  <%= f.password_field :password_confirmation %>
+
+  <% if context == :create %>
+    <%= f.text_field :username %>
+    <%= f.text_field :fullname %>
+    <%= f.email_field :email %>
+    <%= f.password_field :password %>
+    <%= f.password_field :password_confirmation %>
+    <%= f.role_select %>
+  <% elsif context == :update %>
+    <%= f.role_select %>
+  <% elsif context == :self_update %>
+    <%= f.text_field :fullname %>
+    <%= f.email_field :email %>
+    <%= f.password_field :password %>
+    <%= f.password_field :password_confirmation %>
+  <% end %>
 
   <div class='form-group'>
     <div class='col-sm-offset-3 col-sm-9'>

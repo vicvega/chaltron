@@ -7,5 +7,12 @@ FactoryGirl.define do
     email { Faker::Internet.email }
     password '12345678'
     password_confirmation { password }
+
+    factory :admin do
+      after(:build) {|user| user.roles = ['admin']}
+    end
+    factory :user_admin do
+      after(:build) {|user| user.roles = ['user_admin']}
+    end
   end
 end

@@ -39,10 +39,10 @@ en:
           clear_filter: Clear filters
       new:
         title: New local user
+        submit_text: Create local user
       edit:
         title: Edit %{user}
       form:
-        submit_text: Create local user
         cancel_text: Cancel
       show:
         headers:

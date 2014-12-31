@@ -1,4 +1,4 @@
 <div class='container-fluid'>
   <h3 class='page-header'><%= t '.title' %></h3>
-  <%= render 'form' %>
+  <%= render partial: 'form', locals: {submit_text: t('.submit_text'), context: :create} %>
 </div>  
