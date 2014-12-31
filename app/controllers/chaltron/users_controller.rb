@@ -23,13 +23,12 @@ class Chaltron::UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_create_params)
     flash[:notice] = I18n.t('chaltron.users.created') if @user.save
     respond_with(@user)
   end
 
   def update
-    flash[:notice] = I18n.t('chaltron.users.updated') if @user.update(user_update_params)
+    flash[:notice] = I18n.t('chaltron.users.updated') if @user.update(update_params)
     respond_with(@user)
   end
 
@@ -39,12 +38,12 @@ class Chaltron::UsersController < ApplicationController
   end
 
   private
-  def user_create_params
+  def create_params
     params.require(:user).permit(:username, :email, :fullname,
-      :password, :password_confirmation, { roles: [] })
+      :password, :password_confirmation, roles: [])
   end
 
-  def user_update_params
+  def update_params
     params.require(:user).permit(roles: [])
   end
 
