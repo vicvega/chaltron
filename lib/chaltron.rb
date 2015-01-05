@@ -1,4 +1,5 @@
 require 'chaltron/engine'
+require 'chaltron/bootstrap_form'
 
 module Chaltron
   module Controllers
