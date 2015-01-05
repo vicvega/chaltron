@@ -8,14 +8,14 @@ describe User do
     context 'creates user' do
       it do
         visit users_path
-        click_link 'Nuovo utente locale'
+        click_link 'New local user'
 
         u = build :user
         %w( username fullname email password ).each do |f|
           fill_in "user_#{f}", with: u.send(f.to_sym)
         end
         fill_in 'user_password_confirmation', with: u.password
-        click_button 'Crea utente locale'
+        click_button 'Create local user'
 
         expect(page).to have_content I18n.t('chaltron.users.created')
       end
@@ -29,27 +29,27 @@ describe User do
         visit users_path
         # add role to empty set
         click_link user.username
-        click_link 'Modifica'
+        click_link 'Edit'
         check :user_roles_admin
-        click_button "Modifica #{user.username}"
+        click_button "Edit #{user.username}"
         expect(page).to have_content I18n.t('chaltron.users.updated')
         expect(user.reload.roles).to eq ['admin']
-        click_link 'Indietro'
+        click_link 'Back'
 
         # add role to not empty set
         click_link user_admin2.username
-        click_link 'Modifica'
+        click_link 'Edit'
         check :user_roles_admin
-        click_button "Modifica #{user_admin2.username}"
+        click_button "Edit #{user_admin2.username}"
         expect(page).to have_content I18n.t('chaltron.users.updated')
         expect(user_admin2.reload.roles).to eq ['admin', 'user_admin']
-        click_link 'Indietro'
+        click_link 'Back'
 
         # remove a role
         click_link admin.username
-        click_link 'Modifica'
+        click_link 'Edit'
         uncheck :user_roles_admin
-        click_button "Modifica #{admin.username}"
+        click_button "Edit #{admin.username}"
         expect(page).to have_content I18n.t('chaltron.users.updated')
         expect(admin.reload.roles).to eq []
       end

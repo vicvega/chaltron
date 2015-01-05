@@ -48,10 +48,10 @@ describe User do
 
     it 'recovers password' do
       visit new_user_session_path
-      click_link 'Hai dimenticato la password?'
+      click_link 'Forgot your password?'
 
       fill_in 'user_email', with: user.email
-      expect { click_button 'Invia' }.to change { ActionMailer::Base.deliveries.count }.by(1)
+      expect { click_button 'Submit' }.to change { ActionMailer::Base.deliveries.count }.by(1)
 
       mail = ActionMailer::Base.deliveries.last
       expect(mail.to).to eq [user.email]
@@ -64,7 +64,7 @@ describe User do
 
       fill_in 'user_password', with: password
       fill_in 'user_password_confirmation', with: password
-      click_button 'Cambia password'
+      click_button 'Change password'
 
       expect(page).to have_content user.fullname
     end
