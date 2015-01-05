@@ -22,6 +22,12 @@ class Chaltron::UsersController < ApplicationController
   def edit
   end
 
+  def self_show
+  end
+
+  def self_edit
+  end
+
   def create
     flash[:notice] = I18n.t('chaltron.users.created') if @user.save
     respond_with(@user)
@@ -30,6 +36,23 @@ class Chaltron::UsersController < ApplicationController
   def update
     flash[:notice] = I18n.t('chaltron.users.updated') if @user.update(update_params)
     respond_with(@user)
+  end
+
+  def self_update
+    user_params_with_pass = self_update_params.dup
+    if params[:user][:password].present?
+      user_params_with_pass.merge!(
+        password: params[:user][:password],
+        password_confirmation: params[:user][:password_confirmation],
+      )
+    end
+
+    if current_user.update(user_params_with_pass)
+      flash[:notice] = I18n.t('chaltron.users.self_updated')
+      render :self_show
+    else
+      render :self_edit
+    end
   end
 
   def destroy
@@ -45,6 +68,10 @@ class Chaltron::UsersController < ApplicationController
 
   def update_params
     params.require(:user).permit(roles: [])
+  end
+
+  def self_update_params
+    params.require(:user).permit(:email, :fullname)
   end
 
 end

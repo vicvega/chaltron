@@ -42,6 +42,8 @@ it:
         submit_text: Crea utente locale
       edit:
         title: Modifica %{user}
+      self_edit:
+        title: Modifica dati personali
       form:
         cancel_text: Annulla
       show:
@@ -51,3 +53,9 @@ it:
         edit: Modifica
         destroy: Cancella
         destroy_confirm: Sei sicuro di voler cancellare %{user}?
+      self_show:
+        title: Dati personali
+        headers:
+          activity: Attività
+          details: Dettagli
+        edit: Modifica dati personali

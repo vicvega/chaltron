@@ -6,14 +6,18 @@ SimpleNavigation::Configuration.run do |navigation|
     if signed_in?
       primary.item :admin,
         { icon: 'fa fa-fw fa-cogs',
-          text: I18n.t('chaltron.menu.admin').titleize
+          text: I18n.t('chaltron.menu.admin')
         }, nil do |admin|
         admin.item :users,
           { icon: 'fa fa-fw fa-users',
-            text: I18n.t('chaltron.menu.users').titleize
+            text: I18n.t('chaltron.menu.users')
           }, users_url, highlights_on: /\/users\//
       end
       primary.item :logged, current_user.display_name.html_safe, nil do |user|
+        user.item :self_edit, { icon: 'fa fa-fw fa-user',
+                  text: I18n.t('chaltron.menu.self_show') }, self_show_url,
+                  highlights_on: /\/self_[show|edit]/
+
         user.item :logout, { icon: 'fa fa-fw fa-sign-out', text: 'Logout' },
                   destroy_user_session_url, method: :delete
       end

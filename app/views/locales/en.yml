@@ -42,6 +42,8 @@ en:
         submit_text: Create local user
       edit:
         title: Edit %{user}
+      self_edit:
+        title: Edit account data
       form:
         cancel_text: Cancel
       show:
@@ -51,3 +53,9 @@ en:
         edit: Edit
         destroy: Destroy
         destroy_confirm: Are you sure you want to destroy %{user}?
+      self_show:
+        title: Account data
+        headers:
+          activity: Activity
+          details: Details
+        edit: Edit account data

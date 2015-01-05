@@ -6,13 +6,16 @@ it:
       alert:   attenzione
       notice:  nota
     menu:
-      admin: amministrazione
-      users: utenti
+      admin: Amministrazione
+      users: Utenti
+      self_show: Dati personali
     access_denied: Accesso negato! Non hai i permessi ad accedere a questa pagina.
     access_denied_try_login: Accesso negato. Prova ad effettuare il login.
     not_allowed_to_sign_in: Accesso negato. La tua utenza non può accedere al sistema. Contatta l'amministratore.
     common:
       back: Indietro
+      cancel: Annulla
     users:
       created: Utente creato con successo.
       updated: Utente aggiornato con successo.
+      self_updated: Dati personali aggiornati con successo.
