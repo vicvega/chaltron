@@ -6,7 +6,7 @@ describe User do
     before { login_with user.username, user.password }
 
     it 'edits account data' do
-      visit self_show_path
+      visit self_show_users_path
       expect(page).to have_content user.fullname
 
       click_link 'Edit account data'
@@ -20,7 +20,7 @@ describe User do
     end
 
     it 'changes password' do
-      visit self_show_path
+      visit self_show_users_path
       expect(page).to have_content user.fullname
 
       click_link 'Edit account data'

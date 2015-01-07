@@ -1,7 +1,7 @@
 <div class='container-fluid'>
   <h3 class='page-header'><%= t('.title') %></h3>
 
-  <%= bootstrap_form_for(current_user, as: :user, url: self_update_path, layout: :horizontal,
+  <%= bootstrap_form_for(current_user, as: :user, url: self_update_users_path, layout: :horizontal,
     label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
     <%= f.text_field :fullname %>
     <%= f.email_field :email %>
@@ -15,7 +15,7 @@
     <div class='form-group'>
       <div class='col-sm-offset-3 col-sm-9'>
         <%= f.submit t('.title'), class: 'btn btn-primary' %>
-        <%= link_to self_show_path, class: 'btn btn-default pull-right' do %>
+        <%= link_to self_show_users_path, class: 'btn btn-default pull-right' do %>
           <%= icon(:times) %>
           <%= t('chaltron.common.cancel') %>
         <% end %>

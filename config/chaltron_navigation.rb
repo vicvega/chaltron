@@ -15,7 +15,7 @@ SimpleNavigation::Configuration.run do |navigation|
       end
       primary.item :logged, current_user.display_name.html_safe, nil do |user|
         user.item :self_edit, { icon: 'fa fa-fw fa-user',
-                  text: I18n.t('chaltron.menu.self_show') }, self_show_url,
+                  text: I18n.t('chaltron.menu.self_show') }, self_show_users_url,
                   highlights_on: /\/self_[show|edit]/
 
         user.item :logout, { icon: 'fa fa-fw fa-sign-out', text: 'Logout' },
