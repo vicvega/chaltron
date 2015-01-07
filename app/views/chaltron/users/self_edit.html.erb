@@ -1,8 +1,8 @@
 <div class='container-fluid'>
   <h3 class='page-header'><%= t('.title') %></h3>
 
-  <%= bootstrap_form_for(current_user, as: :user, url: self_update_users_path, layout: :horizontal,
-    label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
+  <%= bootstrap_form_for(current_user, as: :user, url: self_update_users_path,
+    layout: :horizontal) do |f| %>
     <%= f.text_field :fullname %>
     <%= f.email_field :email %>
     <% if current_user.provider.nil? %>
@@ -12,7 +12,7 @@
         <%= f.password_field :password_confirmation %>
       </fieldset>
     <% end %>
-    <%= f.form_group label_col: 'col-sm-3' do %>
+    <%= f.form_group do %>
       <%= f.submit t('.title'), class: 'btn btn-primary' %>
       <%= link_to self_show_users_path, class: 'btn btn-default pull-right' do %>
         <%= icon(:times) %>

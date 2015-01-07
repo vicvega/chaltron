@@ -1,5 +1,4 @@
-<%= bootstrap_form_for(@user, layout: :horizontal,
-  label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
+<%= bootstrap_form_for(@user, layout: :horizontal) do |f| %>
 
   <% if context == :create %>
     <%= f.text_field :username %>
@@ -12,7 +11,7 @@
     <%= f.role_select %>
   <% end %>
 
-  <%= f.form_group label_col: 'col-sm-3' do %>
+  <%= f.form_group do %>
     <%= f.submit submit_text, class: 'btn btn-primary' %>
     <%= back_link class: 'btn btn-default pull-right', text: t('.cancel_text'), icon: 'times' %>
   <% end %>
