@@ -12,15 +12,12 @@
         <%= f.password_field :password_confirmation %>
       </fieldset>
     <% end %>
-    <div class='form-group'>
-      <div class='col-sm-offset-3 col-sm-9'>
-        <%= f.submit t('.title'), class: 'btn btn-primary' %>
-        <%= link_to self_show_users_path, class: 'btn btn-default pull-right' do %>
-          <%= icon(:times) %>
-          <%= t('chaltron.common.cancel') %>
-        <% end %>
-      </div>
-    </div>
+    <%= f.form_group label_col: 'col-sm-3' do %>
+      <%= f.submit t('.title'), class: 'btn btn-primary' %>
+      <%= link_to self_show_users_path, class: 'btn btn-default pull-right' do %>
+        <%= icon(:times) %>
+        <%= t('chaltron.common.cancel') %>
+      <% end %>
+    <% end %>
   <% end %>
-
 </div>

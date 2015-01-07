@@ -12,11 +12,9 @@
     <%= f.role_select %>
   <% end %>
 
-  <div class='form-group'>
-    <div class='col-sm-offset-3 col-sm-9'>
-      <%= f.submit submit_text, class: 'btn btn-primary' %>
-      <%= back_link class: 'btn btn-default pull-right', text: t('.cancel_text'), icon: 'times' %>
-    </div>
-  </div>
+  <%= f.form_group label_col: 'col-sm-3' do %>
+    <%= f.submit submit_text, class: 'btn btn-primary' %>
+    <%= back_link class: 'btn btn-default pull-right', text: t('.cancel_text'), icon: 'times' %>
+  <% end %>
 
 <% end %>
