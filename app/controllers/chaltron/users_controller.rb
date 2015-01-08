@@ -64,6 +64,12 @@ class Chaltron::UsersController < ApplicationController
     end
   end
 
+  def ldap_search
+  end
+
+  def ldap_create
+  end
+
   private
   def create_params
     params.require(:user).permit(:username, :email, :fullname,

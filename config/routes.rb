@@ -5,6 +5,8 @@ Rails.application.routes.draw do
       get   'self_show'
       get   'self_edit'
       patch 'self_update'
+      get   'ldap_search'
+      post  'ldap_create'
     end
   end
 end

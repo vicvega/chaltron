@@ -59,3 +59,6 @@ it:
           activity: Attività
           details: Dettagli
         edit: Modifica dati personali
+      ldap_search:
+        title: Ricerca utenti LDAP
+        submit_text: Cerca

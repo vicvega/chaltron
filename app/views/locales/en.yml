@@ -59,3 +59,6 @@ en:
           activity: Activity
           details: Details
         edit: Edit account data
+      ldap_search:
+        title: Search for LDAP sers
+        submit_text: Search
