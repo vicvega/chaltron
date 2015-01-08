@@ -19,4 +19,5 @@ it:
       created: Utente creato con successo.
       updated: Utente aggiornato con successo.
       self_updated: Dati personali aggiornati con successo.
+      cannot_self_destroy: Non puoi cancellare il tuo stesso account.
       it_s_you: Sei tu!

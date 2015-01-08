@@ -68,7 +68,8 @@
       <%= icon('edit') %>
       <%= t('.edit') %>
     <% end %>
-    <%= link_to  @user, method: :delete, class: 'btn btn-danger',
+    <%= link_to @user, method: :delete, class: 'btn btn-danger',
+      disabled: current_user == @user,
       data: { confirm: t('.destroy_confirm', user: @user.username) } do %>
       <%= icon('trash') %>
       <%= t('.destroy') %>

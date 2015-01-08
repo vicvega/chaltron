@@ -56,8 +56,12 @@ class Chaltron::UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
-    respond_with(@user)
+    if current_user == @user
+      redirect_to({ action: :index }, alert: I18n.t('chaltron.users.cannot_self_destroy'))
+    else
+      @user.destroy
+      respond_with(@user)
+    end
   end
 
   private

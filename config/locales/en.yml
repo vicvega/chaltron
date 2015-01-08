@@ -19,4 +19,5 @@ en:
       created: User was successfully created.
       updated: User was successfully updated.
       self_updated: Account data successfully updated.
+      cannot_self_destroy: You cannot destroy your own account.
       it_s_you: It's you!
