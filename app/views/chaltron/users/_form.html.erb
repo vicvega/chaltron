@@ -8,7 +8,7 @@
     <%= f.password_field :password_confirmation %>
     <%= f.role_select %>
   <% elsif context == :update %>
-    <%= f.role_select(disabled: current_user == @user) %>
+    <%= f.role_select %>
   <% end %>
 
   <%= f.form_group do %>
