@@ -13,6 +13,7 @@ RSpec.describe Chaltron::UsersController, type: :controller do
       it 'destroy user' do
         delete :destroy, id: user.id
         expect(User.count).to eq 1
+        expect(flash[:alert]).to be_nil
       end
     end
     context 'current user' do
