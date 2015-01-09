@@ -1,6 +1,10 @@
+require 'chaltron/ldap/person'
+
 class Chaltron::UsersController < ApplicationController
   before_action :authenticate_user!
-  load_and_authorize_resource except: [:self_show, :self_edit, :self_update]
+  load_and_authorize_resource except: [:self_show, :self_edit, :self_update, :ldap_create, :ldap_search]
+  before_action :authorize_create_user, only: [:ldap_create, :ldap_search]
+
   respond_to :html
 
   def index
@@ -46,7 +50,6 @@ class Chaltron::UsersController < ApplicationController
         password_confirmation: params[:user][:password_confirmation],
       )
     end
-
     if current_user.update(user_params_with_pass)
       flash[:notice] = I18n.t('chaltron.users.self_updated')
       render :self_show
@@ -67,6 +70,20 @@ class Chaltron::UsersController < ApplicationController
   def ldap_search
   end
 
+  def ldap_new
+    @ldap_entries = []
+    userid = params[:userid]
+    department = params[:department]
+    if userid.present?
+      entry = Chaltron::LDAP::Person.find_by_uid(userid)
+      @ldap_entries << entry unless entry.nil?
+    end
+
+
+
+
+  end
+
   def ldap_create
   end
 
@@ -84,4 +101,7 @@ class Chaltron::UsersController < ApplicationController
     params.require(:user).permit(:email, :fullname)
   end
 
+  def authorize_create_user
+    authorize! :create, User
+  end
 end

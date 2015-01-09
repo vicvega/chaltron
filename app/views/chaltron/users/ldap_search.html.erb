@@ -1,18 +1,19 @@
 <div class='container-fluid'>
   <h3 class='page-header'><%= t('.title') %></h3>
 
-  <%= bootstrap_form_for(current_user, as: :user, url: self_update_users_path, layout: :horizontal,
-    label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
-    <%= f.text_field :fullname %>
-    <%= f.email_field :email %>
+  <%= bootstrap_form_tag(url: ldap_new_users_url, method: :post, layout: :horizontal) do |f| %>
 
-    <%= f.form_group label_col: 'col-sm-3' do %>
-      <%= f.submit t('.submit_text'), class: 'btn btn-primary' %>
+    <%= f.text_field :userid, label: t('.name_label'), help: t('.name_help') %>
+    <%= f.text_field :fullname, label: t('.fullname_label'), help: t('.fullname_help') %>
+    <%= f.text_field :department, label: t('.department_label'), help: t('.department_help') %>
+
+    <%= f.form_group class: 'form-actions' do %>
+      <%= submit_tag t('.submit_text'), class: 'btn btn-primary' %>
       <%= link_to users_path, class: 'btn btn-default pull-right' do %>
         <%= icon(:times) %>
         <%= t('chaltron.common.cancel') %>
       <% end %>
-   <% end %>
-  <% end %>
+    <% end %>
 
+  <% end %>
 </div>

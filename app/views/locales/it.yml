@@ -62,3 +62,12 @@ it:
       ldap_search:
         title: Ricerca utenti LDAP
         submit_text: Cerca
+        name_label: Utente
+        name_help: Ricerca per user-id
+        fullname_label: Nome
+        fullname_help: Ricerca per nome o cognome
+        department_label: Funzione
+        department_help: Ricerca per sigla di funzione
+      ldap_new:
+        title: Nuovi utenti LDAP
+        submit_text: Crea utenti LDAP

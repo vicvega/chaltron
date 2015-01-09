@@ -72,9 +72,6 @@ module Chaltron
 
       end
 
-
-
-
       private
 
       def options

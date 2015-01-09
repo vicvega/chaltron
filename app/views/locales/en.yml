@@ -62,3 +62,12 @@ en:
       ldap_search:
         title: Search for LDAP sers
         submit_text: Search
+        name_label: User
+        name_help: Search for user-id
+        fullname_label: Fullname
+        fullname_help: Search for first name or surname
+        department_label: Department
+        department_help: Search for department
+      ldap_new:
+        title: New LDAP users
+        submit_text: Create LDAP users

@@ -1,0 +1,41 @@
+<div class='container-fluid'>
+  <h3 class='page-header'><%= t('.title') %></h3>
+
+    <%= bootstrap_form_tag(url: ldap_new_users_url, method: :post, layout: :horizontal) do |f| %>
+
+      <%= f.form_group do %>
+
+        <%= content_tag 'table', id: 'ldap_create', class: 'table table-striped table-condensed' do %>
+          <thead>
+            <tr>
+              <th class='username'>
+                <%= User.human_attribute_name(:username) %>
+              </th>
+              <th class='fullname'>
+                <%= User.human_attribute_name(:fullname) %>
+              </th>
+              <th class='email'>
+                <%= User.human_attribute_name(:email) %>
+              </th>
+              <th class='department'>
+                <%= User.human_attribute_name(:department) %>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: 'ldap_entry', collection: @ldap_entries %>
+          </tbody>
+        <% end %>
+
+      <% end %>
+
+      <%= f.role_select label: User.human_attribute_name(:roles)  %>
+
+      <%= f.form_group class: 'form-actions' do %>
+        <%= f.submit t('.submit_text'), class: 'btn btn-primary' %>
+        <%= back_link class: 'btn btn-default pull-right',
+          text: t('chaltron.common.cancel'), icon: 'times' %>
+      <% end %>
+
+    <% end %>
+</div>  
