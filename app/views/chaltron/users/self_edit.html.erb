@@ -12,7 +12,7 @@
         <%= f.password_field :password_confirmation %>
       </fieldset>
     <% end %>
-    <%= f.form_group do %>
+    <%= f.form_group class: 'form-actions' do %>
       <%= f.submit t('.title'), class: 'btn btn-primary' %>
       <%= link_to self_show_users_path, class: 'btn btn-default pull-right' do %>
         <%= icon(:times) %>

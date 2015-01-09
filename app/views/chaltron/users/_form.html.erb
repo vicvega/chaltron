@@ -15,7 +15,7 @@
     <% end %>
   <% end %>
 
-  <%= f.form_group do %>
+  <%= f.form_group class: 'form-actions' do %>
     <%= f.submit submit_text, class: 'btn btn-primary' %>
     <%= back_link class: 'btn btn-default pull-right', text: t('.cancel_text'), icon: 'times' %>
   <% end %>
