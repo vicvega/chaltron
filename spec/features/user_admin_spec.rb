@@ -6,7 +6,7 @@ describe User do
     before { login_with user_admin.username, user_admin.password }
 
     context 'creates user' do
-      it do
+      it 'succeeds' do
         visit users_path
         click_link 'New local user'
 
@@ -25,7 +25,7 @@ describe User do
      let!(:user) { create :user }
      let!(:admin) { create :admin }
      let!(:user_admin2) { create :user_admin }
-      it do
+      it 'succeeds' do
         visit users_path
         # add role to empty set
         click_link user.username
@@ -53,7 +53,20 @@ describe User do
         expect(page).to have_content I18n.t('chaltron.users.updated')
         expect(admin.reload.roles).to eq []
       end
+    end
 
+    context 'updates himself' do
+      it 'cannot remove user_admin role' do
+        visit users_path
+
+        click_link user_admin.username
+        click_link 'Edit'
+        uncheck :user_roles_admin
+        click_button "Edit #{user_admin.username}"
+
+        expect(page).to have_content I18n.t('chaltron.users.updated')
+        expect(user_admin.reload.roles).to eq ['user_admin']
+      end
     end
   end
 end
