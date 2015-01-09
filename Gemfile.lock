@@ -91,7 +91,7 @@ GEM
     factory_girl_rails (4.5.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
-    ffaker (1.25.0)
+    ffaker (1.30.0)
     font-awesome-sass (4.2.2)
       sass (~> 3.2)
     gitlab_omniauth-ldap (1.2.0)
