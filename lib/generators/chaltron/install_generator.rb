@@ -16,9 +16,6 @@ module Chaltron
     end
 
     def install_gems
-      gem 'rails-i18n'
-      gem 'nprogress-rails'
-
       # test
       gem_group :development, :test do
         gem 'rspec-rails'
