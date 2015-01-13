@@ -1,4 +1,4 @@
-//= require chaltron/main
+//= require_tree ./chaltron
 //= require bootstrap-sprockets
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
