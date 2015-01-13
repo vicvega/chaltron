@@ -6,6 +6,7 @@
     <%= f.text_field :userid, label: t('.name_label'), help: t('.name_help') %>
     <%= f.text_field :fullname, label: t('.fullname_label'), help: t('.fullname_help') %>
     <%= f.text_field :department, label: t('.department_label'), help: t('.department_help') %>
+    <%= f.text_field :limit, label: t('.limit_label'), help: t('.limit_help'), value: @limit %>
 
     <%= f.form_group class: 'form-actions' do %>
       <%= submit_tag t('.submit_text'), class: 'btn btn-primary' %>

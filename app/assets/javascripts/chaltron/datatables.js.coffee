@@ -13,7 +13,7 @@ class @DataTableBuilder
     @initTable(container: div)
     # ldap create
     div = $("table#ldap_create")
-    @initTable(container: div, params: {paging: false, searching: false})
+    @initTable(container: div, params: {paging: false})
     # datatable class
     div = $("table.datatable")
     @initTable(container: div)

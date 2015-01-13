@@ -68,26 +68,37 @@ class Chaltron::UsersController < ApplicationController
   end
 
   def ldap_search
+    @limit = default_limit
   end
 
   def ldap_new
     @ldap_entries = []
-    userid = params[:userid]
+    userid     = params[:userid]
     department = params[:department]
+    name       = params[:fullname]
+    limit      = params[:limit].to_i
     if userid.present?
       entry = Chaltron::LDAP::Person.find_by_uid(userid)
       @ldap_entries << entry unless entry.nil?
+    else
+      opts = {}
+      opts[:department] = "*#{department}*" unless department.blank?
+      opts[:cn]         = "*#{name}*"       unless name.blank?
+      opts[:limit]      = limit.zero? ? default_limit : limit
+
+      res = Chaltron::LDAP::Person.find_by_fields(opts)
+      @ldap_entries = res
     end
-
-
-
-
   end
 
   def ldap_create
   end
 
   private
+  def default_limit
+    100
+  end
+
   def create_params
     params.require(:user).permit(:username, :email, :fullname,
       :password, :password_confirmation, roles: [])
