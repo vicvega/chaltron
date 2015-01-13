@@ -26,12 +26,37 @@ describe Chaltron::LDAP::Person do
     end
   end
 
+  describe 'search by dn' do
+    subject(:res) { Chaltron::LDAP::Person.find_by_field 'dn', name }
+    context 'returning 1 values' do
+      let(:name) { 'uid=sirius,ou=people,dc=azkaban,dc=co,dc=uk' }
+      it { is_expected.to be_an_instance_of Array }
+      it { expect(res.size).to eq 1 }
+      it { expect(res.first.uid).to eq 'sirius' }
+    end
+  end
+
   describe 'search by field' do
     subject(:res) { Chaltron::LDAP::Person.find_by_field 'title', title }
     context 'returning 2 values' do
       let(:title) { '* guy' }
       it { is_expected.to be_an_instance_of Array }
       it { expect(res.size).to eq 2 }
+      it { expect(res.first).to be_an_instance_of Chaltron::LDAP::Person }
+    end
+    context 'returning empty set' do
+      let(:title) { 'test' }
+      it { is_expected.to be_an_instance_of Array }
+      it { expect(res.size).to eq 0 }
+    end
+  end
+
+  describe 'search by multiple fields' do
+    subject(:res) { Chaltron::LDAP::Person.find_by_fields(title: title, uid: 'sirius') }
+    context 'returning 1 value' do
+      let(:title) { '* guy' }
+      it { is_expected.to be_an_instance_of Array }
+      it { expect(res.size).to eq 1 }
       it { expect(res.first).to be_an_instance_of Chaltron::LDAP::Person }
     end
     context 'returning empty set' do

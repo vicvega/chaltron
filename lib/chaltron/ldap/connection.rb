@@ -16,11 +16,11 @@ module Chaltron
       end
 
       def find_by_uid(id)
-        user(uid, id)
+        find_user(uid: id)
       end
 
-      def user(*args)
-        users(*args).first
+      def find_user(*args)
+        find_users(*args).first
       end
 
       def ldap_search(*args)
@@ -36,16 +36,23 @@ module Chaltron
         end
       end
 
-      def users(field, value, limit = nil)
-        if field.to_sym == :dn
+      def find_users(args)
+        limit = args.delete(:limit)
+        fields = args.keys
+
+        if fields.include?(:dn)
           options = {
-            base: value,
+            base: args[:dn],
             scope: Net::LDAP::SearchScope_BaseObject
           }
         else
+          filters = []
+          fields.each do |field|
+            filters << Net::LDAP::Filter.eq(field, args[field])
+          end
           options = {
             base: base,
-            filter: Net::LDAP::Filter.eq(field, value)
+            filter: filters.inject{|sum, n| Net::LDAP::Filter.join(sum, n)}
           }
         end
 
