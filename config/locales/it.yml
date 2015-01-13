@@ -21,3 +21,4 @@ it:
       self_updated: Dati personali aggiornati con successo.
       cannot_self_destroy: Non puoi cancellare il tuo stesso account.
       it_s_you: Sei tu!
+      missing_field: Manca!
