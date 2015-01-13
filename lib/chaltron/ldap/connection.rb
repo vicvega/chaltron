@@ -37,6 +37,7 @@ module Chaltron
       end
 
       def find_users(args)
+        return [] if args.empty?
         limit = args.delete(:limit)
         fields = args.keys
 
@@ -76,7 +77,6 @@ module Chaltron
         entries.map do |entry|
           Chaltron::LDAP::Person.new(entry, uid)
         end
-
       end
 
       private
