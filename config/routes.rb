@@ -8,8 +8,10 @@ Rails.application.routes.draw do
     end
   end
   # search and create LDAP users
-  get   'ldap/search' => 'chaltron/ldap#search'
-  post  'ldap/new'    => 'chaltron/ldap#new'
-  post  'ldap/create' => 'chaltron/ldap#create'
+  get   'ldap/search'       => 'chaltron/ldap#search'
+  get   'ldap/new'          => 'chaltron/ldap#new'
+  post  'ldap/create'       => 'chaltron/ldap#create'
+  post  'ldap/multi_new'    => 'chaltron/ldap#multi_new'
+  post  'ldap/multi_create' => 'chaltron/ldap#multi_create'
 
 end

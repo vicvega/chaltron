@@ -71,6 +71,6 @@ en:
         department_help: Search for department (also partial match)
         limit_label: Limit
         limit_help: Max shown results
-      new:
+      multi_new:
         title: New LDAP users
         submit_text: Create LDAP users

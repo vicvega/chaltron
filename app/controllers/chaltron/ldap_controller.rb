@@ -8,7 +8,7 @@ class Chaltron::LdapController < ApplicationController
     @limit = default_limit
   end
 
-  def new
+  def multi_new
     @entries = []
     userid     = params[:userid]
     department = params[:department]
@@ -26,6 +26,12 @@ class Chaltron::LdapController < ApplicationController
       res = Chaltron::LDAP::Person.find_by_fields(opts)
       @entries = res
     end
+  end
+
+  def multi_create
+  end
+
+  def new
   end
 
   def create

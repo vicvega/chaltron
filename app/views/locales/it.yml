@@ -71,7 +71,7 @@ it:
         department_help: Ricerca per sigla di funzione (anche match parziale)
         limit_label: Limite
         limit_help: Massimo numero di risultati visualizzati
-      new:
+      multi_new:
         title: Nuovi utenti LDAP
         submit_text: Crea utenti LDAP
         par: Selezione gli utenti facendo un click sulla riga della tabella
