@@ -2,23 +2,25 @@
 $font-size-base: 13px;
 $navbar-height: 40px;
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "bootstrap/theme";
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'bootstrap/theme';
 
 // font-awesome
-@import "font-awesome-sprockets";
-@import "font-awesome";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 
 // Core variables and mixins
-@import "chaltron/mixins";
+@import 'chaltron/mixins';
 
 // Core CSS
-@import "chaltron/layout";
+@import 'chaltron/layout';
 
 // datatables
 @import 'dataTables/bootstrap/3/jquery.dataTables.bootstrap';
 @import 'dataTables/extras/dataTables.responsive';
+@import 'dataTables/extras/dataTables.tableTools';
+@import 'chaltron/datatables';
 
 // minor fix
 .dataTables_wrapper .dataTables_filter input {

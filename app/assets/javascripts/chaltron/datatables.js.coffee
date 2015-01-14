@@ -13,7 +13,19 @@ class @DataTableBuilder
     @initTable(container: div)
     # ldap create
     div = $("table#ldap_create")
-    @initTable(container: div, params: {paging: false})
+    @initTable(container: div, params: {
+      paging: false,
+      # default sorting: username (2nd column) asc
+      aaSorting: [[1,'asc']]
+      aoColumnDefs: [
+        { bSortable: false, aTargets: [ 0 ] }
+      ],
+      dom: 'T<"clear">lfrtip',
+      tableTools: {
+        sRowSelect: 'multi',
+        aButtons: [ ]
+      }})
+
     # datatable class
     div = $("table.datatable")
     @initTable(container: div)
