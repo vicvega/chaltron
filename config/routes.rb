@@ -5,12 +5,9 @@ Rails.application.routes.draw do
       get   'self_show'
       get   'self_edit'
       patch 'self_update'
-#      get   'ldap_search'
-#      post  'ldap_new'
-#      post  'ldap_create'
     end
   end
-
+  # search and create LDAP users
   get   'ldap/search' => 'chaltron/ldap#search'
   post  'ldap/new'    => 'chaltron/ldap#new'
   post  'ldap/create' => 'chaltron/ldap#create'
