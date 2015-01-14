@@ -1,6 +1,6 @@
 class Chaltron::UsersController < ApplicationController
   before_action :authenticate_user!
-  load_and_authorize_resource except: [:self_show, :self_edit, :self_update, :ldap_create, :ldap_search]
+  load_and_authorize_resource except: [:self_show, :self_edit, :self_update]
 
   respond_to :html
 
