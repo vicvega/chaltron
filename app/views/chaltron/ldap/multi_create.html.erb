@@ -1,7 +1,6 @@
 <div class='container-fluid'>
   <h3 class='page-header'><%= t('.title') %></h3>
 
-
   <div class='col-md-3'>
     <div class='panel panel-default'>
       <div class='panel-heading'><%= t '.result' %></div>
@@ -12,7 +11,7 @@
           class: 'list-group-item') unless @error.empty? %>
       </ul>
     </div>
-    <hr/>
+    <hr>
     <%= link_to users_path, class: 'btn btn-primary' do %>
       <%= icon('arrow-left') %>
       <%= t('chaltron.common.back') %>
@@ -25,7 +24,10 @@
         <div class='panel-heading'><%= t('.created', count: @created.size) %></div>
         <ul class='list-group'>
           <% @created.each do |u| %>
-            <%= content_tag :li, u.display_name, class: 'list-group-item' %>
+            <%= content_tag :li, class: 'list-group-item' do %>
+              <%= icon('check') %>
+              <%= u.display_name %>
+            <% end %>
           <% end %>
         </ul>
       </div>
