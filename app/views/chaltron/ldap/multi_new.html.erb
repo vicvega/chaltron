@@ -3,7 +3,8 @@
 
     <%= content_tag :p, t('.par') %>
 
-    <%= bootstrap_form_tag(url: ldap_new_url, method: :post, layout: :horizontal) do |f| %>
+    <%= bootstrap_form_for(User.new, url: ldap_multi_create_url, method: :post,
+      layout: :horizontal, html: {id: 'ldap_create'}) do |f| %>
 
       <%= f.form_group do %>
         <%= content_tag 'table', id: 'ldap_create', class: 'table table-striped table-condensed' do %>
@@ -30,7 +31,7 @@
         <% end %>
       <% end %>
 
-      <%= f.role_select label: User.human_attribute_name(:roles)  %>
+      <%= f.role_select %>
 
       <%= f.form_group class: 'form-actions' do %>
         <%= f.submit t('.submit_text'), class: 'btn btn-primary' %>

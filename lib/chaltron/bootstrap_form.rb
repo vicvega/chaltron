@@ -2,11 +2,8 @@ class BootstrapForm::FormBuilder
 
   def role_select(opts={})
     collection = Chaltron.roles.map {|role| [ role, I18n.translate("roles.#{role}") ] }
-
-    label = opts[:label] || :roles
-
     checked = @object.nil?? false : @object.roles
-    html = inputs_collection(label, collection, :first, :last, checked: checked) do |name, value, options|
+    html = inputs_collection(:roles, collection, :first, :last, checked: checked) do |name, value, options|
       options[:multiple] = true
       options[:inline] = true
 
