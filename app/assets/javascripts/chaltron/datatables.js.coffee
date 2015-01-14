@@ -92,3 +92,15 @@ class @DataTableBuilder
 $(document).on 'page:change', ->
   table = new DataTableBuilder
   table.go()
+
+$ ->
+  $('form#ldap_create').on 'submit', (e) ->
+    table = TableTools.fnGetMasters()[0]
+    data = table.fnGetSelectedData()
+    for d in data
+      $('<input/>', {
+        name: 'uids[]',
+        type: 'hidden',
+        multiple: 'multiple',
+        value: d[1]
+      }).appendTo(@)
