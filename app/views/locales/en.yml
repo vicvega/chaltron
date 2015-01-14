@@ -59,7 +59,8 @@ en:
           activity: Activity
           details: Details
         edit: Edit account data
-      ldap_search:
+    ldap:
+      search:
         title: Search for LDAP sers
         submit_text: Search
         name_label: User
@@ -70,6 +71,6 @@ en:
         department_help: Search for department (also partial match)
         limit_label: Limit
         limit_help: Max shown results
-      ldap_new:
+      new:
         title: New LDAP users
         submit_text: Create LDAP users

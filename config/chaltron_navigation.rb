@@ -11,12 +11,12 @@ SimpleNavigation::Configuration.run do |navigation|
         admin.item :users,
           { icon: 'fa fa-fw fa-users',
             text: I18n.t('chaltron.menu.users')
-          }, users_url, highlights_on: /\/users\//
+          }, users_url, highlights_on: /\/(users|ldap)/
       end
       primary.item :logged, current_user.display_name.html_safe, nil do |user|
         user.item :self_edit, { icon: 'fa fa-fw fa-user',
                   text: I18n.t('chaltron.menu.self_show') }, self_show_users_url,
-                  highlights_on: /\/self_[show|edit]/
+                  highlights_on: /\/self_(show|edit)/
 
         user.item :logout, { icon: 'fa fa-fw fa-sign-out', text: 'Logout' },
                   destroy_user_session_url, method: :delete

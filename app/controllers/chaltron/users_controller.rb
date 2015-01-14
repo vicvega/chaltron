@@ -1,9 +1,9 @@
-require 'chaltron/ldap/person'
+#require 'chaltron/ldap/person'
 
 class Chaltron::UsersController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource except: [:self_show, :self_edit, :self_update, :ldap_create, :ldap_search]
-  before_action :authorize_create_user, only: [:ldap_create, :ldap_search]
+  #before_action :authorize_create_user, only: [:ldap_create, :ldap_search]
 
   respond_to :html
 
@@ -67,37 +67,37 @@ class Chaltron::UsersController < ApplicationController
     end
   end
 
-  def ldap_search
-    @limit = default_limit
-  end
+#  def ldap_search
+#    @limit = default_limit
+#  end
 
-  def ldap_new
-    @ldap_entries = []
-    userid     = params[:userid]
-    department = params[:department]
-    name       = params[:fullname]
-    limit      = params[:limit].to_i
-    if userid.present?
-      entry = Chaltron::LDAP::Person.find_by_uid(userid)
-      @ldap_entries << entry unless entry.nil?
-    else
-      opts = {}
-      opts[:department] = "*#{department}*" unless department.blank?
-      opts[:cn]         = "*#{name}*"       unless name.blank?
-      opts[:limit]      = limit.zero? ? default_limit : limit
+#  def ldap_new
+#    @ldap_entries = []
+#    userid     = params[:userid]
+#    department = params[:department]
+#    name       = params[:fullname]
+#    limit      = params[:limit].to_i
+#    if userid.present?
+#      entry = Chaltron::LDAP::Person.find_by_uid(userid)
+#      @ldap_entries << entry unless entry.nil?
+#    else
+#      opts = {}
+#      opts[:department] = "*#{department}*" unless department.blank?
+#      opts[:cn]         = "*#{name}*"       unless name.blank?
+#      opts[:limit]      = limit.zero? ? default_limit : limit
 
-      res = Chaltron::LDAP::Person.find_by_fields(opts)
-      @ldap_entries = res
-    end
-  end
+#      res = Chaltron::LDAP::Person.find_by_fields(opts)
+#      @ldap_entries = res
+#    end
+#  end
 
-  def ldap_create
-  end
+#  def ldap_create
+#  end
 
   private
-  def default_limit
-    100
-  end
+#  def default_limit
+#    100
+#  end
 
   def create_params
     params.require(:user).permit(:username, :email, :fullname,
@@ -112,7 +112,7 @@ class Chaltron::UsersController < ApplicationController
     params.require(:user).permit(:email, :fullname)
   end
 
-  def authorize_create_user
-    authorize! :create, User
-  end
+#  def authorize_create_user
+#    authorize! :create, User
+#  end
 end
