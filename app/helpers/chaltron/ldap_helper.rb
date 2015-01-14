@@ -1,8 +1,8 @@
 module Chaltron::LdapHelper
 
-  def display_entry_username(entry)
+  def display_entry_name(entry)
     if current_user.username == entry.username
-      (entry.username + '&nbsp').html_safe +
+      (entry.name + '&nbsp').html_safe +
         tag_label(I18n.t('chaltron.users.it_s_you'), :success)
     else
       entry.username
