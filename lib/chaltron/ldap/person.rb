@@ -27,7 +27,7 @@ module Chaltron
         @uid = uid
       end
 
-      def create_user
+      def create_user(roles = [])
         password = Devise.friendly_token[0, 8].downcase
         opts = {
           extern_uid: dn,
@@ -40,6 +40,7 @@ module Chaltron
           department: department
         }
         user = ::User.build_user(opts)
+        user.roles = []
         user.save
         user
       end

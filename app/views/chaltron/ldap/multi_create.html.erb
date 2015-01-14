@@ -1,0 +1,47 @@
+<div class='container-fluid'>
+  <h3 class='page-header'><%= t('.title') %></h3>
+
+
+  <div class='col-md-3'>
+    <div class='panel panel-default'>
+      <div class='panel-heading'><%= t '.result' %></div>
+      <ul class='list-group'>
+        <%= content_tag(:li, t('.created', count: @created.size),
+          class: 'list-group-item') unless @created.empty? %>
+        <%= content_tag(:li, t('.error', count: @error.size),
+          class: 'list-group-item') unless @error.empty? %>
+      </ul>
+    </div>
+    <hr/>
+    <%= link_to users_path, class: 'btn btn-primary' do %>
+      <%= icon('arrow-left') %>
+      <%= t('chaltron.common.back') %>
+    <% end %>
+  </div>
+
+  <div class='col-md-9'>
+    <% unless @created.empty? %>
+      <div class='panel panel-success'>
+        <div class='panel-heading'><%= t('.created', count: @created.size) %></div>
+        <ul class='list-group'>
+          <% @created.each do |u| %>
+            <%= content_tag :li, u.display_name, class: 'list-group-item' %>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <% unless @error.empty? %>
+      <div class='panel panel-danger'>
+        <% @error.each do |u| %>
+          <div class='panel-heading'><%= u.display_name %></div>
+          <ul class='list-group'>
+            <% u.errors.full_messages.each do |message| %>
+              <%= content_tag :li, message, class: 'list-group-item' %>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+</div>  

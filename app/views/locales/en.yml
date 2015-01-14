@@ -75,3 +75,12 @@ en:
         title: New LDAP users
         submit_text: Create LDAP users
         par: Select users by clicking row table
+      multi_create:
+        title: Create LDAP users
+        result: Results
+        created:
+          one:   A new user has been successfully created
+          other: "%{count} users have been successfully created"
+        error:
+          one:   1 error occurred
+          other: "%{count} errors occurred"

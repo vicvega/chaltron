@@ -75,3 +75,12 @@ it:
         title: Nuovi utenti LDAP
         submit_text: Crea utenti LDAP
         par: Selezione gli utenti facendo un click sulla riga della tabella
+      multi_create:
+        title: Creazione utenti LDAP
+        result: Risultati
+        created:
+          one:   È stato creato un nuovo utente
+          other: Sono stati creati %{count} nuovi utenti
+        error:
+          one:   Si è verificato un errore
+          other: Si sono verificati %{count} errori
