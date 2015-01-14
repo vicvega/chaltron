@@ -3,7 +3,7 @@ table#ldap_create {
     text-align: center;
   }
 
-  tr td:first-child:before {
+  tr td:first-child:not(:only-of-type):before {
     content: "\f096"; /* fa-square-o */
     font-family: FontAwesome;
   }
