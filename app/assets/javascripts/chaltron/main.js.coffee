@@ -1,4 +1,4 @@
-$(document).on 'page:change', ->
+$ ->
   # Flash
   if (flash = $('.flash-container div.alert')).length > 0
     flash.click -> $(@).fadeOut()
