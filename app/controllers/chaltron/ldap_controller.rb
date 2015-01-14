@@ -31,12 +31,6 @@ class Chaltron::LdapController < ApplicationController
   def multi_create
   end
 
-  def new
-  end
-
-  def create
-  end
-
   private
   def default_limit
     100
