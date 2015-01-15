@@ -11,4 +11,9 @@ gemspec
 # your gem to rubygems.org.
 
 # To use debugger
-# gem 'debugger'
+# gem 'byebug', group: [:development, :test]
+
+group :development, :test do
+  gem 'jquery-rails'
+  gem 'turbolinks'
+end  

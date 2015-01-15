@@ -9,10 +9,10 @@ module LoginHelpers
       user_input = 'username'
       password_input = 'password'
     else
+      click_link 'Standard'
       user_input = 'user_username'
       password_input = 'user_password'
     end
-
     fill_in user_input, with: user
     fill_in password_input, with: password
 
