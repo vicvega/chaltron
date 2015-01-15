@@ -1,38 +1,37 @@
 <% if ldap_enabled? %>
   <fieldset>
-    <ul class='nav nav-pills nav-stacked'>
-      <%= content_tag :li, class: (@filters[:provider].blank? ? 'active': '') do %>
-        <%= link_to users_url(filters: @filters.merge(provider: nil)) do %>
-          <span class='badge pull-right'><%= User.count %></span>
-          <%= t '.provider.all' %>
-        <% end %>
-      <% end %>
-      <%= content_tag :li, class: (@filters[:provider] == 'local' ? 'active': '') do %>
-        <%= link_to users_url(filters: @filters.merge(provider: 'local')) do %>
-          <span class='badge pull-right'><%= User.where(provider: nil).count %></span>
-          <%= t '.provider.local' %>
-        <% end %>
-      <% end %>
-      <%= content_tag :li, class: (@filters[:provider] == 'ldap' ? 'active': '') do %>
-        <%= link_to users_url(filters: @filters.merge(provider: 'ldap')) do %>
-          <span class='badge pull-right'><%= User.where(provider: :ldap).count %></span>
-          <%= t '.provider.ldap' %>
-        <% end %>
-      <% end %>
-    </ul>
+  <legend><%= t '.provider.legend' %></legend>
+  <div class='list-group'>
+    <%= link_to users_url(filters: @filters.merge(provider: nil)),
+      class: (@filters[:provider].blank? ? 'list-group-item active': 'list-group-item')  do %>
+      <span class='badge pull-right'><%= User.count %></span>
+      <%= t '.provider.all' %>
+    <% end %>
+
+    <%= link_to users_url(filters: @filters.merge(provider: 'local')),
+      class: (@filters[:provider] == 'local' ? 'list-group-item active': 'list-group-item') do %>
+      <span class='badge pull-right'><%= User.where(provider: nil).count %></span>
+      <%= t '.provider.local' %>
+    <% end %>
+
+    <%= link_to users_url(filters: @filters.merge(provider: 'ldap')),
+      class: (@filters[:provider] == 'ldap' ? 'list-group-item active': 'list-group-item') do %>
+      <span class='badge pull-right'><%= User.where(provider: :ldap).count %></span>
+      <%= t '.provider.ldap' %>
+    <% end %>
+  </div>
   </fieldset>
 <% end %>
 
 <fieldset>
   <legend><%= t '.activity.legend' %></legend>
-  <ul class='nav nav-pills nav-stacked'>
-  <%= content_tag :li, class: (@filters[:activity] == 'no_login' ? 'active': '') do %>
-    <%= link_to users_url(filters: @filters.merge(activity: 'no_login')) do %>
-      <%= t '.activity.no_login' %>
-      <span class='badge pull-right'><%= User.where(sign_in_count: 0).count %></span>
+  <div class='list-group'>
+    <%= link_to users_url(filters: @filters.merge(activity: 'no_login')),
+      class: (@filters[:activity] == 'no_login' ? 'list-group-item active': 'list-group-item')  do %>
+        <span class='badge pull-right'><%= User.where(sign_in_count: 0).count %></span>
+        <%= t '.activity.no_login' %>
     <% end %>
-  <% end %>
-  </ul>
+  </div>
 </fieldset>
 
 <fieldset>

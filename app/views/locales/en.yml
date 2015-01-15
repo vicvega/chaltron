@@ -29,6 +29,7 @@ en:
         new_ldap_user: New LDAP user
       side_filters:
           provider:
+            legend: Provider
             all: All
             local: Local
             ldap: LDAP
