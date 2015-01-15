@@ -82,5 +82,5 @@ it:
           one:   È stato creato un nuovo utente
           other: Sono stati creati %{count} nuovi utenti
         error:
-          one:   Si è verificato un errore
-          other: Si sono verificati %{count} errori
+          one:   Un utente non è stato creato
+          other: "%{count} utenti non sono stati creati"

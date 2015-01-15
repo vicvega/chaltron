@@ -82,5 +82,5 @@ en:
           one:   A new user has been successfully created
           other: "%{count} users have been successfully created"
         error:
-          one:   1 error occurred
-          other: "%{count} errors occurred"
+          one:   A user has not been crated
+          other: "%{count} users have not been created"
