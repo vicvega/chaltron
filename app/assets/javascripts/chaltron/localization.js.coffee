@@ -1,5 +1,4 @@
 class @Chaltron
-
   @locales: (field) ->
     lang = Chaltron::lang ? 'en'
     ret = switch lang
@@ -29,9 +28,7 @@ class @Chaltron
               sSortDescending: ': attiva per ordinare la colonna in ordine decrescente'
           }
         }
-
       }
-
       else {
         error_message: 'Select at least a row',
         error_label: 'Warning',
@@ -59,5 +56,4 @@ class @Chaltron
           }
         }
       }
-
     ret[field]
