@@ -1,10 +1,10 @@
 it:
   chaltron:
     flash:
-      success: info
-      error:   errore
-      alert:   attenzione
-      notice:  nota
+      success: Info
+      error:   Errore
+      alert:   Attenzione
+      notice:  Nota
     menu:
       admin: Amministrazione
       users: Utenti
