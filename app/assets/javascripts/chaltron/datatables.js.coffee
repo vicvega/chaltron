@@ -48,6 +48,19 @@ $ ->
     table = TableTools.fnGetMasters()[0]
     data = table.fnGetSelectedData()
 
+    if data.length == 0
+      message = Chaltron.locales('error_message')
+      label = Chaltron.locales('error_label')
+      # display warning flash message
+      flash = $("<div><strong>#{label}</strong>: #{message}</div>").addClass('alert alert-warning')
+
+      $('.flash-container').append(flash)
+      # closable
+      flash.click -> $(@).fadeOut()
+      # self disappearing
+      setTimeout (-> flash.fadeOut()), 5000
+      e.preventDefault()
+
     for d in data
       $('<input/>', {
         name: 'uids[]',

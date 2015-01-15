@@ -31,7 +31,8 @@ class Chaltron::LdapController < ApplicationController
   def multi_create
     @created = []
     @error   = []
-    params[:uids].each do |uid|
+    uids = params[:uids] || []
+    uids.each do |uid|
       user = Chaltron::LDAP::Person.find_by_uid(uid).create_user
       if user.new_record?
         @error << user
