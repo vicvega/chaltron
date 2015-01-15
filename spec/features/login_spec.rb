@@ -48,10 +48,12 @@ describe User do
 
     it 'recovers password' do
       visit new_user_session_path
-      click_link 'Forgot your password?'
+      click_link I18n.t('devise.passwords.new.title')
 
       fill_in 'user_email', with: user.email
-      expect { click_button 'Submit' }.to change { ActionMailer::Base.deliveries.count }.by(1)
+      expect { click_button I18n.t('devise.passwords.new.submit_text') }.to change{
+       ActionMailer::Base.deliveries.count
+      }.by(1)
 
       mail = ActionMailer::Base.deliveries.last
       expect(mail.to).to eq [user.email]
@@ -64,7 +66,7 @@ describe User do
 
       fill_in 'user_password', with: password
       fill_in 'user_password_confirmation', with: password
-      click_button 'Change password'
+      click_button I18n.t('devise.passwords.edit.submit_text')
 
       expect(page).to have_content user.fullname
     end
