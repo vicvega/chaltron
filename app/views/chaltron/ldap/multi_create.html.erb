@@ -20,17 +20,14 @@
 
   <div class='col-md-9'>
     <% unless @created.empty? %>
-      <div class='panel panel-success'>
-        <div class='panel-heading'><%= t('.created', count: @created.size) %></div>
-        <ul class='list-group'>
-          <% @created.each do |u| %>
-            <%= content_tag :li, class: 'list-group-item' do %>
-              <%= icon('check') %>
-              <%= u.display_name %>
-            <% end %>
+      <ul class='list-group'>
+        <% @created.each do |u| %>
+          <%= content_tag :li, class: 'list-group-item list-group-item-success' do %>
+            <%= icon('check') %>
+            <%= u.display_name %>
           <% end %>
-        </ul>
-      </div>
+        <% end %>
+      </ul>
     <% end %>
     <% unless @error.empty? %>
       <div class='panel panel-danger'>
