@@ -83,7 +83,7 @@ RUBY
       end
       # css
       file = 'app/assets/stylesheets/application.css'
-      %w( nprogress nprogress-bootstrap font-awesome chaltron ).each do |x|
+      %w( nprogress nprogress-bootstrap chaltron ).each do |x|
         txt = " *= require #{x}\n"
         inject_into_file file, txt, before: ' *= require_self'
       end
