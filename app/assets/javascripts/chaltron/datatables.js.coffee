@@ -51,14 +51,19 @@ $ ->
     if data.length == 0
       message = Chaltron.locales('error_message')
       label = Chaltron.locales('error_label')
-      # display warning flash message
-      flash = $("<div><strong>#{label}</strong>: #{message}</div>").addClass('alert alert-warning')
 
-      $('.flash-container').append(flash)
+      flash = $("div.alert-warning:contains('#{message}')")
+      if flash.length == 0
+        # display warning flash message
+        flash = $("<div><strong>#{label}</strong>: #{message}</div>").addClass('alert alert-warning')
+        $('.flash-container').append(flash)
+      else
+        flash.show()
       # closable
       flash.click -> $(@).fadeOut()
       # self disappearing
       setTimeout (-> flash.fadeOut()), 5000
+
       e.preventDefault()
 
     for d in data
