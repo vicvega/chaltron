@@ -8,14 +8,26 @@ require 'spec_helper'
 require File.expand_path('../dummy/config/environment.rb', __FILE__)
 require 'rspec/rails'
 
-require 'capybara/rails'
-require 'capybara/poltergeist'
-require 'database_cleaner'
-Capybara.javascript_driver = :poltergeist
-
 require 'ffaker'
 require 'shoulda/matchers'
 require 'factory_girl_rails'
+require 'capybara/rails'
+require 'capybara/poltergeist'
+require 'database_cleaner'
+
+#Capybara.register_driver(:poltergeist) do |app|
+#  Capybara::Poltergeist::Driver.new app,
+#    js_errors: false,
+#    timeout: 180,
+#    phantomjs_logger: nil,
+#    logger: nil,
+#    phantomjs_options:
+#    [
+#      '--load-images=no',
+#      '--ignore-ssl-errors=yes'
+#    ]
+#end
+Capybara.javascript_driver = :poltergeist
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
