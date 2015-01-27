@@ -76,17 +76,11 @@ RUBY
       remove_file 'app/views/layouts/application.html.erb'
       directory 'app/views/layouts'
       # javascript
-      file = 'app/assets/javascripts/application.js'
-      %w( nprogress nprogress-turbolinks chaltron ).each do |x|
-        txt = "//= require #{x}\n"
-        inject_into_file file, txt, before: '//= require_tree .'
-      end
+      inject_into_file 'app/assets/javascripts/application.js',
+        "//= require chaltron\n", before: '//= require_tree .'
       # css
-      file = 'app/assets/stylesheets/application.css'
-      %w( nprogress nprogress-bootstrap chaltron ).each do |x|
-        txt = " *= require #{x}\n"
-        inject_into_file file, txt, before: ' *= require_self'
-      end
+      inject_into_file 'app/assets/stylesheets/application.css',
+        " *= require chaltron\n", before: ' *= require_self'
     end
 
     def create_index_controller

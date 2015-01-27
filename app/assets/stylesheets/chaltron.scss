@@ -10,12 +10,6 @@ $navbar-height: 40px;
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-// Core variables and mixins
-@import 'chaltron/mixins';
-
-// Core CSS
-@import 'chaltron/layout';
-
 // datatables
 @import 'dataTables/bootstrap/3/jquery.dataTables.bootstrap';
 @import 'dataTables/extras/dataTables.responsive';
@@ -26,3 +20,13 @@ $navbar-height: 40px;
 .dataTables_wrapper .dataTables_filter input {
   margin-left: 0.5em;
 }
+
+// nprogress
+@import 'nprogress';
+@import 'nprogress-bootstrap';
+
+// Core variables and mixins
+@import 'chaltron/mixins';
+
+// Core CSS
+@import 'chaltron/layout';
