@@ -12,17 +12,4 @@ class User < ActiveRecord::Base
     fullname.presence || username
   end
 
-  #
-  # Class methods
-  #
-  class << self
-    def build_user(attrs = {})
-      User.new(defaults.merge(attrs.symbolize_keys))
-    end
-
-    def defaults
-      {
-      }
-    end
-  end
 end
