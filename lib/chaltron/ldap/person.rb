@@ -40,7 +40,7 @@ module Chaltron
           department: department
         }
         user = ::User.build_user(opts)
-        user.roles = []
+        user.roles = roles
         user.save
         user
       end

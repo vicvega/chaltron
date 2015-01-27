@@ -33,7 +33,7 @@ class Chaltron::LdapController < ApplicationController
     @error   = []
     uids = params[:uids] || []
     uids.each do |uid|
-      user = Chaltron::LDAP::Person.find_by_uid(uid).create_user
+      user = Chaltron::LDAP::Person.find_by_uid(uid).create_user(params[:user][:roles])
       if user.new_record?
         @error << user
       else
