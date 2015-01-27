@@ -14,7 +14,22 @@ describe User do
         is_expected.to have_content 'Login'
         is_expected.not_to have_content fullname
       end
+
+      context 'when Chaltron.default_roles is set' do
+        before { Chaltron.default_roles = [ 'admin' ] }
+        it 'allows login and set roles' do
+          login_with 'sirius', 'padfoot', :ldap
+          is_expected.to have_content fullname
+          logout
+          is_expected.to have_content 'Login'
+          is_expected.not_to have_content fullname
+
+          expect( User.find_by(username: 'sirius').is?(:admin) ).to be_truthy
+          expect( User.find_by(username: 'sirius').is?(:user_admin) ).to be_falsey
+        end
+      end
     end
+
     context 'when Chaltron.ldap_allow_all is not true' do
       before { Chaltron.ldap_allow_all = false }
       it 'does not allow login' do
