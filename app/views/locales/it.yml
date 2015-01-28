@@ -38,7 +38,6 @@ it:
           activity:
             inactive: Inattivi
             no_login: Mai loggati
-          clear_filter: Rimuovi filtri
       new:
         title: Nuovo utente locale
         submit_text: Crea utente locale

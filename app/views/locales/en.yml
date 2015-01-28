@@ -38,7 +38,6 @@ en:
           activity:
             inactive: Inactive
             no_login: Never logged
-          clear_filter: Clear filters
       new:
         title: New local user
         submit_text: Create local user

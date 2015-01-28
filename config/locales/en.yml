@@ -16,6 +16,7 @@ en:
     common:
       back: Back
       cancel: Cancel
+      clear_filter: Clear filters
     users:
       created: User was successfully created.
       updated: User was successfully updated.

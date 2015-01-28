@@ -16,6 +16,7 @@ it:
     common:
       back: Indietro
       cancel: Annulla
+      clear_filter: Rimuovi filtri
     users:
       created: Utente creato con successo.
       updated: Utente aggiornato con successo.
