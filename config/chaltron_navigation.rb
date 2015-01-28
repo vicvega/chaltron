@@ -11,8 +11,12 @@ SimpleNavigation::Configuration.run do |navigation|
         admin.item :users,
           { icon: 'fa fa-fw fa-users',
             text: I18n.t('chaltron.menu.users')
-          }, users_url, highlights_on: /\/(users|ldap)/
-      end
+          }, users_url, highlights_on: /\/(users|ldap)/ if can?(:manage, User)
+        admin.item :logs,
+          { icon: 'fa fa-fw fa-book',
+            text: I18n.t('chaltron.menu.logs')
+          }, logs_url, highlights_on: /\/logs/ if can?(:read, Log)
+      end if can?(:manage, User) or can?(:read, Log)
       primary.item :logged, current_user.display_name.html_safe, nil do |user|
         user.item :self_edit, { icon: 'fa fa-fw fa-user',
                   text: I18n.t('chaltron.menu.self_show') }, self_show_users_url,

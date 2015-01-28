@@ -9,6 +9,7 @@ en:
       admin: Administration
       users: Users
       self_show: Account data
+      logs: Log
     access_denied: Access denied. You don't have the correct permissions to access this page!
     access_denied_try_login: Access denied. Sign in, please.
     not_allowed_to_sign_in: You are not allowed to sign in. Contact your system administrator.
