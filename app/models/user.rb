@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable,
          :timeoutable, :omniauthable
 
-  validates :username, presence: true, uniqueness: true
+  validates :username, presence: true, uniqueness: {scope: :provider}
 
   def display_name
     fullname.presence || username
