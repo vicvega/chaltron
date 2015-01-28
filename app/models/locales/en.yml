@@ -11,6 +11,10 @@ en:
         sign_in_count: Login count
         roles: Roles
         department: Department
+      log:
+        created_at: Date
+        message: Message
+        category: Category
   roles:
     admin: Administrator
     user_admin: User administrator

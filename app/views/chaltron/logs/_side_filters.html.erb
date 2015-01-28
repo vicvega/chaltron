@@ -1,0 +1,24 @@
+<div class='list-group'>
+  <%= link_to logs_url(filters: @filters.merge(severity: :info)),
+    class: (@filters[:severity] == 'info' ? 'list-group-item active': 'list-group-item')  do %>
+    <span class='badge pull-right'><%= Log.where(severity: :info).count %></span>
+    <%= t 'chaltron.logs.severity.info' %>
+  <% end %>
+  <%= link_to logs_url(filters: @filters.merge(severity: :debug)),
+    class: (@filters[:severity] == 'debug' ? 'list-group-item active': 'list-group-item')  do %>
+    <span class='badge pull-right'><%= Log.where(severity: :debug).count %></span>
+    <%= t 'chaltron.logs.severity.debug' %>
+  <% end %>
+  <%= link_to logs_url(filters: @filters.merge(severity: :error)),
+    class: (@filters[:severity] == 'error' ? 'list-group-item active': 'list-group-item')  do %>
+    <span class='badge pull-right'><%= Log.where(severity: :error).count %></span>
+    <%= t 'chaltron.logs.severity.error' %>
+  <% end %>
+</div>
+
+<fieldset>
+  <%= link_to nil, class: 'pull-right' do %>
+    <%= icon(:remove) %>
+    <strong><%= t 'chaltron.common.clear_filter' %></strong>
+  <% end %>
+</fieldset>

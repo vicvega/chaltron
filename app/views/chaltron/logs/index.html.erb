@@ -1,0 +1,38 @@
+<div class='container-fluid'>
+  <h3 class='page-header'><%= t '.title' %></h3>
+
+  <div class='row'>
+    <div class='col-md-3 side-filters'>
+      <%= render 'side_filters' %>
+    </div>
+
+    <div class='col-md-9'>
+      <div class='panel panel-default'>
+        <div class='panel-heading'>
+          <h3 class='panel-title'><%= t '.panel_header' %></h3>
+        </div>
+        <div class='panel-body'>
+          <%= content_tag 'table', id: 'logs', class: 'table table-striped' do %>
+            <thead>
+              <tr>
+                <th class='timestamp'>
+                  <%= Log.human_attribute_name(:created_at) %>
+                </th>
+                <th class='message'>
+                  <%= Log.human_attribute_name(:message) %>
+                </th>
+                <th class='category'>
+                  <%= Log.human_attribute_name(:category) %>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= render @logs %>
+            </tbody>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

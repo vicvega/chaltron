@@ -1,5 +1,8 @@
 class Log < ActiveRecord::Base
+  Severities = %w( info debug error )
+
   validates_presence_of :severity, :message
+  validates_inclusion_of :severity, in: Severities
 
 #  after_create :to_syslog
 

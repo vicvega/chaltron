@@ -40,7 +40,7 @@ module Chaltron
         ::Log.create(
           message: message,
           category: category.to_s,
-          severity: I18n.t("chaltron.logs.severity.#{severity}")
+          severity: severity.to_s
         )
       end
 

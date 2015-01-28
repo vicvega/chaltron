@@ -11,6 +11,10 @@ it:
         sign_in_count: Numero di login
         roles: Ruoli
         department: Funzione
+      log:
+        created_at: Data
+        message: Messaggio
+        category: Categoria
   roles:
     admin: Amministratore
     user_admin: Amministratore utenti

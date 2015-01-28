@@ -23,6 +23,7 @@ en:
     logs:
       index:
         title: Log list
+        panel_header: Log
     users:
       index:
         title: User list

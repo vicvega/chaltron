@@ -10,6 +10,14 @@ class DataTableBuilder
     # users
     div = $('table#users')
     @initTable(container: div)
+    # logs
+    div = $('table#logs')
+    @initTable(container: div, params: {
+      paging: false,
+      # default sorting: date (1st column) asc
+      aaSorting: [[0,'desc']]
+      }
+    )
     # ldap create
     div = $('table#ldap_create')
     @initTable(container: div, params: {
@@ -23,7 +31,8 @@ class DataTableBuilder
       tableTools: {
         sRowSelect: 'multi',
         aButtons: [ ]
-      }})
+      }}
+    )
 
     # datatable class
     div = $('table.datatable')

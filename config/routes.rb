@@ -11,6 +11,9 @@ Rails.application.routes.draw do
       patch 'self_update'
     end
   end
+
+  resources :logs, controller: 'chaltron/logs', only: [:index, :show]
+
   # search and create LDAP users
   get   'ldap/search'       => 'chaltron/ldap#search'
   post  'ldap/multi_new'    => 'chaltron/ldap#multi_new'

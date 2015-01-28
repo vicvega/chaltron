@@ -23,6 +23,7 @@ it:
     logs:
       index:
         title: Elenco dei log
+        panel_header: Log
     users:
       index:
         title: Elenco degli utenti
