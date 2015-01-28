@@ -20,6 +20,9 @@ it:
       new_ldap:
         submit_text: Login
   chaltron:
+    logs:
+      index:
+        title: Elenco dei log
     users:
       index:
         title: Elenco degli utenti
@@ -29,12 +32,10 @@ it:
         new_ldap_user: Nuovo utente LDAP
       side_filters:
           provider:
-            legend: Provider
             all: Tutti
             local: Locali
             ldap: LDAP
           activity:
-            legend: Attività
             inactive: Inattivi
             no_login: Mai loggati
           clear_filter: Rimuovi filtri

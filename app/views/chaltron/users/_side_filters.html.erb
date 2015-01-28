@@ -1,6 +1,4 @@
 <% if ldap_enabled? %>
-  <fieldset>
-  <legend><%= t '.provider.legend' %></legend>
   <div class='list-group'>
     <%= link_to users_url(filters: @filters.merge(provider: nil)),
       class: (@filters[:provider].blank? ? 'list-group-item active': 'list-group-item')  do %>
@@ -20,19 +18,16 @@
       <%= t '.provider.ldap' %>
     <% end %>
   </div>
-  </fieldset>
+
 <% end %>
 
-<fieldset>
-  <legend><%= t '.activity.legend' %></legend>
-  <div class='list-group'>
-    <%= link_to users_url(filters: @filters.merge(activity: 'no_login')),
-      class: (@filters[:activity] == 'no_login' ? 'list-group-item active': 'list-group-item')  do %>
-        <span class='badge pull-right'><%= User.where(sign_in_count: 0).count %></span>
-        <%= t '.activity.no_login' %>
-    <% end %>
-  </div>
-</fieldset>
+<div class='list-group'>
+  <%= link_to users_url(filters: @filters.merge(activity: 'no_login')),
+    class: (@filters[:activity] == 'no_login' ? 'list-group-item active': 'list-group-item')  do %>
+      <span class='badge pull-right'><%= User.where(sign_in_count: 0).count %></span>
+      <%= t '.activity.no_login' %>
+  <% end %>
+</div>
 
 <fieldset>
   <%= link_to nil, class: 'pull-right' do %>
