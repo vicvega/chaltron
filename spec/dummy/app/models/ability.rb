@@ -31,6 +31,10 @@ class Ability
     user ||= User.new
     if user.is?(:user_admin)
       can :manage, User
+      can :read, Log, category: :login
+    end
+    if user.is?(:admin)
+      can :read, Log
     end
   end
 end
