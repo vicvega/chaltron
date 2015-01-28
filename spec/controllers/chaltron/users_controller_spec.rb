@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Chaltron::UsersController, type: :controller do
-  describe 'DELETE' do
+  describe 'delete' do
     let!(:user) { create :user }
     let(:user_admin) { create :user_admin }
     before do
