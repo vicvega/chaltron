@@ -2,6 +2,9 @@ require 'chaltron/ldap/user'
 
 module Chaltron
   class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+
+  default_log_category I18n.t('chaltron.logs.category.login')
+
     def ldap
 #      puts '##########################################'
 #      puts oauth.inspect
@@ -14,6 +17,8 @@ module Chaltron
       else
         user.remember_me = true if user.persisted?
         flash[:notice] = I18n.t('devise.sessions.signed_in')
+
+        info I18n.t('chaltron.logs.login_via', user: user.display_name, provider: 'ldap')
         sign_in_and_redirect(user)
       end
     end

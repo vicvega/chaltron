@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { omniauth_callbacks: 'chaltron/omniauth_callbacks' }
+  devise_for :users, controllers: {
+    omniauth_callbacks: 'chaltron/omniauth_callbacks',
+    sessions: 'chaltron/sessions'
+  }
+
   resources :users, controller: 'chaltron/users' do
     collection do
       get   'self_show'

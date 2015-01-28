@@ -22,3 +22,13 @@ it:
       cannot_self_destroy: Non puoi cancellare il tuo stesso account.
       it_s_you: Sei tu!
       missing_field: Manca!
+    logs:
+      severity:
+        info: Info
+        debug: Debug
+        error: Errore
+      category:
+        login: Login
+      login: "%{user} ha effettuto il login con successo"
+      logout: "%{user} ha effettuto il logout con successo"
+      login_via: "%{user} ha effettuto il login con successo via %{provider}"

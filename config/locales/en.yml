@@ -22,3 +22,13 @@ en:
       cannot_self_destroy: You cannot destroy your own account.
       it_s_you: It's you!
       missing_field: Missing!
+    logs:
+      severity:
+        info: Info
+        debug: Debug
+        error: Error
+      category:
+        login: Login
+      login: "%{user} has logged in successfully"
+      logout: "%{user} has logged out successfully"
+      login_via: "%{user} has logged in successfully with %{provider}"
