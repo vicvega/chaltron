@@ -13,7 +13,6 @@ class DataTableBuilder
     # logs
     div = $('table#logs')
     @initTable(container: div, params: {
-      paging: false,
       # default sorting: date (1st column) asc
       aaSorting: [[0,'desc']]
       }
