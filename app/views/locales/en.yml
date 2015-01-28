@@ -24,6 +24,11 @@ en:
       index:
         title: Log list
         panel_header: Log
+      show:
+        headers:
+          details: Details
+      side_filters:
+          all: All
     users:
       index:
         title: User list

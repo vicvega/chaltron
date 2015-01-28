@@ -24,6 +24,11 @@ it:
       index:
         title: Elenco dei log
         panel_header: Log
+      show:
+        headers:
+          details: Dettagli
+      side_filters:
+          all: Tutti
     users:
       index:
         title: Elenco degli utenti

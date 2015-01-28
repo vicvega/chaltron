@@ -1,5 +1,11 @@
 <tr>
-  <td class='date'><%= l(log.created_at, format: :short) %></td>
-  <td class='message'><%= log.message %></td>
-  <td class='category'><%= t ("chaltron.logs.category.#{log.category}") %></td>
+  <td class='date'>
+    <%= l(log.created_at, format: :short) %>
+  </td>
+  <td class='message'>
+    <%= link_to log.message, log %>
+  </td>
+  <td class='category'>
+    <%= t ("chaltron.logs.category.#{log.category}") %>
+  </td>
 </tr>
