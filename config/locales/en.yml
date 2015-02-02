@@ -38,3 +38,6 @@ en:
       users:
         created: "%{current} created user %{user}"
         destroyed: "%{current} destroyed user %{user}"
+        ldap_created:
+          one: "%{current} created user %{user} from LDAP"
+          other: "%{current} created %{count} users from LDAP (%{user})"

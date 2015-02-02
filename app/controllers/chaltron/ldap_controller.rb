@@ -4,6 +4,8 @@ class Chaltron::LdapController < ApplicationController
   before_action :authenticate_user!
   before_action :authorize_create_user
 
+  default_log_category :user_admin
+
   def search
     @limit = default_limit
   end
@@ -40,6 +42,9 @@ class Chaltron::LdapController < ApplicationController
         @created << user
       end
     end
+    info I18n.t('chaltron.logs.users.ldap_created',
+        current: current_user.display_name, count: @created.size,
+        user: @created.map(&:display_name).join(', '))
   end
 
   private

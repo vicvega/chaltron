@@ -38,3 +38,6 @@ it:
       users:
         created: "%{current} ha creato l'utente %{user}"
         destroyed: "%{current} ha cancellato l'utente %{user}"
+        ldap_created:
+          one: "%{current} ha creato l'utente %{user} da LDAP"
+          other: "%{current} ha creato %{count} utenti da LDAP (%{user})"
