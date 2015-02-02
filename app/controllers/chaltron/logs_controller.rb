@@ -9,7 +9,9 @@ class Chaltron::LogsController < ApplicationController
 
     @logs = @logs.accessible_by(current_ability)
     # apply severity filter
-    @logs = @logs.where(severity: @filters[:severity]) if @filters[:severity].present?
+    severity = @filters[:severity]
+    @logs = @logs.where(severity: severity) if Log::Severities.include? severity
+
   end
 
   def show
