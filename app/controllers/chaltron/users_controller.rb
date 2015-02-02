@@ -3,6 +3,7 @@ class Chaltron::UsersController < ApplicationController
   load_and_authorize_resource except: [:self_show, :self_edit, :self_update]
 
   respond_to :html
+  default_log_category :user_admin
 
   def index
     @filters = params[:filters] || {}
@@ -30,7 +31,11 @@ class Chaltron::UsersController < ApplicationController
   end
 
   def create
-    flash[:notice] = I18n.t('chaltron.users.created') if @user.save
+    if @user.save
+      flash[:notice] = I18n.t('chaltron.users.created')
+      info I18n.t('chaltron.logs.users.created',
+        current: current_user.display_name, user: @user.display_name)
+    end
     respond_with(@user)
   end
 
@@ -59,6 +64,8 @@ class Chaltron::UsersController < ApplicationController
     if current_user == @user
       redirect_to({ action: :index }, alert: I18n.t('chaltron.users.cannot_self_destroy'))
     else
+      info I18n.t('chaltron.logs.users.destroyed',
+        current: current_user.display_name, user: @user.display_name)
       @user.destroy
       respond_with(@user)
     end
