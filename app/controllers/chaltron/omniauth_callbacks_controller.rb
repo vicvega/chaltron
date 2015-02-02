@@ -3,7 +3,7 @@ require 'chaltron/ldap/user'
 module Chaltron
   class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
-  default_log_category I18n.t('chaltron.logs.category.login')
+  default_log_category :login
 
     def ldap
 #      puts '##########################################'
