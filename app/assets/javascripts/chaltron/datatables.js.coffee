@@ -13,7 +13,7 @@ class DataTableBuilder
     # logs
     div = $('table#logs')
     @initTable(container: div, params: {
-      # default sorting: date (1st column) asc
+      # default sorting: date (1st column) desc
       aaSorting: [[0,'desc']]
       }
     )
@@ -50,6 +50,10 @@ class DataTableBuilder
 $(document).on 'page:change', ->
   table = new DataTableBuilder
   table.go()
+
+
+# specify date format (for sorting)
+$.fn.dataTable.moment('DD MMM HH:mm')
 
 $ ->
   $('form#ldap_create').on 'submit', (e) ->
