@@ -1,9 +1,12 @@
 <tr>
+  <td>
+    <%= tag_label(I18n.t("chaltron.logs.severity.#{log.severity}"), bootstrap_severity(log.severity)) %>
+  </td>
   <td class='date'>
     <%= l(log.created_at, format: :short) %>
   </td>
   <td class='message'>
-    <%= display_message log %>
+    <%= link_to(log.message, log) %>
   </td>
   <td class='category'>
     <%= t("chaltron.logs.category.#{log.category}") %>

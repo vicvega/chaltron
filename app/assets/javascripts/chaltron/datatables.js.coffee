@@ -13,8 +13,8 @@ class DataTableBuilder
     # logs
     div = $('table#logs')
     @initTable(container: div, params: {
-      # default sorting: date (1st column) desc
-      aaSorting: [[0,'desc']]
+      # default sorting: date (2nd column) desc
+      aaSorting: [[1,'desc']]
       }
     )
     # ldap create

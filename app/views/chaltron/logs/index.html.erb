@@ -8,6 +8,7 @@
           <%= content_tag 'table', id: 'logs', class: 'table table-striped' do %>
             <thead>
               <tr>
+                <th></th>
                 <th class='timestamp'>
                   <%= Log.human_attribute_name(:created_at) %>
                 </th>
