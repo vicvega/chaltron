@@ -23,7 +23,7 @@ module ChaltronHelper
     end
   end
 
-  def back_link(opts={})
+  def back_link(opts = {})
     klass = opts[:class] || 'btn btn-primary'
     text  = opts[:text] || t('chaltron.common.back')
     ic    = opts[:icon]  || 'arrow-left'
@@ -49,6 +49,6 @@ module ChaltronHelper
   def badge_label(what, value, type = nil)
     klass = [what]
     klass << "#{what}-#{type}" if type.present?
-    content_tag :span, value, :class => "#{klass.join(' ')}"
+    content_tag :span, value, class: "#{klass.join(' ')}"
   end
 end

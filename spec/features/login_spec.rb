@@ -16,7 +16,7 @@ describe User do
       end
 
       context 'when Chaltron.default_roles is set' do
-        before { Chaltron.default_roles = [ 'admin' ] }
+        before { Chaltron.default_roles = ['admin'] }
         it 'allows login and set roles' do
           login_with 'sirius', 'padfoot', :ldap
           is_expected.to have_content fullname
@@ -24,8 +24,8 @@ describe User do
           is_expected.to have_content 'Login'
           is_expected.not_to have_content fullname
 
-          expect( User.find_by(username: 'sirius').is?(:admin) ).to be_truthy
-          expect( User.find_by(username: 'sirius').is?(:user_admin) ).to be_falsey
+          expect(User.find_by(username: 'sirius').is?(:admin)).to be_truthy
+          expect(User.find_by(username: 'sirius').is?(:user_admin)).to be_falsey
         end
       end
     end

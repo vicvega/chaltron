@@ -5,7 +5,7 @@ RSpec.describe Chaltron::UsersController, type: :controller do
     let!(:user) { create :user }
     let(:user_admin) { create :user_admin }
     before do
-      @request.env["devise.mapping"] = Devise.mappings[:user]
+      @request.env['devise.mapping'] = Devise.mappings[:user]
       sign_in user_admin
     end
 

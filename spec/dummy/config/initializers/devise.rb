@@ -5,5 +5,5 @@ Devise.setup do |config|
       uid:      'uid',
       port:     389,
       method:   :plain
-      #filter: '(&(uid=%{username})(memberOf=cn=myapp-users,ou=groups,dc=example,dc=com))'
+      # filter: '(&(uid=%{username})(memberOf=cn=myapp-users,ou=groups,dc=example,dc=com))'
 end

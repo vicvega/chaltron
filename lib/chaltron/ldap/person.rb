@@ -13,7 +13,7 @@ module Chaltron
         ldap.find_users(field.to_sym => value)
       end
 
-      def self.find_by_fields(fields={})
+      def self.find_by_fields(fields = {})
         ldap.find_users(fields)
       end
 

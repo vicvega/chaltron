@@ -10,11 +10,11 @@ RSpec.describe Log, type: :model do
       subject { log }
       let(:log) { build(:log, severity: severity) }
       context 'good' do
-        let(:severity) {'info'}
+        let(:severity) { 'info' }
         it { is_expected.to be_valid }
       end
       context 'bad' do
-        let(:severity) {'bad'}
+        let(:severity) { 'bad' }
         it { is_expected.to be_invalid }
       end
     end

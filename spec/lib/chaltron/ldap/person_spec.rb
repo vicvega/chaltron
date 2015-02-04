@@ -75,5 +75,4 @@ describe Chaltron::LDAP::Person do
     it { expect(barty.department).to be_nil }
   end
 
-
 end

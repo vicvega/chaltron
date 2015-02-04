@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe Chaltron::LogsController, :type => :controller do
+RSpec.describe Chaltron::LogsController, type: :controller do
   let!(:user_login) { create :log, category: :user_admin }
   let!(:log_other) { create :log, category: :something_else }
 
   let(:admin) { create :admin }
   let(:user_admin) { create :user_admin }
-  before { @request.env["devise.mapping"] = Devise.mappings[:user] }
+  before { @request.env['devise.mapping'] = Devise.mappings[:user] }
 
   let(:logs) { assigns('logs') }
   let(:log) { assigns('log') }

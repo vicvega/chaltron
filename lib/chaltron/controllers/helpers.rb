@@ -6,7 +6,7 @@ module Chaltron
       included do
         rescue_from ::CanCan::AccessDenied do |exception|
           alert = current_user.nil? ? t('chaltron.access_denied_try_login') : t('chaltron.access_denied')
-    	    redirect_to root_url, alert: alert
+          redirect_to root_url, alert: alert
     	  end
       end
 
@@ -14,7 +14,8 @@ module Chaltron
         def log_category
           defined?(@log_category) ? @log_category : self.to_s.downcase
         end
-        def default_log_category cat
+
+        def default_log_category(cat)
           @log_category = cat.to_s
         end
       end
@@ -35,7 +36,7 @@ module Chaltron
       end
 
       private
-      def create_log_message message, category, severity
+      def create_log_message(message, category, severity)
         category ||= self.class.log_category
         ::Log.create(
           message: message,

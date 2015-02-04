@@ -53,7 +53,7 @@ module Chaltron
           end
           options = {
             base: base,
-            filter: filters.inject{|sum, n| Net::LDAP::Filter.join(sum, n)}
+            filter: filters.inject{ |sum, n| Net::LDAP::Filter.join(sum, n) }
           }
         end
 
