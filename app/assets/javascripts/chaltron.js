@@ -5,6 +5,7 @@
 //= require dataTables/extras/dataTables.tableTools
 //= require nprogress
 //= require nprogress-turbolinks
+//= require nprogress-ajax
 //= require moment
 //= require moment/it.js
 //= require datetime-moment
