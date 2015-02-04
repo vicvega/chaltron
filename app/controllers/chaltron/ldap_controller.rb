@@ -44,7 +44,7 @@ class Chaltron::LdapController < ApplicationController
     end
     info I18n.t('chaltron.logs.users.ldap_created',
         current: current_user.display_name, count: @created.size,
-        user: @created.map(&:display_name).join(', '))
+        user: @created.map(&:display_name).join(', ')) if @created.size > 0
   end
 
   private
