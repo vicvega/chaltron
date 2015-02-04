@@ -53,7 +53,7 @@ module Chaltron
           end
           options = {
             base: base,
-            filter: filters.inject{ |sum, n| Net::LDAP::Filter.join(sum, n) }
+            filter: filters.inject { |sum, n| Net::LDAP::Filter.join(sum, n) }
           }
         end
 
@@ -66,7 +66,6 @@ module Chaltron
 #                               user_filter
 #                             end
 #        end
-
 
         options.merge!(size: limit) if limit.present?
 
