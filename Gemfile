@@ -16,4 +16,4 @@ gemspec
 group :development, :test do
   gem 'jquery-rails'
   gem 'turbolinks'
-end  
+end
