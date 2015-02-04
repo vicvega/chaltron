@@ -27,8 +27,6 @@ en:
       show:
         headers:
           details: Details
-      side_filters:
-          all: All
     users:
       index:
         title: User list
