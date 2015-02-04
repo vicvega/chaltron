@@ -12,20 +12,12 @@ class Chaltron::LdapController < ApplicationController
 
   def multi_new
     @entries = []
-    userid     = params[:userid]
-    department = params[:department]
-    name       = params[:fullname]
-    limit      = params[:limit].to_i
+    userid = params[:userid]
     if userid.present?
       entry = Chaltron::LDAP::Person.find_by_uid(userid)
       @entries << entry unless entry.nil?
     else
-      opts = {}
-      opts[:department] = "*#{department}*" unless department.blank?
-      opts[:cn]         = "*#{name}*"       unless name.blank?
-      opts[:limit]      = limit.zero? ? default_limit : limit
-
-      res = Chaltron::LDAP::Person.find_by_fields(opts)
+      res = Chaltron::LDAP::Person.find_by_fields(find_options)
       @entries = res
     end
   end
@@ -33,8 +25,7 @@ class Chaltron::LdapController < ApplicationController
   def multi_create
     @created = []
     @error   = []
-    uids = params[:uids] || []
-    uids.each do |uid|
+    (params[:uids] || []).each do |uid|
       user = Chaltron::LDAP::Person.find_by_uid(uid).create_user(params[:user][:roles])
       if user.new_record?
         @error << user
@@ -48,6 +39,18 @@ class Chaltron::LdapController < ApplicationController
   end
 
   private
+  def find_options
+    department = params[:department]
+    name       = params[:fullname]
+    limit      = params[:limit].to_i
+
+    ret = {}
+    ret[:department] = "*#{department}*" unless department.blank?
+    ret[:cn]         = "*#{name}*"       unless name.blank?
+    ret[:limit]      = limit.zero? ? default_limit : limit
+    ret
+  end
+
   def default_limit
     100
   end
