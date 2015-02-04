@@ -1,19 +1,19 @@
 <% if ldap_enabled? %>
   <div class='list-group'>
-    <%= link_to users_url(filters: @filters.merge(provider: nil)),
-      class: (@filters[:provider].blank? ? 'list-group-item active': 'list-group-item')  do %>
+    <%= link_to users_url(filters: filters.merge(provider: nil)),
+      class: (filters[:provider].blank? ? 'list-group-item active': 'list-group-item')  do %>
       <span class='badge pull-right'><%= User.count %></span>
       <%= t '.provider.all' %>
     <% end %>
 
-    <%= link_to users_url(filters: @filters.merge(provider: 'local')),
-      class: (@filters[:provider] == 'local' ? 'list-group-item active': 'list-group-item') do %>
+    <%= link_to users_url(filters: filters.merge(provider: 'local')),
+      class: (filters[:provider] == 'local' ? 'list-group-item active': 'list-group-item') do %>
       <span class='badge pull-right'><%= User.where(provider: nil).count %></span>
       <%= t '.provider.local' %>
     <% end %>
 
-    <%= link_to users_url(filters: @filters.merge(provider: 'ldap')),
-      class: (@filters[:provider] == 'ldap' ? 'list-group-item active': 'list-group-item') do %>
+    <%= link_to users_url(filters: filters.merge(provider: 'ldap')),
+      class: (filters[:provider] == 'ldap' ? 'list-group-item active': 'list-group-item') do %>
       <span class='badge pull-right'><%= User.where(provider: :ldap).count %></span>
       <%= t '.provider.ldap' %>
     <% end %>
@@ -22,8 +22,8 @@
 <% end %>
 
 <div class='list-group'>
-  <%= link_to users_url(filters: @filters.merge(activity: 'no_login')),
-    class: (@filters[:activity] == 'no_login' ? 'list-group-item active': 'list-group-item')  do %>
+  <%= link_to users_url(filters: filters.merge(activity: 'no_login')),
+    class: (filters[:activity] == 'no_login' ? 'list-group-item active': 'list-group-item')  do %>
       <span class='badge pull-right'><%= User.where(sign_in_count: 0).count %></span>
       <%= t '.activity.no_login' %>
   <% end %>
