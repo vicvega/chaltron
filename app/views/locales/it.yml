@@ -23,14 +23,12 @@ it:
     logs:
       index:
         title: Elenco dei log
-        panel_header: Log
       show:
         headers:
           details: Dettagli
     users:
       index:
         title: Elenco degli utenti
-        panel_header: Utenti
         new_user: Nuovo utente
         new_local_user: Nuovo utente locale
         new_ldap_user: Nuovo utente LDAP
