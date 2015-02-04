@@ -29,7 +29,7 @@ module Chaltron
         private
 
         def update_ldap_attributes(user, entry)
-          user.update_attributes(
+          user.update_attributes!(
             email: entry.email,
             department: entry.department
           )
@@ -46,7 +46,7 @@ module Chaltron
             # * LDAP uid changed for user with same email and we need to update their uid
             #
             user = ::User.find_by(email: email)
-            user.update_attributes(extern_uid: uid, provider: provider) unless user.nil?
+            user.update_attributes!(extern_uid: uid, provider: provider) unless user.nil?
           end
           user
         end
