@@ -22,7 +22,7 @@ module Chaltron
       end
 
       def initialize(entry, uid)
-        #Rails.logger.debug { "Instantiating #{self.class.name} with LDIF:\n#{entry.to_ldif}" }
+        # Rails.logger.debug { "Instantiating #{self.class.name} with LDIF:\n#{entry.to_ldif}" }
         @entry = entry
         @uid = uid
       end
