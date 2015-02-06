@@ -15,13 +15,13 @@ require 'capybara/rails'
 require 'capybara/poltergeist'
 require 'database_cleaner'
 
-#Capybara.register_driver(:poltergeist) do |app|
-#  Capybara::Poltergeist::Driver.new app,
-#    phantomjs_options:
-#    [
-#      '--load-images=no'
-#    ]
-#end
+# Capybara.register_driver(:poltergeist) do |app|
+#   Capybara::Poltergeist::Driver.new app,
+#     phantomjs_options:
+#     [
+#       '--load-images=no'
+#     ]
+# end
 Capybara.javascript_driver = :poltergeist
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
