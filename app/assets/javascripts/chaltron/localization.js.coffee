@@ -14,7 +14,7 @@ class @Chaltron
           sInfoThousands:  ',',
           sLengthMenu:     'Visualizza _MENU_ elementi',
           sLoadingRecords: 'Caricamento...',
-          sProcessing:     'PIPPO...',
+          sProcessing:     'Elaborazione...',
           sSearch:         'Cerca:',
           sZeroRecords:    'La ricerca non ha portato alcun risultato.',
           oPaginate: {
