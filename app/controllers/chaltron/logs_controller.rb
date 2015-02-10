@@ -2,10 +2,13 @@ class Chaltron::LogsController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
 
-  respond_to :html
+  respond_to :html, :json
 
   def index
-    @logs = @logs.accessible_by(current_ability)
+    respond_to do |format|
+      format.html
+      format.json { render json: LogDatatable.new(view_context) }
+    end
   end
 
   def show

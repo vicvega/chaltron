@@ -5,7 +5,8 @@
     <div class='col-md-12'>
       <div class='panel panel-default'>
         <div class='panel-body'>
-          <%= content_tag 'table', id: 'logs', class: 'table table-striped' do %>
+          <%= content_tag 'table', id: 'logs', class: 'table table-striped',
+            data: {source: logs_path(format: :json)} do %>
             <thead>
               <tr>
                 <th></th>
@@ -21,7 +22,6 @@
               </tr>
             </thead>
             <tbody>
-              <%= render @logs %>
             </tbody>
           <% end %>
         </div>
