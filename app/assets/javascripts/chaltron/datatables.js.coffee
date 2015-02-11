@@ -40,7 +40,6 @@ class DataTableBuilder
       ]
     })
 
-
     # datatable class
     div = $('table.datatable')
     @initTable(container: div)
@@ -58,7 +57,6 @@ class DataTableBuilder
 $(document).on 'page:change', ->
   table = new DataTableBuilder
   table.go()
-
 
 # specify date format (for sorting)
 $.fn.dataTable.moment('DD MMM HH:mm')
