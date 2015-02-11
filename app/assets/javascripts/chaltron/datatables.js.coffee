@@ -44,6 +44,14 @@ class DataTableBuilder
     div = $('table.datatable')
     @initTable(container: div)
 
+    # datatable class (server side processing)
+    div = $('table[remote=true].datatable')
+    @initTable(container: div, params: {
+      processing: true
+      serverSide: true
+      ajax: div.data('source')
+    })
+
   initTable: ({container, params} = {}) ->
     if container.length > 0
       params ?= {}
