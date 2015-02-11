@@ -1,9 +1,10 @@
 class DataTableBuilder
   constructor: ->
     @defaultOptions = {
-      destroy: true,
-      autoWidth: false,
+      destroy: true
+      autoWidth: false
       responsive: true
+      stateSave: true
     }
 
   go: ->
@@ -13,15 +14,15 @@ class DataTableBuilder
     # ldap create
     div = $('table#ldap_create')
     @initTable(container: div, params: {
-      paging: false,
+      paging: false
       # default sorting: username (2nd column) asc
       aaSorting: [[1,'asc']]
       aoColumnDefs: [
         { bSortable: false, aTargets: [ 0 ] }
-      ],
-      dom: 'T<"clear">lfrtip',
+      ]
+      dom: 'T<"clear">lfrtip'
       tableTools: {
-        sRowSelect: 'multi',
+        sRowSelect: 'multi'
         aButtons: [ ]
       }}
     )
@@ -34,6 +35,9 @@ class DataTableBuilder
       ajax: div.data('source')
       # default sorting: date (2nd column) desc
       aaSorting: [[1,'desc']]
+      aoColumnDefs: [
+        { asSorting: ['desc', 'asc'], aTargets: [ 1 ] }
+      ]
     })
 
 
