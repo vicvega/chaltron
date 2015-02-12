@@ -8,4 +8,8 @@ Chaltron.setup do |config|
 
   # Default roles granted to new users (if automatically created)
   # config.default_roles = []
+
+  # If syslog enabled, all Log records will be available also in syslog flow
+  # config.enable_syslog = false
+  # config.syslog_facility = Syslog::LOG_SYSLOG
 end

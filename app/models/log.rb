@@ -4,13 +4,20 @@ class Log < ActiveRecord::Base
   validates_presence_of :severity, :message
   validates_inclusion_of :severity, in: Severities
 
-#  after_create :to_syslog
+  after_create :to_syslog if Chaltron.enable_syslog
 
-#  private
-#  def to_syslog
-#    Syslog.open(Rails.application.class.parent.to_s, Syslog::LOG_PID, Chaltron.syslog_facility) do |s|
-#      s.info self.category.upcase + ' - ' + self.message
-#    end if Chaltron.enable_syslog
-#  end
+  private
+  def to_syslog
+    syslog_method =
+      case self.severity
+      when 'info' then :notice
+      when 'debug' then :debug
+      when 'error' then :err
+      else :info
+    end
+    Syslog.open(Rails.application.class.parent.to_s, Syslog::LOG_PID, Chaltron.syslog_facility) do |s|
+      s.send(syslog_method, self.category.upcase + ' - ' + self.message)
+    end
+  end
 
 end
