@@ -15,43 +15,6 @@ module Chaltron
       end
     end
 
-    def install_gems
-      # test
-      gem_group :development, :test do
-        gem 'rspec-rails'
-        gem 'capybara'
-        gem 'factory_girl_rails'
-        gem 'shoulda-matchers'
-        gem 'ffaker'
-      end
-
-      # bundle install in the right directory!!
-      # see https://github.com/rails/rails/issues/3153
-      Bundler.with_clean_env do
-        run 'bundle install'
-      end
-    end
-
-    def setup_rspec
-      generate 'rspec:install'
-      # suppress warnings
-      gsub_file '.rspec', "--warnings\n", ''
-      remove_dir 'test'
-    end
-
-    def config_application
-      # factories
-      application do
-        <<RUBY
-
-    config.generators do |g|
-      g.fixture_replacement :factory_girl
-      g.stylesheets false
-    end
-RUBY
-      end
-    end
-
     def db_migrations
       rake 'chaltron_engine:install:migrations'
     end
