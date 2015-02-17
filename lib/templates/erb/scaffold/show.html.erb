@@ -21,9 +21,9 @@
         <div class='panel-heading'>Details</div>
         <ul class='list-group'><% attributes.each do |attribute| %>
           <li class='list-group-item'>
-	          <span><%= attribute.human_name %>: </span>
-	          <strong><%%= @<%= singular_table_name %>.<%= attribute.name %> %></strong>
-	        </li><% end %>
+            <span><%= attribute.human_name %>: </span>
+            <strong><%%= @<%= singular_table_name %>.<%= attribute.name %> %></strong>
+          </li><% end %>
         </ul>
       </div>
     </div>
