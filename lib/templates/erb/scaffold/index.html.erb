@@ -1,0 +1,43 @@
+<div class='container-fluid'>
+  <h3 class='page-header'><%= plural_table_name.titleize %></h3>
+  <div class='row'>
+    <div class='col-md-12'>
+      <div class='panel panel-default'>
+        <div class='panel-body'>
+          <%%= content_tag 'table', class: 'table table-striped datatable' do %>
+            <thead>
+              <tr><% attributes.each do |attribute| %>
+                <th><%= attribute.name.humanize %></th><% end %>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <%%= content_tag_for(:tr, @<%= plural_table_name %>) do |<%= singular_table_name %>| %><% attributes.each do |attribute| %>
+                <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td><% end %>
+                <td>
+                  <div class='btn-group btn-group-xs' role='group'>
+                    <%%= link_to <%= singular_table_name %>, class: 'btn btn-default' do %>
+                      <%%= icon('eye') %> Show
+                    <%% end %>
+                    <%%= link_to edit_<%= singular_table_name %>_path(<%= singular_table_name %>), class: 'btn btn-default' do %>
+                      <%%= icon('edit') %> Edit
+                    <%% end %>
+                    <%%= link_to <%= singular_table_name %>, data: {confirm: 'Are you sure?'},
+                      method: :delete, class: 'btn btn-danger' do %>
+                      <%%= icon('trash') %> Delete
+                    <%% end %>
+                  </div>
+                </td>
+              <%% end -%>
+            </tbody>
+          <%% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <%%= link_to new_<%= singular_table_name %>_path, class: 'btn btn-primary btn-large' do %>
+    <%%= icon('plus') %> New
+  <%% end %>
+
+</div>

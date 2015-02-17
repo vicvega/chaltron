@@ -1,0 +1,12 @@
+<%%= bootstrap_form_for(@<%= singular_table_name %>, layout: :horizontal) do |f| %>
+
+<% attributes.each do |attribute| -%>
+  <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
+<% end -%>
+
+  <%%= f.form_group class: 'form-actions' do %>
+    <%%= f.submit 'Submit', class: 'btn btn-primary' %>
+    <%%= back_link class: 'btn btn-default pull-right' %>
+  <%% end %>
+
+<%% end %>

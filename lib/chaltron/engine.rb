@@ -25,6 +25,10 @@ module Chaltron
       g.helper false
     end
 
+    config.app_generators do |g|
+      g.templates.unshift File::expand_path('../../templates', __FILE__)
+    end
+
     initializer('chaltron.locales') do |_app|
       Chaltron::Engine.config.i18n.load_path += Dir[root.join('app/views', 'locales', '*.{rb,yml}')]
       Chaltron::Engine.config.i18n.load_path += Dir[root.join('app/models', 'locales', '*.{rb,yml}')]
