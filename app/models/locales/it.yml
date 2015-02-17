@@ -15,6 +15,7 @@ it:
         created_at: Data
         message: Messaggio
         category: Categoria
+        severity: Severità
   roles:
     admin: Amministratore
     user_admin: Amministratore utenti

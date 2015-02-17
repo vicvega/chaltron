@@ -15,6 +15,7 @@ en:
         created_at: Date
         message: Message
         category: Category
+        severity: Severity
   roles:
     admin: Administrator
     user_admin: User administrator
