@@ -93,7 +93,7 @@ RUBY
   See https://github.com/antillas21/ajax-datatables-rails#searching-on-non-text-based-columns.
   You may experience problems!
 EOF
-        puts message
+        say message
       else
         gsub_file ajax_datatables_rails_file,
           /# config.db_adapter = :mysql2/, "config.db_adapter = :#{db_adapter}"
