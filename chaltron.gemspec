@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email       = ['francesco.codazabetta@gmail.com']
   s.homepage    = 'https://github.com/vicvega/chaltron'
   s.summary     = 'Move faster and break things - revisited for rails 4'
-  s.description = 'Unleash more fiammacula power to move faster and break things.'
+  s.description = 'A ready-to-go application with authentication, authorization, logging... with bootstrap flavor'
   s.license     = 'MIT'
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
