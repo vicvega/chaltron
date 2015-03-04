@@ -37,6 +37,8 @@ Chaltron provides
  * authorization (roles and permissions)
  * utility for log messages (syslog enabled)
 
+Login with local user `bella` and `password.1`
+
 Enjoy!
 
 Refer to [wiki pages](https://github.com/vicvega/chaltron/wiki) for further instructions
