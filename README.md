@@ -14,7 +14,7 @@ and install
 ```
 bundle
 ```
-Now you can run
+Now run
 ```
 rails generate chaltron:install
 ```
@@ -25,5 +25,11 @@ to create a ready-to-go application, powered by
  * [bootstrap](https://github.com/twbs/bootstrap-sass)
  * [font-awesome](https://github.com/FortAwesome/font-awesome-sass)
  * datatables [client side](https://github.com/rweng/jquery-datatables-rails) or [server side](https://github.com/antillas21/ajax-datatables-rails) processing
+
+Start your app
+```
+rails server
+```
+Enjoy!
 
 Refer to [wiki pages](https://github.com/vicvega/chaltron/wiki) for further instructions
