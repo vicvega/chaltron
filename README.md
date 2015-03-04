@@ -30,6 +30,13 @@ Start your app
 ```
 rails server
 ```
+
+Chaltron provides
+ * local user (creation, authentication, forgotten password management...)
+ * LDAP user (search, creation, authentication)
+ * authorization (roles and permissions)
+ * utility for log messages (syslog enabled)
+
 Enjoy!
 
 Refer to [wiki pages](https://github.com/vicvega/chaltron/wiki) for further instructions
