@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :log do
-    message { Faker::Lorem.sentences }
+    message { FFaker::Lorem.sentences }
     severity 'info'
     category 'test category'
   end
