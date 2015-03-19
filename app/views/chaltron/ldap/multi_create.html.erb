@@ -13,8 +13,7 @@
     </div>
     <hr>
     <%= link_to users_path, class: 'btn btn-primary' do %>
-      <%= icon('arrow-left') %>
-      <%= t('chaltron.common.back') %>
+      <%= icon 'arrow-left', t('chaltron.common.back') %>
     <% end %>
   </div>
 
@@ -23,8 +22,7 @@
       <ul class='list-group'>
         <% @created.each do |u| %>
           <%= content_tag :li, class: 'list-group-item list-group-item-success' do %>
-            <%= icon('check') %>
-            <%= u.display_name %>
+            <%= icon :check, u.display_name %>
           <% end %>
         <% end %>
       </ul>

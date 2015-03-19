@@ -11,8 +11,7 @@
     <%= f.form_group class: 'form-actions' do %>
       <%= submit_tag t('.submit_text'), class: 'btn btn-primary' %>
       <%= link_to users_path, class: 'btn btn-default pull-right' do %>
-        <%= icon(:times) %>
-        <%= t('chaltron.common.cancel') %>
+        <%= icon :times, t('chaltron.common.cancel') %>
       <% end %>
     <% end %>
 

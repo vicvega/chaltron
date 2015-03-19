@@ -29,7 +29,7 @@ module ChaltronHelper
     ic    = opts[:icon]  || 'arrow-left'
 
     link_to :back, class: klass do
-      icon(ic) + '&nbsp;'.html_safe + text
+      icon(ic, text)
     end
   end
 
