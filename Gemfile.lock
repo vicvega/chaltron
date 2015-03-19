@@ -8,7 +8,7 @@ PATH
       bootstrap_form
       cancancan
       devise
-      font-awesome-sass (= 4.3.1)
+      font-awesome-sass
       gitlab_omniauth-ldap
       jquery-datatables-rails
       momentjs-rails
@@ -108,7 +108,7 @@ GEM
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
     ffaker (2.0.0)
-    font-awesome-sass (4.3.1)
+    font-awesome-sass (4.3.2.1)
       sass (~> 3.2)
     gitlab_omniauth-ldap (1.2.1)
       net-ldap (~> 0.9)
