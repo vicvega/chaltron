@@ -1,4 +1,6 @@
-### 0.1.1 (unreleased)
+### 0.1.2 (unreleased)
+
+### 0.1.1 (2015-05-15)
  * remove test files from gem package
  * update gem dependencies
 
