@@ -18,7 +18,8 @@ it:
         link_text: Hai dimenticato la password?
         submit_text: Login
       new_ldap:
-        submit_text: Login
+        remember_me: Ricordami
+        submit_text: LDAP login
   chaltron:
     logs:
       index:

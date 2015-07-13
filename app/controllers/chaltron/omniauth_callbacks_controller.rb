@@ -15,7 +15,7 @@ module Chaltron
       if user.nil?
         redirect_to root_url, alert: I18n.t('chaltron.not_allowed_to_sign_in')
       else
-        user.remember_me = true if user.persisted?
+        user.remember_me = params[:remember_me] if user.persisted?
         flash[:notice] = I18n.t('devise.sessions.signed_in')
 
         info I18n.t('chaltron.logs.login_via', user: user.display_name, provider: 'ldap')
