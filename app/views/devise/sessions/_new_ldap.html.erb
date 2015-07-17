@@ -2,13 +2,13 @@
   <div class='form-group'>
     <%= label_tag 'username', 'Username', class: 'col-sm-3   control-label' %>
     <div class='col-sm-9'>
-      <%= text_field_tag :username, nil, {class: 'form-control', autofocus: 'autofocus'} %>
+      <%= text_field_tag :username, nil, {class: 'form-control', autofocus: 'autofocus', placeholder: 'LDAP username'} %>
     </div>
   </div>
   <div class='form-group'>
     <%= label_tag 'password', 'Password', class: 'col-sm-3   control-label' %>
     <div class='col-sm-9'>
-      <%= password_field_tag :password, nil, {class: 'form-control bottom'} %>
+      <%= password_field_tag :password, nil, {class: 'form-control bottom', placeholder: 'Password'} %>
     </div>
   </div>
   <% if devise_mapping.rememberable? %>
