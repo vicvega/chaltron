@@ -1,5 +1,6 @@
 ### 0.1.2 - unreleased
  * add remember_me button for LDAP login
+ * allow local login with either username or password
 
 ### 0.1.1 - 2015-05-15
  * remove test files from gem package
