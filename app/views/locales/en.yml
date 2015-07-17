@@ -17,6 +17,7 @@ en:
         remember_me: Remember me
         link_text: Forgot your password?
         submit_text: Login
+        login_placeholder: Username or email
       new_ldap:
         remember_me: Remember me
         submit_text: LDAP login

@@ -37,6 +37,7 @@ module Chaltron
     initializer('chaltron.helpers') do |_app|
       ActiveSupport.on_load(:action_controller) do
         include Chaltron::Controllers::Helpers
+        before_action :configure_permitted_parameters, if: :devise_controller?
       end
     end
   end

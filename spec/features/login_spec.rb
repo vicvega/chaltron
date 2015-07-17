@@ -61,6 +61,14 @@ describe User do
       expect(page).not_to have_content user.fullname
     end
 
+    it 'allows login with email' do
+      login_with user.email, user.password
+      expect(page).to have_content user.fullname
+      logout
+      expect(page).to have_content 'Login'
+      expect(page).not_to have_content user.fullname
+    end
+
     it 'recovers password' do
       visit new_user_session_path
       click_link I18n.t('devise.passwords.new.title')
