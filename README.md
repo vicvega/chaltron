@@ -18,18 +18,17 @@ Now run
 ```
 rails generate chaltron:install
 ```
-to create a ready-to-go application, powered by
-
- * [devise](https://github.com/plataformatec/devise/)
- * [cancancan](https://github.com/CanCanCommunity/cancancan/)
- * [bootstrap](https://github.com/twbs/bootstrap-sass)
- * [font-awesome](https://github.com/FortAwesome/font-awesome-sass)
- * datatables [client side](https://github.com/rweng/jquery-datatables-rails) or [server side](https://github.com/antillas21/ajax-datatables-rails) processing
 
 Start your app
 ```
 rails server
 ```
+
+Login with local user `bella` and `password.1`
+
+Enjoy!
+
+## Features
 
 Chaltron provides
  * local user (creation, authentication, forgotten password management...)
@@ -37,8 +36,20 @@ Chaltron provides
  * authorization (roles and permissions)
  * utility for log messages (syslog enabled)
 
-Login with local user `bella` and `password.1`
+Chaltron is powered by
 
-Enjoy!
+ * [devise](https://github.com/plataformatec/devise/)
+ * [cancancan](https://github.com/CanCanCommunity/cancancan/)
+ * [bootstrap](https://github.com/twbs/bootstrap-sass)
+ * [font-awesome](https://github.com/FortAwesome/font-awesome-sass)
+ * datatables [client side](https://github.com/rweng/jquery-datatables-rails) or [server side](https://github.com/antillas21/ajax-datatables-rails) processing
 
 Refer to [wiki pages](https://github.com/vicvega/chaltron/wiki) for further instructions
+
+## Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
