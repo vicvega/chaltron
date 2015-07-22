@@ -1,4 +1,6 @@
-### 0.1.2 - unreleased
+### 0.1.3 - unreleased
+
+### 0.1.2 - 2015-07-22
  * add remember_me button for LDAP login
  * allow local login with either username or password
 
