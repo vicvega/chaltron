@@ -19,6 +19,9 @@ load 'rails/tasks/engine.rake'
 
 require 'rake/clean'
 
+
+load 'rails/tasks/statistics.rake'
+
 Bundler::GemHelper.install_tasks
 
 Dir[File.join(File.dirname(__FILE__), 'tasks/**/*.rake')].each { |f| load f }
