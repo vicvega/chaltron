@@ -39,7 +39,7 @@ module Chaltron
           department: department
         )
         user.roles = roles
-        user.save!
+        user.save
         user
       end
 

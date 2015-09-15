@@ -16,16 +16,13 @@ class DataTableBuilder
     @initTable(container: div, params: {
       paging: false
       # default sorting: username (2nd column) asc
-      aaSorting: [[1,'asc']]
-      aoColumnDefs: [
-        { bSortable: false, aTargets: [ 0 ] }
+      order: [[1,'asc']]
+      columnDefs: [
+        { orderable: false, className: 'select-checkbox', targets: 0 }
       ]
       dom: 'T<"clear">lfrtip'
-      tableTools: {
-        sRowSelect: 'multi'
-        aButtons: [ ]
-      }}
-    )
+      select: { style: 'multi' }
+    })
 
     # logs
     div = $('table#logs')
@@ -34,9 +31,9 @@ class DataTableBuilder
       serverSide: true
       ajax: div.data('source')
       # default sorting: date (2nd column) desc
-      aaSorting: [[1,'desc']]
-      aoColumnDefs: [
-        { asSorting: ['desc', 'asc'], aTargets: [ 1 ] }
+      order: [[1,'desc']]
+      columnDefs: [
+        { orderSequence: ['desc', 'asc'], targets: [ 1 ] }
       ]
     })
 
@@ -71,10 +68,9 @@ $.fn.dataTable.moment('DD MMM HH:mm')
 
 $ ->
   $('form#ldap_create').on 'submit', (e) ->
-    table = TableTools.fnGetMasters()[0]
-    data = table.fnGetSelectedData()
 
-    if data.length == 0
+    count = $('table#ldap_create').DataTable().rows( { selected: true } ).count()
+    if count == 0
       message = Chaltron.locales('error_message')
       label = Chaltron.locales('error_label')
 
@@ -92,10 +88,10 @@ $ ->
 
       e.preventDefault()
 
-    for d in data
+    for i in [0..count]
       $('<input/>', {
         name: 'uids[]',
         type: 'hidden',
         multiple: 'multiple',
-        value: d[1]
+        value: $('table#ldap_create').DataTable().rows( { selected: true } ).data()[i][1]
       }).appendTo(@)
