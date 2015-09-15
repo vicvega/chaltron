@@ -24,6 +24,7 @@ en:
       cannot_self_destroy: You cannot destroy your own account.
       it_s_you: It's you!
       missing_field: Missing!
+      already_present: Already present!
     logs:
       severity:
         info: Info
