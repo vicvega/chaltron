@@ -21,7 +21,7 @@ class DataTableBuilder
         { orderable: false, className: 'select-checkbox', targets: 0 }
       ]
       dom: 'T<"clear">lfrtip'
-      select: { style: 'multi' }
+      select: { style: 'multi', info: false }
     })
 
     # logs
