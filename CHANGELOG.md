@@ -1,4 +1,5 @@
 ### 0.1.3 - unreleased
+ * remove jquery-datatables-rails gem dependency
 
 ### 0.1.2 - 2015-07-22
  * add remember_me button for LDAP login
