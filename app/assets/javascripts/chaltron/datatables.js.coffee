@@ -70,6 +70,7 @@ $ ->
   $('form#ldap_create').on 'submit', (e) ->
 
     count = $('table#ldap_create').DataTable().rows( { selected: true } ).count()
+
     if count == 0
       message = Chaltron.locales('error_message')
       label = Chaltron.locales('error_label')
@@ -88,7 +89,7 @@ $ ->
 
       e.preventDefault()
 
-    for i in [0..count]
+    for i in [0..count-1]
       $('<input/>', {
         name: 'uids[]',
         type: 'hidden',
