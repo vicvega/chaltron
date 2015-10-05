@@ -5,22 +5,8 @@ describe User do
   context 'validation' do
     it { should validate_presence_of(:username) }
     it { should validate_presence_of(:email) }
-    it { should validate_uniqueness_of(:username) }
-    it { should validate_uniqueness_of(:email) }
-
-    context 'checks case sensitive' do
-      subject { user }
-      context 'for username' do
-        before { create(:user, username: 'pippero') }
-        let(:user) { build(:user, username: 'Pippero') }
-        it { is_expected.to be_invalid }
-      end
-      context 'for email' do
-        before { create(:user, email: 'pippero@example.org') }
-        let(:user) { build(:user, email: 'Pippero@EXAMple.org') }
-        it { is_expected.to be_invalid }
-      end
-    end
+    it { should validate_uniqueness_of(:username).case_insensitive.scoped_to(:provider) }
+    it { should validate_uniqueness_of(:email).case_insensitive }
   end
 
   context 'display_name' do
