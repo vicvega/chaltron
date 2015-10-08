@@ -5,6 +5,7 @@
 [![Code Climate](https://codeclimate.com/github/vicvega/chaltron/badges/gpa.svg)](https://codeclimate.com/github/vicvega/chaltron)
 [![Dependency Status](https://gemnasium.com/vicvega/chaltron.png)](https://gemnasium.com/vicvega/chaltron)
 [![PullReview stats](https://www.pullreview.com/github/vicvega/chaltron/badges/master.svg?)](https://www.pullreview.com/github/vicvega/chaltron/reviews/master)
+[![security](https://hakiri.io/github/vicvega/chaltron/master.svg)](https://hakiri.io/github/vicvega/chaltron/master)
 
 In a fresh new rails application simply add to your `Gemfile`
 ```
