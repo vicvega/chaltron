@@ -1,5 +1,7 @@
-### 0.1.3 - unreleased
+### 0.1.3 - 2015-11-25
  * remove jquery-datatables-rails gem dependency
+ * add footer to default layout
+ * add display of revision number (if REVISION file present)
 
 ### 0.1.2 - 2015-07-22
  * add remember_me button for LDAP login
