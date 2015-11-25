@@ -1,3 +1,5 @@
+### 0.1.4 - current version, unreleased
+
 ### 0.1.3 - 2015-11-25
  * remove jquery-datatables-rails gem dependency
  * add footer to default layout
