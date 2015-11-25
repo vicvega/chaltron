@@ -44,7 +44,22 @@ module ChaltronHelper
     badge_label(:label, *args)
   end
 
+  #
+  # Get current revision
+  #
+  def revision
+    @revision || get_revision_number
+  end
+
   private
+
+  def get_revision_number
+    version_file = "#{Rails.root}/REVISION"
+    if File.exists?(version_file)
+      v = IO.read(version_file).strip
+      v.blank?? nil : v
+    end
+  end
 
   def badge_label(what, value, type = nil)
     klass = [what]
