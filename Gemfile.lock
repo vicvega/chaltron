@@ -59,7 +59,7 @@ GEM
     ajax-datatables-rails (0.3.1)
       railties (>= 3.1)
     arel (6.0.3)
-    autoprefixer-rails (6.2.0)
+    autoprefixer-rails (6.2.1)
       execjs
       json
     bcrypt (3.1.10)
