@@ -31,7 +31,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'bootstrap_form'
   s.add_dependency 'rails-i18n'
   s.add_dependency 'momentjs-rails'
-  s.add_dependency 'sprockets-rails', '2.3.3'
 
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'rspec-rails'
