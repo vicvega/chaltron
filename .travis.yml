@@ -11,4 +11,4 @@ before_install:
   - gem update --system
   - gem --version
 
-cache: bundler
+#cache: bundler
