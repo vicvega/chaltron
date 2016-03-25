@@ -6,9 +6,6 @@ rvm:
 before_install:
   - sudo apt-get update -qq
   - sudo ./travis-ci/setup_ldap.sh
-  - gem update bundler
-  - bundle --version
-  - gem update --system
-  - gem --version
+  - gem install bundler
 
-#cache: bundler
+cache: bundler
