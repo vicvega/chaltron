@@ -1,4 +1,6 @@
 ### 0.1.4 - current version, unreleased
+ * update gem dependencies
+ * remove images (all default images are copied to application by generator task)
 
 ### 0.1.3 - 2015-11-25
  * remove jquery-datatables-rails gem dependency
@@ -14,5 +16,4 @@
  * update gem dependencies
 
 ### 0.1.0 - 2015-03-04
-
  * first release

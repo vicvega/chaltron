@@ -38,6 +38,7 @@ RUBY
       # html
       remove_file 'app/views/layouts/application.html.erb'
       directory 'app/views/layouts'
+      directory 'app/assets/images'
       # javascript
       inject_into_file 'app/assets/javascripts/application.js',
         "//= require chaltron\n", before: '//= require_tree .'
