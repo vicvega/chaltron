@@ -1,4 +1,6 @@
-### 0.1.4 - current version, unreleased
+### 0.1.5 - current version, unreleased
+
+### 0.1.4 - 2016-03-31
  * fix highlighting in admin menu
  * remove images (all default images are copied to application by generator task)
  * update gem dependencies
