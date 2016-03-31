@@ -1,6 +1,7 @@
 ### 0.1.4 - current version, unreleased
- * update gem dependencies
+ * fix highlighting in admin menu
  * remove images (all default images are copied to application by generator task)
+ * update gem dependencies
 
 ### 0.1.3 - 2015-11-25
  * remove jquery-datatables-rails gem dependency
