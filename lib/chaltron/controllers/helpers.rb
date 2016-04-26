@@ -50,7 +50,9 @@ module Chaltron
       #
       protected
       def configure_permitted_parameters
-        devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :username, :email, :password, :remember_me) }
+        devise_parameter_sanitizer.permit(:sign_in) do |user|
+          user.permit(:login, :username, :email, :password, :remember_me)
+        end
       end
 
     end
