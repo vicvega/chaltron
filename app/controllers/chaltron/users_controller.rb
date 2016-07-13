@@ -44,7 +44,7 @@ class Chaltron::UsersController < ApplicationController
   end
 
   def self_update
-    user_params_with_pass = self_update_params.dup
+    user_params_with_pass = self_update_params.dup.to_h
     if params[:user][:password].present?
       user_params_with_pass.merge!(
         password: params[:user][:password],

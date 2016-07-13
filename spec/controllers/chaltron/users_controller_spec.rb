@@ -11,14 +11,14 @@ RSpec.describe Chaltron::UsersController, type: :controller do
 
     context 'user' do
       it 'destroy user' do
-        delete :destroy, id: user.id
+        delete :destroy, params: { id: user_admin.id }
         expect(User.count).to eq 1
         expect(flash[:alert]).to be_nil
       end
     end
     context 'current user' do
       it 'cannot self destroy' do
-        delete :destroy, id: user_admin.id
+        delete :destroy, params: { id: user_admin.id }
         expect(User.count).to eq 2
         expect(flash[:alert]).to eq I18n.t('chaltron.users.cannot_self_destroy')
       end

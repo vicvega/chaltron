@@ -18,12 +18,12 @@ RSpec.describe Chaltron::LogsController, type: :controller do
       expect(logs.count).to eq(2)
     end
     it 'show login' do
-      get :show, id: user_login.id
+      get :show, params: { id: user_login.id }
       expect(log).to eq(log)
       expect(response).to render_template(:show)
     end
     it 'show other' do
-      get :show, id: log_other.id
+      get :show, params: { id: log_other.id }
       expect(log).to eq(log)
       expect(response).to render_template(:show)
     end
@@ -36,12 +36,12 @@ RSpec.describe Chaltron::LogsController, type: :controller do
       expect(logs.count).to eq(1)
     end
     it 'show login' do
-      get :show, id: user_login.id
+      get :show, params: { id: user_login.id }
       expect(log).to eq(log)
       expect(response).to render_template(:show)
     end
     it 'does not show other' do
-      get :show, id: log_other.id
+      get :show, params: { id: log_other.id }
       expect(response).to redirect_to(root_url)
     end
   end

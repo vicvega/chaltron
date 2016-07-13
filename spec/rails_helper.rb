@@ -14,6 +14,7 @@ require 'factory_girl_rails'
 require 'capybara/rails'
 require 'capybara/poltergeist'
 require 'database_cleaner'
+require 'rails-controller-testing'
 
 # Capybara.register_driver(:poltergeist) do |app|
 #   Capybara::Poltergeist::Driver.new app,
