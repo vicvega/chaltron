@@ -6,8 +6,7 @@ class Chaltron::UsersController < ApplicationController
   default_log_category :user_admin
 
   def index
-    @filters = params[:filters] || {}
-
+    @filters = filter_params
     # apply provider filter
     @users = @users.where(provider: nil) if @filters[:provider] == 'local'
     @users = @users.where(provider: :ldap) if @filters[:provider] == 'ldap'
@@ -85,4 +84,7 @@ class Chaltron::UsersController < ApplicationController
     params.require(:user).permit(:email, :fullname)
   end
 
+  def filter_params
+    params.fetch(:filters, {}).permit(:provider, :activity)
+  end
 end
