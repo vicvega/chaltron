@@ -11,7 +11,7 @@ RSpec.describe Chaltron::UsersController, type: :controller do
 
     context 'user' do
       it 'destroy user' do
-        delete :destroy, params: { id: user_admin.id }
+        delete :destroy, params: { id: user.id }
         expect(User.count).to eq 1
         expect(flash[:alert]).to be_nil
       end
