@@ -7,4 +7,5 @@ before_install:
   - sudo ./travis-ci/setup_ldap.sh
   - gem install bundler
 cache: bundler
+before_script: bin/rails db:migrate RAILS_ENV=test
 script: bundle exec rspec
