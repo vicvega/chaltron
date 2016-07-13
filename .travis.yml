@@ -7,4 +7,4 @@ before_install:
   - sudo ./travis-ci/setup_ldap.sh
   - gem install bundler
 cache: bundler
-script: rspec
+script: bundle exec rspec
