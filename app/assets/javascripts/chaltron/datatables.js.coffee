@@ -59,7 +59,7 @@ class DataTableBuilder
 
       container.DataTable(settings)
 
-$(document).on 'page:change', ->
+$(document).on 'turbolinks:load', ->
   table = new DataTableBuilder
   table.go()
 
