@@ -14,6 +14,7 @@ require 'factory_girl_rails'
 require 'capybara/rails'
 require 'capybara/poltergeist'
 require 'database_cleaner'
+require 'rails-controller-testing'
 
 # Capybara.register_driver(:poltergeist) do |app|
 #   Capybara::Poltergeist::Driver.new app,
@@ -38,6 +39,12 @@ Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  [:controller, :view, :request].each do |type|
+    config.include ::Rails::Controller::Testing::TestProcess, :type => type
+    config.include ::Rails::Controller::Testing::TemplateAssertions, :type => type
+    config.include ::Rails::Controller::Testing::Integration, :type => type
+  end
+
   config.include FactoryGirl::Syntax::Methods
   config.include LoginHelpers, type: :feature
   config.include Devise::Test::ControllerHelpers, type: :controller

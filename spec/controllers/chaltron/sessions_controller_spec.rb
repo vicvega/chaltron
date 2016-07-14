@@ -8,7 +8,7 @@ RSpec.describe Chaltron::SessionsController, type: :controller do
     context 'login' do
       it 'generates log message' do
         expect do
-          post :create, user: { login: user.username, password: user.password }
+          post :create, params: { user: { login: user.username, password: user.password } }
         end.to change(Log, :count).by(1)
       end
     end

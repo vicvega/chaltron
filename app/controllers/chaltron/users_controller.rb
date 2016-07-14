@@ -6,8 +6,7 @@ class Chaltron::UsersController < ApplicationController
   default_log_category :user_admin
 
   def index
-    @filters = params[:filters] || {}
-
+    @filters = filter_params
     # apply provider filter
     @users = @users.where(provider: nil) if @filters[:provider] == 'local'
     @users = @users.where(provider: :ldap) if @filters[:provider] == 'ldap'
@@ -45,7 +44,7 @@ class Chaltron::UsersController < ApplicationController
   end
 
   def self_update
-    user_params_with_pass = self_update_params.dup
+    user_params_with_pass = self_update_params.dup.to_h
     if params[:user][:password].present?
       user_params_with_pass.merge!(
         password: params[:user][:password],
@@ -85,4 +84,7 @@ class Chaltron::UsersController < ApplicationController
     params.require(:user).permit(:email, :fullname)
   end
 
+  def filter_params
+    params.fetch(:filters, {}).permit(:provider, :activity)
+  end
 end

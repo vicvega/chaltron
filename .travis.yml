@@ -1,11 +1,11 @@
 language: ruby
 rvm:
-  - 2.1
-  - 2.2
+  - 2.2.2
   - 2.3.0
 before_install:
   - sudo apt-get update -qq
   - sudo ./travis-ci/setup_ldap.sh
   - gem install bundler
-
 cache: bundler
+before_script: bin/rails db:migrate RAILS_ENV=test
+script: bundle exec rspec

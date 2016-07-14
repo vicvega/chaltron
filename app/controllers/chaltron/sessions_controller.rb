@@ -1,6 +1,6 @@
 class Chaltron::SessionsController  < Devise::SessionsController
-  after_filter :after_login, only: :create
-  before_filter :before_logout, only: :destroy
+  after_action :after_login, only: :create
+  before_action :before_logout, only: :destroy
 
   default_log_category :login
 
