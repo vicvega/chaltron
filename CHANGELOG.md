@@ -1,4 +1,5 @@
 ### 0.1.5 - current version, unreleased
+ * rails 5 compatibility
 
 ### 0.1.4 - 2016-03-31
  * fix highlighting in admin menu
