@@ -1,4 +1,6 @@
-### 0.1.5 - current version, unreleased
+### 0.1.6 - current version, unreleased
+
+### 0.1.5 - 2016-07-14
  * rails 5 compatibility
 
 ### 0.1.4 - 2016-03-31
