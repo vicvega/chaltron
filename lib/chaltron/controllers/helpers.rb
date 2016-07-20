@@ -45,10 +45,11 @@ module Chaltron
         )
       end
 
+      protected
+
       #
       # To allow login with username or email
       #
-      protected
       def configure_permitted_parameters
         devise_parameter_sanitizer.permit(:sign_in) do |user|
           user.permit(:login, :username, :email, :password, :remember_me)
