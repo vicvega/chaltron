@@ -1,7 +1,9 @@
 ### 0.1.6 - current version, unreleased
+* update gem dependencies
 
 ### 0.1.5 - 2016-07-14
  * rails 5 compatibility
+ * update gem dependencies
 
 ### 0.1.4 - 2016-03-31
  * fix highlighting in admin menu
