@@ -6,8 +6,8 @@
 [![security](https://hakiri.io/github/vicvega/chaltron/master.svg)](https://hakiri.io/github/vicvega/chaltron/master)
 
 In a fresh new rails application simply add to your `Gemfile`
-```
-gem chaltron
+```ruby
+gem 'chaltron'
 ```
 and install
 ```
