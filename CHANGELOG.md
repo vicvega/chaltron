@@ -1,4 +1,6 @@
-### 0.1.6 - current version, unreleased
+### 0.1.7 - current version, unreleased
+
+### 0.1.6 - 2017-01-17
  * fix scaffold template, removing deprecated helpers
  * update gem dependencies
 
