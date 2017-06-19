@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
-  s.add_dependency 'rails', '> 4.2.0'
+  s.add_dependency 'rails', '~> 5.1'
   s.add_dependency 'devise'
   s.add_dependency 'omniauth'
   s.add_dependency 'gitlab_omniauth-ldap'
@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'bootstrap_form'
   s.add_dependency 'rails-i18n'
   s.add_dependency 'momentjs-rails'
+  s.add_dependency 'jquery-rails'
 
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'rspec-rails'

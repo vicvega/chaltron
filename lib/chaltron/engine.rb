@@ -11,6 +11,8 @@ require 'bootstrap_form'
 require 'nprogress-rails'
 require 'rails-i18n'
 require 'momentjs-rails'
+require 'jquery-rails'
+
 
 require 'simple_navigation_renderers'
 SimpleNavigation.config_file_paths << File.expand_path('../../../config', __FILE__)
