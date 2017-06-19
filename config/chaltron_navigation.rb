@@ -1,6 +1,6 @@
 SimpleNavigation::Configuration.run do |navigation|
   navigation.items do |primary|
-    navigation.renderer = SimpleNavigationRenderers::Bootstrap3
+    navigation.renderer = SimpleNavigationBootstrap::Bootstrap3
     primary.dom_class = 'pull-right'
 
     if signed_in?
