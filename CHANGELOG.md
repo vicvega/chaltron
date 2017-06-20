@@ -2,7 +2,7 @@
 
 ### 0.2.0 - 2017-06-20
 * restore jquery-datatables-rails gem dependency
-* update gem dependencies (require rails 5.1)
+* update gem dependencies (**rails 5.1 required**)
 
 ### 0.1.6 - 2017-01-17
  * fix scaffold template, removing deprecated helpers
