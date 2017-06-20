@@ -32,6 +32,12 @@ class DataTableBuilder
       ajax: div.data('source')
       # default sorting: date (2nd column) desc
       order: [[1,'desc']]
+      columns: [
+        { data: 'severity', searchable: false }
+        { data: 'date',     searchable: false }
+        { data: 'message' }
+        { data: 'category', searchable: false }
+      ]
       columnDefs: [
         { orderSequence: ['desc', 'asc'], targets: [ 1 ] }
       ]

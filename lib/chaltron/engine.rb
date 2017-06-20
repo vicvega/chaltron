@@ -12,7 +12,7 @@ require 'nprogress-rails'
 require 'rails-i18n'
 require 'momentjs-rails'
 require 'jquery-rails'
-
+require 'jquery-datatables-rails'
 
 require 'simple_navigation_bootstrap'
 SimpleNavigation.config_file_paths << File.expand_path('../../../config', __FILE__)

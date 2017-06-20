@@ -11,8 +11,8 @@ $navbar-height: 40px;
 @import 'font-awesome';
 
 // datatables
-@import 'dataTables/dataTables.bootstrap';
-@import 'dataTables/extras/responsive.bootstrap';
+@import 'dataTables/bootstrap/3/jquery.dataTables.bootstrap';
+@import 'dataTables/extras/dataTables.responsive';
 @import 'dataTables/extras/select.dataTables';
 //@import 'chaltron/datatables';
 
