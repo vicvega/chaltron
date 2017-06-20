@@ -1,4 +1,6 @@
-### 0.2.0 - current version, unreleased
+### 0.2.1 - current version, unreleased
+
+### 0.2.0 - 2017-06-20
 * restore jquery-datatables-rails gem dependency
 * update gem dependencies (require rails 5.1)
 
