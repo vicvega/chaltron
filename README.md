@@ -18,6 +18,11 @@ Now run
 rails generate chaltron:install
 ```
 
+Populate database
+```
+rails db:migrate db:seed
+```
+
 Start your app
 ```
 rails server
