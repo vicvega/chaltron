@@ -5,16 +5,23 @@
       <%= render partial: 'side_filters', locals: { filters: @filters } %>
       <hr>
 
-      <div class='btn-group pull-right'>
-        <%= content_tag :button, type: 'button', class: 'btn btn-primary dropdown-toggle',
-          data: {toggle: 'dropdown'}, aria: {expanded: false} do %>
-          <%= icon :plus, t('.new_user') %> <span class="caret"></span>
+      <% if ldap_enabled? %>
+        <div class='btn-group pull-right'>
+          <%= content_tag :button, type: 'button', class: 'btn btn-primary dropdown-toggle',
+            data: {toggle: 'dropdown'}, aria: {expanded: false} do %>
+            <%= icon :plus, t('.new_user') %> <span class="caret"></span>
+          <% end %>
+
+          <ul class='dropdown-menu' role='menu'>
+            <li><%= link_to t('.new_ldap_user'), ldap_search_url %></li>
+            <li><%= link_to t('.new_local_user'), new_user_url %></li>
+          </ul>
+        </div>
+      <% else %>
+        <%= link_to new_user_url, class: 'btn btn-primary pull-right' do %>
+          <%= icon :plus, t('.new_local_user') %>
         <% end %>
-      <ul class='dropdown-menu' role='menu'>
-        <li><%= link_to t('.new_ldap_user'), ldap_search_url %></li>
-        <li><%= link_to t('.new_local_user'), new_user_url %></li>
-      </ul>
-    </div>
+      <% end %>
 
     </div>
     <div class='col-md-9'>
