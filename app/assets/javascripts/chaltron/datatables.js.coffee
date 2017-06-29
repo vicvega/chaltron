@@ -63,7 +63,9 @@ class DataTableBuilder
       # add language
       settings = $.extend({}, settings, {language: Chaltron.locales('datatable')})
 
-      container.DataTable(settings)
+      table = container.DataTable(settings)
+      document.addEventListener 'turbolinks:before-cache', ->
+        table.destroy()
 
 $(document).on 'turbolinks:load', ->
   table = new DataTableBuilder
