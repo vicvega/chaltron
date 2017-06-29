@@ -1,4 +1,6 @@
-### 0.2.1 - current version, unreleased
+### 0.2.2 - current version - unreleased
+
+### 0.2.1 - 2017-06-29
  * update gem dependencies
  * fix duplicate datatables wrappers with browser back button
  * minor fix in default views
