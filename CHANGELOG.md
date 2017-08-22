@@ -1,4 +1,8 @@
 ### 0.2.2 - current version - unreleased
+ * fix scaffold template for boolean type
+ * fix right drop-down menu alignment
+ * minor fix in default views
+ * update gem dependencies
 
 ### 0.2.1 - 2017-06-29
  * update gem dependencies
