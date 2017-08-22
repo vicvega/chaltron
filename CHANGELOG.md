@@ -1,4 +1,6 @@
-### 0.2.2 - current version - unreleased
+### 0.2.3 - current version - unreleased
+
+### 0.2.2 - 2017-08-22
  * fix scaffold template for boolean type
  * fix right drop-down menu alignment
  * minor fix in default views
