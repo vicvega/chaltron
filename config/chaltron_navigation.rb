@@ -18,6 +18,7 @@ SimpleNavigation::Configuration.run do |navigation|
           }, logs_url, highlights_on: /\/logs/ if can?(:read, Log)
       end if can?(:manage, User) or can?(:read, Log)
       primary.item :logged, current_user.display_name.html_safe, nil do |user|
+        user.dom_class = 'dropdown-menu-right'
         user.item :self_edit, { icon: 'fa fa-fw fa-user',
                   text: I18n.t('chaltron.menu.self_show') }, self_show_users_url,
                   highlights_on: /\/self_(show|edit|update)/
