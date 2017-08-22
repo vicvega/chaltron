@@ -1,7 +1,13 @@
 <%%= bootstrap_form_for(@<%= singular_table_name %>, layout: :horizontal) do |f| %>
 
 <% attributes.each do |attribute| -%>
+  <% if attribute.field_type == :check_box -%>
+  <%%= f.form_group :<%= attribute.name %>, label: { text: '<%= attribute.name %>' } do %>
+    <%%= f.<%= attribute.field_type %> :<%= attribute.name %>, label: '' %>
+  <%% end -%>
+  <% else -%>
   <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
+  <% end -%>
 <% end -%>
 
   <%%= f.form_group class: 'form-actions' do %>
