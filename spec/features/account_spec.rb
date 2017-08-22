@@ -13,7 +13,7 @@ describe User do
 
       fullname = 'emmeline vance'
       fill_in 'user_fullname', with: fullname
-      click_button I18n.t('chaltron.users.self_edit.title')
+      click_button I18n.t('chaltron.users.self_edit.submit')
 
       expect(page).to have_content I18n.t('chaltron.users.self_updated')
       expect(page).to have_content fullname
@@ -28,7 +28,7 @@ describe User do
       password = 'password.1'
       fill_in 'user_password', with: password
       fill_in 'user_password_confirmation', with: password
-      click_button I18n.t('chaltron.users.self_edit.title')
+      click_button I18n.t('chaltron.users.self_edit.submit')
 
       expect(page).to have_content I18n.t('chaltron.users.self_updated')
 

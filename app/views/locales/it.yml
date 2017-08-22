@@ -49,6 +49,7 @@ it:
         title: Modifica %{user}
       self_edit:
         title: Modifica dati personali
+        submit: Invia
       form:
         cancel_text: Annulla
       show:

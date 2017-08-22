@@ -49,6 +49,7 @@ en:
         title: Edit %{user}
       self_edit:
         title: Edit account data
+        submit: Submit
       form:
         cancel_text: Cancel
       show:
