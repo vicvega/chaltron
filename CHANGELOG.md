@@ -1,4 +1,6 @@
 ### 0.2.3 - current version - unreleased
+ * fix flash messages fade out trigger with turbolinks
+ * update gem dependencies
 
 ### 0.2.2 - 2017-08-22
  * fix scaffold template for boolean type
