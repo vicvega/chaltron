@@ -3,7 +3,7 @@
 
     <%= content_tag :p, t('.par') %>
 
-    <%= bootstrap_form_for(User.new, url: ldap_multi_create_url, method: :post,
+    <%= bootstrap_form_for(User.new, url: ldap_multi_create_path, method: :post,
       layout: :horizontal, html: {id: 'ldap_create'}) do |f| %>
 
       <%= f.form_group do %>

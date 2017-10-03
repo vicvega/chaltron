@@ -1,7 +1,7 @@
 <div class='container-fluid'>
   <h3 class='page-header'><%= t('.title') %></h3>
 
-  <%= bootstrap_form_tag(url: ldap_multi_new_url, method: :post, layout: :horizontal) do |f| %>
+  <%= bootstrap_form_tag(url: ldap_multi_new_path, method: :post, layout: :horizontal) do |f| %>
 
     <%= f.text_field :userid, label: t('.name_label'), help: t('.name_help') %>
     <%= f.text_field :fullname, label: t('.fullname_label'), help: t('.fullname_help') %>
