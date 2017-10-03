@@ -1,4 +1,6 @@
-### 0.2.3 - current version - unreleased
+### 0.2.4 - current version - unreleased
+
+### 0.2.3 - 2017-10-03
  * fix flash messages fade out trigger with turbolinks
  * use `_path` instead of `_url` in route helpers
  * update gem dependencies
