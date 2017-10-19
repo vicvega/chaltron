@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    chaltron (0.2.4)
+    chaltron (0.2.5)
       ajax-datatables-rails
       autoprefixer-rails
       bootstrap-sass
@@ -279,4 +279,4 @@ DEPENDENCIES
   sqlite3
 
 BUNDLED WITH
-   1.14.6
+   1.15.4

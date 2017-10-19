@@ -1,4 +1,8 @@
-### 0.2.4 - current version - unreleased
+### 0.2.5 - current version - unreleased
+
+### 0.2.4 - 2017-10-19
+ * fix duplicated javascript inclusion
+ * update gem dependencies
 
 ### 0.2.3 - 2017-10-03
  * fix flash messages fade out trigger with turbolinks
