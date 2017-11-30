@@ -10,7 +10,7 @@ require 'rspec/rails'
 
 require 'ffaker'
 require 'shoulda/matchers'
-require 'factory_girl_rails'
+require 'factory_bot_rails'
 require 'capybara/rails'
 require 'capybara/poltergeist'
 require 'database_cleaner'
@@ -45,7 +45,7 @@ RSpec.configure do |config|
     config.include ::Rails::Controller::Testing::Integration, type: type
   end
 
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
   config.include LoginHelpers, type: :feature
   config.include Devise::Test::ControllerHelpers, type: :controller
 

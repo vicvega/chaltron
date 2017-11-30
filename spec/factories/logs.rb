@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :log do
     message { FFaker::Lorem.sentences }
     severity 'info'

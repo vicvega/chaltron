@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe User do
   context 'validation' do
-    subject { FactoryGirl.build(:user) }
+    subject { FactoryBot.build(:user) }
     it { should validate_presence_of(:username) }
     it { should validate_presence_of(:email) }
     it { should validate_uniqueness_of(:username).scoped_to(:provider).case_insensitive }
