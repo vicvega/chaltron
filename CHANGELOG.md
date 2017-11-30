@@ -1,4 +1,6 @@
 ### 0.2.5 - current version - unreleased
+* FactoryBot replaces FactoryGirl
+* update gem dependencies
 
 ### 0.2.4 - 2017-10-19
  * fix duplicated javascript inclusion
