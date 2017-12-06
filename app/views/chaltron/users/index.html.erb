@@ -27,24 +27,26 @@
     <div class='col-md-9'>
       <div class='panel panel-default'>
         <div class='panel-body'>
-          <%= content_tag 'table', id: 'users', class: 'table table-striped' do %>
-            <thead>
-              <tr>
-                <th class='username'>
-                  <%= User.human_attribute_name(:username) %>
-                </th>
-                <th class='fullname'>
-                  <%= User.human_attribute_name(:fullname) %>
-                </th>
-                <th class='email'>
-                  <%= User.human_attribute_name(:email) %>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <%= render @users %>
-            </tbody>
-          <% end %>
+          <div class='table-responsive'>
+            <%= content_tag 'table', id: 'users', class: 'table table-striped' do %>
+              <thead>
+                <tr>
+                  <th class='username'>
+                    <%= User.human_attribute_name(:username) %>
+                  </th>
+                  <th class='fullname'>
+                    <%= User.human_attribute_name(:fullname) %>
+                  </th>
+                  <th class='email'>
+                    <%= User.human_attribute_name(:email) %>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <%= render @users %>
+              </tbody>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
