@@ -1,6 +1,6 @@
-//= require jquery
-//= require jquery_ujs
-//= require bootstrap-sprockets
+//= require jquery3
+//= require popper
+//= require bootstrap
 //= require dataTables/jquery.dataTables
 //= require dataTables/extras/dataTables.responsive
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
