@@ -1,7 +1,7 @@
 SimpleNavigation::Configuration.run do |navigation|
   navigation.items do |primary|
-    navigation.renderer = SimpleNavigationBootstrap::Bootstrap3
-    primary.dom_class = 'pull-right'
+    navigation.renderer = SimpleNavigation::Renderer::Json
+#    primary.dom_class = 'pull-right'
 
     if signed_in?
       primary.item :admin,

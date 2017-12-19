@@ -62,6 +62,6 @@ SimpleNavigation::Configuration.run do |navigation|
       info_nav.item :about_info_page, { icon: 'fa fa-fw fa-headphones', text: 'Link 5' }, home_test5_path
       info_nav.item :contact_info_page, { icon: 'fa fa-fw fa-soccer-ball-o', text: 'Link 6' }, home_test6_path
     end
-
+    primary.item :user, { icon: 'user', text: 'Link 7' }, home_test7_path
   end
 end
