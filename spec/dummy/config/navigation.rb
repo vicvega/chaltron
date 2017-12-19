@@ -4,7 +4,7 @@ SimpleNavigation::Configuration.run do |navigation|
   # Specify a custom renderer if needed.
   # The default renderer is SimpleNavigation::Renderer::List which renders HTML lists.
   # The renderer can also be specified as option in the render_navigation call.
-  navigation.renderer = SimpleNavigationBootstrap::Bootstrap3
+  navigation.renderer = SimpleNavigation::Renderer::Json
 
   # Specify the class that will be applied to active navigation items.
   # Defaults to 'selected' navigation.selected_class = 'your_selected_class'
@@ -62,6 +62,6 @@ SimpleNavigation::Configuration.run do |navigation|
       info_nav.item :about_info_page, { icon: 'fa fa-fw fa-headphones', text: 'Link 5' }, home_test5_path
       info_nav.item :contact_info_page, { icon: 'fa fa-fw fa-soccer-ball-o', text: 'Link 6' }, home_test6_path
     end
-
+    primary.item :user, { icon: 'user', text: 'Link 7' }, home_test7_path
   end
 end
