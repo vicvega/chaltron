@@ -15,8 +15,8 @@ SimpleNavigation::Configuration.run do |navigation|
         user.item :self_edit, { icon: 'user',
                   text: I18n.t('chaltron.menu.self_show') }, self_show_users_path,
                   highlights_on: /\/self_(show|edit|update)/
-        user.item :logout, { icon: 'sign-out', text: 'Logout' },
-                  destroy_user_session_path, method: :delete
+        user.item :logout, { icon: 'sign-out', text: 'Logout', method: :delete },
+                  destroy_user_session_path
       end
     else
       primary.item :login, { icon: 'sign-in', text: 'Login' }, new_user_session_path

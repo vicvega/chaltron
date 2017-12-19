@@ -42,12 +42,11 @@ class NavbarBuilder
       "<i class=\"fa fa-fw fa-#{name.icon}\"></i>&nbsp;#{name.text}"
 
   render_link: (item) ->
-    if item.method
-      "<a class=\"#{item.klass}\" href=\"#{item.url}\" data-method=\"#{item.method}\">#{@render_name item.name}</a>"
+    if item.name.method
+      "<a class=\"#{item.klass}\" href=\"#{item.url}\" data-method=\"#{item.name.method}\">
+        #{@render_name item.name}</a>"
     else
       "<a class=\"#{item.klass}\" href=\"#{item.url}\">#{@render_name item.name}</a>"
-
-
 
 $(document).on 'turbolinks:load', ->
   navbar = new NavbarBuilder
