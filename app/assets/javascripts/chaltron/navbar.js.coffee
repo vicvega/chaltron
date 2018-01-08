@@ -1,53 +1,46 @@
 class NavbarBuilder
 
-  constructor: ->
-    # users
-    div = $('#navigation')
-    @data = JSON.parse(div.text())
-
-  go: ->
-    content = (@render_item_li(item) for item in @data).join('')
-    $('#navigation').html(
-      "<ul class=\"navbar-nav mr-auto\">#{content}</ul>"
+  render: ->
+    @prepend_class(i, 'navbar-nav mr-auto') for i in $('#navigation ul')
+    $('#navigation ul li').addClass('nav-item')
+    $('#navigation ul li a').addClass('nav-link')
+    $('#navigation ul li ul').parent().addClass('dropdown')
+    $('#navigation ul li.dropdown').children('a').addClass('dropdown-toggle').attr(
+      {id: 'navbarDropdown', role: 'button', 'aria-haspopup': 'true', 'aria-expanded': 'false', 'data-toggle': 'dropdown'}
     )
+    @render_dropdown_menu i for i in $('#navigation ul li.dropdown')
+    @render_icon_a i for i in $('#navigation ul li a')
 
-  render_dropdown: (item) ->
-    klass = 'nav-link dropdown-toggle'
-    klass += ' active' if item.selected
-    "<li class=\"nav-item dropdown\">
-      <a class=\"#{klass}\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">#{@render_name(item.name)}</a>
-      <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">#{(@render_item_a(i) for i in item.items).join('')}
-      </div>
-    </li>"
+  render_dropdown_menu: (item) ->
+    links = jQuery(item).find('ul li a')
+    jQuery(l).addClass('dropdown-item').removeClass('nav-link') for l in links
+    @render_dropdown_links (i) for i in jQuery(item).find('ul')
 
-  render_item_a: (item) ->
-    klass = 'dropdown-item'
-    klass += ' active' if item.selected
-    item.klass = klass
-    @render_link item
+  render_dropdown_links: (item) ->
+    el = jQuery(item)
+    links = el.find('li a')
 
-  render_item_li: (item) ->
-    if item.items
-      @render_dropdown(item)
-    else
-      klass = 'nav-item'
-      klass += ' active' if item.selected
-      item.klass = 'nav-link'
-      "<li class=\"#{klass}\">#{@render_link(item)}</li>"
+    klass = 'dropdown-menu'
+    klass += ' dropdown-menu-right' if el.hasClass('dropdown-menu-right')
+    div = $('<div></div>').addClass('dropdown-menu').attr('aria-labelledby': 'navbarDropdown').append(links)
+    el.replaceWith(div)
 
-  render_name: (name) ->
-    if typeof name is 'string'
-      name
-    else
-      "<i class=\"fa fa-fw fa-#{name.icon}\"></i>&nbsp;#{name.text}"
+  prepend_class: (item, klass) ->
+    el = jQuery(item)
+    if el.attr('class')
+      klass += " #{el.attr('class')}"
+      el.removeClass(jQuery(item).attr('class'))
 
-  render_link: (item) ->
-    if item.name.method
-      "<a class=\"#{item.klass}\" href=\"#{item.url}\" data-method=\"#{item.name.method}\">
-        #{@render_name item.name}</a>"
-    else
-      "<a class=\"#{item.klass}\" href=\"#{item.url}\">#{@render_name item.name}</a>"
+    el.addClass(klass)
+
+    if el.hasClass('justify-content-end')
+      el.removeClass('mr-auto')
+
+  render_icon_a: (item) ->
+    el = jQuery(item)
+    if el.attr('icon')
+      el.html("<i class=\"fa fa-fw fa-#{el.attr('icon')}\"></i>&nbsp;#{el.text()}")
 
 $(document).on 'turbolinks:load', ->
   navbar = new NavbarBuilder
-  navbar.go()
+  navbar.render()
