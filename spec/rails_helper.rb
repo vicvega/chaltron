@@ -18,11 +18,10 @@ require 'rails-controller-testing'
 
 # Capybara.register_driver(:poltergeist) do |app|
 #   Capybara::Poltergeist::Driver.new app,
-#     phantomjs_options:
-#     [
-#       '--load-images=no'
-#     ]
+#     phantomjs_options: [ '--load-images=no' ],
+#     js_errors: true
 # end
+
 Capybara.javascript_driver = :poltergeist
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
