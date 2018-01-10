@@ -42,9 +42,6 @@ RUBY
       # javascript
       inject_into_file 'app/assets/javascripts/application.js',
         "//= require chaltron\n", before: '//= require_tree .'
-      # css
-      inject_into_file 'app/assets/stylesheets/application.css',
-        " *= require chaltron\n", before: ' *= require_self'
     end
 
     def create_index_controller
