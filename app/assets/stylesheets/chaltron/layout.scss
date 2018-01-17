@@ -34,14 +34,6 @@ div#content {
   @include form-box(650px);
 }
 
-/**
- * Navbar tabs
- *
- */
- .nav-tabs {
-    margin-bottom: 15px;
-}
-
 #nprogress .spinner {
   display: block;
   position: fixed;
