@@ -39,7 +39,8 @@ class DataTableBuilder
         { data: 'category', searchable: false }
       ]
       columnDefs: [
-        { orderSequence: ['desc', 'asc'], targets: [ 1 ] }
+        { orderSequence: ['desc', 'asc'], targets: [ 1 ] },
+        { className: 'text-center', "targets": [ 0 ] }
       ]
     })
 

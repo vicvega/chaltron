@@ -6,7 +6,7 @@
       data: {source: logs_path(format: :json)} do %>
       <thead>
         <tr>
-          <th>
+          <th class='severity'>
             <%= Log.human_attribute_name(:severity) %>
           </th>
           <th class='timestamp'>
