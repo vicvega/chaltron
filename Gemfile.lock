@@ -64,11 +64,7 @@ GEM
     ajax-datatables-rails (0.4.0)
       railties (>= 4.0)
     arel (8.0.0)
-<<<<<<< 8e038790747464fd97ce99d1c0e5c29ea807ec5d
     autoprefixer-rails (7.2.5)
-=======
-    autoprefixer-rails (7.2.4)
->>>>>>> gem update
       execjs
     bcrypt (3.1.11)
     bootstrap (4.0.0.beta3)
