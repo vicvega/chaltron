@@ -1,11 +1,11 @@
 <div class='container-fluid'>
-  <h3 class='page-header'><%= t '.title' %></h3>
+  <h3 class='pt-4'><%= t '.title' %></h3>
   <div class='row'>
 
     <div class='col-md-9'>
-      <div class='panel panel-default'>
-        <div class='panel-heading'><%= t '.headers.details' %></div>
-        <ul class='list-group'>
+      <div class='card'>
+        <div class='card-header'><%= t '.headers.details' %></div>
+        <ul class='list-group list-group-flush'>
           <li class='list-group-item'>
             <span><%= User.human_attribute_name(:username) %>: </span>
             <strong><%= current_user.username %></strong>
@@ -29,9 +29,9 @@
     </div>
 
     <div class='col-md-3'>
-      <div class='panel panel-default'>
-        <div class='panel-heading'><%= t '.headers.activity' %></div>
-        <ul class='list-group'>
+      <div class='card'>
+        <div class='card-header'><%= t '.headers.activity' %></div>
+        <ul class='list-group list-group-flush'>
           <% unless current_user.last_sign_in_at.nil? %>
             <li class='list-group-item'>
               <span><%= User.human_attribute_name(:last_sign_in_at) %>: </span>
@@ -47,7 +47,7 @@
         </ul>
       </div>
 
-      <%= link_to self_edit_users_path, class: 'btn btn-primary' do %>
+      <%= link_to self_edit_users_path, class: 'btn btn-primary mt-4' do %>
         <%= icon 'edit', t('.edit') %>
       <% end %>
 
