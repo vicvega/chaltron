@@ -1,28 +1,28 @@
 <div class='container-fluid'>
-  <h3 class='page-header'><%= t ("chaltron.logs.severity.#{@log.severity}") %></h3>
+  <h3 class='pt-4'><%= t ("chaltron.logs.severity.#{@log.severity}") %></h3>
   <div class='row'>
-
     <div class='col-md-12'>
-      <%= display_panel(@log) do %>
-        <div class='panel-heading'><%= t '.headers.details' %></div>
+      <div class='card'>
+          <%= content_tag :div, class: "card-header text-white bg-#{bootstrap_severity(@log.severity)}" do %>
+            <%= t '.headers.details' %>
+          <% end %>
 
-        <ul class='list-group'>
-          <li class='list-group-item'>
-            <span><%= Log.human_attribute_name(:created_at) %>: </span>
-            <strong><%= l(@log.created_at, format: :short) %></strong>
-          </li>
-          <li class='list-group-item'>
-            <span><%= Log.human_attribute_name(:message) %>: </span>
-            <strong><%= @log.message %></strong>
-          </li>
-          <li class='list-group-item'>
-            <span><%= Log.human_attribute_name(:category) %>: </span>
-            <strong><%= t ("chaltron.logs.category.#{@log.category}") %></strong>
-          </li>
-        </ul>
-      <% end %>
+          <ul class='list-group list-group-flush'>
+            <li class='list-group-item'>
+              <span><%= Log.human_attribute_name(:created_at) %>: </span>
+              <strong><%= l(@log.created_at, format: :short) %></strong>
+            </li>
+            <li class='list-group-item'>
+              <span><%= Log.human_attribute_name(:message) %>: </span>
+              <strong><%= @log.message %></strong>
+            </li>
+            <li class='list-group-item'>
+              <span><%= Log.human_attribute_name(:category) %>: </span>
+              <strong><%= t ("chaltron.logs.category.#{@log.category}") %></strong>
+            </li>
+          </ul>
+      </div>
     </div>
-
 
   </div>
 
