@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'font-awesome-sass'
   s.add_dependency 'nprogress-rails'
   s.add_dependency 'simple-navigation'
-  s.add_dependency 'jquery-datatables-rails'
+  s.add_dependency 'jquery-datatables'
   s.add_dependency 'ajax-datatables-rails'
   s.add_dependency 'cancancan'
   s.add_dependency 'bootstrap_form'

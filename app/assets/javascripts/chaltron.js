@@ -2,10 +2,11 @@
 //= require jquery_ujs
 //= require popper
 //= require bootstrap
-//= require dataTables/jquery.dataTables
-//= require dataTables/dataTables.bootstrap4.min
-//= require dataTables/extras/dataTables.responsive
-//= require dataTables/extras/dataTables.select.min
+//= require datatables/jquery.dataTables
+//= require datatables/dataTables.bootstrap4
+//= require datatables/extensions/Responsive/dataTables.responsive
+//= require datatables/extensions/Responsive/responsive.bootstrap4
+//= require datatables/extensions/Select/dataTables.select
 //= require nprogress
 //= require nprogress-turbolinks
 //= require nprogress-ajax

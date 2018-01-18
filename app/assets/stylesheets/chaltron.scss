@@ -6,10 +6,10 @@
 @import 'font-awesome';
 
 // datatables
-@import 'dataTables/bootstrap.css';
-@import 'dataTables/dataTables.bootstrap4.min.css';
-@import 'dataTables/extras/dataTables.responsive';
-@import 'dataTables/extras/select.dataTables';
+@import 'datatables/dataTables.bootstrap4';
+@import 'datatables/extensions/Responsive/responsive.bootstrap4';
+@import 'datatables/extensions/Select/select.bootstrap4';
+
 
 // minor fix
 .dataTables_wrapper .dataTables_filter input {
