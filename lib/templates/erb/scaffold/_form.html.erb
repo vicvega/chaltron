@@ -1,4 +1,4 @@
-<%%= bootstrap_form_for(@<%= singular_table_name %>, layout: :horizontal) do |f| %>
+<%%= bootstrap_form_for(@<%= singular_table_name %>, layout: :horizontal, label_col: 'col-sm-2 col-form-label', control_col: 'col-sm-10') do |f| %>
 
 <% attributes.each do |attribute| -%>
   <% if attribute.field_type == :check_box -%>
@@ -10,9 +10,12 @@
   <% end -%>
 <% end -%>
 
-  <%%= f.form_group class: 'form-actions' do %>
-    <%%= f.submit 'Submit', class: 'btn btn-primary' %>
-    <%%= back_link class: 'btn btn-default pull-right' %>
-  <%% end %>
+  <div class='form-group row'>
+    <div class='col-sm-2'></div>
+    <div class='col-sm-10'>
+      <%%= f.submit 'Submit', class: 'btn btn-primary' %>
+      <%%= back_link class: 'btn btn-default pull-right' %>
+    </div>
+  </div>
 
 <%% end %>

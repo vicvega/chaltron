@@ -1,20 +1,22 @@
 <div class='container-fluid'>
-  <h3 class='page-header'>Editing <%= singular_table_name %></h3>
+  <h3 class='pt-4'>Editing <%= singular_table_name %></h3>
   <div class='row'>
 
     <div class='col-md-3'>
-      <ul class='list-group'>
-        <%%= link_to <%= index_helper %>_path, class: 'list-group-item' do %>
-          <%%= icon('list') %> <%= singular_table_name.capitalize %> index
-        <%% end %>
-        <%%= link_to @<%= singular_table_name %>, class: 'list-group-item' do %>
-          <%%= icon('eye') %> Show
-        <%% end %>
-        <%%= link_to @<%= singular_table_name %>, data: {confirm: 'Are you sure?'},
-              method: :delete, class: 'list-group-item list-group-item-danger' do %>
-        <%%= icon('trash') %> Delete
-      <%% end %>
-      </ul>
+      <div class='card'>
+        <ul class='list-group list-group-flush'>
+          <%%= link_to <%= index_helper %>_path, class: 'list-group-item' do %>
+            <%%= icon('list') %> <%= singular_table_name.capitalize %> index
+          <%% end %>
+          <%%= link_to @<%= singular_table_name %>, class: 'list-group-item' do %>
+            <%%= icon('eye') %> Show
+          <%% end %>
+          <%%= link_to @<%= singular_table_name %>, data: {confirm: 'Are you sure?'},
+                method: :delete, class: 'list-group-item list-group-item-danger' do %>
+            <%%= icon('trash') %> Delete
+          <%% end %>
+        </ul>
+      </div>
     </div>
 
     <div class='col-md-9'>
