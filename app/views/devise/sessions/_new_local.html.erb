@@ -1,18 +1,18 @@
-<%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name), layout: :horizontal, label_col: 'col-sm-2 col-form-label', control_col: 'col-sm-10') do |f| %>
+<%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name), layout: :horizontal, label_col: 'col-sm-3 col-form-label', control_col: 'col-sm-9') do |f| %>
   <%= f.text_field :login, placeholder: t('.login_placeholder') %>
   <%= f.password_field :password, placeholder: 'Password' %>
   <% if devise_mapping.rememberable? %>
     <div class='form-group row'>
-      <div class="col-sm-2"></div>
-      <div class="col-sm-10">
+      <div class='col-sm-3'></div>
+      <div class='col-sm-9'>
         <%= f.check_box :remember_me, label: t('.remember_me'), control_col: 'col-sm-2', label_col: 'col-sm-2 col-form-label' %>
       </div>
     </div>
   <% end %>
 
   <div class='form-group row'>
-    <div class='col-sm-2'></div>
-    <div class='col-sm-10'>
+    <div class='col-sm-3'></div>
+    <div class='col-sm-9'>
       <%= f.submit t('.submit_text'), class: 'btn btn-primary' %>
     </div>
   </div>
