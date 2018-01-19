@@ -3,18 +3,16 @@
   <div class='row'>
 
     <div class='col-md-3'>
-      <div class='card'>
-        <ul class='list-group list-group-flush'>
-          <%%= link_to <%= index_helper %>_path, class: 'list-group-item' do %>
-            <%%= icon('list') %> <%= singular_table_name.capitalize %> index
-          <%% end %>
-          <%%= link_to edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: 'list-group-item' do %>
-            <%%= icon('wrench') %> Edit
-          <%% end %>
-          <%%= link_to new_<%= singular_table_name %>_path, class: 'list-group-item' do %>
-            <%%= icon('plus') %> New <%= singular_table_name %>
-          <%% end %>
-        </ul>
+      <div class='list-group'>
+        <%%= link_to <%= index_helper %>_path, class: 'list-group-item list-group-item-action' do %>
+          <%%= icon('list') %> <%= singular_table_name.capitalize %> index
+        <%% end %>
+        <%%= link_to edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: 'list-group-item list-group-item-action' do %>
+          <%%= icon('wrench') %> Edit
+        <%% end %>
+        <%%= link_to new_<%= singular_table_name %>_path, class: 'list-group-item list-group-item-action' do %>
+          <%%= icon('plus') %> New <%= singular_table_name %>
+        <%% end %>
       </div>
     </div>
 
