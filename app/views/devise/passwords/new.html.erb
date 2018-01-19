@@ -7,7 +7,14 @@
         html: { role: 'form', method: :post }  ) do |f| %>
         <p><%= t '.par1' %></p>
         <%= f.email_field :email, autofocus: true %>
-        <%= f.submit t('.submit_text'), class: 'btn btn-primary' %>
+
+        <div class='form-group row'>
+          <div class='col-sm-2'></div>
+          <div class='col-sm-10'>
+            <%= submit_tag t('.submit_text'), class: 'btn btn-primary' %>
+          </div>
+        </div>
+
         <hr>
         <p><%= t '.par2_html' %></p>
       <% end %>

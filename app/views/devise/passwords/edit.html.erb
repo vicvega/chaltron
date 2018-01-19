@@ -8,7 +8,12 @@
         <%= f.hidden_field :reset_password_token %>
         <%= f.password_field :password, autofocus: true %>
         <%= f.password_field :password_confirmation %>
-        <%= f.submit t('.submit_text'), class: 'btn btn-primary' %>
+        <div class='form-group row'>
+          <div class='col-sm-4'></div>
+          <div class='col-sm-8'>
+            <%= submit_tag t('.submit_text'), class: 'btn btn-primary' %>
+          </div>
+        </div>
         <hr>
         <p><%= t '.par_html' %></p>
       <% end %>
