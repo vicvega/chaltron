@@ -39,5 +39,13 @@ SimpleNavigation::Configuration.run do |navigation|
   navigation.items do |primary|
     primary.item :news, 'Link 1', home_test1_path, link_html: { icon: 'bullhorn' }
     primary.item :concerts, 'Link 2', home_test2_path, link_html: { icon: 'line-chart' }
+    primary.item :video, 'Link 3', home_test3_path, link_html: { icon: 'book' }
+    primary.item :info, 'Submenu', '#', link_html: { icon: 'hand-o-down' } do |info_nav|
+      info_nav.item :main_info_page, 'Link 4', home_test4_path, link_html: { icon: 'paw' }
+      info_nav.item :about_info_page, 'Link 5', home_test5_path, link_html: { icon: 'headphones' }
+      info_nav.item :contact_info_page, 'Link 6', home_test6_path, link_html: { icon: 'soccer-ball-o' }
+    end
+    #primary.item :user, { icon: 'user', text: 'Link 7' }, home_test7_path
+    primary.item :user, 'Link7', home_test7_path, link_html: { icon: 'user' }
   end
 end
