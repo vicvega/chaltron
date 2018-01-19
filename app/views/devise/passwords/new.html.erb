@@ -3,7 +3,8 @@
   <div class='card'>
     <div class='card-body'>
       <%= bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name),
-        html: { role: 'form', method: :post} ) do |f| %>
+        layout: :horizontal, label_col: 'col-sm-2 col-form-label', control_col: 'col-sm-10',
+        html: { role: 'form', method: :post }  ) do |f| %>
         <p><%= t '.par1' %></p>
         <%= f.email_field :email, autofocus: true %>
         <%= f.submit t('.submit_text'), class: 'btn btn-primary' %>
