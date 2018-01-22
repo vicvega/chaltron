@@ -5,7 +5,10 @@
 [![PullReview stats](https://www.pullreview.com/github/vicvega/chaltron/badges/master.svg?)](https://www.pullreview.com/github/vicvega/chaltron/reviews/master)
 [![security](https://hakiri.io/github/vicvega/chaltron/master.svg)](https://hakiri.io/github/vicvega/chaltron/master)
 
-**The latest release (1.x) of Chaltron targets Bootstrap v4.** If you are using Bootstrap v3, refer to the  [bootstrap3](https://github.com/vicvega/chaltron/tree/bootstrap3) branch (chaltron version 0.x).
+## Important note
+
+**The latest release (1.x) of Chaltron targets Bootstrap v4.**
+If you are using Bootstrap v3, refer to the  [bootstrap3](https://github.com/vicvega/chaltron/tree/bootstrap3) branch (chaltron version 0.x).
 
 ## Usage
 
