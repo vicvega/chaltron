@@ -12,7 +12,6 @@ PATH
       gitlab_omniauth-ldap
       jquery-datatables
       jquery-rails
-      momentjs-rails
       nprogress-rails
       omniauth
       rails (~> 5.0)
@@ -68,9 +67,9 @@ GEM
     autoprefixer-rails (7.2.5)
       execjs
     bcrypt (3.1.11)
-    bootstrap (4.0.0.beta3)
+    bootstrap (4.0.0)
       autoprefixer-rails (>= 6.0.3)
-      popper_js (>= 1.12.3, < 2)
+      popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
     bootstrap_form (2.7.0)
     builder (3.2.3)
@@ -143,8 +142,6 @@ GEM
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.1)
-    momentjs-rails (2.17.1)
-      railties (>= 3.1)
     net-ldap (0.16.1)
     nio4r (2.2.0)
     nokogiri (1.8.1)

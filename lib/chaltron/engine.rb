@@ -10,7 +10,6 @@ require 'ajax-datatables-rails'
 require 'bootstrap_form'
 require 'nprogress-rails'
 require 'rails-i18n'
-require 'momentjs-rails'
 require 'jquery-rails'
 require 'jquery-datatables'
 
