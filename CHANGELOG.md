@@ -1,4 +1,6 @@
-### 1.0.0 - current version - unreleased
+### 1.0.1 - current version - unreleased
+
+### 1.0.0 - 20178-01-22
  * compatibility with version 4 of bootstrap
 
 ### 0.2.5 - 20178-01-22
