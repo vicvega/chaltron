@@ -20,7 +20,6 @@ class DataTableBuilder
       columnDefs: [
         { orderable: false, className: 'select-checkbox', targets: 0 }
       ]
-      dom: 'T<"clear">lfrtip'
       select: { style: 'multi', info: false }
     })
 
