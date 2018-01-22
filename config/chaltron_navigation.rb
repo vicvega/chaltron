@@ -1,6 +1,7 @@
 SimpleNavigation::Configuration.run do |navigation|
   navigation.items do |primary|
     primary.dom_class = 'justify-content-end'
+    navigation.selected_class = 'active'
 
     if signed_in?
       primary.item :admin, I18n.t('chaltron.menu.admin'), '#', link_html: { icon: 'cogs' } do |admin|
