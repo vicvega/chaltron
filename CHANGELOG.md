@@ -1,4 +1,5 @@
-### 0.2.6 - current version - unreleased
+### 1.0.0 - current version - unreleased
+ * compatibility with version 4 of bootstrap
 
 ### 0.2.5 - 20178-01-22
 * FactoryBot replaces FactoryGirl
