@@ -2,7 +2,7 @@
   <h3 class='pt-4'><%= t('.title') %></h3>
 
   <%= bootstrap_form_tag(url: ldap_multi_new_path, method: :post, layout: :horizontal,
-    label_col: 'col-sm-2 col-form-label', control_col: 'col-sm-10') do |f| %>
+    label_col: 'col-sm-2', control_col: 'col-sm-10') do |f| %>
 
     <%= f.text_field :userid, label: t('.name_label'), help: t('.name_help') %>
     <%= f.text_field :fullname, label: t('.fullname_label'), help: t('.fullname_help') %>
