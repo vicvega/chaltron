@@ -1,4 +1,6 @@
-### 0.2.5 - current version - unreleased
+### 0.2.6 - current version - unreleased
+
+### 0.2.5 - 20178-01-22
 * FactoryBot replaces FactoryGirl
 * wrap table in `div.table-responsive` to improve mobile layout
 * remove dependency from moment.js
