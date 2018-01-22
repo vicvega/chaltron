@@ -57,6 +57,3 @@ class @Chaltron
         }
       }
     ret[field]
-
-$ ->
-  moment.locale(Chaltron::lang ? 'en')

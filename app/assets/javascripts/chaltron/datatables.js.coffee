@@ -71,9 +71,6 @@ $(document).on 'turbolinks:load', ->
   table = new DataTableBuilder
   table.go()
 
-# specify date format (for sorting)
-$.fn.dataTable.moment('DD MMM HH:mm')
-
 $ ->
   $('form#ldap_create').on 'submit', (e) ->
 
