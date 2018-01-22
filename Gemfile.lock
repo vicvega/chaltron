@@ -12,7 +12,6 @@ PATH
       gitlab_omniauth-ldap
       jquery-datatables-rails
       jquery-rails
-      momentjs-rails
       nprogress-rails
       omniauth
       rails (~> 5.0)
@@ -139,8 +138,6 @@ GEM
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.1)
-    momentjs-rails (2.17.1)
-      railties (>= 3.1)
     net-ldap (0.16.1)
     nio4r (2.2.0)
     nokogiri (1.8.1)
