@@ -15,6 +15,15 @@ module Chaltron
       end
     end
 
+    def gemfile
+      gem 'bootstrap_form',
+        git: 'https://github.com/bootstrap-ruby/rails-bootstrap-forms.git',
+        branch: 'master'
+      Bundler.with_clean_env do
+        run 'bundle install'
+      end
+    end
+
     def db_migrations
       rake 'chaltron_engine:install:migrations'
     end
@@ -42,9 +51,6 @@ RUBY
       # javascript
       inject_into_file 'app/assets/javascripts/application.js',
         "//= require chaltron\n", before: '//= require_tree .'
-      # css
-      inject_into_file 'app/assets/stylesheets/application.css',
-        " *= require chaltron\n", before: ' *= require_self'
     end
 
     def create_index_controller

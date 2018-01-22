@@ -1,10 +1,9 @@
 body {
-//  background-color: #E1E1E1;
 }
 
 div#content {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 /**
@@ -16,7 +15,7 @@ div#content {
   margin: 0;
   text-align: center;
   position: fixed;
-  top: 40px;
+  top: 2.5rem;
   width: 100%;
   opacity: 0.8;
   z-index: 100;
@@ -35,35 +34,10 @@ div#content {
   @include form-box(650px);
 }
 
-/**
- * Navbar tabs
- *
- */
- .nav-tabs {
-    margin-bottom: 15px;
-}
-
 #nprogress .spinner {
   display: block;
   position: fixed;
   z-index: 1031;
   top: 12px;
   right: 5px;
-}
-
-/**
- * Scaffold
- *
- */
-.side-filters fieldset {
-  margin-bottom: 15px;
-}
-
-.form-actions {
-  background-color: whitesmoke;
-  border-top: 1px solid #e5e5e5;
-  margin-bottom: 18px;
-  margin-top: 18px;
-  padding-bottom: 18px;
-  padding-top: 18px;
 }

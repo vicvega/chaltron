@@ -34,17 +34,6 @@ module ChaltronHelper
   end
 
   #
-  # Badge and label helpers
-  #
-  def badge(*args)
-    badge_label(:badge, *args)
-  end
-
-  def tag_label(*args)
-    badge_label(:label, *args)
-  end
-
-  #
   # Get current revision
   #
   def revision
@@ -61,9 +50,4 @@ module ChaltronHelper
     end
   end
 
-  def badge_label(what, value, type = nil)
-    klass = [what]
-    klass << "#{what}-#{type}" if type.present?
-    content_tag :span, value, class: "#{klass.join(' ')}"
-  end
 end

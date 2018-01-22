@@ -2,7 +2,7 @@ require 'devise'
 require 'cancancan'
 require 'omniauth'
 require 'omniauth-ldap'
-require 'bootstrap-sass'
+require 'bootstrap'
 require 'autoprefixer-rails'
 require 'font-awesome-sass'
 require 'simple-navigation'
@@ -11,9 +11,8 @@ require 'bootstrap_form'
 require 'nprogress-rails'
 require 'rails-i18n'
 require 'jquery-rails'
-require 'jquery-datatables-rails'
+require 'jquery-datatables'
 
-require 'simple_navigation_bootstrap'
 SimpleNavigation.config_file_paths << File.expand_path('../../../config', __FILE__)
 
 module Chaltron

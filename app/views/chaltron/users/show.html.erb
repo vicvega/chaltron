@@ -1,11 +1,11 @@
 <div class='container-fluid'>
-  <h3 class='page-header'><%= @user.display_name %></h3>
+  <h3 class='pt-4'><%= @user.display_name %></h3>
   <div class='row'>
 
     <div class='col-md-9'>
-      <div class='panel panel-default'>
-        <div class='panel-heading'><%= t '.headers.details' %></div>
-        <ul class='list-group'>
+      <div class='card'>
+        <div class='card-header'><%= t '.headers.details' %></div>
+        <ul class='list-group list-group-flush'>
           <li class='list-group-item'>
             <span><%= User.human_attribute_name(:username) %>: </span>
             <strong><%= @user.username %></strong>
@@ -33,9 +33,9 @@
     </div>
 
     <div class='col-md-3'>
-      <div class='panel panel-default'>
-        <div class='panel-heading'><%= t '.headers.activity' %></div>
-        <ul class='list-group'>
+      <div class='card'>
+        <div class='card-header'><%= t '.headers.activity' %></div>
+        <ul class='list-group list-group-flush'>
           <li class='list-group-item'>
             <span><%= User.human_attribute_name(:sign_in_count) %>: </span>
             <strong><%= @user.sign_in_count %></strong>
@@ -64,7 +64,7 @@
   <% end %>
 
   <div class='pull-right'>
-    <%= link_to edit_user_path(@user), class: 'btn btn-default' do %>
+    <%= link_to edit_user_path(@user), class: 'btn btn-primary' do %>
       <%= icon :edit, t('.edit') %>
     <% end %>
     <%= link_to @user, method: :delete, class: 'btn btn-danger',

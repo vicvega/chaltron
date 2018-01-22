@@ -1,20 +1,23 @@
 <div class='container-fluid'>
-  <h3 class='page-header'><%= t('.title') %></h3>
+  <h3 class='pt-4'><%= t('.title') %></h3>
 
-  <%= bootstrap_form_tag(url: ldap_multi_new_path, method: :post, layout: :horizontal) do |f| %>
+  <%= bootstrap_form_tag(url: ldap_multi_new_path, method: :post, layout: :horizontal,
+    label_col: 'col-sm-2', control_col: 'col-sm-10') do |f| %>
 
     <%= f.text_field :userid, label: t('.name_label'), help: t('.name_help') %>
     <%= f.text_field :fullname, label: t('.fullname_label'), help: t('.fullname_help') %>
     <%= f.text_field :department, label: t('.department_label'), help: t('.department_help') %>
     <%= f.text_field :limit, label: t('.limit_label'), help: t('.limit_help'), value: @limit %>
 
-    <%= f.form_group class: 'form-actions' do %>
-      <%= submit_tag t('.submit_text'), class: 'btn btn-primary' %>
-      <%= link_to users_path, class: 'btn btn-default pull-right' do %>
-        <%= icon :times, t('chaltron.common.cancel') %>
-      <% end %>
-    <% end %>
-
+    <div class='form-group row'>
+      <div class='col-sm-2'></div>
+      <div class='col-sm-10'>
+        <%= submit_tag t('.submit_text'), class: 'btn btn-primary' %>
+        <%= link_to users_path, class: 'btn btn-link pull-right' do %>
+          <%= icon :times, t('chaltron.common.cancel') %>
+        <% end %>
+      </div>
+    </div>
   <% end %>
 
 </div>

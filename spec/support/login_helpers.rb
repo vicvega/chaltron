@@ -20,6 +20,6 @@ module LoginHelpers
   end
 
   def logout
-    click_link 'Logout' rescue nil
+    click_link 'Logout'
   end
 end

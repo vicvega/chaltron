@@ -12,3 +12,7 @@ gemspec
 
 # To use debugger
 # gem 'byebug', group: [:development, :test]
+group :test do
+  gem 'turbolinks', '~> 5'
+  gem 'coffee-rails', '~> 4.2'
+end

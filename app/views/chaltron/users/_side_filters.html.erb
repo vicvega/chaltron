@@ -1,37 +1,20 @@
 <% if ldap_enabled? %>
   <div class='list-group'>
-    <%= link_to users_path(filters: filters.merge(provider: nil).to_h),
-      class: (filters[:provider].blank? ? 'list-group-item active': 'list-group-item')  do %>
-      <span class='badge pull-right'><%= User.count %></span>
-      <%= t '.provider.all' %>
-    <% end %>
-
-    <%= link_to users_path(filters: filters.merge(provider: 'local').to_h),
-      class: (filters[:provider] == 'local' ? 'list-group-item active': 'list-group-item') do %>
-      <span class='badge pull-right'><%= User.where(provider: nil).count %></span>
-      <%= t '.provider.local' %>
-    <% end %>
-
-    <%= link_to users_path(filters: filters.merge(provider: 'ldap').to_h),
-      class: (filters[:provider] == 'ldap' ? 'list-group-item active': 'list-group-item') do %>
-      <span class='badge pull-right'><%= User.where(provider: :ldap).count %></span>
-      <%= t '.provider.ldap' %>
-    <% end %>
+    <%= display_side_filter_link(users_path(filters: filters.merge(provider: nil).to_h),
+      filters[:provider].blank?, t('.provider.all'), User.count) %>
+    <%= display_side_filter_link(users_path(filters: filters.merge(provider: 'local').to_h),
+      (filters[:provider] == 'local'), t('.provider.local'), User.where(provider: nil).count) %>
+    <%= display_side_filter_link(users_path(filters: filters.merge(provider: 'ldap').to_h),
+        (filters[:provider] == 'ldap'), t('.provider.ldap'), User.where(provider: 'ldap').count) %>
   </div>
-
 <% end %>
-
-<div class='list-group'>
-  <%= link_to users_path(filters: filters.merge(activity: 'no_login').to_h),
-    class: (filters[:activity] == 'no_login' ? 'list-group-item active': 'list-group-item')  do %>
-      <span class='badge pull-right'><%= User.where(sign_in_count: 0).count %></span>
-      <%= t '.activity.no_login' %>
-  <% end %>
+<div class='list-group mt-4'>
+  <%= display_side_filter_link(users_path(filters: filters.merge(activity: 'no_login').to_h),
+      (filters[:activity] == 'no_login'), t('.activity.no_login'), User.where(sign_in_count: 0).count) %>
 </div>
 
-<fieldset>
+<fieldset class='mt-4'>
   <%= link_to nil, class: 'pull-right' do %>
     <strong><%= icon :remove, t('chaltron.common.clear_filter') %></strong>
   <% end %>
-</fieldset>
 </fieldset>

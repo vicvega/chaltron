@@ -1,20 +1,17 @@
 // Bootstrap
-$font-size-base: 13px;
-$navbar-height: 40px;
-
-@import 'bootstrap-sprockets';
 @import 'bootstrap';
-@import 'bootstrap/theme';
 
 // font-awesome
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
 // datatables
-@import 'dataTables/bootstrap/3/jquery.dataTables.bootstrap';
-@import 'dataTables/extras/dataTables.responsive';
-@import 'dataTables/extras/select.dataTables';
-//@import 'chaltron/datatables';
+@import 'datatables/dataTables.bootstrap4';
+@import 'datatables/extensions/Responsive/responsive.bootstrap4';
+@import 'datatables/extensions/Select/select.bootstrap4';
+
+// bootstrap_form
+@import 'rails_bootstrap_forms';
 
 // minor fix
 .dataTables_wrapper .dataTables_filter input {
@@ -30,3 +27,6 @@ $navbar-height: 40px;
 
 // Core CSS
 @import 'chaltron/layout';
+
+// logs
+@import 'chaltron/logs';

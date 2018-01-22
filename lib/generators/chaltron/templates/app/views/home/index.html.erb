@@ -1,13 +1,12 @@
 <%= render 'carousel' %>
-
 <div class='container-fluid'>
   <div class='row'>
     <div class='col-lg-12'>
-      <h1 class='page-header'>
+      <h1 class='pt-4'>
         Welcome to Chaltron! <small> aka Muffaster reloaded</small>
       </h1>
     </div>
-    <%= render 'panel', title: 'Bootstrap v3',
+    <%= render 'panel', title: 'Bootstrap v4',
         link: 'http://getbootstrap.com', icon: 'check',
         body: 'Bootstrap rocks! And there are lots of good template ready to ' \
               'use, and free. Just as this one ;-)'
@@ -23,9 +22,11 @@
     %>
   </div>
 
+  <hr>
+
   <div class='row'>
     <div class='col-lg-12'>
-      <h2 class='page-header'>Main features</h2>
+      <h2 class='pt-4'>Main features</h2>
     </div>
     <div class='col-md-6'>
       <p>Chaltron provides:</p>
@@ -33,7 +34,7 @@
         <li>
           <%= icon('check-square', '', class: 'fa-li') %>
           Compatibility with
-          <strong><%= link_to 'Bootstrap v3', 'http://getbootstrap.com' %></strong> and
+          <strong><%= link_to 'Bootstrap v4', 'http://getbootstrap.com' %></strong> and
           <strong><%= link_to 'Font Awesome v4', 'http://fortawesome.github.io/Font-Awesome/' %></strong>
         </li>
         <li>
@@ -54,13 +55,15 @@
         taste <strong>L</strong>ight <strong>S</strong>peed <strong>A</strong>pplication <strong>D</strong>evelopment!</p>
     </div>
     <div class='col-md-6'>
-      <%= image_tag('700x300.gif', class: 'img-responsive img-thumbnail') %>
+      <%= image_tag('700x300.gif', class: 'img-responsive img-thumbnail border border-primary') %>
     </div>
   </div>
 
+  <hr>
+
   <div class='row'%>
     <div class='col-lg-12'>
-      <h2 class='page-header'>FAQ</h2>
+      <h2 class='pt-4'>FAQ</h2>
     </div>
   </div>
 
@@ -85,11 +88,10 @@
     }
   %>
 
-  <div class='row'%>
+  <div class='row'>
     <div class='col-lg-12'>
-      <div class='panel-group' id='accordion'>
+      <div id='accordion' role='tablist'>
         <%= render partial: 'faq', collection: faqs %>
-      </div>
     </div>
   </div>
 

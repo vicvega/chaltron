@@ -4,10 +4,11 @@ SimpleNavigation::Configuration.run do |navigation|
   # Specify a custom renderer if needed.
   # The default renderer is SimpleNavigation::Renderer::List which renders HTML lists.
   # The renderer can also be specified as option in the render_navigation call.
-  navigation.renderer = SimpleNavigationBootstrap::Bootstrap3
+  # navigation.renderer = SimpleNavigation::Renderer::List
 
   # Specify the class that will be applied to active navigation items.
-  # Defaults to 'selected' navigation.selected_class = 'your_selected_class'
+  # Defaults to 'selected'
+  navigation.selected_class = 'active'
 
   # Specify the class that will be applied to the current leaf of
   # active navigation items. Defaults to 'simple-navigation-active-leaf'
@@ -54,14 +55,14 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>.
     #
 
-    primary.item :news, { icon: 'fa fa-fw fa-bullhorn', text: 'Link 1' }, home_test1_path
-    primary.item :concerts, { icon: 'fa fa-fw fa-line-chart', text: 'Link 2' }, home_test2_path
-    primary.item :video, { icon: 'fa fa-fw fa-book', text: 'Link 3' }, home_test3_path
-    primary.item :info, { icon: 'fa fa-fw fa-hand-o-down', text: 'Submenu' }, '#' do |info_nav|
-      info_nav.item :main_info_page, { icon: 'fa fa-fw fa-paw', text: 'Link 4' }, home_test4_path
-      info_nav.item :about_info_page, { icon: 'fa fa-fw fa-headphones', text: 'Link 5' }, home_test5_path
-      info_nav.item :contact_info_page, { icon: 'fa fa-fw fa-soccer-ball-o', text: 'Link 6' }, home_test6_path
+    primary.item :news, 'Link 1', home_test1_path, link_html: { icon: 'bullhorn' }
+    primary.item :concerts, 'Link 2', home_test2_path, link_html: { icon: 'line-chart' }
+    primary.item :video, 'Link 3', home_test3_path, link_html: { icon: 'book' }
+    primary.item :info, 'Submenu', '#', link_html: { icon: 'hand-o-down' } do |info_nav|
+      info_nav.item :main_info_page, 'Link 4', home_test4_path, link_html: { icon: 'paw' }
+      info_nav.item :about_info_page, 'Link 5', home_test5_path, link_html: { icon: 'headphones' }
+      info_nav.item :contact_info_page, 'Link 6', home_test6_path, link_html: { icon: 'soccer-ball-o' }
     end
-
+    primary.item :user, 'Link7', home_test7_path, link_html: { icon: 'user' }
   end
 end

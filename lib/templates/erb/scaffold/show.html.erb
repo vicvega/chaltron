@@ -1,25 +1,25 @@
 <div class='container-fluid'>
-  <h3 class='page-header'>Show <%= singular_table_name %></h3>
+  <h3 class='pt-4'>Show <%= singular_table_name %></h3>
   <div class='row'>
 
     <div class='col-md-3'>
-      <ul class='list-group'>
-        <%%= link_to <%= index_helper %>_path, class: 'list-group-item' do %>
+      <div class='list-group'>
+        <%%= link_to <%= index_helper %>_path, class: 'list-group-item list-group-item-action' do %>
           <%%= icon('list') %> <%= singular_table_name.capitalize %> index
         <%% end %>
-        <%%= link_to edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: 'list-group-item' do %>
+        <%%= link_to edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: 'list-group-item list-group-item-action' do %>
           <%%= icon('wrench') %> Edit
         <%% end %>
-        <%%= link_to new_<%= singular_table_name %>_path, class: 'list-group-item' do %>
+        <%%= link_to new_<%= singular_table_name %>_path, class: 'list-group-item list-group-item-action' do %>
           <%%= icon('plus') %> New <%= singular_table_name %>
         <%% end %>
-      </ul>
+      </div>
     </div>
 
     <div class='col-md-9'>
-      <div class='panel panel-default'>
-        <div class='panel-heading'>Details</div>
-        <ul class='list-group'><% attributes.each do |attribute| %>
+      <div class='card'>
+        <div class='card-header'>Details</div>
+        <ul class='list-group list-group-flush'><% attributes.each do |attribute| %>
           <li class='list-group-item'>
             <span><%= attribute.human_name %>: </span>
             <strong><%%= @<%= singular_table_name %>.<%= attribute.name %> %></strong>

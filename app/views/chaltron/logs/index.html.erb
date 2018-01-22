@@ -1,34 +1,28 @@
 <div class='container-fluid'>
-  <h3 class='page-header'><%= t '.title' %></h3>
+  <h3 class='pt-4'><%= t '.title' %></h3>
 
   <div class='row'>
-    <div class='col-md-12'>
-      <div class='panel panel-default'>
-        <div class='panel-body'>
-          <%= content_tag 'table', id: 'logs', class: 'table table-striped',
-            data: {source: logs_path(format: :json)} do %>
-            <thead>
-              <tr>
-                <th>
-                  <%= Log.human_attribute_name(:severity) %>
-                </th>
-                <th class='timestamp'>
-                  <%= Log.human_attribute_name(:created_at) %>
-                </th>
-                <th class='message'>
-                  <%= Log.human_attribute_name(:message) %>
-                </th>
-                <th class='category'>
-                  <%= Log.human_attribute_name(:category) %>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-            </tbody>
-          <% end %>
-        </div>
-      </div>
-    </div>
+    <%= content_tag 'table', id: 'logs', class: 'table table-striped',
+      data: {source: logs_path(format: :json)} do %>
+      <thead>
+        <tr>
+          <th class='severity'>
+            <%= Log.human_attribute_name(:severity) %>
+          </th>
+          <th class='timestamp'>
+            <%= Log.human_attribute_name(:created_at) %>
+          </th>
+          <th class='message'>
+            <%= Log.human_attribute_name(:message) %>
+          </th>
+          <th class='category'>
+            <%= Log.human_attribute_name(:category) %>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    <% end %>
   </div>
 
 </div>

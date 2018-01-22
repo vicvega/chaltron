@@ -20,7 +20,6 @@ class DataTableBuilder
       columnDefs: [
         { orderable: false, className: 'select-checkbox', targets: 0 }
       ]
-      dom: 'T<"clear">lfrtip'
       select: { style: 'multi', info: false }
     })
 
@@ -39,7 +38,8 @@ class DataTableBuilder
         { data: 'category', searchable: false }
       ]
       columnDefs: [
-        { orderSequence: ['desc', 'asc'], targets: [ 1 ] }
+        { orderSequence: ['desc', 'asc'], targets: [ 1 ] },
+        { className: 'text-center', "targets": [ 0 ] }
       ]
     })
 

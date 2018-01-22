@@ -1,10 +1,8 @@
-<nav class='navbar navbar-inverse navbar-fixed-bottom'>
-  <div class='container-fluid'>
-    <%= content_tag :p, class: 'navbar-text' do %>
-      <%= icon('github') %>
-      Created with
-      <%= link_to 'chaltron', 'https://github.com/vicvega/chaltron', class: 'navbar-link' %>
-    <% end %>
-    <%= content_tag :p, revision, class: 'navbar-text pull-right' unless revision.nil? %>
-  </div>
+<nav class='navbar fixed-bottom navbar-dark bg-dark py-0'>
+  <%= content_tag :div, class: 'navbar-text' do %>
+    <%= icon('github') %>
+    Created with
+    <%= link_to 'chaltron', 'https://github.com/vicvega/chaltron', class: 'navbar-link' %>
+  <% end %>
+  <%= content_tag :div, revision, class: 'navbar-text ' unless revision.nil? %>
 </nav>

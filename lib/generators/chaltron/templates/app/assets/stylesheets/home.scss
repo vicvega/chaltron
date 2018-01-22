@@ -2,29 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'chaltron';
+
 #main-carousel {
   img {
     height: 400px;
     width: 100%;
   }
-  margin-bottom: 60px;
-}
-
-.marketing {
-  img.img-circle {
-    height: 140px;
-    width: 140px;
-  }
-  .col-lg-4 {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-}
-
-.featurette-divider {
-  margin: 80px 0;
-}
-
-.featurette-heading {
-  font-size: 50px;
 }

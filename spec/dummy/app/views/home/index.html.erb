@@ -1,47 +1,50 @@
 <%= render 'carousel' %>
-
 <div class='container-fluid'>
   <div class='row'>
     <div class='col-lg-12'>
-      <h1 class='page-header'>
+      <h1 class='pt-4'>
         Welcome to Chaltron! <small> aka Muffaster reloaded</small>
       </h1>
     </div>
-    <%= render 'panel', title: 'Bootstrap v3.2.0',
+    <%= render 'panel', title: 'Bootstrap v4',
         link: 'http://getbootstrap.com', icon: 'check',
         body: 'Bootstrap rocks! And there are lots of good template ready to ' \
               'use, and free. Just as this one ;-)'
     %>
     <%= render 'panel', title: 'Free &amp; Open Source'.html_safe,
-        icon: 'gift', link_text: 'Fork me on github',
+        icon: 'github', link_text: 'Fork me on GitHub',
         body: "It's all free and open and much is still to do. " \
               'So pull request are very welcome'
     %>
     <%= render 'panel', title: 'Easy to use', icon: 'compass',
-        body: "It's so easy to build up and running web applications in a" \
+        body: "It's so easy to build up and running web applications in a " \
               'few seconds. Try by yourself', link_text: 'Have a look'
     %>
   </div>
 
+  <hr>
+
   <div class='row'>
     <div class='col-lg-12'>
-      <h2 class='page-header'>Main features</h2>
+      <h2 class='pt-4'>Main features</h2>
     </div>
     <div class='col-md-6'>
       <p>Chaltron provides:</p>
       <ul class='fa-ul'>
-        <li><i class='fa-li fa fa-check-square'></i>
+        <li>
+          <%= icon('check-square', '', class: 'fa-li') %>
           Compatibility with
-          <strong><%= link_to 'Bootstrap v3.2', 'http://getbootstrap.com' %></strong> and
-          <strong><%= link_to 'Font Awesome v4.1', 'http://fortawesome.github.io/Font-Awesome/' %></strong>
+          <strong><%= link_to 'Bootstrap v4', 'http://getbootstrap.com' %></strong> and
+          <strong><%= link_to 'Font Awesome v4', 'http://fortawesome.github.io/Font-Awesome/' %></strong>
         </li>
-        <li><i class='fa-li fa fa-check-square'></i>
+        <li>
+          <%= icon('check-square', '', class: 'fa-li') %>
           Authentication (local and LDAP users) and authorization with
           <strong><%= link_to 'devise', 'https://github.com/plataformatec/devise/' %></strong>
         </li>
-        <li><i class='fa-li fa fa-check-square'></i>
-          Easy
-          <strong><%= link_to 'amCharts', 'http://www.amcharts.com/' %></strong>
+        <li>
+          <%= icon('check-square', '', class: 'fa-li') %>
+          <strong><%= link_to 'Datatables', 'https://datatables.net/' %></strong>
           integration
         </li>
       </ul>
@@ -56,9 +59,11 @@
     </div>
   </div>
 
-  <div class='row'%>
+  <hr>
+
+  <div class='row'>
     <div class='col-lg-12'>
-      <h2 class='page-header'>FAQ</h2>
+      <h2 class='pt-4'>FAQ</h2>
     </div>
   </div>
 
@@ -83,11 +88,10 @@
     }
   %>
 
-  <div class='row'%>
+  <div class='row'>
     <div class='col-lg-12'>
-      <div class='panel-group' id='accordion'>
+      <div id='accordion' role='tablist'>
         <%= render partial: 'faq', collection: faqs %>
-      </div>
     </div>
   </div>
 
