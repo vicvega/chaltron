@@ -9,7 +9,7 @@
 
 **The latest release (1.x) of chaltron targets bootstrap v4.**
 
-If you are using Bootstrap v3, refer to the  [bootstrap3](https://github.com/vicvega/chaltron/tree/bootstrap3) branch (chaltron version 0.x).
+If you are using bootstrap v3, refer to the  [bootstrap3](https://github.com/vicvega/chaltron/tree/bootstrap3) branch (chaltron version 0.x).
 
 ## Usage
 
