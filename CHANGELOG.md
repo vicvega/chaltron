@@ -1,4 +1,7 @@
-### 0.2.6 - current version - unreleased
+### 0.2.7 - current version - unreleased
+
+
+### 0.2.6 - 2018-01-26
  * fix new_user button disappearing on small screens
 
 ### 0.2.5 - 2018-01-22
