@@ -1,7 +1,7 @@
 ### 0.2.6 - current version - unreleased
  * fix new_user button disappearing on small screens
 
-### 0.2.5 - 20178-01-22
+### 0.2.5 - 2018-01-22
 * FactoryBot replaces FactoryGirl
 * wrap table in `div.table-responsive` to improve mobile layout
 * remove dependency from moment.js
