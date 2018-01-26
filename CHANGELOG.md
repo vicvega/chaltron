@@ -1,4 +1,5 @@
 ### 0.2.6 - current version - unreleased
+ * fix new_user button disappearing on small screens
 
 ### 0.2.5 - 20178-01-22
 * FactoryBot replaces FactoryGirl
