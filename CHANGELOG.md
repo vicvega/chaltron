@@ -1,9 +1,12 @@
 ### 1.0.1 - current version - unreleased
 
-### 1.0.0 - 20178-01-22
+### 1.0.0 - 2018-01-22
  * compatibility with version 4 of bootstrap
 
-### 0.2.5 - 20178-01-22
+### 0.2.6 - 2018-01-26
+* fix new_user button disappearing on small screens
+
+### 0.2.5 - 2018-01-22
 * FactoryBot replaces FactoryGirl
 * wrap table in `div.table-responsive` to improve mobile layout
 * remove dependency from moment.js
