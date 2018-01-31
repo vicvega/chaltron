@@ -74,6 +74,7 @@ RUBY
 
     def setup_chaltron
       copy_file 'config/initializers/chaltron.rb'
+      copy_file 'app/assets/stylesheets/chaltron_custom.scss'
     end
 
     def setup_authorization
