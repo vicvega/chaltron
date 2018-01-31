@@ -1,4 +1,5 @@
 ### 1.0.1 - current version - unreleased
+ * redesign default home page
 
 ### 1.0.0 - 2018-01-22
  * compatibility with version 4 of bootstrap
