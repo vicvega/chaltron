@@ -1,7 +1,13 @@
+/*
+ * See http://getbootstrap.com/docs/4.0/getting-started/theming to learn customization
+ */
+
+$font-size-base: 0.85rem;
 
 @import 'chaltron';
 
+// to keep space for navbars (top and bottom)
 div#content {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
 }
