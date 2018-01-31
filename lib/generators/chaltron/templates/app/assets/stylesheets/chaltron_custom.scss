@@ -2,12 +2,16 @@
  * See http://getbootstrap.com/docs/4.0/getting-started/theming to learn customization
  */
 
-$font-size-base: 0.85rem;
+ $font-size-base: 0.85rem;
 
-@import 'chaltron';
+ @import 'chaltron';
 
-// to keep space for navbars (top and bottom)
-div#content {
-  margin-top: 2.5em;
-  margin-bottom: 2.5em;
-}
+ // to keep space for navbars (top and bottom)
+ div#content {
+   margin-top: 2.7em;
+   margin-bottom: 2.7em;
+ }
+
+ .flash-container {
+   top: 4em;
+ }
