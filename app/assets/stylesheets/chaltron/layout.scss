@@ -21,7 +21,6 @@ div#content {
   z-index: 100;
   .alert {
     margin: 0;
-    border-radius: 0;
   }
 }
 
@@ -31,7 +30,7 @@ div#content {
  */
 .login-box{
   margin-top: 100px;
-  @include form-box(650px);
+  max-width: 650px;
 }
 
 #nprogress .spinner {

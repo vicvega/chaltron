@@ -17,7 +17,7 @@ module ChaltronHelper
   end
 
   def flash_message(message, type)
-    content_tag(:div, message, class: "alert #{bootstrap_class_for(type)}") do
+    content_tag(:div, message, class: "alert #{bootstrap_class_for(type)} rounded-0") do
       content_tag(:strong, I18n.t("chaltron.flash.#{type}") + ': ') +
       message
     end
