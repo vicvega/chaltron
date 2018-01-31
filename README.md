@@ -52,7 +52,7 @@ Chaltron is powered by
 
  * [devise](https://github.com/plataformatec/devise/)
  * [cancancan](https://github.com/CanCanCommunity/cancancan/)
- * [bootstrap](https://github.com/twbs/bootstrap-sass)
+ * [bootstrap](https://github.com/twbs/bootstrap-rubygem)
  * [font-awesome](https://github.com/FortAwesome/font-awesome-sass)
  * [datatables](http://datatables.net/)
 
