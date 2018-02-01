@@ -10,10 +10,10 @@ SimpleNavigation::Configuration.run do |navigation|
         admin.item :logs, I18n.t('chaltron.menu.logs'), logs_path, link_html: { icon: 'book' },
            highlights_on: /\/logs/ if can?(:read, Log)
       end if can?(:manage, User) or can?(:read, Log)
-      primary.item :logged, current_user.display_name.html_safe, '#' do |user|
-        user.dom_class = 'dropdown-menu-right'
+      primary.item :logged, current_user.display_name.html_safe, '#',
+        html: { class: 'dropdown-menu-right' } do |user|
         user.item :self_edit, I18n.t('chaltron.menu.self_show'), self_show_users_path,
-          link_html: { icon: 'user'},
+          link_html: { icon: 'user' },
           highlights_on: /\/self_(show|edit|update)/
         user.item :logout, 'Logout', destroy_user_session_path, method: :delete,
           link_html: { icon: 'sign-out' }

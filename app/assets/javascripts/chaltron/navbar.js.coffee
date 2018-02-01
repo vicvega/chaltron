@@ -21,8 +21,9 @@ class NavbarBuilder
     links = el.find('li a')
 
     klass = 'dropdown-menu'
-    klass += ' dropdown-menu-right' if el.hasClass('dropdown-menu-right')
-    div = $('<div></div>').addClass('dropdown-menu').attr('aria-labelledby': 'navbarDropdown').append(links)
+    klass += ' dropdown-menu-right' if el.parent().hasClass('dropdown-menu-right')
+
+    div = $('<div></div>').addClass(klass).attr('aria-labelledby': 'navbarDropdown').append(links)
     el.replaceWith(div)
 
   prepend_class: (item, klass) ->
