@@ -1,11 +1,12 @@
 ### 1.0.1 - current version - unreleased
  * redesign default home page
-
-### 1.0.0 - 2018-01-22
- * compatibility with version 4 of bootstrap
+ * fix alignment issue in navbar right menu
 
 ### 0.2.6 - 2018-01-26
 * fix new_user button disappearing on small screens
+
+### 1.0.0 - 2018-01-22
+ * compatibility with version 4 of bootstrap
 
 ### 0.2.5 - 2018-01-22
 * FactoryBot replaces FactoryGirl
