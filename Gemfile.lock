@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    chaltron (1.0.1)
+    chaltron (1.0.2)
       ajax-datatables-rails
       autoprefixer-rails
       bootstrap

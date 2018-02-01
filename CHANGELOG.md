@@ -1,4 +1,6 @@
-### 1.0.1 - current version - unreleased
+### 1.0.2 - current version - unreleased
+
+### 1.0.1 - 2018-02-01
  * redesign default home page
  * fix alignment issue in navbar right menu
 
