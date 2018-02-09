@@ -16,10 +16,10 @@ SimpleNavigation::Configuration.run do |navigation|
           link_html: { icon: 'user' },
           highlights_on: /\/self_(show|edit|update)/
         user.item :logout, 'Logout', destroy_user_session_path, method: :delete,
-          link_html: { icon: 'sign-out' }
+          link_html: { icon: 'sign-out-alt' }
       end
     else
-      primary.item :login, 'Login', new_user_session_path, link_html: { icon: 'sign-in' }
+      primary.item :login, 'Login', new_user_session_path, link_html: { icon: 'sign-in-alt' }
     end
   end
 end

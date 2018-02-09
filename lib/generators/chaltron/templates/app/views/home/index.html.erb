@@ -6,23 +6,68 @@
       </h1>
 
       <div class='card-deck'>
-        <%= render 'panel', title: 'Bootstrap v4',
-            link: 'http://getbootstrap.com', icon: 'check',
-            body: 'Bootstrap rocks! And there are lots of good template ready to ' \
-                  'use, and free. Just as this one ;-)',
-            footer: 'Bootstrap rocks!'
-        %>
-        <%= render 'panel', title: 'Free &amp; Open Source'.html_safe,
-            icon: 'github', link_text: 'Fork me on GitHub',
-            body: "It's all free and open and much is still to do. " \
-                  'So pull request are very welcome',
-            footer: 'Open source rocks!'
-        %>
-        <%= render 'panel', title: 'Easy to use', icon: 'compass',
-            body: "It's so easy to build up and running web applications in a " \
-                  'few seconds. Try by yourself', link_text: 'Have a look',
-            footer: 'Chaltron rocks!'
-        %>
+        <div class='card'>
+          <%= image_tag('700x300.gif', class: 'card-img-top') %>
+          <div class='card-body'>
+            <h5 class='card-title'>
+                <%= icon(:fas, :check) %>
+                Bootstrap v4
+            </h5>
+            <p class='card-text'>
+              Bootstrap rocks! And there are lots of good template ready to use, and free.
+              Just as this one ;-)
+            </p>
+            <%= link_to 'Learn more', 'http://getbootstrap.com', class: 'btn btn-primary' %>
+          </div>
+          <div class='card-footer'>
+            <small class='text-muted'>
+              <%= icon(:far, 'thumbs-o-up') %>
+              Bootstrap rocks!
+            </small>
+          </div>
+        </div>
+
+        <div class='card'>
+          <%= image_tag('700x300.gif', class: 'card-img-top') %>
+          <div class='card-body'>
+            <h5 class='card-title'>
+                <%= icon(:fab, :github) %>
+                Free &amp; Open Source
+            </h5>
+            <p class='card-text'>
+              It's all free and open and much is still to do.
+              So pull request are very welcome
+            </p>
+            <%= link_to 'Fork me on GitHub', 'https://github.com/vicvega/chaltron', class: 'btn btn-primary' %>
+          </div>
+          <div class='card-footer'>
+            <small class='text-muted'>
+              <%= icon(:far, 'thumbs-o-up') %>
+              Open source rocks!
+            </small>
+          </div>
+        </div>
+
+        <div class='card'>
+          <%= image_tag('700x300.gif', class: 'card-img-top') %>
+          <div class='card-body'>
+            <h5 class='card-title'>
+                <%= icon(:fas, :compass) %>
+                Easy to use
+            </h5>
+            <p class='card-text'>
+              It's so easy to build up and running web applications in a few seconds.
+              Try by yourself
+            </p>
+            <%= link_to 'Have a look', 'https://github.com/vicvega/chaltron', class: 'btn btn-primary' %>
+          </div>
+          <div class='card-footer'>
+            <small class='text-muted'>
+              <%= icon(:far, 'thumbs-o-up') %>
+              Chaltron rocks!
+            </small>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -36,7 +81,7 @@
     </div>
     <div class='col-md-5'>
       <h2 class='pt-4'>
-        <%= icon(:far, 'hand-o-down') %>
+        <%= icon(:far, 'hand-point-down') %>
         Main features
       </h2>
       <p>Chaltron provides:</p>
@@ -45,7 +90,7 @@
           <%= icon(:far, 'check-square', '', class: 'fa-li') %>
           Compatibility with
           <strong><%= link_to 'Bootstrap v4', 'http://getbootstrap.com' %></strong> and
-          <strong><%= link_to 'Font Awesome v4', 'http://fortawesome.github.io/Font-Awesome/' %></strong>
+          <strong><%= link_to 'Font Awesome v5', 'https://fontawesome.com' %></strong>
         </li>
         <li>
           <%= icon(:far, 'check-square', '', class: 'fa-li') %>

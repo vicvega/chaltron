@@ -40,7 +40,7 @@ class NavbarBuilder
   render_icon_a: (item) ->
     el = jQuery(item)
     if el.attr('icon')
-      el.html("<i class=\"far fa-#{el.attr('icon')}\"></i>&nbsp;#{el.text()}")
+      el.html("<i class=\"fas fa-#{el.attr('icon')}\"></i>&nbsp;#{el.text()}")
 
 $(document).on 'turbolinks:load', ->
   navbar = new NavbarBuilder
