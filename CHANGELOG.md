@@ -1,4 +1,6 @@
-### 1.0.2 - current version - unreleased
+### 1.0.3 - current version - unreleased
+
+### 1.0.2 - 2018-02-09
  * use Font Awesome 5
  * update gem dependencies
 
