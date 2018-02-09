@@ -8,7 +8,7 @@
   <%= image_tag('700x300.gif', class: 'card-img-top') %>
   <div class='card-body'>
     <h5 class='card-title'>
-        <%= icon(icon) %>
+        <%= icon(:far, icon) %>
         <%= title %>
     </h5>
     <p class='card-text'><%= raw body %> </p>
@@ -16,7 +16,7 @@
   </div>
   <div class='card-footer'>
     <small class='text-muted'>
-      <%= icon('thumbs-o-up') %>
+      <%= icon(:far, 'thumbs-o-up') %>
       <%= raw footer %>
     </small>
   </div>

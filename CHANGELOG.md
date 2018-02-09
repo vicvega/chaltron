@@ -1,4 +1,6 @@
 ### 1.0.2 - current version - unreleased
+ * use Font Awesome 5
+ * update gem dependencies
 
 ### 1.0.1 - 2018-02-01
  * redesign default home page

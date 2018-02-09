@@ -4,15 +4,20 @@
   link_text ||= 'Learn more'
 %>
 
-<div class='col-md-4'>
-  <div class='card'>
-    <h5 class='card-header text-white bg-primary'>
-        <%= icon(icon) %>
+<div class='card'>
+  <%= image_tag('700x300.gif', class: 'card-img-top') %>
+  <div class='card-body'>
+    <h5 class='card-title'>
+        <%= icon(:far, icon) %>
         <%= title %>
     </h5>
-    <div class='card-body'>
-      <p><%= raw body %> </p>
-      <%= link_to link_text, link, class: 'btn btn-primary' %>
-    </div>
+    <p class='card-text'><%= raw body %> </p>
+    <%= link_to link_text, link, class: 'btn btn-primary' %>
+  </div>
+  <div class='card-footer'>
+    <small class='text-muted'>
+      <%= icon(:far, 'thumbs-o-up') %>
+      <%= raw footer %>
+    </small>
   </div>
 </div>

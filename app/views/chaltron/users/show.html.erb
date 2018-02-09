@@ -60,17 +60,17 @@
 
   <hr>
   <%= link_to users_path, class: 'btn btn-primary' do %>
-    <%= icon 'arrow-left', t('chaltron.common.back') %>
+    <%= icon :far, 'arrow-left', t('chaltron.common.back') %>
   <% end %>
 
   <div class='pull-right'>
     <%= link_to edit_user_path(@user), class: 'btn btn-primary' do %>
-      <%= icon :edit, t('.edit') %>
+      <%= icon :far, :edit, t('.edit') %>
     <% end %>
     <%= link_to @user, method: :delete, class: 'btn btn-danger',
       disabled: current_user == @user,
       data: { confirm: t('.destroy_confirm', user: @user.username) } do %>
-      <%= icon :trash, t('.destroy') %>
+      <%= icon :far, :trash, t('.destroy') %>
     <% end %>
   </div>
 </div>

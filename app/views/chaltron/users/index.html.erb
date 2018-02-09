@@ -9,7 +9,7 @@
         <div class='dropdown pull-right'>
           <%= content_tag :button, type: 'button', class: 'btn btn-primary dropdown-toggle',
             data: {toggle: 'dropdown'}, aria: {expanded: false, haspopup: true}, id: 'new_user_button' do %>
-            <%= icon :plus, t('.new_user') %>
+            <%= icon :far, :plus, t('.new_user') %>
           <% end %>
 
           <%= content_tag :div, class: 'dropdown-menu', aria: {labelledby: 'new_user_button'} do %>
@@ -19,7 +19,7 @@
         </div>
       <% else %>
         <%= link_to new_user_path, class: 'btn btn-primary pull-right' do %>
-          <%= icon :plus, t('.new_local_user') %>
+          <%= icon :far, :plus, t('.new_local_user') %>
         <% end %>
       <% end %>
 
