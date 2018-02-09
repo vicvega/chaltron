@@ -12,3 +12,8 @@
 //= require nprogress-ajax
 
 //= require_tree ./chaltron
+
+
+NProgress.configure({
+  showSpinner: false,
+});
