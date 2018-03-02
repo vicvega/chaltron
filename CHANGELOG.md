@@ -1,4 +1,6 @@
 ### 1.0.3 - current version - unreleased
+ * fix missing icon in self edit view
+ * update gem dependencies
 
 ### 1.0.2 - 2018-02-09
  * use Font Awesome 5
