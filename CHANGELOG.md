@@ -1,4 +1,5 @@
 ### 1.0.4 - current version - unreleased
+ * add missing translation for `Log` severities
 
 ### 1.0.3 - 2018-03-12
  * fix missing icon in self edit view
