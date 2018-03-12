@@ -3,7 +3,7 @@ module Chaltron::LogsHelper
     case severity.to_s
     when 'emerg', 'alert', 'crit', 'err'
       'danger'
-    when 'warning', 'notice'
+    when 'warning'
       'warning'
     when 'debug'
       'info'
