@@ -1,5 +1,5 @@
 class Log < ActiveRecord::Base
-  Severities = %w( emerg panic alert crit err warning notice info debug )
+  Severities = %w( emerg alert crit err warning notice info debug )
 
   validates_presence_of :severity, :message
   validates_inclusion_of :severity, in: Severities
@@ -11,6 +11,7 @@ class Log < ActiveRecord::Base
   private
 
   def change_severity
+    self.severity = :emerg   if self.severity && self.severity.to_sym == :panic
     self.severity = :err     if self.severity && self.severity.to_sym == :error
     self.severity = :warning if self.severity && self.severity.to_sym == :warn
   end

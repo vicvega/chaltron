@@ -1,6 +1,6 @@
 ### 1.0.3 - current version - unreleased
  * fix missing icon in self edit view
- * extend LogMessage severities to include standard syslog's
+ * extend `Log` severities to include standard syslog's
  * update gem dependencies
 
 ### 1.0.2 - 2018-02-09
