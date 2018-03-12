@@ -1,4 +1,6 @@
-### 1.0.3 - current version - unreleased
+### 1.0.4 - current version - unreleased
+
+### 1.0.3 - 2018-03-12
  * fix missing icon in self edit view
  * extend `Log` severities to include standard syslog's
  * update gem dependencies
