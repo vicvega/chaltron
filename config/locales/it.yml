@@ -27,9 +27,14 @@ it:
       already_present: Giá presente!
     logs:
       severity:
+        emerg: Emergenza
+        alert: Allarme
+        crit: Errore critico
+        err: Errore
+        warning: Avviso
+        notice: Nota
         info: Info
         debug: Debug
-        error: Errore
       category:
         login: Login
         user_admin: Amministrazione utenti
