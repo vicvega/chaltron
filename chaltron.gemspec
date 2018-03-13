@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'gitlab_omniauth-ldap'
   s.add_dependency 'autoprefixer-rails'
   s.add_dependency 'bootstrap-sass'
-  s.add_dependency 'font-awesome-sass'
+  s.add_dependency 'font-awesome-sass', '< 5'
   s.add_dependency 'sass-rails'
   s.add_dependency 'nprogress-rails'
   s.add_dependency 'simple_navigation_bootstrap'
