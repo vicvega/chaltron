@@ -1,6 +1,12 @@
 ### 1.0.4 - current version - unreleased
  * add missing translation for `Log` severities
 
+### 0.2.8 - 2018-03-13
+ * fix font-awesome-sass version number (must be < 5)
+
+### 0.2.7 - 2018-03-13
+ * extend Log severities to include standard syslog's
+
 ### 1.0.3 - 2018-03-12
  * fix missing icon in self edit view
  * extend `Log` severities to include standard syslog's
