@@ -54,7 +54,7 @@ Chaltron is powered by
  * [cancancan](https://github.com/CanCanCommunity/cancancan/)
  * [bootstrap](https://github.com/twbs/bootstrap-rubygem)
  * [font-awesome](https://github.com/FortAwesome/font-awesome-sass)
- * [datatables](http://datatables.net/)
+ * [datatables](https://github.com/mkhairi/jquery-datatables)
 
 Refer to [wiki pages](https://github.com/vicvega/chaltron/wiki) for further instructions
 
