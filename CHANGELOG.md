@@ -1,4 +1,6 @@
-### 0.2.7 - current version - unreleased
+### 0.2.8 - current version - unreleased
+
+### 0.2.7 - 2018-03-13
  * extend Log severities to include standard syslog's
 
 ### 0.2.6 - 2018-01-26
