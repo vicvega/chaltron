@@ -1,4 +1,7 @@
-### 0.2.8 - current version - unreleased
+### 0.2.9 - current version - unreleased
+
+### 0.2.8 - 2018-03-13
+ * require font-awesome-sass < 5
 
 ### 0.2.7 - 2018-03-13
  * extend Log severities to include standard syslog's
