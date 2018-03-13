@@ -1,5 +1,5 @@
 ### 0.2.7 - current version - unreleased
-
+ * extend Log severities to include standard syslog's
 
 ### 0.2.6 - 2018-01-26
  * fix new_user button disappearing on small screens

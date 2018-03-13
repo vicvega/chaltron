@@ -27,9 +27,14 @@ en:
       already_present: Already present!
     logs:
       severity:
+        emerg: Emergency
+        alert: Alert
+        crit: Critical error
+        err: Error
+        warning: Warning
+        notice: Notice
         info: Info
         debug: Debug
-        error: Error
       category:
         login: Login
         user_admin: User administration
