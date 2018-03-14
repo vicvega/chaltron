@@ -1,6 +1,6 @@
 **The latest chaltron release (1.x) targets bootstrap v4.**
 
-If you are using bootstrap v3, refer to the  [bootstrap3 branch CHANGELOG](https://github.com/vicvega/chaltron/blob/bootstrap3/CHANGELOG.md).
+If you are using bootstrap v3, refer to version 0, on [bootstrap3 branch](https://github.com/vicvega/chaltron/blob/bootstrap3/CHANGELOG.md).
 
 ### 1.0.4 - current version - unreleased
  * add missing translation for `Log` severities
