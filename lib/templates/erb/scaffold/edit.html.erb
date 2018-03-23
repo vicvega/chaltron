@@ -5,14 +5,14 @@
     <div class='col-md-3'>
       <div class='list-group'>
         <%%= link_to <%= index_helper %>_path, class: 'list-group-item list-group-item-action' do %>
-          <%%= icon('list') %> <%= singular_table_name.capitalize %> index
+          <%%= icon(:fas, :list) %> <%= singular_table_name.capitalize %> index
         <%% end %>
         <%%= link_to @<%= singular_table_name %>, class: 'list-group-item list-group-item-action' do %>
-          <%%= icon('eye') %> Show
+          <%%= icon(:fas, :eye) %> Show
         <%% end %>
         <%%= link_to @<%= singular_table_name %>, data: {confirm: 'Are you sure?'},
               method: :delete, class: 'list-group-item list-group-item-danger list-group-item-action' do %>
-          <%%= icon('trash') %> Delete
+          <%%= icon(:fas, :trash) %> Delete
         <%% end %>
       </div>
     </div>
