@@ -2,7 +2,6 @@
 
 [![Coverage Status](https://coveralls.io/repos/vicvega/chaltron/badge.svg?branch=master&service=github)](https://coveralls.io/github/vicvega/chaltron?branch=master)
 [![Code Climate](https://codeclimate.com/github/vicvega/chaltron/badges/gpa.svg)](https://codeclimate.com/github/vicvega/chaltron)
-[![PullReview stats](https://www.pullreview.com/github/vicvega/chaltron/badges/master.svg?)](https://www.pullreview.com/github/vicvega/chaltron/reviews/master)
 [![security](https://hakiri.io/github/vicvega/chaltron/master.svg)](https://hakiri.io/github/vicvega/chaltron/master)
 
 ## Important note
