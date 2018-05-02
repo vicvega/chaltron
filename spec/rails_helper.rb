@@ -23,6 +23,7 @@ require 'rails-controller-testing'
 # end
 
 Capybara.javascript_driver = :poltergeist
+Capybara.server = :webrick
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
