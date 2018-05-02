@@ -3,6 +3,7 @@
 If you are using bootstrap v3, refer to version 0, on [bootstrap3 branch](https://github.com/vicvega/chaltron/blob/bootstrap3/CHANGELOG.md).
 
 ### 1.0.5 - current version - unreleased
+ * update gem dependencies
 
 ### 1.0.4 - 2018-03-23
  * add missing translation for `Log` severities
