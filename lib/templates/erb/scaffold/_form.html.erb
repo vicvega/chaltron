@@ -1,13 +1,13 @@
 <%%= bootstrap_form_for(@<%= singular_table_name %>, layout: :horizontal, label_col: 'col-sm-2 col-form-label', control_col: 'col-sm-10') do |f| %>
 
 <% attributes.each do |attribute| -%>
-  <% if attribute.field_type == :check_box -%>
+<% if attribute.field_type == :check_box -%>
   <%%= f.form_group :<%= attribute.name %>, label: { text: '<%= attribute.name %>' } do %>
     <%%= f.<%= attribute.field_type %> :<%= attribute.name %>, label: '' %>
   <%% end -%>
-  <% else -%>
+<% else -%>
   <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
-  <% end -%>
+<% end -%>
 <% end -%>
 
   <div class='form-group row'>
