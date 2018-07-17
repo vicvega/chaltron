@@ -1,4 +1,4 @@
-<%%= bootstrap_form_for(@<%= singular_table_name %>, layout: :horizontal, label_col: 'col-sm-2 col-form-label', control_col: 'col-sm-10') do |f| %>
+<%%= bootstrap_form_with(model: @<%= singular_table_name %>, local: true, layout: :horizontal, label_col: 'col-sm-2 col-form-label', control_col: 'col-sm-10') do |f| %>
 
 <% attributes.each do |attribute| -%>
 <% if attribute.field_type == :check_box -%>
