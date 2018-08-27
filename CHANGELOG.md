@@ -1,4 +1,5 @@
 ### 0.2.9 - current version - unreleased
+ * avoid using Enumerable#sum to fix issue with empty array in ruby 2.5
 
 ### 0.2.8 - 2018-03-13
  * fix font-awesome-sass version number (must be < 5)

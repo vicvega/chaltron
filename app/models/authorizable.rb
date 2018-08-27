@@ -1,6 +1,6 @@
 module Authorizable
   def roles=(roles)
-    self.roles_mask = (roles & Chaltron.roles).map { |r| 2**Chaltron.roles.index(r) }.sum
+    self.roles_mask = (roles & Chaltron.roles).map { |r| 2**Chaltron.roles.index(r) }.inject(:+)
   end
 
   def roles
