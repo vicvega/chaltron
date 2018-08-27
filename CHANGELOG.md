@@ -1,4 +1,6 @@
-### 0.2.9 - current version - unreleased
+### 0.2.10 - current version - unreleased
+
+### 0.2.9 - 2018-08-27
  * avoid using Enumerable#sum to fix issue with empty array in ruby 2.5
 
 ### 0.2.8 - 2018-03-13
