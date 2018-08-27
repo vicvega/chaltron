@@ -2,7 +2,10 @@
 
 If you are using bootstrap v3, refer to version 0, on [bootstrap3 branch](https://github.com/vicvega/chaltron/blob/bootstrap3/CHANGELOG.md).
 
-### 1.0.6 - current version - unreleased
+### 1.0.7 - current version - unreleased
+ * update gem dependencies
+
+### 1.0.6 - 2018-08-27
  * avoid using Enumerable#sum to fix issue with empty array in ruby 2.5
  * use bootstrap_form_with in scaffold template, according to new rails scaffold
  * fix index view wideness in scaffold template
