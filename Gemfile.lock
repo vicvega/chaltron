@@ -160,6 +160,7 @@ GEM
       hashie (>= 3.4.6, < 3.6.0)
       rack (>= 1.6.2, < 3)
     orm_adapter (0.5.0)
+    phantomjs (2.1.1.0)
     poltergeist (1.18.1)
       capybara (>= 2.1, < 4)
       cliver (~> 0.3.1)
@@ -287,6 +288,7 @@ DEPENDENCIES
   database_cleaner
   factory_bot_rails
   ffaker
+  phantomjs
   poltergeist
   rails-controller-testing
   rspec-rails
@@ -295,4 +297,4 @@ DEPENDENCIES
   turbolinks (~> 5)
 
 BUNDLED WITH
-   1.16.1
+   1.16.4
