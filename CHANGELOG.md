@@ -2,7 +2,9 @@
 
 If you are using bootstrap v3, refer to version 0, on [bootstrap3 branch](https://github.com/vicvega/chaltron/blob/bootstrap3/CHANGELOG.md).
 
-### 1.0.7 - current version - unreleased
+### 1.0.8 - current version - unreleased
+
+### 1.0.7 - 2018-09-27
  * fix undefined method `def_delegators` issue
  * update gem dependencies
 
