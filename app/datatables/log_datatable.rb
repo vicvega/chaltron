@@ -1,4 +1,6 @@
+require 'forwardable'
 class LogDatatable < AjaxDatatablesRails::Base
+  extend Forwardable
 
   def_delegators :@view, :link_to, :content_tag, :bootstrap_severity, :current_ability
 
