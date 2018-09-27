@@ -7,7 +7,7 @@ class Chaltron::LogsController < ApplicationController
   def index
     respond_to do |format|
       format.html
-      format.json { render json: LogDatatable.new(view_context) }
+      format.json { render json: LogDatatable.new(params, view_context: view_context) }
     end
   end
 

@@ -1,6 +1,11 @@
-require 'forwardable'
-class LogDatatable < AjaxDatatablesRails::Base
+class LogDatatable < AjaxDatatablesRails::ActiveRecord
   extend Forwardable
+  attr_reader :view
+
+  def initialize(params, opts = {})
+    @view = opts[:view_context]
+    super
+  end
 
   def_delegators :@view, :link_to, :content_tag, :bootstrap_severity, :current_ability
 
