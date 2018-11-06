@@ -15,15 +15,6 @@ module Chaltron
       end
     end
 
-    def gemfile
-      gem 'bootstrap_form',
-        git: 'https://github.com/bootstrap-ruby/rails-bootstrap-forms.git',
-        branch: 'master'
-      Bundler.with_clean_env do
-        run 'bundle install'
-      end
-    end
-
     def db_migrations
       rake 'chaltron_engine:install:migrations'
     end
