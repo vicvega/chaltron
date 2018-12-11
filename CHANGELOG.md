@@ -1,4 +1,5 @@
 ### 0.2.10 - current version - unreleased
+ * Only local users can change their own email addresses
 
 ### 0.2.9 - 2018-08-27
  * avoid using Enumerable#sum to fix issue with empty array in ruby 2.5

@@ -4,13 +4,15 @@
   <%= bootstrap_form_for(current_user, as: :user, url: self_update_users_path,
     layout: :horizontal) do |f| %>
     <%= f.text_field :fullname %>
-    <%= f.email_field :email %>
     <% if current_user.provider.nil? %>
+    <%= f.email_field :email %>
       <fieldset>
         <legend>Password</legend>
         <%= f.password_field :password %>
         <%= f.password_field :password_confirmation %>
       </fieldset>
+    <% else %>
+      <%= f.email_field :email, disabled: true %>
     <% end %>
     <%= f.form_group class: 'form-actions' do %>
       <%= f.submit t('.submit'), class: 'btn btn-primary' %>
