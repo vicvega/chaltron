@@ -12,3 +12,10 @@ gemspec
 
 # To use debugger
 # gem 'byebug', group: [:development, :test]
+
+group :test do
+  gem 'poltergeist'
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
+  gem 'turbolinks', '~> 5'
+  gem 'coffee-rails', '~> 4.2'
+end
