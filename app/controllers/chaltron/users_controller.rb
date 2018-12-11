@@ -81,7 +81,9 @@ class Chaltron::UsersController < ApplicationController
   end
 
   def self_update_params
-    params.require(:user).permit(:email, :fullname)
+    allowed = [:fullname]
+    allowed << :email if current_user.provider.nil?
+    params.require(:user).permit(allowed)
   end
 
   def filter_params

@@ -3,6 +3,7 @@
 If you are using bootstrap v3, refer to version 0, on [bootstrap3 branch](https://github.com/vicvega/chaltron/blob/bootstrap3/CHANGELOG.md).
 
 ### 1.0.9 - current version - unreleased
+* Only local users can change their own email addresses
 * update gem dependencies
 
 ### 1.0.8 - 2018-09-27
