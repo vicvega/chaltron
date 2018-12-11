@@ -1,0 +1,12 @@
+version: '3'
+services:
+  ldap:
+    image: osixia/openldap:1.2.1
+    ports:
+      - 127.0.0.1:389:389
+    environment:
+      LDAP_DOMAIN: azkaban.co.uk
+      LDAP_ORGANISATION: Azkaban
+      LDAP_REMOVE_CONFIG_AFTER_SETUP: 'false'
+    volumes:
+      - ./travis-ci/ldap:/container/service/slapd/assets/config/bootstrap/ldif/custom
