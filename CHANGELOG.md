@@ -1,4 +1,5 @@
 ### 0.2.11 - current version - unreleased
+* fix Travis CI tests
 
 ### 0.2.10 - 2018-12-11
  * Only local users can change their own email addresses
