@@ -17,3 +17,5 @@ group :test do
   gem 'turbolinks', '~> 5'
   gem 'coffee-rails', '~> 4.2'
 end
+
+gem 'rails-html-sanitizer', '~> 1.0', '>= 1.0.4'

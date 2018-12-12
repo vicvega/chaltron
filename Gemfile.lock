@@ -292,6 +292,7 @@ DEPENDENCIES
   phantomjs
   poltergeist
   rails-controller-testing
+  rails-html-sanitizer (~> 1.0, >= 1.0.4)
   rspec-rails
   shoulda-matchers
   sqlite3
