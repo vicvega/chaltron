@@ -38,9 +38,9 @@ it:
       category:
         login: Login
         user_admin: Amministrazione utenti
-      login: "%{user} ha effettuto il login con successo"
-      logout: "%{user} ha effettuto il logout con successo"
-      login_via: "%{user} ha effettuto il login con successo via %{provider}"
+      login: "%{user} ha effettuato il login con successo"
+      logout: "%{user} ha effettuato il logout con successo"
+      login_via: "%{user} ha effettuato il login con successo via %{provider}"
       users:
         created: "%{current} ha creato l'utente %{user}"
         destroyed: "%{current} ha cancellato l'utente %{user}"
