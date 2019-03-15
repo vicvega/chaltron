@@ -11,6 +11,7 @@ rvm:
   - 2.3
   - 2.4
   - 2.5
+  - 2.6
 
 before_install:
   - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -23,7 +24,7 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
   - docker version
   - docker-compose version
-  - gem install bundler
+  - gem install bundler -v '<2'
 
 cache: bundler
 
