@@ -3,6 +3,7 @@
 If you are using bootstrap v3, refer to version 0, on [bootstrap3 branch](https://github.com/vicvega/chaltron/blob/bootstrap3/CHANGELOG.md).
 
 ### 1.0.10 - current version - unreleased
+* fix missing semicolons in view helpers
 
 ### 1.0.9 - 2018-12-11
 * Only local users can change their own email addresses
