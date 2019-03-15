@@ -2,7 +2,10 @@
 
 If you are using bootstrap v3, refer to version 0, on [bootstrap3 branch](https://github.com/vicvega/chaltron/blob/bootstrap3/CHANGELOG.md).
 
-### 1.0.10 - current version - unreleased
+### 1.0.11 - current version - unreleased
+
+
+### 1.0.10 - 2019-03-15
 * fix missing semicolons in view helpers
 * fix Travis CI tests
 
