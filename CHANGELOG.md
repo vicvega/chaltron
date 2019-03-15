@@ -1,4 +1,7 @@
-### 0.2.11 - current version - unreleased
+### 0.2.12 - current version - unreleased
+
+
+### 0.2.11 - 2019-03-15
 * fix Travis CI tests
 * fix missing semicolons in view helpers
 
