@@ -1,7 +1,7 @@
 module Chaltron::UsersHelper
   def display_username(user)
     if user == current_user
-      link_to(user.username, user) + '&nbsp'.html_safe +
+      link_to(user.username, user) + '&nbsp;'.html_safe +
         content_tag(:span, I18n.t('chaltron.users.it_s_you'), class: 'badge badge-success')
     else
       link_to user.username, user
