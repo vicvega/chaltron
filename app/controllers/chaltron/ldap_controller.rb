@@ -41,12 +41,12 @@ class Chaltron::LdapController < ApplicationController
   private
   def find_options
     department = params[:department]
-    name       = params[:fullname]
+    name       = params[:lastname]
     limit      = params[:limit].to_i
 
     ret = {}
     ret[:department] = "*#{department}*" unless department.blank?
-    ret[:cn]         = "*#{name}*"       unless name.blank?
+    ret[:last_name]  = "*#{name}*"       unless name.blank?
     ret[:limit]      = limit.zero? ? default_limit : limit
     ret
   end
