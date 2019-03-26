@@ -66,12 +66,8 @@ module Chaltron
         end
         options.merge!(size: limit) unless limit.nil?
 
-        entries = ldap_search(options).select do |entry|
-          entry.respond_to? uid
-        end
-
-        entries.map do |entry|
-          Chaltron::LDAP::Person.new(entry, uid)
+        ldap_search(options).map do |entry|
+          Chaltron::LDAP::Person.new(entry, uid) if entry.respond_to? uid
         end
       end
 
