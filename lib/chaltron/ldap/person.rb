@@ -44,11 +44,17 @@ module Chaltron
       end
 
       def department
-        entry.department.first rescue nil
+        entry.send(Chaltron.ldap_field_mappings[:department]).first rescue nil
       end
 
       def name
-        entry.cn.first
+        if Chaltron.ldap_field_mappings[:full_name].nil?
+          first_name = entry.send(Chaltron.ldap_field_mappings[:first_name]).first
+          last_name = entry.send(Chaltron.ldap_field_mappings[:last_name]).first
+          "#{first_name} #{last_name}"
+        else
+          entry.send(Chaltron.ldap_field_mappings[:full_name]).first
+        end
       end
 
       def uid
@@ -60,7 +66,7 @@ module Chaltron
       end
 
       def email
-        entry.mail.first rescue nil
+        entry.send(Chaltron.ldap_field_mappings[:email]).first rescue nil
       end
 
       def dn
