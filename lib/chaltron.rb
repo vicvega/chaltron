@@ -22,6 +22,14 @@ module Chaltron
   mattr_accessor :syslog_facility
   @@syslog_facility = Syslog::LOG_SYSLOG
 
+  mattr_accessor :ldap_field_mappings
+  @@ldap_field_mappings = {
+    first_name: 'givenname',
+    last_name: 'cn',
+    department: 'department',
+    email: 'mail'
+  }
+
   def self.setup
     yield self
   end
