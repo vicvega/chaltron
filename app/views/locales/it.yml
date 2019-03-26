@@ -71,8 +71,8 @@ it:
         submit_text: Cerca
         name_label: Utente
         name_help: Ricerca per user-id (match esatto)
-        fullname_label: Nome
-        fullname_help: Ricerca per nome o cognome (anche match parziale)
+        lastname_label: Nome
+        lastname_help: Ricerca per cognome (anche match parziale)
         department_label: Funzione
         department_help: Ricerca per sigla di funzione (anche match parziale)
         limit_label: Limite

@@ -22,7 +22,9 @@ module Chaltron
       end
 
       def find_by_uid(id)
-        find_user(uid: id)
+        opts = {}
+        opts[uid.to_sym] = id
+        ret = find_user(opts)
       end
 
       def find_user(*args)
@@ -53,26 +55,15 @@ module Chaltron
             scope: Net::LDAP::SearchScope_BaseObject
           }
         else
-          filters = []
-          fields.each do |field|
-            filters << Net::LDAP::Filter.eq(field, args[field])
+          filters = fields.map do |field|
+            f = translate_field(field)
+            Net::LDAP::Filter.eq(f, args[field]) if f
           end
           options = {
             base: base,
             filter: filters.inject { |sum, n| Net::LDAP::Filter.join(sum, n) }
           }
         end
-
-#        if config.user_filter.present?
-#          user_filter = Net::LDAP::Filter.construct(config.user_filter)
-
-#          options[:filter] = if options[:filter]
-#                               Net::LDAP::Filter.join(options[:filter], user_filter)
-#                             else
-#                               user_filter
-#                             end
-#        end
-
         options.merge!(size: limit) unless limit.nil?
 
         entries = ldap_search(options).select do |entry|
@@ -88,6 +79,11 @@ module Chaltron
 
       def options
         Devise.omniauth_configs[:ldap].options
+      end
+
+      def translate_field field
+        return uid if field.to_sym == :uid
+        Chaltron.ldap_field_mappings[field.to_sym]
       end
 
       def adapter_options
