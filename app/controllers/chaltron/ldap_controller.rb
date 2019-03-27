@@ -15,11 +15,11 @@ class Chaltron::LdapController < ApplicationController
     userid = params[:userid]
     if userid.present?
       entry = Chaltron::LDAP::Person.find_by_uid(userid)
-      @entries << entry unless entry.nil?
+      @entries << entry
     else
-      res = Chaltron::LDAP::Person.find_by_fields(find_options)
-      @entries = res
+      @entries = Chaltron::LDAP::Person.find_by_fields(find_options)
     end
+    @entries.compact!
   end
 
   def multi_create
