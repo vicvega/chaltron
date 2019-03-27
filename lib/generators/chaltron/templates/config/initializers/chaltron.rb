@@ -26,6 +26,15 @@ Chaltron.setup do |config|
   #   'DN_of_LDAP_group2' => 'role2'
   # }
 
+  # The following callback is called after a successful LDAP authentication
+  # The callback may manipulate the user instance and
+  # must return user if ok, nil if not allowed do login
+  # Takes two parameters:
+  #  - user, current instance of User
+  #  - ldap, a new instance of Chaltron::LDAP::Connection
+  # Default is the following (it does nothing and return user)
+  # config.ldap_after_authenticate =  -> (user, ldap) { user }
+
   # If syslog enabled, all Log records will be available also in syslog flow
   # config.enable_syslog = false
   # config.syslog_facility = Syslog::LOG_SYSLOG
