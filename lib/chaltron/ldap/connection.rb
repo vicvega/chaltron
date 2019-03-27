@@ -45,6 +45,12 @@ module Chaltron
       end
 
       def find_users(args)
+        find_objects(args).map do |entry|
+          Chaltron::LDAP::Person.new(entry, uid) if entry.respond_to? uid
+        end.compact
+      end
+
+      def find_objects(args)
         return [] if args.empty?
         limit = args.delete(:limit)
         fields = args.keys
@@ -66,9 +72,7 @@ module Chaltron
         end
         options.merge!(size: limit) unless limit.nil?
 
-        ldap_search(options).map do |entry|
-          Chaltron::LDAP::Person.new(entry, uid) if entry.respond_to? uid
-        end.compact
+        ldap_search(options)
       end
 
       private
