@@ -33,6 +33,9 @@ module Chaltron
   mattr_accessor :ldap_role_mappings
   @@ldap_role_mappings = {}
 
+  mattr_accessor :ldap_after_authenticate
+  @@ldap_after_authenticate = -> (user, ldap) { user }
+
   def self.setup
     yield self
   end
