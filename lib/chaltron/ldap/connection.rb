@@ -68,7 +68,7 @@ module Chaltron
 
         ldap_search(options).map do |entry|
           Chaltron::LDAP::Person.new(entry, uid) if entry.respond_to? uid
-        end
+        end.compact
       end
 
       private
