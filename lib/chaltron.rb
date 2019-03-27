@@ -14,7 +14,7 @@ module Chaltron
   @@default_roles = []
 
   mattr_accessor :ldap_allow_all
-  @@ldap_allow_all = false
+  @@ldap_allow_all = true
 
   mattr_accessor :enable_syslog
   @@enable_syslog = false

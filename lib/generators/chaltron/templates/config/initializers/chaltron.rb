@@ -2,12 +2,29 @@ Chaltron.setup do |config|
   # Add new roles to the right and NEVER change role order, or you'll break every role bitmask
   # config.roles = %w( admin user_admin )
 
-  # If ldap enabled (see config/initializers/devise.rb), set this to true to
-  # allow every ldap authenitcated users to access you application
-  # config.ldap_allow_all = false
+  # If LDAP enabled (see config/initializers/devise.rb), chaltron must use
+  # email field and may use first_name, last_name, full_name, department.
+  # Here is the field mapping on you own LDAP server.
+  # Default values are the following:
+  # {
+  #   first_name: 'givenname',
+  #   last_name: 'cn',
+  #   department: 'department',
+  #   email: 'mail'
+  # }
 
-  # Default roles granted to new users (if automatically created)
+  # If LDAP enabled, set this to true to allow every ldap authenitcated
+  # users to access you application
+  # config.ldap_allow_all = true
+
+  # You may set here default roles granted to new users (if automatically created)
   # config.default_roles = []
+
+  # Roles granted to new users may be retrieved by LDAP group membership.
+  # config.ldap_role_mappings = {
+  #   'DN_of_LDAP_group1' => 'role1',
+  #   'DN_of_LDAP_group2' => 'role2'
+  # }
 
   # If syslog enabled, all Log records will be available also in syslog flow
   # config.enable_syslog = false
