@@ -50,6 +50,17 @@ module Chaltron
         end.compact
       end
 
+      def find_groups_by_member(dn)
+        group_filter = Net::LDAP::Filter.eq('objectCategory', 'group')
+        filter1 = Net::LDAP::Filter.eq('member', dn)
+        filter2 = Net::LDAP::Filter.eq('uniquemember', dn)
+        options = {
+          base: base,
+          filter: group_filter && (filter2 || filter3)
+        }
+        ldap_search(options)
+      end
+
       def find_objects(args)
         return [] if args.empty?
         limit = args.delete(:limit)

@@ -30,6 +30,9 @@ module Chaltron
     email: 'mail'
   }
 
+  mattr_accessor :ldap_role_mappings
+  @@ldap_role_mappings = {}
+
   def self.setup
     yield self
   end
