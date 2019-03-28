@@ -37,7 +37,7 @@ describe Chaltron::LDAP::Person do
   end
 
   describe 'search by field' do
-    subject(:res) { Chaltron::LDAP::Person.find_by_field 'title', title }
+    subject(:res) { Chaltron::LDAP::Person.find_by_fields(title: title) }
     context 'returning 2 values' do
       let(:title) { '* guy' }
       it { is_expected.to be_an_instance_of Array }
