@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   include Authorizable
   # Include default devise modules. Others available are:
   # :registerable, :confirmable, :lockable and :omniauthable
