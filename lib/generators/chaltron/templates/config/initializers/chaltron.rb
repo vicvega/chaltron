@@ -34,6 +34,24 @@ Chaltron.setup do |config|
   #  - ldap, a new instance of Chaltron::LDAP::Connection
   # Default is the following (it does nothing and return user)
   # config.ldap_after_authenticate =  -> (user, ldap) { user }
+  #
+  # Example:
+  # config.ldap_after_authenticate = -> (user, ldap) {
+  #   ldap.find_by_uid(user.username).entry.enabled == ['true'] ? user : nil
+  # }
+
+  # The following callback is called before logout of an LDAP user
+  # Takes two parameters:
+  #  - user, current instance of User
+  #  - ldap, a new instance of Chaltron::LDAP::Connection
+  # Default is the following (does nothing)
+  # config.ldap_before_logout =  -> (user, ldap) { }
+  #
+  # Example:
+  # config.ldap_before_logout = -> (user, ldap) {
+  #   ldap.update_attributes(user.extern_uid, { lastLogout: Time.now.strftime('%Y%m%d%H%M%S%z') })
+  # }
+  #
 
   # If syslog enabled, all Log records will be available also in syslog flow
   # config.enable_syslog = false

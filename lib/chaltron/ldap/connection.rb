@@ -86,6 +86,10 @@ module Chaltron
         ldap_search(options)
       end
 
+      def update_attributes(dn, args)
+        ldap.modify dn: dn, operations: args.map { |k,v| [:replace, k, v] }
+      end
+
       private
 
       def options

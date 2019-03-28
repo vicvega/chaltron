@@ -26,4 +26,8 @@ class User < ActiveRecord::Base
     end
   end
 
+  def ldap_user?
+    provider == 'ldap'
+  end
+
 end

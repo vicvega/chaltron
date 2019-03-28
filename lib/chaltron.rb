@@ -36,6 +36,9 @@ module Chaltron
   mattr_accessor :ldap_after_authenticate
   @@ldap_after_authenticate = -> (user, ldap) { user }
 
+  mattr_accessor :ldap_before_logout
+  @@ldap_before_logout = -> (user, ldap) { }
+
   def self.setup
     yield self
   end
