@@ -82,7 +82,6 @@ module Chaltron
           }
         end
         options.merge!(size: limit) unless limit.nil?
-
         ldap_search(options)
       end
 
@@ -98,7 +97,8 @@ module Chaltron
 
       def translate_field field
         return uid if field.to_sym == :uid
-        Chaltron.ldap_field_mappings[field.to_sym]
+        return Chaltron.ldap_field_mappings[field.to_sym] unless Chaltron.ldap_field_mappings[field.to_sym].nil?
+        field
       end
 
       def adapter_options

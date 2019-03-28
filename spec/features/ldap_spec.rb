@@ -36,7 +36,6 @@ describe User do
 
       click_button I18n.t('chaltron.users.index.new_user')
       click_link I18n.t('chaltron.users.index.new_ldap_user')
-      fill_in 'fullname', with: 'b'
       click_button I18n.t('chaltron.ldap.search.submit_text')
 
       is_expected.to have_content 'sirius'
