@@ -36,6 +36,28 @@ describe User do
 
       click_button I18n.t('chaltron.users.index.new_user')
       click_link I18n.t('chaltron.users.index.new_ldap_user')
+      fill_in 'lastname', with: 'bla'
+      click_button I18n.t('chaltron.ldap.search.submit_text')
+
+      is_expected.to have_content 'sirius'
+
+      find('table#ldap_create tr', text: 'sirius').click
+
+      check :user_roles_admin
+      click_button I18n.t('chaltron.ldap.multi_new.submit_text')
+
+      is_expected.to have_css 'li.list-group-item-success'
+      is_expected.to have_content 'Sirius Black'
+      is_expected.not_to have_css 'div.panel-danger'
+
+      expect(User.find_by(username: 'sirius').is? :admin).to be_truthy
+    end
+
+    it 'creates LDAP users without filters' do
+      visit users_path
+
+      click_button I18n.t('chaltron.users.index.new_user')
+      click_link I18n.t('chaltron.users.index.new_ldap_user')
       click_button I18n.t('chaltron.ldap.search.submit_text')
 
       is_expected.to have_content 'sirius'
