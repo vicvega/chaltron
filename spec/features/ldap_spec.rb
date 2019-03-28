@@ -5,7 +5,10 @@ describe User do
   context 'user_admin', js: true do
 
     let(:user_admin) { create :user_admin }
-    before { login_with user_admin.username, user_admin.password }
+    before {
+      login_with user_admin.username, user_admin.password
+      Chaltron.ldap_allow_all = false
+    }
     subject { page }
 
     it 'creates LDAP user by uid' do
