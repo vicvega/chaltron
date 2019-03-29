@@ -2,7 +2,9 @@
 
 If you are using bootstrap v3, refer to version 0, on [bootstrap3 branch](https://github.com/vicvega/chaltron/blob/bootstrap3/CHANGELOG.md).
 
-### 1.1.0 - current version - unreleased
+### 1.1.1 - current version - unreleased
+
+### 1.1.0 - 2019-03-29 
 * fix LDAP access with authentication
 * add LDAP fields name mapping
 * add LDAP groups roles mapping
