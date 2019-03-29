@@ -19,12 +19,15 @@ module Chaltron
           user = find_by_uid_and_provider
           entry = Chaltron::LDAP::Person.find_by_uid(username)
           if user.nil? and create
-            groups = Chaltron.default_roles
-            groups = Chaltron::LDAP::Person.find_groups_by_member(entry.dn).map do |e|
-              Chaltron.ldap_role_mappings[e.dn]
-            end if !Chaltron.ldap_role_mappings.blank?
             # create user
-            user = entry.create_user(groups)
+            roles = Chaltron.default_roles
+            roles = Chaltron::LDAP::Person.find_groups_by_member(dn).map do |e|
+              method = Chaltron.ldap_group_uid || Devise.omniauth_configs[:ldap].options[:uid]
+              group = e.send(method).first
+              Chaltron.ldap_role_mappings[group]
+            end if !Chaltron.ldap_role_mappings.blank?
+
+            user = entry.create_user(roles)
           end
           update_ldap_attributes(user, entry) unless user.nil?
           user

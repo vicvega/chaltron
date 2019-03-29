@@ -71,19 +71,13 @@ module Chaltron
       end
 
       def find_groups_by_member(member)
-        group_filter = Net::LDAP::Filter.eq('objectCategory', 'group')
         filter1 = Net::LDAP::Filter.eq('member', member)
         filter2 = Net::LDAP::Filter.eq('uniquemember', member)
         filter3 = Net::LDAP::Filter.eq('memberuid', member)
         options = {
-          base: base,
-          filter: group_filter & (filter3)
-#          filter: group_filter & (filter1 | filter2)
+          base: Chaltron.ldap_group_base || base,
+          filter: filter1 | filter2 | filter3
         }
-
-        puts options.inspect
-
-
         ldap_search(options)
       end
 
