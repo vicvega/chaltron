@@ -21,10 +21,6 @@ module Chaltron
         ldap.find_by_uid(uid)
       end
 
-      def self.find_groups_by_member(dn)
-        ldap.find_groups_by_member(dn)
-      end
-
       def initialize(entry, uid)
         # Rails.logger.debug { "Instantiating #{self.class.name} with LDIF:\n#{entry.to_ldif}" }
         @entry = entry
@@ -79,6 +75,10 @@ module Chaltron
 
       def provider
         'ldap'
+      end
+
+      def ldap_groups
+        self.class.ldap.find_groups_by_member(self)
       end
 
       private

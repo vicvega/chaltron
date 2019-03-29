@@ -69,4 +69,4 @@ objectClass: posixGroup
 objectClass: top
 cn: good
 gidNumber: 10000
-memberUid: Sirius Black
+memberUid: sirius

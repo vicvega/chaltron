@@ -24,9 +24,10 @@ Chaltron.setup do |config|
   # If not specified the :base parameter defined in Devise.omniauth_configs[:ldap] will be used
   # config.ldap_group_base = 'ou=groups,dc=example,dc=com'
 
-  # Here you may specify a different base for your LDAP groups
-  # If not specified the :uid parameter defined in Devise.omniauth_configs[:ldap] will be used
-  # config.ldap_group_uid = 'cn'
+  # Here you may specify a filter to retrieve LDAP group membership
+  # Accept entry (an instance of Chaltron::LDAP::Person) as parameter
+  # Default is
+  # config.ldap_group_member_filter = -> (entry) { "uniquemember=#{entry.dn}" }
 
   # Roles granted to new users may be retrieved by LDAP group membership.
   # config.ldap_role_mappings = {
