@@ -4,8 +4,6 @@ Chaltron.setup do |config|
 
   config.ldap_allow_all = false
 
-  config.default_roles = %w[ admin user_admin ]
-
   config.ldap_field_mappings = {
     first_name: 'givenName',
     last_name: 'sn',

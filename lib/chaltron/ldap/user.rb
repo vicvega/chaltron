@@ -21,12 +21,9 @@ module Chaltron
           if user.nil? and create
             # create user
             roles = Chaltron.default_roles
-            roles = Chaltron::LDAP::Person.find_groups_by_member(dn).map do |e|
-              method = Chaltron.ldap_group_uid || Devise.omniauth_configs[:ldap].options[:uid]
-              group = e.send(method).first
-              Chaltron.ldap_role_mappings[group]
+            roles = entry.ldap_groups.map do |e|
+              Chaltron.ldap_role_mappings[e.dn]
             end if !Chaltron.ldap_role_mappings.blank?
-
             user = entry.create_user(roles)
           end
           update_ldap_attributes(user, entry) unless user.nil?

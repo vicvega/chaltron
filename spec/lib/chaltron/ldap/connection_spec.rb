@@ -55,15 +55,15 @@ describe Chaltron::LDAP::Connection do
     context 'find_groups_by_member' do
       before {
         Chaltron.ldap_group_base = 'ou=groups,dc=azkaban,dc=co,dc=uk'
+        Chaltron.ldap_group_member_filter = -> (entry) { "memberUid=#{entry.uid}" }
       }
-
-      subject(:res) { ldap.find_groups_by_member(user) }
+      subject(:res) { ldap.find_groups_by_member(entry) }
       context 'returns right value' do
-        let(:user) { 'Sirius Black' }
+        let(:entry) { Chaltron::LDAP::Person.find_by_uid('sirius') }
         it { is_expected.not_to be_empty }
       end
       context 'returns empty' do
-        let(:user) { 'Bartemius Crouch' }
+        let(:entry) { Chaltron::LDAP::Person.find_by_uid('barty') }
         it { is_expected.to be_empty }
       end
     end
