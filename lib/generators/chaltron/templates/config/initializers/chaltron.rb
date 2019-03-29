@@ -20,6 +20,14 @@ Chaltron.setup do |config|
   # You may set here default roles granted to new users (if automatically created)
   # config.default_roles = []
 
+  # Here you may specify a different base for your LDAP groups
+  # If not specified the :base parameter defined in Devise.omniauth_configs[:ldap] will be used
+  # config.ldap_group_base = 'ou=groups,dc=example,dc=com'
+
+  # Here you may specify a different base for your LDAP groups
+  # If not specified the :uid parameter defined in Devise.omniauth_configs[:ldap] will be used
+  # config.ldap_group_uid = 'cn'
+
   # Roles granted to new users may be retrieved by LDAP group membership.
   # config.ldap_role_mappings = {
   #   'DN_of_LDAP_group1' => 'role1',

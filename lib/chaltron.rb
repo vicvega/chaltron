@@ -30,6 +30,12 @@ module Chaltron
     email: 'mail'
   }
 
+  mattr_accessor :ldap_group_base
+  @@ldap_group_base = nil
+
+  mattr_accessor :ldap_group_uid
+  @@ldap_group_uid = nil
+
   mattr_accessor :ldap_role_mappings
   @@ldap_role_mappings = {}
 
