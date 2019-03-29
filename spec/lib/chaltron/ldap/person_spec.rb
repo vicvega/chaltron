@@ -68,11 +68,31 @@ describe Chaltron::LDAP::Person do
 
   describe 'create by uid' do
     subject(:barty) { Chaltron::LDAP::Person.find_by_uid('barty').create_user }
-    it { expect(barty.provider).to eq 'ldap' }
-    it { expect(barty.username).to eq 'barty' }
-    it { expect(barty.fullname).to eq 'Bartemius Crouch' }
-    it { expect(barty.email).to eq 'barty.crouch@azkaban.co.uk' }
-    it { expect(barty.department).to be_nil }
+
+    context 'without fullname' do
+      it { expect(barty.provider).to eq 'ldap' }
+      it { expect(barty.username).to eq 'barty' }
+      it { expect(barty.fullname).to eq 'Bartemius Crouch' }
+      it { expect(barty.email).to eq 'barty.crouch@azkaban.co.uk' }
+      it { expect(barty.department).to be_nil }
+    end
+    context 'with fullname' do
+      before do
+        Chaltron.ldap_field_mappings = {
+          full_name: 'displayName',
+          first_name: 'givenName',
+          last_name: 'sn',
+          email: 'mail'
+        }
+      end
+      it { expect(barty.provider).to eq 'ldap' }
+      it { expect(barty.username).to eq 'barty' }
+      it { expect(barty.fullname).to eq 'Bartemius Crouch Jr.' }
+      it { expect(barty.email).to eq 'barty.crouch@azkaban.co.uk' }
+      it { expect(barty.department).to be_nil }
+    end
+
+
   end
 
 end

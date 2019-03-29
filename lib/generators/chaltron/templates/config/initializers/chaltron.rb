@@ -6,7 +6,7 @@ Chaltron.setup do |config|
   # email field and may use first_name, last_name, full_name, department.
   # Here is the field mapping on you own LDAP server.
   # Default values are the following:
-  # {
+  # config.ldap_field_mappings = {
   #   first_name: 'givenname',
   #   last_name: 'cn',
   #   department: 'department',

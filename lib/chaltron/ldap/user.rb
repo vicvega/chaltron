@@ -23,7 +23,7 @@ module Chaltron
             roles = Chaltron.default_roles
             roles = entry.ldap_groups.map do |e|
               Chaltron.ldap_role_mappings[e.dn]
-            end if !Chaltron.ldap_role_mappings.blank?
+            end.compact if !Chaltron.ldap_role_mappings.blank?
             user = entry.create_user(roles)
           end
           update_ldap_attributes(user, entry) unless user.nil?
