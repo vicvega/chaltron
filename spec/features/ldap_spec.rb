@@ -8,6 +8,11 @@ describe User do
     before {
       login_with user_admin.username, user_admin.password
       Chaltron.ldap_allow_all = false
+      Chaltron.ldap_field_mappings = {
+        first_name: 'givenName',
+        last_name: 'sn',
+        email: 'mail'
+      }
     }
     subject { page }
 
