@@ -2,8 +2,11 @@
 
 If you are using bootstrap v3, refer to version 0, on [bootstrap3 branch](https://github.com/vicvega/chaltron/blob/bootstrap3/CHANGELOG.md).
 
-### 1.0.11 - current version - unreleased
-* fix ldap access whit authentication
+### 1.1.0 - current version - unreleased
+* fix LDAP access with authentication
+* add LDAP fields name mapping
+* add LDAP groups roles mapping
+* add LDAP callback (after authenticate and before logout)
 
 ### 1.0.10 - 2019-03-15
 * fix missing semicolons in view helpers
