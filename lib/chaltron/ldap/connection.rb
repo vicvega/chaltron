@@ -45,23 +45,6 @@ module Chaltron
       end
 
       def find_users(args)
-        find_objects(args).map do |entry|
-          Chaltron::LDAP::Person.new(entry, uid) if entry.respond_to? uid
-        end.compact
-      end
-
-      def find_groups_by_member(dn)
-        group_filter = Net::LDAP::Filter.eq('objectCategory', 'group')
-        filter1 = Net::LDAP::Filter.eq('member', dn)
-        filter2 = Net::LDAP::Filter.eq('uniquemember', dn)
-        options = {
-          base: base,
-          filter: group_filter && (filter2 || filter3)
-        }
-        ldap_search(options)
-      end
-
-      def find_objects(args)
         return [] if args.empty?
         limit = args.delete(:limit)
         fields = args.keys
@@ -82,6 +65,25 @@ module Chaltron
           }
         end
         options.merge!(size: limit) unless limit.nil?
+        ldap_search(options).map do |entry|
+          Chaltron::LDAP::Person.new(entry, uid) if entry.respond_to? uid
+        end.compact
+      end
+
+      def find_groups_by_member(member)
+        group_filter = Net::LDAP::Filter.eq('objectCategory', 'group')
+        filter1 = Net::LDAP::Filter.eq('member', member)
+        filter2 = Net::LDAP::Filter.eq('uniquemember', member)
+        filter3 = Net::LDAP::Filter.eq('memberuid', member)
+        options = {
+          base: base,
+          filter: group_filter & (filter3)
+#          filter: group_filter & (filter1 | filter2)
+        }
+
+        puts options.inspect
+
+
         ldap_search(options)
       end
 
