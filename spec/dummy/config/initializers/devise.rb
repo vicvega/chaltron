@@ -1,7 +1,7 @@
 Devise.setup do |config|
   config.omniauth :ldap,
       host:     'localhost',
-      base:     'ou=people,dc=azkaban,dc=co,dc=uk',
+      base:     'dc=azkaban,dc=co,dc=uk',
       uid:      'uid',
       port:     389,
       encryption:   :plain,
