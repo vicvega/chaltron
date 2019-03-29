@@ -70,6 +70,13 @@ describe Chaltron::LDAP::Person do
     subject(:barty) { Chaltron::LDAP::Person.find_by_uid('barty').create_user }
 
     context 'without fullname' do
+      before do
+        Chaltron.ldap_field_mappings = {
+          first_name: 'givenName',
+          last_name: 'sn',
+          email: 'mail'
+        }
+      end
       it { expect(barty.provider).to eq 'ldap' }
       it { expect(barty.username).to eq 'barty' }
       it { expect(barty.fullname).to eq 'Bartemius Crouch' }
