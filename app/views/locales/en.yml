@@ -71,8 +71,8 @@ en:
         submit_text: Search
         name_label: User
         name_help: Search by user-id (exact match)
-        fullname_label: Fullname
-        fullname_help: Search by last name (also partial match)
+        lastname_label: Fullname
+        lastname_help: Search by last name (also partial match)
         department_label: Department
         department_help: Search by department (also partial match)
         limit_label: Limit
