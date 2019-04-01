@@ -1,5 +1,10 @@
-### 0.2.12 - current version - unreleased
+### 0.3.1 - current version - unreleased
 
+### 0.3.0 - 2019-04-01
+* fix LDAP access with authentication
+* add LDAP fields name mapping
+* add LDAP groups roles mapping
+* add LDAP callback (after authenticate and before logout)
 
 ### 0.2.11 - 2019-03-15
 * fix Travis CI tests
