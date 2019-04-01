@@ -1,4 +1,4 @@
-class Log < ActiveRecord::Base
+class Log < ApplicationRecord
   Severities = %w( emerg alert crit err warning notice info debug )
 
   validates_presence_of :severity, :message
