@@ -1,15 +1,18 @@
 dn: ou=people,dc=azkaban,dc=co,dc=uk
 objectClass: organizationalUnit
+objectClass: top
 ou: people
 
 dn: ou=groups,dc=azkaban,dc=co,dc=uk
 objectClass: organizationalUnit
+objectClass: top
 ou: groups
 
 dn: uid=sirius,ou=people,dc=azkaban,dc=co,dc=uk
 objectClass: inetOrgPerson
 objectClass: posixAccount
 objectClass: shadowAccount
+objectClass: top
 uid: sirius
 sn: Black
 givenName: Sirius
@@ -37,6 +40,7 @@ dn: uid=barty,ou=people,dc=azkaban,dc=co,dc=uk
 objectClass: inetOrgPerson
 objectClass: posixAccount
 objectClass: shadowAccount
+objectClass: top
 uid: barty
 sn: Crouch
 givenName: Bartemius
@@ -60,12 +64,9 @@ title: Bad guy
 postalAddress: Test Home
 initials: TT
 
-dn: cn=example,ou=groups,dc=azkaban,dc=co,dc=uk
+dn: cn=good,ou=groups,dc=azkaban,dc=co,dc=uk
 objectClass: posixGroup
-cn: example
+objectClass: top
+cn: good
 gidNumber: 10000
-
-dn: cn=example2,ou=groups,dc=azkaban,dc=co,dc=uk
-objectClass: posixGroup
-cn: example2
-gidNumber: 10001
+memberUid: sirius

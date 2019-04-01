@@ -70,11 +70,11 @@ en:
         title: Search for LDAP sers
         submit_text: Search
         name_label: User
-        name_help: Search for user-id (exact match)
-        fullname_label: Fullname
-        fullname_help: Search for first name or surname (also partial match)
+        name_help: Search by user-id (exact match)
+        lastname_label: Last name
+        lastname_help: Search by last name or surname (also partial match)
         department_label: Department
-        department_help: Search for department (also partial match)
+        department_help: Search by department (also partial match)
         limit_label: Limit
         limit_help: Max shown results
       multi_new:

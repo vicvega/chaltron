@@ -66,11 +66,11 @@
   <div class='pull-right'>
     <%= link_to edit_user_path(@user), class: 'btn btn-default' do %>
       <%= icon :edit, t('.edit') %>
-    <% end %>
+    <% end if can? :edit, @user %>
     <%= link_to @user, method: :delete, class: 'btn btn-danger',
       disabled: current_user == @user,
       data: { confirm: t('.destroy_confirm', user: @user.username) } do %>
       <%= icon :trash, t('.destroy') %>
-    <% end %>
+    <% end if can? :destroy, @user %>
   </div>
 </div>

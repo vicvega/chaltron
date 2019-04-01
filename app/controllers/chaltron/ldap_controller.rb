@@ -15,11 +15,11 @@ class Chaltron::LdapController < ApplicationController
     userid = params[:userid]
     if userid.present?
       entry = Chaltron::LDAP::Person.find_by_uid(userid)
-      @entries << entry unless entry.nil?
+      @entries << entry
     else
-      res = Chaltron::LDAP::Person.find_by_fields(find_options)
-      @entries = res
+      @entries = Chaltron::LDAP::Person.find_by_fields(find_options)
     end
+    @entries.compact!
   end
 
   def multi_create
@@ -41,12 +41,12 @@ class Chaltron::LdapController < ApplicationController
   private
   def find_options
     department = params[:department]
-    name       = params[:fullname]
+    name       = params[:lastname]
     limit      = params[:limit].to_i
 
     ret = {}
     ret[:department] = "*#{department}*" unless department.blank?
-    ret[:cn]         = "*#{name}*"       unless name.blank?
+    ret[:last_name]  = "*#{name}*"       unless name.blank?
     ret[:limit]      = limit.zero? ? default_limit : limit
     ret
   end
