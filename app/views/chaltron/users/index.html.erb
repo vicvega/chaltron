@@ -5,7 +5,7 @@
       <%= render partial: 'side_filters', locals: { filters: @filters } %>
       <hr>
 
-      <% if ldap_enabled? %>
+      <% if ldap_enabled? and !Chaltron.ldap_allow_all %>
         <div class='btn-group'>
           <%= content_tag :button, type: 'button', class: 'btn btn-primary dropdown-toggle',
             data: {toggle: 'dropdown'}, aria: {expanded: false} do %>

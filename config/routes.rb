@@ -15,8 +15,9 @@ Rails.application.routes.draw do
   resources :logs, controller: 'chaltron/logs', only: [:index, :show]
 
   # search and create LDAP users
-  get   'ldap/search'       => 'chaltron/ldap#search'
-  post  'ldap/multi_new'    => 'chaltron/ldap#multi_new'
-  post  'ldap/multi_create' => 'chaltron/ldap#multi_create'
-
+  if Devise.omniauth_providers.include?(:ldap) and !Chaltron.ldap_allow_all
+    get   'ldap/search'       => 'chaltron/ldap#search'
+    post  'ldap/multi_new'    => 'chaltron/ldap#multi_new'
+    post  'ldap/multi_create' => 'chaltron/ldap#multi_create'
+  end
 end

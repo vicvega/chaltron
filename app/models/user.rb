@@ -26,4 +26,8 @@ class User < ApplicationRecord
     end
   end
 
+  def ldap_user?
+    provider == 'ldap'
+  end
+
 end

@@ -20,7 +20,11 @@ module Chaltron
           entry = Chaltron::LDAP::Person.find_by_uid(username)
           if user.nil? and create
             # create user
-            user = entry.create_user Chaltron.default_roles
+            roles = Chaltron.default_roles
+            roles = entry.ldap_groups.map do |e|
+              Chaltron.ldap_role_mappings[e.dn]
+            end.compact if !Chaltron.ldap_role_mappings.blank?
+            user = entry.create_user(roles)
           end
           update_ldap_attributes(user, entry) unless user.nil?
           user
