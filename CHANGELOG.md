@@ -3,6 +3,7 @@
 If you are using bootstrap v3, refer to version 0, on [bootstrap3 branch](https://github.com/vicvega/chaltron/blob/bootstrap3/CHANGELOG.md).
 
 ### 1.1.1 - current version - unreleased
+* display roles in users index view
 * fix typo in en locale file
 * update gem dependencies
 

@@ -4,4 +4,7 @@
   </td>
   <td class='fullname'><%= user.fullname %></td>
   <td class='email'><%= user.email %></td>
+  <td class='roles'>
+    <%= safe_join(user.roles.map{|x| content_tag(:span, t("roles.#{x}"), class: 'badge badge-primary') }, ' ') %>
+  </td>
 </tr>

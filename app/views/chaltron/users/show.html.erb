@@ -26,7 +26,7 @@
           <% end %>
           <li class='list-group-item'>
             <span><%= User.human_attribute_name(:roles) %>: </span>
-            <strong><%= @user.roles.map{|x| t("roles.#{x}") }.join(', ') %></strong>
+            <%= safe_join(@user.roles.map{|x| content_tag(:span, t("roles.#{x}"), class: 'badge badge-primary')}, ' ') %>
           </li>
         </ul>
       </div>
