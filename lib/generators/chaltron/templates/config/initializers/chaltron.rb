@@ -62,6 +62,10 @@ Chaltron.setup do |config|
   # }
   #
 
+  # The content of the following file (if present in Rails.root directory)
+  # will be displayed in the footer
+  # config.revision_filename = 'REVISION'
+
   # If syslog enabled, all Log records will be available also in syslog flow
   # config.enable_syslog = false
   # config.syslog_facility = Syslog::LOG_SYSLOG

@@ -45,6 +45,9 @@ module Chaltron
   mattr_accessor :ldap_before_logout
   @@ldap_before_logout = -> (user, ldap) { }
 
+  mattr_accessor :revision_filename
+  @@revision_filename = 'REVISION'
+
   def self.setup
     yield self
   end

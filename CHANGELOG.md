@@ -3,6 +3,7 @@
 If you are using bootstrap v3, refer to version 0, on [bootstrap3 branch](https://github.com/vicvega/chaltron/blob/bootstrap3/CHANGELOG.md).
 
 ### 1.1.2 - current version - unreleased
+* add revision_filename parameter
 
 ### 1.1.1 - 2019-04-01
 * display roles in users index view

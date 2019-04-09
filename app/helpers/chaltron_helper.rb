@@ -43,7 +43,7 @@ module ChaltronHelper
   private
 
   def get_revision_number
-    version_file = "#{Rails.root}/REVISION"
+    version_file = "#{Rails.root}/#{Chaltron.revision_filename}"
     if File.exists?(version_file)
       v = IO.read(version_file).strip
       v.blank?? nil : v
