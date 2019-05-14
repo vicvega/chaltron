@@ -74,7 +74,7 @@ GEM
       actionpack (>= 5.0)
       activemodel (>= 5.0)
     builder (3.2.3)
-    cancancan (2.3.0)
+    cancancan (3.0.1)
     capybara (2.17.0)
       addressable
       mini_mime (>= 0.1.3)
