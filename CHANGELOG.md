@@ -1,4 +1,5 @@
 ### 0.3.1 - current version - unreleased
+* gem update
 
 ### 0.3.0 - 2019-04-01
 * fix LDAP access with authentication
