@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    chaltron (1.1.3)
+    chaltron (1.1.4)
       ajax-datatables-rails
       autoprefixer-rails
       bootstrap
@@ -121,7 +121,7 @@ GEM
       factory_bot (~> 5.0.2)
       railties (>= 4.2.0)
     ffaker (2.11.0)
-    ffi (1.10.0)
+    ffi (1.11.1)
     font-awesome-sass (5.8.1)
       sassc (>= 1.11)
     gitlab_omniauth-ldap (2.1.1)

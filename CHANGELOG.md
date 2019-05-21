@@ -2,7 +2,9 @@
 
 If you are using bootstrap v3, refer to version 0, on [bootstrap3 branch](https://github.com/vicvega/chaltron/blob/bootstrap3/CHANGELOG.md).
 
-### 1.1.3 - current version - unreleased
+### 1.1.4 - current version - unreleased
+
+### 1.1.3 - 2019-05-21
 * fix issue with navbar and turbolinks
 * gem update
 
