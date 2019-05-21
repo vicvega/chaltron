@@ -1,6 +1,9 @@
 class NavbarBuilder
 
-  render: ->
+  teardown: ->
+    $('#navigation').html($('meta[name="navigation"]').attr('content'))
+    
+  setup: ->
     @prepend_class(i, 'navbar-nav mr-auto') for i in $('#navigation ul')
     $('#navigation ul li').addClass('nav-item')
     $('#navigation ul li a').addClass('nav-link')
@@ -42,6 +45,14 @@ class NavbarBuilder
     if el.attr('icon')
       el.html("<i class=\"fas fa-#{el.attr('icon')}\"></i>&nbsp;#{el.text()}")
 
-$(document).on 'turbolinks:load', ->
+$(document).one 'turbolinks:load', ->
   navbar = new NavbarBuilder
-  navbar.render()
+  navbar.setup()
+
+$(document).on 'turbolinks:render', ->
+  navbar = new NavbarBuilder
+  navbar.setup()
+
+$(document).on 'turbolinks:before-render', ->
+  navbar = new NavbarBuilder
+  navbar.teardown()
