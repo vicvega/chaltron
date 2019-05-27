@@ -132,16 +132,16 @@ module Chaltron
         method = translate_method
         return unless method
 
-        opts = if options[:verify_certificates] && method != 'plain'
-                 # Dup so we don't accidentally overwrite the constant
-                 OpenSSL::SSL::SSLContext::DEFAULT_PARAMS.dup
-               else
-                 # It is important to explicitly set verify_mode for two reasons:
-                 # 1. The behavior of OpenSSL is undefined when verify_mode is not set.
-                 # 2. The net-ldap gem implementation verifies the certificate hostname
-                 #    unless verify_mode is set to VERIFY_NONE.
-                 { verify_mode: OpenSSL::SSL::VERIFY_NONE }
-               end
+        opts = if options[:disable_verify_certificates]
+          # It is important to explicitly set verify_mode for two reasons:
+          # 1. The behavior of OpenSSL is undefined when verify_mode is not set.
+          # 2. The net-ldap gem implementation verifies the certificate hostname
+          #    unless verify_mode is set to VERIFY_NONE.
+          { verify_mode: OpenSSL::SSL::VERIFY_NONE }
+         else
+           # Dup so we don't accidentally overwrite the constant
+           OpenSSL::SSL::SSLContext::DEFAULT_PARAMS.dup
+         end
 
         opts.merge!(custom_tls_options)
 
