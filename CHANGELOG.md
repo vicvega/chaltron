@@ -2,7 +2,9 @@
 
 If you are using bootstrap v3, refer to version 0, on [bootstrap3 branch](https://github.com/vicvega/chaltron/blob/bootstrap3/CHANGELOG.md).
 
-### 1.1.4 - current version - unreleased
+### 1.1.5 - current version - unreleased
+
+### 1.1.4 - 2019-05-27
   * fix issue with SSL params for LDAP connection
 
 ### 1.1.3 - 2019-05-21
