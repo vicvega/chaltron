@@ -5,7 +5,6 @@ If you are using bootstrap v3, refer to version 0, on [bootstrap3 branch](https:
 ### 1.1.4 - current version - unreleased
   * fix issue with SSL params for LDAP connection
 
-
 ### 1.1.3 - 2019-05-21
 * fix issue with navbar and turbolinks
 * gem update
