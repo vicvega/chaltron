@@ -1,4 +1,7 @@
-### 0.3.1 - current version - unreleased
+### 0.3.2 - current version - unreleased
+
+### 0.3.1 - 2019-05-27
+* fix issue with SSL params for LDAP connection
 * gem update
 
 ### 0.3.0 - 2019-04-01
