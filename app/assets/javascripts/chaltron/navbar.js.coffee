@@ -1,9 +1,13 @@
 class NavbarBuilder
 
   teardown: ->
-    $('#navigation').html($('meta[name="navigation"]').attr('content'))
-    
+    # restore
+    $('#navigation').html($('#navigation').data('navbar'))
+
   setup: ->
+    # backup
+    $('#navigation').data('navbar', $('#navigation').html())
+
     @prepend_class(i, 'navbar-nav mr-auto') for i in $('#navigation ul')
     $('#navigation ul li').addClass('nav-item')
     $('#navigation ul li a').addClass('nav-link')

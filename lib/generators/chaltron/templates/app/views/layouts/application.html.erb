@@ -9,9 +9,6 @@
     <%= stylesheet_link_tag    'application', 'data-turbolinks-track' => true, media: 'all' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= favicon_link_tag 'favicon.ico', rel: 'shortcut icon' %>
-
-    <%= tag.meta name: 'navigation', content: render_navigation(expand_all: true) +  render_navigation(expand_all: true, context: :chaltron) %>
-
   </head>
   <body>
     <%= render 'layouts/navbar' %>
