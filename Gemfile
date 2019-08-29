@@ -1,4 +1,5 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Declare your gem's dependencies in chaltron.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
@@ -10,10 +11,5 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-# To use debugger
+# To use a debugger
 # gem 'byebug', group: [:development, :test]
-group :test do
-  gem 'phantomjs', :require => 'phantomjs/poltergeist'
-  gem 'turbolinks', '~> 5'
-  gem 'coffee-rails', '~> 4.2'
-end

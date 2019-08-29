@@ -1,12 +1,8 @@
 .bundle/
 log/*.log
 pkg/
-coverage/
-spec/dummy/db/*.sqlite3
-spec/dummy/db/*.sqlite3-journal
-spec/dummy/log/*.log
-spec/dummy/tmp/
-spec/dummy/.sass-cache
-spec/generators/tmp/
-.rubocop.yml
-.rubocop_todo.yml
+test/dummy/db/*.sqlite3
+test/dummy/db/*.sqlite3-journal
+test/dummy/log/*.log
+test/dummy/storage/
+test/dummy/tmp/
