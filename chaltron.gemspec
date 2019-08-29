@@ -7,11 +7,11 @@ require "chaltron/version"
 Gem::Specification.new do |spec|
   spec.name        = "chaltron"
   spec.version     = Chaltron::VERSION
-  spec.authors     = ["Francesco Coda Zabetta"]
-  spec.email       = [""]
-  spec.homepage    = "TODO"
-  spec.summary     = "TODO: Summary of Chaltron."
-  spec.description = "TODO: Description of Chaltron."
+  spec.authors     = ["vicvega"]
+  spec.email       = ["francesco.codazabetta@gmail.com"]
+  spec.homepage    = "https://github.com/vicvega/chaltron"
+  spec.summary     = "An easy generator for rails applications."
+  spec.description = "A ready-to-go application with authentication, authorization, logging... with bootstrap flavor."
   spec.license     = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
