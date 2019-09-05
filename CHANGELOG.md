@@ -1,4 +1,5 @@
 ### 0.3.3 - current version - unreleased
+* gem update
 
 ### 0.3.2 - 2019-09-05
 * make inline option programmable for role selection
