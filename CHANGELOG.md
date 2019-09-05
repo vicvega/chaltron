@@ -1,4 +1,6 @@
-### 0.3.2 - current version - unreleased
+### 0.3.3 - current version - unreleased
+
+### 0.3.2 - 2019-09-05
 * make inline option programmable for role selection
 
 ### 0.3.1 - 2019-05-27
