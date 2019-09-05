@@ -2,7 +2,9 @@
 
 If you are using bootstrap v3, refer to version 0, on [bootstrap3 branch](https://github.com/vicvega/chaltron/blob/bootstrap3/CHANGELOG.md).
 
-### 1.1.6 - current version - unreleased
+### 1.1.7 - current version - unreleased
+
+### 1.1.6 - 2019-09-05
 * make inline option programmable for role selection
 * gem update
 
