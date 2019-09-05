@@ -1,4 +1,5 @@
 ### 0.3.2 - current version - unreleased
+* make inline option programmable for role selection
 
 ### 0.3.1 - 2019-05-27
 * fix issue with SSL params for LDAP connection
