@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'sass-rails', '~> 5.0'
   s.add_dependency 'devise'
   s.add_dependency 'omniauth'
+  s.add_dependency 'omniauth-rails_csrf_protection'
   s.add_dependency 'gitlab_omniauth-ldap'
   s.add_dependency 'autoprefixer-rails'
   s.add_dependency 'bootstrap'
