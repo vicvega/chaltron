@@ -23,7 +23,7 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
   - docker version
   - docker-compose version
-  - gem install bundler -v '<2'
+  - gem install bundler
 
 cache: bundler
 
