@@ -155,7 +155,7 @@ GEM
     minitest (5.13.0)
     net-ldap (0.16.2)
     nio4r (2.5.2)
-    nokogiri (1.10.5)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     nprogress-rails (0.2.0.2)
     omniauth (1.9.0)
