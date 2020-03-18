@@ -14,7 +14,7 @@ class Chaltron::InstallGenerator < Rails::Generators::Base
   end
 
   def add_gems
-
+    gem 'simple-navigation'
   end
 
   def add_foreman
@@ -23,7 +23,7 @@ class Chaltron::InstallGenerator < Rails::Generators::Base
   end
 
   def add_javascript
-    run 'yarn add bootstrap jquery popper.js @fortawesome/fontawesome-free ' +
+    run 'yarn add bootstrap jquery popper.js @fortawesome/fontawesome-free ' \
         'datatables.net datatables.net-bs4'
 
     content = <<-JS
