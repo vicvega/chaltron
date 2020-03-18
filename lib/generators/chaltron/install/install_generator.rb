@@ -24,7 +24,7 @@ class Chaltron::InstallGenerator < Rails::Generators::Base
 
   def add_javascript
     run 'yarn add bootstrap jquery popper.js @fortawesome/fontawesome-free ' +
-        'datatables.net datatables.net-bs4 nprogress'
+        'datatables.net datatables.net-bs4'
 
     content = <<-JS
 const webpack = require('webpack');
