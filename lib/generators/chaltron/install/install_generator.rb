@@ -13,10 +13,6 @@ class Chaltron::InstallGenerator < Rails::Generators::Base
     end
   end
 
-  def add_gems
-    gem 'simple-navigation'
-  end
-
   def add_foreman
     gem 'foreman'
     copy_file 'Procfile'
@@ -48,10 +44,6 @@ environment.plugins.append('Provide',
     directory 'app/views/layouts', force: true
   end
 
-  def add_navigation
-    copy_file 'config/navigation.rb'
-  end
-
   def create_index_controller
     # controller, views and assets replacement
     copy_file 'app/controllers/home_controller.rb'
@@ -63,6 +55,17 @@ environment.plugins.append('Provide',
     Array(1..10).each do |x|
       route "get 'home/test#{x}'"
     end
+  end
+
+  def add_navigation
+    gem 'simple-navigation'
+    copy_file 'config/navigation.rb'
+  end
+
+  def add_bootstrap_form
+    gem 'bootstrap_form'
+    inject_into_file 'app/assets/stylesheets/application.css',
+        "*= require rails_bootstrap_forms\n", before: '*= require_tree .'
   end
 
   private
