@@ -13,6 +13,54 @@ class Chaltron::InstallGenerator < Rails::Generators::Base
     end
   end
 
+  def add_gems
+
+  end
+
+  def add_foreman
+    gem 'foreman'
+    copy_file 'Procfile'
+  end
+
+  def add_javascript
+    run 'yarn add bootstrap jquery popper.js @fortawesome/fontawesome-free ' +
+        'datatables.net datatables.net-bs4 nprogress'
+
+    content = <<-JS
+const webpack = require('webpack');
+environment.plugins.append('Provide',
+  new webpack.ProvidePlugin({
+    $: 'jquery',
+    jQuery: 'jquery',
+    Popper: ['popper.js', 'default']
+  })
+);
+ JS
+
+    insert_into_file 'config/webpack/environment.js', content + "\n", before: "module.exports = environment"
+
+    directory 'app/javascript/packs', force: true
+    directory 'app/javascript/stylesheets', force: true
+    directory 'app/javascript/images', force: true
+  end
+
+  def apply_layout
+    directory 'app/views/layouts', force: true
+  end
+
+  def create_index_controller
+    # controller, views and assets replacement
+    copy_file 'app/controllers/home_controller.rb'
+    directory 'app/views/home/'
+
+    copy_file 'app/assets/stylesheets/home.scss'
+
+    route "root to: 'home#index'"
+    Array(1..10).each do |x|
+      route "get 'home/test#{x}'"
+    end
+  end
+
   private
 
   def print_banner

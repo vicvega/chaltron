@@ -1,0 +1,14 @@
+<div class='card'>
+  <%= content_tag :div, id: "heading#{faq_counter}", class: 'card-header', role: 'tab' do %>
+    <h5 class='mb-0'>
+      <%= link_to raw(faq[:question]), "#collapse#{faq_counter}", data: {toggle: 'collapse'},
+        role: 'button', aria: {expanded: false, controls: "collapse#{faq_counter}"}, class: 'collapsed' %>
+    </h5>
+  <% end %>
+  <%= content_tag :div, id: "collapse#{faq_counter}", class: 'collapse', role: 'tabpanel',
+    data: { parent: '#accordion'}, aria: {labelledby: "heading#{faq_counter}"} do %>
+    <div class="card-body">
+      <%= raw faq[:answer] %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,28 @@
+// to keep space for navbars (top and bottom)
+div#content {
+  margin-top: 2.7em;
+  margin-bottom: 2.7em;
+}
+
+/**
+ * Flash messages
+ *
+ */
+.flash-container {
+  cursor: pointer;
+  margin: 0;
+  text-align: center;
+  position: fixed;
+  top: 4em;
+  width: 100%;
+  opacity: 0.8;
+  z-index: 100;
+  .alert {
+    margin: 0;
+  }
+}
+
+.login-box{
+  margin-top: 100px;
+  max-width: 650px;
+}
