@@ -1,0 +1,92 @@
+it:
+  devise:
+    passwords:
+      new:
+        title: Password dimenticata?
+        par1: Inserisci la tua email per ricevere instruzioni su come resettare la password
+        submit_text: Invia
+        par2_html: Hai già delle credenziali valide? <strong><a href="/users/sign_in">Login</a></strong>
+      edit:
+        title: Cambio password
+        submit_text: Cambia password
+        par_html: Come non detto! <strong><a href="/users/sign_in">Login</a></strong>
+    sessions:
+      new:
+        title: Login
+      new_local:
+        remember_me: Ricordami
+        link_text: Hai dimenticato la password?
+        submit_text: Login
+        login_placeholder: Username o email
+      new_ldap:
+        remember_me: Ricordami
+        submit_text: LDAP login
+  chaltron:
+    logs:
+      index:
+        title: Elenco dei log
+      show:
+        headers:
+          details: Dettagli
+    users:
+      index:
+        title: Elenco degli utenti
+        new_user: Nuovo utente
+        new_local_user: Nuovo utente locale
+        new_ldap_user: Nuovo utente LDAP
+      side_filters:
+          provider:
+            all: Tutti
+            local: Locali
+            ldap: LDAP
+          activity:
+            inactive: Inattivi
+            no_login: Mai loggati
+      new:
+        title: Nuovo utente locale
+        submit_text: Crea utente locale
+      edit:
+        title: Modifica %{user}
+      self_edit:
+        title: Modifica dati personali
+        submit: Invia
+      form:
+        cancel_text: Annulla
+      show:
+        headers:
+          activity: Attività
+          details: Dettagli
+        edit: Modifica
+        destroy: Cancella
+        destroy_confirm: Sei sicuro di voler cancellare %{user}?
+      self_show:
+        title: Dati personali
+        headers:
+          activity: Attività
+          details: Dettagli
+        edit: Modifica dati personali
+    ldap:
+      search:
+        title: Ricerca utenti LDAP
+        submit_text: Cerca
+        name_label: Utente
+        name_help: Ricerca per user-id (match esatto)
+        lastname_label: Nome
+        lastname_help: Ricerca per cognome (anche match parziale)
+        department_label: Funzione
+        department_help: Ricerca per sigla di funzione (anche match parziale)
+        limit_label: Limite
+        limit_help: Massimo numero di risultati visualizzati
+      multi_new:
+        title: Nuovi utenti LDAP
+        submit_text: Crea utenti LDAP
+        par: Selezione gli utenti facendo un click sulla riga della tabella
+      multi_create:
+        title: Creazione utenti LDAP
+        result: Risultati
+        created:
+          one:   È stato creato un nuovo utente
+          other: Sono stati creati %{count} nuovi utenti
+        error:
+          one:   Un utente non è stato creato
+          other: "%{count} utenti non sono stati creati"

@@ -1,0 +1,18 @@
+en:
+  activerecord:
+    attributes:
+      user:
+        username: Username
+        fullname: Full name
+        email:  E-mail
+        password_confirmation: Confirm password
+        last_sign_in_at: Last login
+        last_sign_in_ip: Last login from
+        sign_in_count: Login count
+        roles: Roles
+        department: Department
+      log:
+        created_at: Date
+        message: Message
+        category: Category
+        severity: Severity

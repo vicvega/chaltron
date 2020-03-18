@@ -1,0 +1,49 @@
+en:
+  chaltron:
+    flash:
+      success: info
+      error:   error
+      alert:   alert
+      notice:  notice
+    menu:
+      admin: Administration
+      users: Users
+      self_show: Account data
+      logs: Log
+    access_denied: Access denied. You don't have the correct permissions to access this page!
+    access_denied_try_login: Access denied. Sign in, please.
+    not_allowed_to_sign_in: You are not allowed to sign in. Contact your system administrator.
+    common:
+      back: Back
+      cancel: Cancel
+      clear_filter: Clear filters
+    users:
+      created: User was successfully created.
+      updated: User was successfully updated.
+      self_updated: Account data successfully updated.
+      cannot_self_destroy: You cannot destroy your own account.
+      it_s_you: It's you!
+      missing_field: Missing!
+      already_present: Already present!
+    logs:
+      severity:
+        emerg: Emergency
+        alert: Alert
+        crit: Critical error
+        err: Error
+        warning: Warning
+        notice: Notice
+        info: Info
+        debug: Debug
+      category:
+        login: Login
+        user_admin: User administration
+      login: "%{user} has logged in successfully"
+      logout: "%{user} has logged out successfully"
+      login_via: "%{user} has logged in successfully with %{provider}"
+      users:
+        created: "%{current} created user %{user}"
+        destroyed: "%{current} destroyed user %{user}"
+        ldap_created:
+          one: "%{current} created user %{user} from LDAP"
+          other: "%{current} created %{count} users from LDAP (%{user})"
