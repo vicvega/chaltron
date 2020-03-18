@@ -48,6 +48,10 @@ environment.plugins.append('Provide',
     directory 'app/views/layouts', force: true
   end
 
+  def add_navigation
+    copy_file 'config/navigation.rb'
+  end
+
   def create_index_controller
     # controller, views and assets replacement
     copy_file 'app/controllers/home_controller.rb'
