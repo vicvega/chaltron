@@ -33,11 +33,15 @@ environment.plugins.append('Provide',
 );
  JS
 
-    insert_into_file 'config/webpack/environment.js', content + "\n", before: "module.exports = environment"
+    insert_into_file 'config/webpack/environment.js', content + "\n",
+      before: "module.exports = environment"
 
     directory 'app/javascript/packs', force: true
     directory 'app/javascript/stylesheets', force: true
     directory 'app/javascript/images', force: true
+
+    directory 'app/assets/javascripts/', force: true
+    insert_into_file 'app/assets/config/manifest.js', '//= link application.js'
   end
 
   def apply_layout
@@ -65,7 +69,7 @@ environment.plugins.append('Provide',
   def add_bootstrap_form
     gem 'bootstrap_form'
     inject_into_file 'app/assets/stylesheets/application.css',
-        "*= require rails_bootstrap_forms\n", before: '*= require_tree .'
+        " *= require rails_bootstrap_forms\n", before: ' *= require_tree .'
   end
 
   private
