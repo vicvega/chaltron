@@ -1,5 +1,3 @@
-//= require jquery
-
 function NavbarBuilder() {
 
   function renderDropdownMenu(item){
