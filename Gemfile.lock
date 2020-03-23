@@ -2,6 +2,8 @@ PATH
   remote: .
   specs:
     chaltron (2.0.0)
+      autoprefixer-rails
+      bootstrap_form
       rails (~> 6.0.0)
       simple-navigation
 
@@ -63,10 +65,16 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2)
+    autoprefixer-rails (9.7.4)
+      execjs
+    bootstrap_form (4.4.0)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     builder (3.2.4)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
     erubi (1.9.0)
+    execjs (2.7.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.2)

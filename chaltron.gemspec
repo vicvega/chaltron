@@ -28,6 +28,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rails', '~> 6.0.0'
   spec.add_dependency 'simple-navigation'
   spec.add_dependency 'bootstrap_form'
+  spec.add_dependency 'autoprefixer-rails'
 
   spec.add_development_dependency 'sqlite3'
 end
