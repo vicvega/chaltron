@@ -62,12 +62,10 @@ environment.plugins.append('Provide',
   end
 
   def add_navigation
-    gem 'simple-navigation'
     copy_file 'config/navigation.rb'
   end
 
   def add_bootstrap_form
-    gem 'bootstrap_form'
     inject_into_file 'app/assets/stylesheets/application.css',
         " *= require rails_bootstrap_forms\n", before: ' *= require_tree .'
   end

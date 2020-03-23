@@ -1,4 +1,5 @@
 require 'simple-navigation'
+require 'bootstrap_form'
 
 SimpleNavigation.config_file_paths << File.expand_path('../../../config', __FILE__)
 
