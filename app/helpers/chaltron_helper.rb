@@ -1,8 +1,8 @@
 module ChaltronHelper
 
-  # def ldap_enabled?
-  #   Devise.omniauth_providers.include? :ldap
-  # end
+  def ldap_enabled?
+    Devise.omniauth_providers.include? :ldap
+  end
 
   def icon(style, name, text = nil, html_options = {})
     if text.is_a?(Hash)

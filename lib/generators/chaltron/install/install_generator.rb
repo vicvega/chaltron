@@ -70,6 +70,31 @@ environment.plugins.append('Provide',
         " *= require rails_bootstrap_forms\n", before: ' *= require_tree .'
   end
 
+  def db_migrations
+   rake 'chaltron_engine:install:migrations'
+  end
+
+  def add_devise
+    environment "config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }",
+                env: 'development'
+
+    append_file 'db/seeds.rb' do
+  <<RUBY
+  Role.create(name: 'admin')
+  Role.create(name: 'user_admin')
+  User.create do |u|
+    u.username              = 'bella'
+    u.fullname              = 'Bellatrix Lestrange'
+    u.email                 = 'bellatrix.lestrange@azkaban.co.uk'
+    u.password              = 'password.1'
+    u.password_confirmation = 'password.1'
+    u.roles                 = Role.all
+  end
+RUBY
+    end
+
+  end
+
   private
 
   def print_banner

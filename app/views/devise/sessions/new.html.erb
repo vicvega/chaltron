@@ -1,0 +1,37 @@
+<div class='container login-box'>
+  <h4><%= t '.title' %></h4>
+  <div class='card'>
+    <div class='card-header'>
+      <% if ldap_enabled? %>
+      <ul class='nav nav-tabs card-header-tabs' role='tablist'>
+        <li class='nav-item'>
+          <%= link_to 'LDAP', '#tab-ldap', class: 'nav-link active', id: 'ldap-tab',
+            data: {toggle: 'tab'}, aria: {controls: 'ldap', selected: true} %>
+        </li>
+        <li class='nav-item'>
+          <%= link_to 'Standard', '#tab-local', class: 'nav-link', id: 'local-tab',
+            data: {toggle: 'tab'}, aria: {controls: 'local', selected: false} %>
+        </li>
+      </ul>
+    </div>
+    <div class='tab-content'>
+      <div id='tab-ldap' class='tab-pane show active' role='tabpanel' aria-labelledby='ldap-tab'>
+        <div class='card-body'>
+          <%= render partial: 'devise/sessions/new_ldap' %>
+        </div>
+      </div>
+      <div id='tab-local' class='tab-pane' role='tabpanel' aria-labelledby='local-tab'>
+        <div class='card-body'>
+          <%= render partial: 'devise/sessions/new_local' %>
+        </div>
+      </div>
+    </div>
+    <% else %>
+    </div>
+    <!-- LDAP not enabled -->
+    <div class='card-body'>
+      <%= render partial: 'devise/sessions/new_local' %>
+    </div>
+    <% end %>
+  </div>
+</div>

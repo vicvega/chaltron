@@ -30,5 +30,12 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'bootstrap_form'
   spec.add_dependency 'autoprefixer-rails'
 
+  spec.add_dependency 'devise'
+  spec.add_dependency 'omniauth'
+  spec.add_dependency 'omniauth-rails_csrf_protection'
+  spec.add_dependency 'gitlab_omniauth-ldap'
+  spec.add_dependency 'cancancan'
+
   spec.add_development_dependency 'sqlite3'
+  spec.add_development_dependency 'factory_bot_rails'
 end

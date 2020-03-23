@@ -2,6 +2,8 @@ require 'simple-navigation'
 require 'bootstrap_form'
 require 'autoprefixer-rails'
 
+require 'devise'
+
 SimpleNavigation.config_file_paths << File.expand_path('../../../config', __FILE__)
 
 module Chaltron
