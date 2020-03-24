@@ -95,6 +95,10 @@ RUBY
   end
 
   def add_chaltron
+    copy_file 'app/models/ability.rb'
+  end
+
+  def add_chaltron
     copy_file 'config/initializers/chaltron.rb'
   end
 
