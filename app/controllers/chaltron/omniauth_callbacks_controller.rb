@@ -1,4 +1,4 @@
-# require 'chaltron/ldap/user'
+require 'chaltron/ldap/user'
 
 module Chaltron
   class OmniauthCallbacksController < Devise::OmniauthCallbacksController

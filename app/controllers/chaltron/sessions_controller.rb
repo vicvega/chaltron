@@ -1,4 +1,4 @@
-# require 'chaltron/ldap/connection'
+require 'chaltron/ldap/connection'
 
 class Chaltron::SessionsController  < Devise::SessionsController
   after_action :after_login, only: :create

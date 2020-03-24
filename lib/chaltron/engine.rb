@@ -4,6 +4,8 @@ require 'autoprefixer-rails'
 require 'rails-i18n'
 require 'devise'
 require 'cancancan'
+require 'omniauth'
+require 'omniauth-ldap'
 require 'ajax-datatables-rails'
 
 SimpleNavigation.config_file_paths << File.expand_path('../../../config', __FILE__)
