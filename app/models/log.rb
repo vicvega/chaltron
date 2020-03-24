@@ -6,7 +6,7 @@ class Log < ApplicationRecord
 
   before_validation :standardize_severity, :truncate_message
 
-  # after_create :to_syslog if Chaltron.enable_syslog
+  after_create :to_syslog if Chaltron.enable_syslog
 
   private
 
@@ -20,9 +20,9 @@ class Log < ApplicationRecord
     self.message = message&.truncate(1000)
   end
 
-  # def to_syslog
-  #   Syslog.open(Rails.application.class.parent.to_s, Syslog::LOG_PID, Chaltron.syslog_facility) do |s|
-  #     s.send(self.severity.to_sym, self.category.upcase + ' - ' + self.message)
-  #   end
-  # end
+  def to_syslog
+    Syslog.open(Rails.application.class.parent.to_s, Syslog::LOG_PID, Chaltron.syslog_facility) do |s|
+      s.send(self.severity.to_sym, self.category.upcase + ' - ' + self.message)
+    end
+  end
 end
