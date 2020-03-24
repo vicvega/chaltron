@@ -1,9 +1,10 @@
 require 'simple-navigation'
 require 'bootstrap_form'
 require 'autoprefixer-rails'
-
+require 'rails-i18n'
 require 'devise'
 require 'cancancan'
+require 'ajax-datatables-rails'
 
 SimpleNavigation.config_file_paths << File.expand_path('../../../config', __FILE__)
 

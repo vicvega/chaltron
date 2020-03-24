@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     chaltron (2.0.0)
+      ajax-datatables-rails
       autoprefixer-rails
       bootstrap_form
       cancancan
@@ -10,6 +11,7 @@ PATH
       omniauth
       omniauth-rails_csrf_protection
       rails (~> 6.0.0)
+      rails-i18n
       simple-navigation
 
 GEM
@@ -70,7 +72,9 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2)
-    autoprefixer-rails (9.7.4)
+    ajax-datatables-rails (1.1.0)
+      railties (>= 4.2)
+    autoprefixer-rails (9.7.5)
       execjs
     bcrypt (3.1.13)
     bootstrap_form (4.4.0)
@@ -150,6 +154,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.3.0)
       loofah (~> 2.3)
+    rails-i18n (6.0.0)
+      i18n (>= 0.7, < 2)
+      railties (>= 6.0.0, < 7)
     railties (6.0.2.2)
       actionpack (= 6.0.2.2)
       activesupport (= 6.0.2.2)

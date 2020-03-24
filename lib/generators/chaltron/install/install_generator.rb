@@ -94,12 +94,40 @@ RUBY
     end
   end
 
-  def add_chaltron
+  def add_cancancan
     copy_file 'app/models/ability.rb'
   end
 
   def add_chaltron
     copy_file 'config/initializers/chaltron.rb'
+  end
+
+  def add_ajax_datatables
+    ajax_datatables_rails_file = 'config/initializers/ajax_datatables_rails.rb'
+    copy_file ajax_datatables_rails_file
+
+    # setup ajax-datatables-rails
+    db_adapter =
+      case ActiveRecord::Base.connection.adapter_name
+      when 'Mysql2'     then :mysql2
+      when 'SQLite'     then :sqlite3
+      when 'PostgreSQL' then :pg
+      else nil
+      end
+
+    if db_adapter.nil?
+      message =<<EOF
+PAY ATTENTION!
+ajax-datatables-rails gem (needed by chaltron) does not support #{options[:database]}.
+See https://github.com/jbox-web/ajax-datatables-rails
+You may experience problems!
+EOF
+      say message
+    else
+      gsub_file ajax_datatables_rails_file,
+        /# config.db_adapter = :mysql2/, "config.db_adapter = :#{db_adapter}"
+    end
+
   end
 
   private
