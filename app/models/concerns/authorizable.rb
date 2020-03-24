@@ -6,7 +6,7 @@ module Authorizable
     has_many :roles, through: :role_assignments
   end
 
-  def role?(role)
-    roles.any? { |r| r.name.underscore.to_sym == role.to_sym }
+  def has_role?(role)
+    roles.any? { |r| r.name.underscore == role.to_s }
   end
 end

@@ -7,8 +7,10 @@ class UserTest < ActiveSupport::TestCase
     Role.create(name: 'user_admin')
     assert_difference 'User.count' do
       u = create(:user, roles: Role.all)
-      assert u.role?(:admin)
-      assert u.role?(:user_admin)
+      assert u.has_role?(:admin)
+      assert u.has_role?(:user_admin)
+      assert u.has_role?('admin')
+      assert u.has_role?('user_admin')
     end
   end
 
