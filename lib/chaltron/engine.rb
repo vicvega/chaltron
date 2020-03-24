@@ -3,6 +3,7 @@ require 'bootstrap_form'
 require 'autoprefixer-rails'
 
 require 'devise'
+require 'cancancan'
 
 SimpleNavigation.config_file_paths << File.expand_path('../../../config', __FILE__)
 

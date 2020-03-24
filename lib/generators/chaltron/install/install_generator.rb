@@ -92,7 +92,10 @@ environment.plugins.append('Provide',
   end
 RUBY
     end
+  end
 
+  def add_chaltron
+    copy_file 'config/initializers/chaltron.rb'
   end
 
   private
