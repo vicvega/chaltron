@@ -6,16 +6,11 @@ class BootstrapForm::FormBuilder
     checked_ids = @object.nil?? false : @object.roles.map(&:id)
     disabled_id = opts[:disabled].blank? ? nil : Role.find_by_name(opts[:disabled]).id
 
-
     html = inputs_collection(:role_ids, collection, :first, :last, checked: checked_ids) do |name, value, options|
       options[:multiple] = true
-      options[:inline] = opts.fetch(:inline, true)
+      options[:inline]   = opts.fetch(:inline, true)
+      options[:disabled] = true if value == disabled_id
 
-
-      if value == disabled_id
-        options[:disabled] = true
-        # options[:checked] = true
-      end
       check_box(name, options, value, nil)
     end
 
