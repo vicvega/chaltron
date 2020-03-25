@@ -8,6 +8,7 @@ class BootstrapForm::FormBuilder
 
     html = inputs_collection(:role_ids, collection, :first, :last, checked: checked_ids) do |name, value, options|
       options[:multiple] = true
+      options[:custom]   = opts.fetch(:custom, true)
       options[:inline]   = opts.fetch(:inline, true)
       options[:disabled] = true if value == disabled_id
 
