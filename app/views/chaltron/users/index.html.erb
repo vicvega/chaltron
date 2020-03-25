@@ -1,0 +1,53 @@
+<div class='container-fluid'>
+  <h3 class='pt-4'><%= t '.title' %></h3>
+  <div class='row'>
+    <div class='col-md-3'>
+      <%= render partial: 'side_filters', locals: { filters: @filters } %>
+      <hr>
+
+      <% if ldap_enabled? and !Chaltron.ldap_allow_all %>
+        <div class='dropdown pull-right'>
+          <%= content_tag :button, type: 'button', class: 'btn btn-primary dropdown-toggle',
+            data: {toggle: 'dropdown'}, aria: {expanded: false, haspopup: true}, id: 'new_user_button' do %>
+            <%= icon :fas, :plus, t('.new_user') %>
+          <% end %>
+
+          <%= content_tag :div, class: 'dropdown-menu', aria: {labelledby: 'new_user_button'} do %>
+            <%#= link_to t('.new_ldap_user'), ldap_search_path, class: 'dropdown-item' %>
+            <%= link_to t('.new_local_user'), new_user_path, class: 'dropdown-item' %>
+          <% end %>
+        </div>
+      <% else %>
+        <%= link_to new_user_path, class: 'btn btn-primary pull-right' do %>
+          <%= icon :fas, :plus, t('.new_local_user') %>
+        <% end %>
+      <% end %>
+
+    </div>
+    <div class='col-md-9'>
+      <div class='table-responsive'>
+        <%= content_tag 'table', id: 'users', class: 'table table-striped datatable' do %>
+          <thead>
+            <tr>
+              <th class='username'>
+                <%= User.human_attribute_name(:username) %>
+              </th>
+              <th class='fullname'>
+                <%= User.human_attribute_name(:fullname) %>
+              </th>
+              <th class='email'>
+                <%= User.human_attribute_name(:email) %>
+              </th>
+              <th class='roles'>
+                <%= User.human_attribute_name(:roles) %>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @users %>
+          </tbody>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

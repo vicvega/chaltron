@@ -1,0 +1,76 @@
+<div class='container-fluid'>
+  <h3 class='pt-4'><%= @user.display_name %></h3>
+  <div class='row'>
+
+    <div class='col-md-9'>
+      <div class='card'>
+        <div class='card-header'><%= t '.headers.details' %></div>
+        <ul class='list-group list-group-flush'>
+          <li class='list-group-item'>
+            <span><%= User.human_attribute_name(:username) %>: </span>
+            <strong><%= @user.username %></strong>
+          </li>
+          <li class='list-group-item'>
+            <span><%= User.human_attribute_name(:fullname) %>: </span>
+            <strong><%= @user.fullname %></strong>
+          </li>
+          <li class='list-group-item'>
+            <span><%= User.human_attribute_name(:email) %>: </span>
+            <strong><%= @user.email %></strong>
+          </li>
+          <% unless @user.department.nil? %>
+            <li class='list-group-item'>
+              <span><%= User.human_attribute_name(:department) %>: </span>
+              <strong><%= @user.department %> </strong>
+            </li>
+          <% end %>
+          <li class='list-group-item'>
+            <span><%= User.human_attribute_name(:roles) %>: </span>
+            <%= safe_join(@user.roles.map{|x| content_tag(:span, t("roles.#{x.name}"), class: 'badge badge-primary')}, ' ') %>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class='col-md-3'>
+      <div class='card'>
+        <div class='card-header'><%= t '.headers.activity' %></div>
+        <ul class='list-group list-group-flush'>
+          <li class='list-group-item'>
+            <span><%= User.human_attribute_name(:sign_in_count) %>: </span>
+            <strong><%= @user.sign_in_count %></strong>
+          </li>
+          <% unless @user.last_sign_in_at.nil? %>
+            <li class='list-group-item'>
+              <span><%= User.human_attribute_name(:last_sign_in_at) %>: </span>
+              <strong><%= l @user.last_sign_in_at, format: :short %> </strong>
+            </li>
+          <% end %>
+          <% unless @user.last_sign_in_ip.nil? %>
+            <li class='list-group-item'>
+              <span><%= User.human_attribute_name(:last_sign_in_ip) %>: </span>
+              <strong><%= @user.last_sign_in_ip%> </strong>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <hr>
+  <%= link_to users_path, class: 'btn btn-primary' do %>
+    <%= icon :fas, 'arrow-left', t('chaltron.common.back') %>
+  <% end %>
+
+  <div class='float-right'>
+    <%= link_to edit_user_path(@user), class: 'btn btn-primary' do %>
+      <%= icon :fas, :edit, t('.edit') %>
+    <% end if can? :edit, @user %>
+    <%= link_to @user, method: :delete, class: 'btn btn-danger',
+      disabled: current_user == @user,
+      data: { confirm: t('.destroy_confirm', user: @user.username) } do %>
+      <%= icon :fas, :trash, t('.destroy') %>
+    <% end if can? :destroy, @user%>
+  </div>
+</div>

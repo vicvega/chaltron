@@ -2,7 +2,7 @@ module Authorizable
   extend ActiveSupport::Concern
 
   included do
-    has_many :role_assignments
+    has_many :role_assignments, dependent: :destroy
     has_many :roles, through: :role_assignments
   end
 

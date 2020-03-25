@@ -4,5 +4,13 @@ Rails.application.routes.draw do
     sessions: 'chaltron/sessions'
   }
 
+  resources :users, controller: 'chaltron/users' do
+    collection do
+      get   'self_show'
+      get   'self_edit'
+      patch 'self_update'
+    end
+  end
+  
  resources :logs, controller: 'chaltron/logs', only: [:index, :show]
 end

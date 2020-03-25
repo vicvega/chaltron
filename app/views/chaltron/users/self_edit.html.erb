@@ -1,0 +1,33 @@
+<div class='container-fluid'>
+  <div class='row'>
+      <div class='col-md-12'>
+        <h3 class='pt-4'><%= t('.title') %></h3>
+
+        <%= bootstrap_form_for(current_user, as: :user, url: self_update_users_path,
+          layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-10') do |f| %>
+          <%= f.text_field :fullname %>
+          <% if current_user.provider.nil? %>
+          <%= f.email_field :email %>
+            <fieldset>
+              <legend>Password</legend>
+              <%= f.password_field :password %>
+              <%= f.password_field :password_confirmation %>
+            </fieldset>
+          <% else %>
+            <%= f.email_field :email, disabled: true %>
+          <% end %>
+
+          <div class='form-group row'>
+            <div class='col-sm-2'></div>
+            <div class='col-sm-10'>
+              <%= f.submit t('.submit'), class: 'btn btn-primary' %>
+              <%= link_to self_show_users_path, class: 'btn btn-link pull-right' do %>
+                <%= icon :fas, :times, t('chaltron.common.cancel') %>
+              <% end %>
+            </div>
+          </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>

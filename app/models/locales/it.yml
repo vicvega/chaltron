@@ -10,9 +10,13 @@ it:
         last_sign_in_ip: Ultimo login da
         sign_in_count: Numero di login
         roles: Ruoli
+        role_ids: Ruoli
         department: Funzione
       log:
         created_at: Data
         message: Messaggio
         category: Categoria
         severity: Severità
+  roles:
+    admin: Amministratore
+    user_admin: Amministratore utenti

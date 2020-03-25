@@ -10,9 +10,13 @@ en:
         last_sign_in_ip: Last login from
         sign_in_count: Login count
         roles: Roles
+        role_ids: Roles
         department: Department
       log:
         created_at: Date
         message: Message
         category: Category
         severity: Severity
+  roles:
+    admin: Administrator
+    user_admin: User Administrator
