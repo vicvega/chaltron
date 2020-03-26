@@ -15,6 +15,8 @@ Chaltron.setup do |config|
   # config.ldap_allow_all = true
 
   # You may set here default roles granted to new users (if automatically created)
+  # e. g. config.default_roles = [Role.find_by_name('role1')]
+  # An empty array is the default
   # config.default_roles = []
 
   # Here you may specify a different base for your LDAP groups
@@ -28,8 +30,8 @@ Chaltron.setup do |config|
 
   # Roles granted to new users may be retrieved by LDAP group membership.
   # config.ldap_role_mappings = {
-  #   'DN_of_LDAP_group1' => 'role1',
-  #   'DN_of_LDAP_group2' => 'role2'
+  #   'DN_of_LDAP_group1' => Role.find_by_name('role1'),
+  #   'DN_of_LDAP_group2' => Role.find_by_name('role2')
   # }
 
   # The following callback is called after a successful LDAP authentication

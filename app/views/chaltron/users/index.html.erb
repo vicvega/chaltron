@@ -13,7 +13,7 @@
           <% end %>
 
           <%= content_tag :div, class: 'dropdown-menu', aria: {labelledby: 'new_user_button'} do %>
-            <%#= link_to t('.new_ldap_user'), ldap_search_path, class: 'dropdown-item' %>
+            <%= link_to t('.new_ldap_user'), ldap_search_path, class: 'dropdown-item' %>
             <%= link_to t('.new_local_user'), new_user_path, class: 'dropdown-item' %>
           <% end %>
         </div>

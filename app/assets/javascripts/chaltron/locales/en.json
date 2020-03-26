@@ -1,6 +1,4 @@
 {
-  "error_message": "Select at least a row",
-  "error_label":   "Warning",
   "datatables": {
     "sEmptyTable":     "No data available in table",
     "sInfo":           "Showing _START_ to _END_ of _TOTAL_ entries",

@@ -26,7 +26,7 @@ module Chaltron
                 Chaltron.ldap_role_mappings[e.dn]
               end.compact
             end
-            user = entry.create_user(roles)
+            user = entry.create_user(roles: roles)
           end
           update_ldap_attributes(user, entry) unless user.nil?
           user

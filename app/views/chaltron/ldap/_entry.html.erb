@@ -1,0 +1,9 @@
+<tr>
+  <td>
+    <%= custom_checkbox(id: "checkbox-#{entry.username}", data: {entry: entry.username}, class: 'entry') %>
+  </td>
+  <td class='username'><%= entry.username %></td>
+  <td class='fullname'><%= display_entry_name(entry) %></td>
+  <td class='email'><%= display_entry_email(entry) %></td>
+  <td class='department'><%= entry.department %></td>
+</tr>

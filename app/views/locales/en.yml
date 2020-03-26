@@ -80,7 +80,7 @@ en:
       multi_new:
         title: New LDAP users
         submit_text: Create LDAP users
-        par: Select users by clicking row table
+        par: Select users you want to create
       multi_create:
         title: Create LDAP users
         result: Results
