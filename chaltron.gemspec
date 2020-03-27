@@ -36,6 +36,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'gitlab_omniauth-ldap'
   spec.add_dependency 'cancancan'
   spec.add_dependency 'ajax-datatables-rails'
+  spec.add_dependency 'nprogress-rails'
 
   spec.add_development_dependency 'sqlite3'
   spec.add_development_dependency 'factory_bot_rails'

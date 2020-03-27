@@ -1,6 +1,7 @@
 require 'simple-navigation'
 require 'bootstrap_form'
 require 'autoprefixer-rails'
+require 'nprogress-rails'
 require 'rails-i18n'
 require 'devise'
 require 'cancancan'

@@ -8,6 +8,7 @@ PATH
       cancancan
       devise
       gitlab_omniauth-ldap
+      nprogress-rails
       omniauth
       omniauth-rails_csrf_protection
       rails (~> 6.0.0)
@@ -123,6 +124,7 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
+    nprogress-rails (0.2.0.2)
     omniauth (1.9.1)
       hashie (>= 3.4.6)
       rack (>= 1.6.2, < 3)
