@@ -1,0 +1,39 @@
+<div id='main-carousel' class='carousel slide img-thumbnail' data-ride='carousel'>
+
+  <ol class="carousel-indicators">
+    <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#main-carousel" data-slide-to="1"></li>
+    <li data-target="#main-carousel" data-slide-to="2"></li>
+  </ol>
+
+  <div class='carousel-inner'>
+    <div class='carousel-item active'>
+      <%= image_tag('slide1.gif') %>
+      <div class='carousel-caption d-none d-md-block'>
+        <h1>Chaltron rulez!</h1>
+      </div>
+    </div>
+    <div class='carousel-item'>
+      <%= image_tag('slide2.gif') %>
+      <div class='carousel-caption d-none d-md-block'>
+        <h1>Wow!</h1>
+        <p>Looking good</p>
+      </div>
+    </div>
+    <div class='carousel-item'>
+      <%= image_tag('slide3.gif') %>
+      <div class='carousel-caption d-none d-md-block'>
+        <h1>Not bad!</h1>
+      </div>
+    </div>
+  </div>
+
+  <a class="carousel-control-prev" href="#main-carousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#main-carousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

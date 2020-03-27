@@ -1,0 +1,154 @@
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-lg-12'>
+      <h1 class='pt-4'>
+        Welcome to Chaltron! <small> aka Muffaster reloaded</small>
+      </h1>
+
+      <div class='card-deck'>
+        <div class='card'>
+          <%= image_tag('700x300.gif', class: 'card-img-top') %>
+          <div class='card-body'>
+            <h5 class='card-title'>
+                <%= icon(:fas, :check) %>
+                Bootstrap v4
+            </h5>
+            <p class='card-text'>
+              Bootstrap rocks! And there are lots of good template ready to use, and free.
+              Just as this one ;-)
+            </p>
+            <%= link_to 'Learn more', 'http://getbootstrap.com', class: 'btn btn-primary' %>
+          </div>
+          <div class='card-footer'>
+            <small class='text-muted'>
+              <%= icon(:far, 'thumbs-up') %>
+              Bootstrap rocks!
+            </small>
+          </div>
+        </div>
+
+        <div class='card'>
+          <%= image_tag('700x300.gif', class: 'card-img-top') %>
+          <div class='card-body'>
+            <h5 class='card-title'>
+                <%= icon(:fab, :github) %>
+                Free &amp; Open Source
+            </h5>
+            <p class='card-text'>
+              It's all free and open and much is still to do.
+              So pull request are very welcome
+            </p>
+            <%= link_to 'Fork me on GitHub', 'https://github.com/vicvega/chaltron', class: 'btn btn-primary' %>
+          </div>
+          <div class='card-footer'>
+            <small class='text-muted'>
+              <%= icon(:far, 'thumbs-up') %>
+              Open source rocks!
+            </small>
+          </div>
+        </div>
+
+        <div class='card'>
+          <%= image_tag('700x300.gif', class: 'card-img-top') %>
+          <div class='card-body'>
+            <h5 class='card-title'>
+                <%= icon(:fas, :compass) %>
+                Easy to use
+            </h5>
+            <p class='card-text'>
+              It's so easy to build up and running web applications in a few seconds.
+              Try by yourself
+            </p>
+            <%= link_to 'Have a look', 'https://github.com/vicvega/chaltron', class: 'btn btn-primary' %>
+          </div>
+          <div class='card-footer'>
+            <small class='text-muted'>
+              <%= icon(:far, 'thumbs-up') %>
+              Chaltron rocks!
+            </small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr>
+
+  <div class='row'>
+    <div class='col-md-7'>
+      <%= render 'carousel' %>
+    </div>
+    <div class='col-md-5'>
+      <h2 class='pt-4'>
+        <%= icon(:far, 'hand-point-down') %>
+        Main features
+      </h2>
+      <p>Chaltron provides:</p>
+      <ul class='fa-ul'>
+        <li>
+          <%= icon(:far, 'check-square', '', class: 'fa-li') %>
+          Compatibility with
+          <strong><%= link_to 'Bootstrap v4', 'http://getbootstrap.com' %></strong> and
+          <strong><%= link_to 'Font Awesome v5', 'https://fontawesome.com' %></strong>
+        </li>
+        <li>
+          <%= icon(:far, 'check-square', '', class: 'fa-li') %>
+          Authentication (local and LDAP users) and authorization with
+          <strong><%= link_to 'devise', 'https://github.com/plataformatec/devise/' %></strong>
+        </li>
+        <li>
+          <%= icon(:far, 'check-square', '', class: 'fa-li') %>
+          <strong><%= link_to 'Datatables', 'https://datatables.net/' %></strong>
+          integration
+        </li>
+      </ul>
+      <p>In short all you need is here. Don't waste time with RAD. Try LSAD!</p>
+      <p>
+        Try
+        <strong><%= link_to 'Chaltron', 'https://github.com/vicvega/chaltron' %></strong>,
+        taste <strong>L</strong>ight <strong>S</strong>peed <strong>A</strong>pplication <strong>D</strong>evelopment!
+      </p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class='row'%>
+    <div class='col-lg-12'>
+      <h2 class='pt-4'>
+        <%= icon(:far, 'question-circle') %>
+        FAQ
+      </h2>
+    </div>
+  </div>
+
+  <%
+    faqs = []
+    faqs << {
+      question: "It seems there is lack of documentation, isn't it? " \
+                'What am I supposed to do?',
+      answer: 'You are supposed to write it on your own, I mean come ' \
+              "<a href='https://github.com/vicvega/chaltron/'>here</a> " \
+              ' and contribute'
+    }
+    faqs << {
+      question: "But can't you do that...?",
+      answer: 'No!'
+    }
+    faqs << {
+      question: 'This thing is fucking awesome! How can I repay?',
+      answer: 'A couple of beers is always fine for me! ' \
+              "<i class='fa fa-beer'></i>" \
+              "<i class='fa fa-beer'></i>"
+    }
+  %>
+
+  <div class='row'>
+    <div class='col-lg-12'>
+      <div id='accordion' role='tablist'>
+        <%= render partial: 'faq', collection: faqs %>
+    </div>
+  </div>
+
+</div>
