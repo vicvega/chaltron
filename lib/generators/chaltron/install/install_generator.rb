@@ -46,6 +46,7 @@ environment.plugins.append('Provide',
 
   def apply_layout
     directory 'app/views/layouts', force: true
+    directory 'app/assets/stylesheets/chaltron'
   end
 
   def create_index_controller

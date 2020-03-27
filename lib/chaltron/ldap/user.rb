@@ -2,7 +2,6 @@
 #
 # * Find or create user from omniauth.auth data
 #
-
 require 'chaltron/ldap/person'
 
 module Chaltron

@@ -2,6 +2,11 @@
 div#content {
   margin-top: 2.7em;
   margin-bottom: 2.7em;
+
+  .login-box{
+    margin-top: 100px;
+    max-width: 650px;
+  }
 }
 
 /**
@@ -20,9 +25,4 @@ div#content {
   .alert {
     margin: 0;
   }
-}
-
-.login-box{
-  margin-top: 100px;
-  max-width: 650px;
 }

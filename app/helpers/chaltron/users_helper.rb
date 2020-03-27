@@ -1,4 +1,5 @@
 module Chaltron::UsersHelper
+
   def display_username(user)
     if user == current_user
       link_to(user.username, user) + '&nbsp;'.html_safe +
@@ -9,7 +10,6 @@ module Chaltron::UsersHelper
   end
 
   def display_side_filter_link(url, active, text, count)
-
     klass = 'list-group-item list-group-item-action'
     klass += ' active' if active
 
@@ -23,6 +23,6 @@ module Chaltron::UsersHelper
     link_to url, class: klass do
       content_tag(:span, count, class: badge_klass) + text
     end
-
   end
+
 end
