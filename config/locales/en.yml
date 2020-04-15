@@ -23,8 +23,10 @@ en:
       self_updated: Account data successfully updated.
       cannot_self_destroy: You cannot destroy your own account.
       it_s_you: It's you!
+      disabled: Disabled
       missing_field: Missing!
       already_present: Already present!
+      inactive_message: Your account has been disabled.
     logs:
       severity:
         emerg: Emergency

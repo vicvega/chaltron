@@ -9,6 +9,10 @@ Rails.application.routes.draw do
       get   'self_edit'
       patch 'self_update'
     end
+    member do
+      get 'enable'
+      get 'disable'
+    end
   end
 
   resources :logs, controller: 'chaltron/logs', only: [:index, :show]

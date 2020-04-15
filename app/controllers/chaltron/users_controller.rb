@@ -43,6 +43,16 @@ class Chaltron::UsersController < ApplicationController
     respond_with(@user)
   end
 
+  def enable
+    @user.enable!
+    redirect_to(@user)
+  end
+
+  def disable
+    @user.disable!
+    redirect_to(@user)
+  end
+
   def self_update
     user_params_with_pass = self_update_params.dup.to_h
     if params[:user][:password].present?
