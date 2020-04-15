@@ -23,8 +23,10 @@ it:
       self_updated: Dati personali aggiornati con successo.
       cannot_self_destroy: Non puoi cancellare il tuo stesso account.
       it_s_you: Sei tu!
+      disabled: Disabilitato
       missing_field: Manca!
       already_present: Giá presente!
+      inactive_message: Il tuo account è stato disabilitato.
     logs:
       severity:
         emerg: Emergenza

@@ -57,6 +57,8 @@ it:
           activity: Attività
           details: Dettagli
         edit: Modifica
+        enable: Abilita
+        disable: Disabilita
         destroy: Cancella
         destroy_confirm: Sei sicuro di voler cancellare %{user}?
       self_show:

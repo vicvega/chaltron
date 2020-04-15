@@ -38,4 +38,29 @@ class User < ApplicationRecord
   def ldap_user?
     provider == 'ldap'
   end
+
+  def enabled?
+    self.enabled
+  end
+
+  def disabled?
+    !self.enabled
+  end
+
+  def enable!
+    update!(enabled: true)
+  end
+
+  def disable!
+    update!(enabled: false)
+  end
+
+  def active_for_authentication?
+    super && enabled?
+  end
+
+  def inactive_message
+    I18n.t('chaltron.users.inactive_message')
+  end
+
 end
