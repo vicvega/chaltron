@@ -12,6 +12,7 @@ describe User do
         last_name: 'sn',
         email: 'mail'
       }
+      Chaltron.ldap_after_authenticate = -> (user, ldap) { user }
     }
 
     let(:fullname) { 'Sirius Black' }
@@ -87,6 +88,14 @@ describe User do
       end
     end
 
+    context 'when Chaltron.ldap_after_authenticate returns nil' do
+      before { Chaltron.ldap_after_authenticate = -> (user, ldap) { nil } }
+      it 'does not allow login' do
+        login_with 'sirius', 'padfoot', :ldap
+        is_expected.to have_content I18n.t('chaltron.not_allowed_to_sign_in')
+      end
+    end
+
     context 'when user already present with outdated email' do
       before do
         u = Chaltron::LDAP::Person.find_by_uid('barty').create_user
@@ -142,5 +151,13 @@ describe User do
 
       expect(page).to have_content user.fullname
     end
+
+    it 'does not allow login to disabled users' do
+      user.disable!
+
+      login_with user.reload.email, user.password
+      expect(page).to have_content user.inactive_message
+    end
+
   end
 end
