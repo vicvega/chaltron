@@ -12,7 +12,6 @@ module Chaltron
       # We only find ourselves here
       # if the authentication to LDAP was successful.
       user = Chaltron::LDAP::User.find_or_create(oauth, Chaltron.ldap_allow_all)
-
       if user.nil?
         redirect_to new_user_session_url, alert: I18n.t('chaltron.not_allowed_to_sign_in')
       else
