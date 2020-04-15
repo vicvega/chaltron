@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Chaltron::SessionsController, type: :controller do
+RSpec.describe Devise::SessionsController, type: :controller do
   context 'devise' do
     before { @request.env['devise.mapping'] = Devise.mappings[:user] }
     let(:user) { create :user }

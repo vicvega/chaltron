@@ -40,7 +40,6 @@ en:
         user_admin: User administration
       login: "%{user} has logged in successfully"
       logout: "%{user} has logged out successfully"
-      login_via: "%{user} has logged in successfully with %{provider}"
       users:
         created: "%{current} created user %{user}"
         destroyed: "%{current} destroyed user %{user}"
