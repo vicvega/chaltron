@@ -13,7 +13,26 @@ gemspec
 # To use debugger
 # gem 'byebug', group: [:development, :test]
 group :test do
-  gem 'phantomjs', :require => 'phantomjs/poltergeist'
+  gem 'devise'
+  gem 'omniauth'
+  gem 'omniauth-rails_csrf_protection'
+  gem 'gitlab_omniauth-ldap'
+  gem 'cancancan'
+
+  gem 'bootstrap'
+  gem 'autoprefixer-rails'
+  gem 'font-awesome-sass'
+
+  gem 'jquery-rails'
+  gem 'jquery-datatables'
+  gem 'ajax-datatables-rails'
+
+  gem 'bootstrap_form'
+  gem 'nprogress-rails'
+  gem 'simple-navigation'
+  gem 'rails-i18n'
+
+  gem 'phantomjs', require: 'phantomjs/poltergeist'
   gem 'turbolinks', '~> 5'
   gem 'coffee-rails', '~> 4.2'
 end
