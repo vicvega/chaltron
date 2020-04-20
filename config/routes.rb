@@ -23,4 +23,4 @@ Rails.application.routes.draw do
     post  'ldap/multi_new'    => 'chaltron/ldap#multi_new'
     post  'ldap/multi_create' => 'chaltron/ldap#multi_create'
   end
-end
+end if defined?(Devise)

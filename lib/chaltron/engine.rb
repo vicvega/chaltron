@@ -1,20 +1,3 @@
-require 'devise'
-require 'cancancan'
-require 'omniauth'
-require 'omniauth-ldap'
-require 'bootstrap'
-require 'autoprefixer-rails'
-require 'font-awesome-sass'
-require 'simple-navigation'
-require 'ajax-datatables-rails'
-require 'bootstrap_form'
-require 'nprogress-rails'
-require 'rails-i18n'
-require 'jquery-rails'
-require 'jquery-datatables'
-
-SimpleNavigation.config_file_paths << File.expand_path('../../../config', __FILE__)
-
 module Chaltron
   class Engine < ::Rails::Engine
     config.generators do |g|
@@ -33,11 +16,27 @@ module Chaltron
       Chaltron::Engine.config.i18n.load_path += Dir[root.join('app/models', 'locales', '*.{rb,yml}')]
     end
 
-    initializer('chaltron.helpers') do |_app|
+    initializer('chaltron.controller') do |_app|
       ActiveSupport.on_load(:action_controller) do
         include Chaltron::Controllers::Helpers
         before_action :configure_permitted_parameters, if: :devise_controller?
+
+        # to override devise views
+        prepend_view_path File.expand_path('../../../app/views', __FILE__)
       end
     end
+
+    initializer('chaltron.simple_navigation') do |_app|
+      if defined?(SimpleNavigation)
+        SimpleNavigation.config_file_paths << File.expand_path('../../../config', __FILE__)
+      end
+    end
+
+    initializer('chaltron.bootstrap_form') do |_app|
+      if defined?(BootstrapForm)
+        require 'chaltron/form_builder/bootstrap_form'
+      end
+    end
+
   end
 end

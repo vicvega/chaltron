@@ -1,5 +1,4 @@
 require 'chaltron/engine'
-require 'chaltron/bootstrap_form'
 require 'syslog'
 
 module Chaltron

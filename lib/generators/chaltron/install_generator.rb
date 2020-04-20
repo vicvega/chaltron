@@ -15,6 +15,27 @@ module Chaltron
       end
     end
 
+    def add_gem_dependencies
+      gem 'devise'
+      gem 'omniauth'
+      gem 'omniauth-rails_csrf_protection'
+      gem 'gitlab_omniauth-ldap'
+      gem 'cancancan'
+
+      gem 'bootstrap'
+      gem 'autoprefixer-rails'
+      gem 'font-awesome-sass'
+
+      gem 'jquery-rails'
+      gem 'jquery-datatables'
+      gem 'ajax-datatables-rails'
+
+      gem 'bootstrap_form'
+      gem 'nprogress-rails'
+      gem 'simple-navigation'
+      gem 'rails-i18n'      
+    end
+
     def db_migrations
       rake 'chaltron_engine:install:migrations'
     end
