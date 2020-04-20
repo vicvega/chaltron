@@ -54,14 +54,14 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            when the item should be highlighted, you can set a regexp which is matched
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>.
     #
-    primary.item :news, 'Link 1', home_test1_path, link_html: { icon: 'bullhorn' }
-    primary.item :concerts, 'Link 2', home_test2_path, link_html: { icon: 'chart-line' }
-    primary.item :video, 'Link 3', home_test3_path, link_html: { icon: 'book' }
-    primary.item :info, 'Submenu', '#', link_html: { icon: 'hand-point-down' } do |info_nav|
-      info_nav.item :main_info_page, 'Link 4', home_test4_path, link_html: { icon: 'paw' }
-      info_nav.item :about_info_page, 'Link 5', home_test5_path, link_html: { icon: 'headphones' }
-      info_nav.item :contact_info_page, 'Link 6', home_test6_path, link_html: { icon: 'futbol' }
+    primary.item :news, 'Link 1', home_test1_path, link_html: { icon: 'fas fa-bullhorn' }
+    primary.item :concerts, 'Link 2', home_test2_path, link_html: { icon: 'fas fa-chart-line' }
+    primary.item :video, 'Link 3', home_test3_path, link_html: { icon: 'fas fa-book' }
+    primary.item :info, 'Submenu', '#', link_html: { icon: 'fas fa-hand-point-down' } do |info_nav|
+      info_nav.item :main_info_page, 'Link 4', home_test4_path, link_html: { icon: 'fas fa-paw' }
+      info_nav.item :about_info_page, 'Link 5', home_test5_path, link_html: { icon: 'fas fa-headphones' }
+      info_nav.item :contact_info_page, 'Link 6', home_test6_path, link_html: { icon: 'fas fa-futbol' }
     end
-    primary.item :user, 'Link7', home_test7_path, link_html: { icon: 'user' }
+    primary.item :user, 'Link7', home_test7_path, link_html: { icon: 'fas fa-user' }
   end
 end
