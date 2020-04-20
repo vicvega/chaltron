@@ -60,19 +60,35 @@ RUBY
       remove_file 'app/views/layouts/application.html.erb'
       directory 'app/views/layouts'
       directory 'app/assets/images'
-      # javascript
-      inject_into_file 'app/assets/javascripts/application.js',
-        "//= require chaltron\n", before: '//= require_tree .'
+    end
 
-      localization =<<EOF
-      
-document.addEventListener("DOMContentLoaded", function(event) {
-  Chaltron.locale = $('body').data('locale');
-});
+    def add_javascript
+      dependencies =<<EOF
+//= require jquery
+//= require popper
+//= require bootstrap
+//= require datatables/jquery.dataTables
+//= require datatables/dataTables.bootstrap4
+//= require datatables/extensions/Responsive/dataTables.responsive
+//= require datatables/extensions/Responsive/responsive.bootstrap4
+//= require chaltron
 EOF
 
+      inject_into_file 'app/assets/javascripts/application.js', dependencies, before: '//= require_tree .'
+
+      localization =<<EOF
+
+  document.addEventListener("DOMContentLoaded", function(event) {
+    Chaltron.locale = $('body').data('locale');
+  });
+EOF
       inject_into_file 'app/assets/javascripts/application.js', localization
     end
+
+    def add_stylesheets
+    end
+
+
 
     def create_index_controller
       generate 'controller home index'
@@ -81,7 +97,7 @@ EOF
       # controller, views and assets replacement
       copy_file 'app/controllers/home_controller.rb', force: true
       directory 'app/views/home/', force: true
-      copy_file 'app/assets/javascripts/home.js.coffee', force: true
+      copy_file 'app/assets/javascripts/home.coffee', force: true
       copy_file 'app/assets/stylesheets/home.scss', force: true
 
       Array(1..10).each do |x|

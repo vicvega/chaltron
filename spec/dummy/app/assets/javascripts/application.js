@@ -12,5 +12,15 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require jquery
+//= require popper
+//= require bootstrap
+//= require datatables/jquery.dataTables
+//= require datatables/dataTables.bootstrap4
+//= require datatables/extensions/Responsive/dataTables.responsive
+//= require datatables/extensions/Responsive/responsive.bootstrap4
+//= require nprogress
+//= require nprogress-turbolinks
+//= require nprogress-ajax
 //= require chaltron
 //= require_tree .
