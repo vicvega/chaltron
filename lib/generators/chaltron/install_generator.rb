@@ -65,6 +65,7 @@ RUBY
         "//= require chaltron\n", before: '//= require_tree .'
 
       localization =<<EOF
+      
 document.addEventListener("DOMContentLoaded", function(event) {
   Chaltron.locale = $('body').data('locale');
 });
