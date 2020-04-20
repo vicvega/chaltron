@@ -10,12 +10,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= favicon_link_tag 'favicon.ico', rel: 'shortcut icon' %>
   </head>
-  <body>
+  <%= content_tag :body, data: { locale: I18n.locale } do %>
     <%= render 'layouts/navbar' %>
     <%= render 'layouts/flash' %>
     <div id='content'>
       <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
-  </body>
+  <% end %>
 </html>

@@ -33,7 +33,7 @@ module Chaltron
       gem 'bootstrap_form'
       gem 'nprogress-rails'
       gem 'simple-navigation'
-      gem 'rails-i18n'      
+      gem 'rails-i18n'
     end
 
     def db_migrations
@@ -63,6 +63,14 @@ RUBY
       # javascript
       inject_into_file 'app/assets/javascripts/application.js',
         "//= require chaltron\n", before: '//= require_tree .'
+
+      localization =<<EOF
+document.addEventListener("DOMContentLoaded", function(event) {
+  Chaltron.locale = $('body').data('locale');
+});
+EOF
+
+      inject_into_file 'app/assets/javascripts/application.js', localization
     end
 
     def create_index_controller
