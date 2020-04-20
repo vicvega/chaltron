@@ -71,6 +71,9 @@ RUBY
 //= require datatables/dataTables.bootstrap4
 //= require datatables/extensions/Responsive/dataTables.responsive
 //= require datatables/extensions/Responsive/responsive.bootstrap4
+//= require nprogress
+//= require nprogress-turbolinks
+//= require nprogress-ajax
 //= require chaltron
 EOF
 
@@ -81,14 +84,19 @@ EOF
   document.addEventListener("DOMContentLoaded", function(event) {
     Chaltron.locale = $('body').data('locale');
   });
+
+  NProgress.configure({
+    showSpinner: false,
+  });
+
 EOF
       inject_into_file 'app/assets/javascripts/application.js', localization
     end
 
     def add_stylesheets
+      copy_file 'app/assets/stylesheets/chaltron_custom.scss'
+      copy_file 'app/assets/stylesheets/datatables.scss'
     end
-
-
 
     def create_index_controller
       generate 'controller home index'
@@ -111,7 +119,6 @@ EOF
 
     def setup_chaltron
       copy_file 'config/initializers/chaltron.rb'
-      copy_file 'app/assets/stylesheets/chaltron_custom.scss'
     end
 
     def setup_authorization
