@@ -18,4 +18,13 @@ module Chaltron::LdapHelper
     end
   end
 
+  def custom_checkbox(options)
+    id = options.delete(:id)
+    klass = options.delete(:class)
+    content_tag :div, class: 'custom-control custom-checkbox' do
+      check_box_tag('checkbox', nil, nil, options.merge(id: id, class: "custom-control-input d-none #{klass}")) +
+      label_tag(id, '', class: 'custom-control-label d-block', for: id)
+    end
+  end
+
 end
