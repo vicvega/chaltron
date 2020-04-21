@@ -79,18 +79,19 @@ EOF
 
       inject_into_file 'app/assets/javascripts/application.js', dependencies, before: '//= require_tree .'
 
-      localization =<<EOF
+      javascript =<<JS
 
-  document.addEventListener("DOMContentLoaded", function(event) {
-    Chaltron.locale = $('body').data('locale');
-  });
 
-  NProgress.configure({
-    showSpinner: false,
-  });
+document.addEventListener('DOMContentLoaded', function(event) {
+  Chaltron.locale = $('body').data('locale');
+});
 
-EOF
-      inject_into_file 'app/assets/javascripts/application.js', localization
+NProgress.configure({
+  showSpinner: false,
+});
+
+JS
+      inject_into_file 'app/assets/javascripts/application.js', javascript, after: '//= require_tree .'
     end
 
     def add_stylesheets
