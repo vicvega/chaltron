@@ -12,7 +12,7 @@ class AddEnabledToUsers < ActiveRecord::Migration[5.2]
 end
 ```
 
-#### 2 Install chalton v2
+#### 2 Install chaltron v2
 Just update your bundle
 
 ##### 2.1 Update `Gemfile`
