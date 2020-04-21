@@ -2,7 +2,9 @@
 
 If you are using bootstrap v3, refer to version 0, on [bootstrap3 branch](https://github.com/vicvega/chaltron/blob/bootstrap3/CHANGELOG.md).
 
-### 1.1.8 - current version - unreleased
+### 2.0.0 - current version - unreleased
+* refactor all assets dependencies
+* replace coffescript with javascript
 
 ### 1.1.7 - 2020-04-15
 * add enable/disable user feature
