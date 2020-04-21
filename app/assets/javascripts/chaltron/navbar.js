@@ -34,7 +34,7 @@ function NavbarBuilder() {
 
   function renderIconLink(item) {
     if($(item).attr('icon')  ) {
-      $(item).html("<i class=\"" + $(item).attr('icon') + "\"></i>&nbsp;" + $(item).text());
+      $(item).html("<i class=\"fa fa-" + $(item).attr('icon') + "\"></i>&nbsp;" + $(item).text());
     }
   }
 
