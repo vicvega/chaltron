@@ -95,5 +95,5 @@ Remove any reference to `Chaltron.locales`
 
 `DataTables` objects are localized with the following options
 ```javascript
-language: Chaltron.translate('datatable')
+language: Chaltron.translate('datatables')
 ```
