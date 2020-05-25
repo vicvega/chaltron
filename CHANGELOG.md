@@ -2,7 +2,9 @@
 
 If you are using bootstrap v3, refer to version 0, on [bootstrap3 branch](https://github.com/vicvega/chaltron/blob/bootstrap3/CHANGELOG.md).
 
-### 2.0.0 - current version - unreleased
+### 2.0.1 - current version - unreleased
+
+### 2.0.0 - 2020-05-25
 * refactor all assets dependencies
 * replace coffescript with javascript
 
