@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    chaltron (2.0.1)
+    chaltron (2.0.2)
       rails (~> 5.0)
 
 GEM
