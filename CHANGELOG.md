@@ -4,6 +4,7 @@ If you are using bootstrap v3, refer to version 0, on [bootstrap3 branch](https:
 
 ### 2.0.1 - current version - unreleased
 * fix issue with install generator when database password is needed
+* gem update
 
 ### 2.0.0 - 2020-05-25
 * refactor all assets dependencies
