@@ -138,7 +138,7 @@ GEM
     minitest (5.14.4)
     net-ldap (0.16.2)
     nio4r (2.5.7)
-    nokogiri (1.11.3)
+    nokogiri (1.11.4)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     nprogress-rails (0.2.0.2)
