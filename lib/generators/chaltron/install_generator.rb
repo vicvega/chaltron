@@ -22,7 +22,7 @@ module Chaltron
       gem 'gitlab_omniauth-ldap'
       gem 'cancancan'
 
-      gem 'bootstrap'
+      gem 'bootstrap', '~> 4.6'
       gem 'autoprefixer-rails'
       gem 'font-awesome-sass'
 
