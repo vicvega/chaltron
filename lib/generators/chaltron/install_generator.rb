@@ -126,10 +126,6 @@ JS
       copy_file 'app/models/ability.rb'
     end
 
-    def setup_ajax_datatables
-      copy_file 'config/initializers/ajax_datatables_rails.rb'
-    end
-
     private
 
     def print_banner
