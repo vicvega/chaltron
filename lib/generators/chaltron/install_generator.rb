@@ -36,6 +36,16 @@ module Chaltron
       gem 'rails-i18n'
     end
 
+    def gem_priority
+      # chaltron gem must be loaded after devise to setup the correct view paths
+      chaltron = File.readlines('Gemfile')
+                     .select { |l| l.match('chaltron') }
+                     .first
+
+      gsub_file 'Gemfile', chaltron, ''
+      append_file 'Gemfile', "\n#{chaltron}"
+    end
+
     def db_migrations
       rake 'chaltron_engine:install:migrations'
     end

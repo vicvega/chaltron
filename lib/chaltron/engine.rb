@@ -20,9 +20,6 @@ module Chaltron
       ActiveSupport.on_load(:action_controller) do
         include Chaltron::Controllers::Helpers
         before_action :configure_permitted_parameters, if: :devise_controller?
-
-        # to override devise views
-        prepend_view_path File.expand_path('../../../app/views', __FILE__)
       end
     end
 
