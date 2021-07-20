@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    chaltron (2.0.2)
+    chaltron (2.0.3)
       rails (~> 5.0)
 
 GEM
@@ -297,4 +297,4 @@ DEPENDENCIES
   turbolinks (~> 5)
 
 BUNDLED WITH
-   2.0.2
+   2.2.16
