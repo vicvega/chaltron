@@ -27,6 +27,9 @@ jobs:
     # this is needed to fix permission issue (https://github.com/actions/checkout/issues/211)
     - run: sudo chown -R $USER:$USER /home/runner/work/chaltron/chaltron
     - uses: actions/checkout@v2
+    
+    - run: ls -lh ${{ github.workspace }}/travis-ci/ldap
+    
     - name: Set up Ruby
     # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
     # change this to (see https://github.com/ruby/setup-ruby#versioning):
