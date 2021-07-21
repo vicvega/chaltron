@@ -6,7 +6,7 @@
       <hr>
 
       <% if ldap_enabled? and !Chaltron.ldap_allow_all %>
-        <div class='dropdown pull-right'>
+        <div class='dropdown float-right'>
           <%= content_tag :button, type: 'button', class: 'btn btn-primary dropdown-toggle',
             data: {toggle: 'dropdown'}, aria: {expanded: false, haspopup: true}, id: 'new_user_button' do %>
             <%= icon :fas, :plus, t('.new_user') %>
@@ -18,7 +18,7 @@
           <% end %>
         </div>
       <% else %>
-        <%= link_to new_user_path, class: 'btn btn-primary pull-right' do %>
+        <%= link_to new_user_path, class: 'btn btn-primary float-right' do %>
           <%= icon :fas, :plus, t('.new_local_user') %>
         <% end %>
       <% end %>
