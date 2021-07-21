@@ -33,6 +33,9 @@ jobs:
         volumes:
           - ${{ github.workspace }}//travis-ci/ldap:/container/service/slapd/assets/config/bootstrap/ldif/custom
     steps:
+    - run: whoami
+    
+    
     - uses: actions/checkout@v2
     - name: Set up Ruby
     # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
