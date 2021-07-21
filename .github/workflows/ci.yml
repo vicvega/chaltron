@@ -23,7 +23,8 @@ jobs:
         volumes:
           - ${{ github.workspace }}/travis-ci/ldap:/container/service/slapd/assets/config/bootstrap/ldif/custom
     steps:
-    #- run: sudo chown -R $USER:$USER /home/runner/work/chaltron/chaltron
+    # this is needed to fix permission issue (https://github.com/actions/checkout/issues/211)
+    - run: sudo chown -R $USER:$USER /home/runner/work/chaltron/chaltron
     - uses: actions/checkout@v2
     - name: Set up Ruby
     # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
