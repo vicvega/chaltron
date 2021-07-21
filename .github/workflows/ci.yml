@@ -20,6 +20,7 @@ jobs:
         env:
           LDAP_DOMAIN: azkaban.co.uk
           LDAP_ORGANISATION: Azkaban
+          LDAP_REMOVE_CONFIG_AFTER_SETUP: 'false'
         volumes:
           - ${{ github.workspace }}/travis-ci/ldap:/container/service/slapd/assets/config/bootstrap/ldif/custom
     steps:
