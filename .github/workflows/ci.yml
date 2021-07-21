@@ -47,3 +47,7 @@ jobs:
       run: bin/rails db:create db:migrate RAILS_ENV=test
     - name: Run tests
       run: bundle exec rspec  
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
