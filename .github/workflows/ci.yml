@@ -34,6 +34,7 @@ jobs:
           - ${{ github.workspace }}//travis-ci/ldap:/container/service/slapd/assets/config/bootstrap/ldif/custom
     steps:
     - run: whoami
+    - run: sudo chown -R $USER:$USER /home/github/actions-runner/_work/vicvega/chaltron
     
     
     - uses: actions/checkout@v2
