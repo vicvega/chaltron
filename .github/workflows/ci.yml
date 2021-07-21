@@ -24,8 +24,6 @@ jobs:
     services:
       ldap:
         image: osixia/openldap:1.2.1
-        ports:
-          - 127.0.0.1:389:389
         env:
           LDAP_DOMAIN: azkaban.co.uk
           LDAP_ORGANISATION: Azkaban
