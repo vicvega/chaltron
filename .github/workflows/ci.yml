@@ -31,7 +31,7 @@ jobs:
           LDAP_ORGANISATION: Azkaban
           LDAP_REMOVE_CONFIG_AFTER_SETUP: 'false'
         volumes:
-          - /$(pwd)/travisssssss-ci/ldap:/container/service/slapd/assets/config/bootstrap/ldif/custom
+          - ${{ github.workspace }}//travis-ci/ldap:/container/service/slapd/assets/config/bootstrap/ldif/custom
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
