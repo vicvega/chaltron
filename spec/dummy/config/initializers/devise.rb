@@ -1,6 +1,6 @@
 Devise.setup do |config|
   config.omniauth :ldap,
-      host:     'localhost',
+      host:     ENV.fetch('LDAP_HOST', '127.0.0.1'),
       base:     'dc=azkaban,dc=co,dc=uk',
       uid:      'uid',
       port:     389,
