@@ -3,7 +3,7 @@
 If you are using bootstrap v3, refer to version 0, on [bootstrap3 branch](https://github.com/vicvega/chaltron/blob/bootstrap3/CHANGELOG.md).
 
 ### 2.0.3 - current version - unreleased
-*
+* gem update
 
 ### 2.0.2 - 2021-07-20
 * set bootstrap to version 4
