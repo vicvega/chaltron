@@ -24,6 +24,8 @@ jobs:
     services:
       ldap:
         image: osixia/openldap:1.2.1
+        ports:
+          - 389:389
         env:
           LDAP_DOMAIN: azkaban.co.uk
           LDAP_ORGANISATION: Azkaban
@@ -45,8 +47,6 @@ jobs:
       run: bin/rails db:create db:migrate RAILS_ENV=test
     - name: Run tests
       run: bundle exec rspec  
-      env: 
-        LDAP_HOST: ldap
     - name: Coveralls
       uses: coverallsapp/github-action@master
       with:
