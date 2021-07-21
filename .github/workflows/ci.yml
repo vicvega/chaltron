@@ -16,14 +16,14 @@ jobs:
       ldap:
         image: osixia/openldap:1.2.1
         ports:
-          - 389:389
+          - 127.0.0.1:389:389
         env:
           LDAP_DOMAIN: azkaban.co.uk
           LDAP_ORGANISATION: Azkaban
         volumes:
           - ${{ github.workspace }}/travis-ci/ldap:/container/service/slapd/assets/config/bootstrap/ldif/custom
     steps:
-    - run: sudo chown -R $USER:$USER /home/runner/work/chaltron/chaltron
+    #- run: sudo chown -R $USER:$USER /home/runner/work/chaltron/chaltron
     - uses: actions/checkout@v2
     - name: Set up Ruby
     # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
