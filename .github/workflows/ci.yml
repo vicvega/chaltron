@@ -25,7 +25,7 @@ jobs:
     # this is needed to fix permission issue (https://github.com/actions/checkout/issues/211)
     - run: sudo chown -R $USER:$USER /home/runner/work/chaltron/chaltron
     - uses: actions/checkout@v2
-    
+
     - name: Set up Ruby
     # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
     # change this to (see https://github.com/ruby/setup-ruby#versioning):
@@ -34,16 +34,14 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    
+
     - name: Load LDAP
       run: |
         sudo apt-get install ldap-utils
-        echo "Running LDAPADD"
-        ls -lh ${{ github.workspace }}/travis-ci/ldap
-        ldapadd -D "cn=admin, dc=azkaban, dc=co, dc=uk" -w admin < ${{ github.workspace }}/travis-ci/ldap/entry.ldif
+        ldapadd -D "cn=admin, dc=azkaban, dc=co, dc=uk" -w admin < ${{ github.workspace }}/ci/ldap/entry.ldif
 
     - name: Setup database
       run: bin/rails db:create db:migrate RAILS_ENV=test
-    
+
     - name: Run tests
       run: bundle exec rspec
