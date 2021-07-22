@@ -37,7 +37,10 @@ jobs:
     
     - name: Load LDAP
       run: |
+        echo '==================================== 1'
         sudo apt-get install ldap-utils
+        echo '==================================== 2'
+        echo "Running LDAPADD"
         ldapadd -D "cn=admin, dc=azkaban, dc=co, dc=uk" -W < ${{ github.workspace }}/travis-ci/ldap
 
     - name: Setup database
