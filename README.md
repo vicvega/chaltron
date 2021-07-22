@@ -8,7 +8,7 @@
 
 ## Important note
 
-**The latest chaltron release (1.x) targets bootstrap v4.**
+**The latest chaltron release targets bootstrap v4.**
 
 If you are using bootstrap v3, refer to the  [bootstrap3](https://github.com/vicvega/chaltron/tree/bootstrap3) branch (chaltron version 0.x).
 
