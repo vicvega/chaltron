@@ -9,4 +9,4 @@ services:
       LDAP_ORGANISATION: Azkaban
       LDAP_REMOVE_CONFIG_AFTER_SETUP: 'false'
     volumes:
-      - ./travis-ci/ldap:/container/service/slapd/assets/config/bootstrap/ldif/custom
+      - ./ci/ldap:/container/service/slapd/assets/config/bootstrap/ldif/custom
