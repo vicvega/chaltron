@@ -5,6 +5,7 @@ If you are using bootstrap v3, refer to version 0, on [bootstrap3 branch](https:
 ### 2.0.3 - current version - unreleased
 * gem update
 * setup github workflow for CI
+* fix legacy bootstrap classes
 
 ### 2.0.2 - 2021-07-20
 * set bootstrap to version 4
