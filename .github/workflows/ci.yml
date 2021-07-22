@@ -14,7 +14,7 @@ jobs:
         ruby-version: ['2.6', '2.7']
     services:
       ldap:
-        image: osixia/openldap:1.2.1
+        image: osixia/openldap:1.5.0
         ports:
           - 127.0.0.1:389:389
         env:
