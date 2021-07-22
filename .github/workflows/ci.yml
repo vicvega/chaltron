@@ -12,14 +12,19 @@ jobs:
     strategy:
       matrix:
         ruby-version: ['2.6', '2.7', '3.0']
-      
+    services:
+      ldap:
+        image: osixia/openldap:1.2.1
+        ports:
+          - 127.0.0.1:389:389
+        env:
+          LDAP_DOMAIN: azkaban.co.uk
+          LDAP_ORGANISATION: Azkaban
+          LDAP_REMOVE_CONFIG_AFTER_SETUP: 'false'
     steps:
-    - run: ls -lh /home/runner/work/chaltron/chaltron/travis-ci/ldap
     # this is needed to fix permission issue (https://github.com/actions/checkout/issues/211)
     - run: sudo chown -R $USER:$USER /home/runner/work/chaltron/chaltron
     - uses: actions/checkout@v2
-    
-    - run: ls -lh ${{ github.workspace }}/travis-ci/ldap
     
     - name: Set up Ruby
     # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
@@ -30,8 +35,12 @@ jobs:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
+    - name: Load LDAP
+      run: ldapadd -D "cn=admin, dc=azkaban, dc=co, dc=uk" -W < ${{ github.workspace }}/travis-ci/ldap
+
     - name: Setup database
       run: bin/rails db:create db:migrate RAILS_ENV=test
+    
     - name: Run tests
       run: bundle exec rspec
 
@@ -39,17 +48,3 @@ jobs:
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-
-
-    services:
-      ldap:
-        image: osixia/openldap:1.2.1
-        ports:
-          - 127.0.0.1:389:389
-        env:
-          LDAP_DOMAIN: azkaban.co.uk
-          LDAP_ORGANISATION: Azkaban
-          LDAP_REMOVE_CONFIG_AFTER_SETUP: 'false'
-        volumes:
-          #- /home/runner/work/chaltron/chaltron/travis-ci/ldap:/container/service/slapd/assets/config/bootstrap/ldif/custom
-          - ${{ github.workspace }}/travis-ci/ldap:/container/service/slapd/assets/config/bootstrap/ldif/custom
