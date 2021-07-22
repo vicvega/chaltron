@@ -1,7 +1,7 @@
 # Chaltron
 
 [![Gem Version](https://badge.fury.io/rb/chaltron.svg)](http://badge.fury.io/rb/chaltron) [![Build Status](https://travis-ci.org/vicvega/chaltron.svg?branch=master)](http://travis-ci.org/vicvega/chaltron)
-[![Coverage Status](https://coveralls.io/repos/vicvega/chaltron/badge.svg?branch=master&service=github)](https://coveralls.io/github/vicvega/chaltron?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/vicvega/chaltron/badge.svg?branch=master)](https://coveralls.io/github/vicvega/chaltron?branch=master)
 [![Code Climate](https://codeclimate.com/github/vicvega/chaltron/badges/gpa.svg)](https://codeclimate.com/github/vicvega/chaltron)
 [![security](https://hakiri.io/github/vicvega/chaltron/master.svg)](https://hakiri.io/github/vicvega/chaltron/master)
 
