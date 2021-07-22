@@ -16,7 +16,7 @@ end
 Just update your bundle
 
 ##### 2.1 Update `Gemfile`
-Add the following gems
+Add the following gems **before `chaltron`**
 ```
 gem 'devise'
 gem 'omniauth'
@@ -37,6 +37,8 @@ gem 'nprogress-rails'
 gem 'simple-navigation'
 gem 'rails-i18n'
 ```
+
+Note that `chaltron` gem msut be declared after `devise`, because both of them change the view paths
 
 ##### 2.2 Update `app/assets/javascripts/application.js`
 Add the following dependencies, replacing `//= require chaltron`
