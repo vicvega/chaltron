@@ -34,8 +34,10 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-
+    
+    - run: sudo apt-get install ldap-utils
     - name: Load LDAP
+      
       run: ldapadd -D "cn=admin, dc=azkaban, dc=co, dc=uk" -W < ${{ github.workspace }}/travis-ci/ldap
 
     - name: Setup database
