@@ -39,7 +39,8 @@ jobs:
       run: |
         sudo apt-get install ldap-utils
         echo "Running LDAPADD"
-        ldapadd -D "cn=admin, dc=azkaban, dc=co, dc=uk" -w admin < ${{ github.workspace }}/travis-ci/ldap
+        ls -lh ${{ github.workspace }}/travis-ci/ldap
+        ldapadd -D "cn=admin, dc=azkaban, dc=co, dc=uk" -w admin < ${{ github.workspace }}/travis-ci/ldap/entry.ldif
 
     - name: Setup database
       run: bin/rails db:create db:migrate RAILS_ENV=test
