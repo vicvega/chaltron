@@ -45,9 +45,7 @@ jobs:
 
     - name: Run tests
       run: bundle exec rspec
-      
-    - run: cat ${{ github.workspace }}/coverage/lcov.info
-    
+
     - name: Coveralls
       uses: coverallsapp/github-action@master
       with:
