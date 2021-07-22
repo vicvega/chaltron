@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'shoulda-matchers'
   s.add_development_dependency 'factory_bot_rails'
   s.add_development_dependency 'ffaker'
-  s.add_development_dependency 'coveralls'
+  s.add_development_dependency 'coveralls_reborn'
   s.add_development_dependency 'rails-controller-testing'
 
 end
