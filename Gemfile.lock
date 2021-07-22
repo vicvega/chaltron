@@ -297,6 +297,7 @@ DEPENDENCIES
   rspec-rails
   shoulda-matchers
   simple-navigation
+  simplecov
   simplecov-lcov
   sqlite3
   turbolinks (~> 5)
