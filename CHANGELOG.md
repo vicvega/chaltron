@@ -4,6 +4,7 @@ If you are using bootstrap v3, refer to version 0, on [bootstrap3 branch](https:
 
 ### 2.0.4 - current version - unreleased
 * use update instead of update_attributes (removed in Rails 6.1)
+* fix role update at login based on LDAP groups
 * gem update
 
 ### 2.0.3 - 20201-07-22
