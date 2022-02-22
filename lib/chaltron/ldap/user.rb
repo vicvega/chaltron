@@ -18,25 +18,30 @@ module Chaltron
           end
           user = find_by_uid_and_provider
           entry = Chaltron::LDAP::Person.find_by_uid(username)
-          if user.nil? and create
-            # create user
+          if user.nil? && create
+            # create user with default roles
             roles = Chaltron.default_roles
-            roles = entry.ldap_groups.map do |e|
-              Chaltron.ldap_role_mappings[e.dn]
-            end.compact if !Chaltron.ldap_role_mappings.blank?
             user = entry.create_user(roles)
           end
-          update_ldap_attributes(user, entry) unless user.nil?
+          roles = if !Chaltron.ldap_role_mappings.blank?
+                    entry.ldap_groups.map do |e|
+                      Chaltron.ldap_role_mappings[e.dn]
+                    end.compact
+                  else
+                    Chaltron.default_roles
+                  end
+          # update roles, email and department
+          update_attributes_from_ldap(user, entry, roles) unless user.nil?
           user
         end
 
         private
 
-        def update_ldap_attributes(user, entry)
-          user.update!(
-            email: entry.email,
-            department: entry.department
-          )
+        def update_attributes_from_ldap(user, entry, roles)
+          user.email = entry.email
+          user.department = entry.department
+          user.roles = roles
+          user.save
         end
 
         def find_by_uid_and_provider
